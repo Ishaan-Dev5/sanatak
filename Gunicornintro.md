@@ -23,22 +23,23 @@
 ---
 
 ## What is gunicorn
-Gunicorn (Green Unicorn) is a WSGI compliant web server for Python Applications that receive requests sent to the Web Server from a Client and forwards them onto the Python applications or Web Frameworks (such as Flask or Django) in order to run the appropriate application code for the request.
+Gunicorn (Green Unicorn) is a WSGI-compliant HTTP server for Python web applications. It receives client requests via a web server (like Nginx) and forwards them to Python applications built with WSGI-compatible frameworks such as Flask, Django, or FastAPI.
 Gunicorn is one implementation of a WSGI server for Python applications.
 
 ---
 
 ## Why we need gunicorn?
+
 The standard web servers such as Apache, and NGINX don’t know how to communicate with your Python applications. Web servers receive the request from a client(Web browser) and return a response. The web server doesn’t create the response, it only returns the response. So, a server needs to talk with a Web Application that can create a response.
 
-And what Web Application can do? Anything your project needs it to do. I am sure you all have cool ideas to release to the world. We almost live on the web these days. So, what you build will need to communicate to the web servers in order to reach your users/audience over the internet. Therefore, we need an architecture, sort of a protocol, everyone agrees on, to bridge the request-response cycle between your web server and web application.
+Python web applications need an interface to connect with web servers — this is where WSGI (Web Server Gateway Interface) comes in.
 
-WSGI comes into the picture because it basically provides that bridge of your need to communicate between your Web Server and Web Application. WSGI (Web Server Gateway Interface), is a set of rules which allow a WSGI compliant server to work with a WSGI compliant Python application. WSGI also handles scaling for web servers to be able to handle thousands of requests so you don’t have to think about accepting multiple requests at a time.
+WSGI  basically provides that bridge of your need to communicate between your Web Server and Web Application. WSGI (Web Server Gateway Interface), is a set of rules which allow a WSGI compliant server to work with a WSGI compliant Python application. WSGI also handles scaling for web servers to be able to handle thousands of requests so you don’t have to think about accepting multiple requests at a time.
 <img width="1534" height="425" alt="image" src="https://github.com/user-attachments/assets/2a7b0f1c-0585-4346-afe5-8cb793c45248" />
 
 ---
 
-## Before Unicorn
+## Deplyoment Before GUnicorn
 
 Before the widespread use of Gunicorn, Python web applications were often deployed using a variety of methods, including: Flask's built-in development server (which is not suitable for production), other WSGI servers like Waitress or uWSGI, or directly through web servers like Apache or Nginx with a WSGI module
 
