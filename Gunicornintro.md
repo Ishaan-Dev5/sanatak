@@ -67,7 +67,7 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 
 |  Use Case |  Description |
 |-------------|----------------|
-| * Run Python Web Apps** | Helps run Python websites made with Flask, Django, or FastAPI. |
+| ** Run Python Web Apps** | Helps run Python websites made with Flask, Django, or FastAPI. |
 | ** For Live/Production Use** | Can handle real users and traffic, good for live websites. |
 | ** Handles Many Users** | Uses multiple workers to serve many users at the same time. |
 | ** Works with Nginx/Apache** | Often used behind Nginx or Apache, which handles static files and SSL. |
