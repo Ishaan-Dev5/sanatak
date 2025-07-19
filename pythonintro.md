@@ -161,6 +161,6 @@ You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](ht
 ## References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-|  | Document format followed from this link                         |
-|                                   | Documentation referred for the table of contents to be included |
-| 
+| [https://www.python.org/] | Python Official Site                       |
+|  [https://www.geeksforgeeks.org/python/history-of-python/]                                 | History Of Python |
+| [https://www.geeksforgeeks.org/python/introduction-to-python/]   | Introduction to Python |
