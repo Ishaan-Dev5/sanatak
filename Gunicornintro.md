@@ -80,21 +80,22 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 ---
 
 
-## Advantages of Python
+##  Advantages of Gunicorn
 
-- Easy to Learn and Use
-- Open Source & Free  
-- Versatile Across Domains
-- Extensive Libraries and Frameworks  
-- Platform Independent
+1. **WSGI Compliant** – Supports Django, Flask, and other WSGI apps.
+2. **Easy to Use** – Simple CLI commands and minimal configuration needed.
+3. **Multi-process Support** – Handles concurrent requests via multiple workers.
+4. **Reverse Proxy Compatible** – Works well behind Nginx/Apache.
+5. **Async Capable** – Supports async workers using `gevent` or `eventlet`.
+
 ---
-## Limitations of Python
+##  Disadvantages of Gunicorn
 
-- Slower Execution Speed
-- Mobile App Development
-- Memory Consumption
-- Runtime Errors
-- Threading Limitations
+1. **No Windows Support** – Limited or no native support for Windows.
+2. **No Static File Handling** – Needs Nginx/Apache to serve static files.
+3. **Not Async by Default** – Requires extra config for async support.
+4. **No SSL Handling** – Cannot serve HTTPS directly.
+5. **Memory Overhead** – Each worker is a separate process, increasing RAM usage.
 ---
 
 
