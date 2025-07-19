@@ -51,7 +51,7 @@ Python is a high-level, general-purpose programming language developed by Guido 
 ---
 
 
-## Key features
+## Features Of Python
 
 | Feature                     | Description                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------|
@@ -67,6 +67,24 @@ Python is a high-level, general-purpose programming language developed by Guido 
 | Wide Application Areas      | Used in AI, automation, web, game dev, data science, and more              |
 
 ---
+
+## Use-Cases
+
+Popular use cases of Python across industries and domains:
+
+
+| Domain                | Use Case Description                                                         |
+|-----------------------|------------------------------------------------------------------------------|
+| Web Development       | Building websites and web apps with frameworks like Django and Flask         |
+| Data Science          | Analyzing large datasets using Pandas, NumPy, and visualization tools        |
+| Machine Learning & AI | Creating smart models using libraries like TensorFlow, Keras, and scikit-learn |
+| Automation/Scripting  | Writing scripts to automate tasks like file management and data entry        |
+| Game Development      | Building 2D/3D games using tools like Pygame                                 |
+| Cybersecurity         | Writing tools for penetration testing and security analysis                  |
+| Finance               | Creating financial models and algorithms for trading and forecasting         |
+| Desktop Applications  | Developing software with GUI using Tkinter or PyQt                          |
+| Education             | Teaching programming due to Python's simplicity and readability              |
+| Internet of Things    | Programming hardware devices like Raspberry Pi for smart applications        |
 
 
 ## Getting Started
