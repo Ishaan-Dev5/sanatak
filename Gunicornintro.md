@@ -39,7 +39,9 @@ WSGI comes into the picture because it basically provides that bridge of your ne
 ---
 
 ## Before Unicorn
+
 Before the widespread use of Gunicorn, Python web applications were often deployed using a variety of methods, including: Flask's built-in development server (which is not suitable for production), other WSGI servers like Waitress or uWSGI, or directly through web servers like Apache or Nginx with a WSGI module
+
 ---
 ##  Timeline
 
