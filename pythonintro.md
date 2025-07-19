@@ -12,7 +12,7 @@
 
 - [Introduction](#Introduction)
 - [History of Python](#History-of-Python)
-- [Key Features](#features)
+- [Features](#Features)
 - [Use Cases](#use-cases)
 - [Advantages of Python](#advantages-of-python)
 - [Limitations of Python](#limitations-of-python)
