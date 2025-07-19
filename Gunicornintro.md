@@ -83,47 +83,37 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 
 ##  Advantages of Gunicorn
 
- **WSGI Compliant** – Supports Django, Flask, and other WSGI apps.
- **Easy to Use** – Simple CLI commands and minimal configuration needed.
- **Multi-process Support** – Handles concurrent requests via multiple workers.
- **Reverse Proxy Compatible** – Works well behind Nginx/Apache.
+- WSGI Compliant – Supports Django, Flask, and other WSGI apps.
+- Easy to Use – Simple CLI commands and minimal configuration needed.
+- Multi-process Support – Handles concurrent requests via multiple workers.
+- Reverse Proxy Compatible – Works well behind Nginx/Apache.
 
 ---
 ##  Disadvantages of Gunicorn
 
- **No Windows Support** – Limited or no native support for Windows.
- **No Static File Handling** – Needs Nginx/Apache to serve static files.
- **Not Async by Default** – Requires extra config for async support.
- **No SSL Handling** – Cannot serve HTTPS directly.
- **Memory Overhead** – Each worker is a separate process, increasing RAM usage.
+- No Windows Support – Limited or no native support for Windows.
+- No Static File Handling – Needs Nginx/Apache to serve static files.
+- Not Async by Default – Requires extra config for async support.
+- No SSL Handling – Cannot serve HTTPS directly.
+- Memory Overhead – Each worker is a separate process, increasing RAM usage.
 ---
 
-
-
-
 ## FAQs
-
 
 ### 1. What is Gunicorn used for?
 Gunicorn is a WSGI HTTP server used to run Python web applications like Flask, Django, or FastAPI in production environments.
 
-
-
 ### 2. Can Gunicorn serve static files?
 No, Gunicorn does not serve static files (like images, CSS, or JS). It is recommended to use it behind a reverse proxy like **Nginx** to handle static files and SSL.
-
-
 
 ### 3. Is Gunicorn asynchronous?
 Gunicorn is synchronous by default, but it supports asynchronous workers like **gevent**, **eventlet**, and **gthread** for handling async tasks or long-lived connections.
 
-
-
 ### 4. Does Gunicorn work on Windows?
 Gunicorn is primarily designed for **Unix-like systems** (Linux/macOS) and is not fully supported on Windows.
 
-
 ---
+
 ## Contact Information
 | Name         | Email address          |
 |--------------|------------------------|
@@ -132,6 +122,6 @@ Gunicorn is primarily designed for **Unix-like systems** (Linux/macOS) and is no
 ## References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| https://docs.gunicorn.org/en/stable/# | Python Official Site                       |
-|  https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b                               | History Of Python |
-| https://www.geeksforgeeks.org/python/introduction-to-python/   | Introduction to Python |
+| https://docs.gunicorn.org/en/stable/# | Gunicorn Official Site                       |
+|  https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b                               | What is Gunicorn |
+
