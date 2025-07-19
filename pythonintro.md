@@ -25,12 +25,16 @@
 ## Introduction
 Python is a high-level, general-purpose programming language developed by Guido van Rossum in 1991.It is valued for its clear and readable syntax, making it accessible for beginners and powerful for professionals. Python supports multiple programming styles, including object-oriented and functional programming. It is widely used in web development, data science, automation, and artificial intelligence due to its extensive libraries and active global community.
 
+---
+
 ## History Of Python
 
 - **Creator**: Guido van Rossum  
 - **Initial Release**: 1991  
 - **Current Version**: Python 3.13.5
 - **Naming Origin**: Inspired by the British comedy show *Monty Python’s Flying Circus*
+
+---
 
 ##  Timeline
 
