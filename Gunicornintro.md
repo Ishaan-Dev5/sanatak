@@ -67,16 +67,16 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 
 |  Use Case |  Description |
 |-------------|----------------|
-| **1. Run Python Web Apps** | Helps run Python websites made with Flask, Django, or FastAPI. |
-| **2. For Live/Production Use** | Can handle real users and traffic, good for live websites. |
-| **3. Handles Many Users** | Uses multiple workers to serve many users at the same time. |
-| **4. Works with Nginx/Apache** | Often used behind Nginx or Apache, which handles static files and SSL. |
-| **5. Used in Docker/Kubernetes** | Works well inside containers and cloud platforms for microservices. |
-| **6. Serve APIs** | Can serve REST APIs quickly and handle many requests. |
-| **7. Cloud-Friendly** | Works easily on AWS, GCP, Azure, and other cloud platforms. |
-| **8. Simpler than uWSGI** | Easier to set up than uWSGI but does a similar job. |
-| **9. Can Handle Async Tasks** | Supports long-running or real-time tasks using async workers. |
-| **10. Used for Testing Too** | Can be used in testing setups that are close to real production. |
+| * Run Python Web Apps** | Helps run Python websites made with Flask, Django, or FastAPI. |
+| ** For Live/Production Use** | Can handle real users and traffic, good for live websites. |
+| ** Handles Many Users** | Uses multiple workers to serve many users at the same time. |
+| ** Works with Nginx/Apache** | Often used behind Nginx or Apache, which handles static files and SSL. |
+| ** Used in Docker/Kubernetes** | Works well inside containers and cloud platforms for microservices. |
+| ** Serve APIs** | Can serve REST APIs quickly and handle many requests. |
+| ** Cloud-Friendly** | Works easily on AWS, GCP, Azure, and other cloud platforms. |
+| ** Simpler than uWSGI** | Easier to set up than uWSGI but does a similar job. |
+| ** Can Handle Async Tasks** | Supports long-running or real-time tasks using async workers. |
+| ** Used for Testing Too** | Can be used in testing setups that are close to real production. |
 
 ---
 
