@@ -1,9 +1,29 @@
+# Python Documentation
+
+---
+
 | Author      | Created on  | Version    | Last updated by | Last edited on |
 |-------------|-------------|------------|-----------------|----------------|
-| ABC    | 10-08-23    | version 1  | ABC        | 24-08-23       |
+| Ishaan    | 19-07-25    | version 1  | Ishaan        | 19-07-25       |
+
+---
+
+## Table of Contents 
+
+- [Introduction](#Introduction)
+- [History of Python](#history-of-python)
+- [Key Features](#key-features)
+- [Use Cases](#use-cases)
+- [Advantages of Python](#advantages-of-python)
+- [Limitations of Python](#limitations-of-python)
+- [Getting Started](#getting-started)
+- [Contact Information](#contact-information)
+- [References](#references)
+
+---
 
 ## Introduction
-This Document create a basic software template , software template is a pre-designed  structure that serves as a starting point for creating software documentation, This template provides an organization layout, and content structure.
+Python is a high-level, general-purpose programming language developed by Guido van Rossum in 1991.It is valued for its clear and readable syntax, making it accessible for beginners and powerful for professionals. Python supports multiple programming styles, including object-oriented and functional programming. It is widely used in web development, data science, automation, and artificial intelligence due to its extensive libraries and active global community.
 
 ## Purposes
 Scenarios that demonstrate how a product, service, or system can be applied or utilized to solve specific problems or meet particular needs.
