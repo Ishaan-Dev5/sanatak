@@ -10,8 +10,8 @@
 
 ## Table of Contents 
 
-- [Introduction](#Introduction)
-- [History of Python](#History-of-Python)
+- [Introduction](#what-is-gunicorn)
+- [Why We need Gunicorn(#why-we-need-gunicorn)]
 - [Features](#Features-Of-Python)
 - [Use Cases](#use-cases)
 - [Advantages of Python](#advantages-of-python)
