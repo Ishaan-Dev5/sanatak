@@ -143,7 +143,7 @@ print("Hello, Python!")
 ## Contact Information
 | Name         | Email address          |
 |--------------|------------------------|
-| abc          | abc@mygurukulam.co     |
+| Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
 
 ## References
 | Links                                             | Descriptions                                                    |
