@@ -66,6 +66,9 @@ Python is a high-level, general-purpose programming language developed by Guido 
 | Rapid Prototyping           | Ideal for quickly turning ideas into working apps                          |
 | Wide Application Areas      | Used in AI, automation, web, game dev, data science, and more              |
 
+---
+
+
 ## Getting Started
 ### Pre-requisites
 | License Type         | Description                                         | Commercial Use | Open Source            |
