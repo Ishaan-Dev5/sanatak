@@ -11,7 +11,7 @@
 ## Table of Contents 
 
 - [Introduction](#Introduction)
-- [History of Python](#history-of-python)
+- [History of Python](#History-of-Python)
 - [Key Features](#key-features)
 - [Use Cases](#use-cases)
 - [Advantages of Python](#advantages-of-python)
@@ -25,8 +25,27 @@
 ## Introduction
 Python is a high-level, general-purpose programming language developed by Guido van Rossum in 1991.It is valued for its clear and readable syntax, making it accessible for beginners and powerful for professionals. Python supports multiple programming styles, including object-oriented and functional programming. It is widely used in web development, data science, automation, and artificial intelligence due to its extensive libraries and active global community.
 
-## Purposes
-Scenarios that demonstrate how a product, service, or system can be applied or utilized to solve specific problems or meet particular needs.
+## History Of Python
+
+- **Creator**: Guido van Rossum  
+- **Initial Release**: 1991  
+- **Current Version**: Python 3.x (Check the latest: [Python Downloads](https://www.python.org/downloads/))  
+- **Naming Origin**: Inspired by the British comedy show *Monty Python’s Flying Circus*
+
+##  Timeline
+
+| Year       | Milestone                                                       |
+|------------|------------------------------------------------------------------|
+| 1989       | Guido van Rossum begins developing Python during Christmas break |
+| 1991       | First release: Python 0.9.0                                      |
+| 2000       | Python 2.0 introduced list comprehensions, garbage collection    |
+| 2008       | Python 3.0 released—major overhaul, not backward compatible      |
+| 2020       | Official end of Python 2 support                                 |
+| 2023–2024  | Python 3.12 and 3.13 launched with speed and syntax improvements |
+| Present    | Widely used globally in AI, data science, web development, and more |
+
+---
+
 
 ## Key features
 write key features that are the most important and standout parts of something that make it special or useful, like the main things that make something different from everything.
