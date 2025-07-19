@@ -45,7 +45,7 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 ---
 
 
-## Features of Gunicorn (Green Unicorn)
+## Features of Gunicorn
 
 | Feature                     | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
