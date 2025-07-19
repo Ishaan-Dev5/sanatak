@@ -11,7 +11,7 @@
 ## Table of Contents 
 
 - [Introduction](#what-is-gunicorn)
-- [Why We need Gunicorn(#why-we-need-gunicorn)]
+- [Why We need Gunicorn](#why-we-need-gunicorn)
 - [Features](#Features-Of-Python)
 - [Use Cases](#use-cases)
 - [Advantages of Python](#advantages-of-python)
