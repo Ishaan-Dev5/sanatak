@@ -45,21 +45,20 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 ---
 
 
-## Features Of Python
+## Features of Gunicorn (Green Unicorn)
 
 | Feature                     | Description                                                                 |
-|-----------------------------|-----------------------------------------------------------------------------|
-| Simple Syntax               | Easy to read and write, almost like plain English                          |
-| Interpreted Language        | Executes code line-by-line, making debugging easier                        |
-| Cross-Platform Support      | Runs on Windows, macOS, Linux, and more                                    |
-| Rich Standard Library       | Built-in modules for various tasks like math, file I/O, and web services   |
-| Dynamically Typed           | No need to declare variable types—Python does it automatically             |
-| Multi-Paradigm Support      | Supports object-oriented, functional, and procedural programming styles     |
-| Strong Community            | Global community with forums, tutorials, and libraries                     |
-| Third-Party Packages        | Tools like NumPy, Pandas, TensorFlow, Flask expand its capabilities        |
-| Rapid Prototyping           | Ideal for quickly turning ideas into working apps                          |
-| Wide Application Areas      | Used in AI, automation, web, game dev, data science, and more              |
-
+|----------------------------|-----------------------------------------------------------------------------|
+| **WSGI Compliance**        | Fully adheres to the WSGI standard, making it compatible with frameworks like Django, Flask, and FastAPI |
+| **Pre-Fork Worker Model**  | Uses multiple worker processes to handle requests concurrently for better performance |
+| **Supports Sync & Async**  | Offers synchronous and asynchronous worker types (e.g., gevent, eventlet, gthread) |
+| **Lightweight & Fast**     | Minimal resource usage with high-speed request handling                     |
+| **Simple Configuration**   | Easy to set up via CLI or Python-based config files                         |
+| **Automatic Worker Management** | Handles worker timeouts, restarts, and scaling automatically               |
+| **Production-Ready**       | Designed for real-world traffic and scalable deployments                    |
+| **Framework Agnostic**     | Works with any WSGI-compatible Python web framework                         |
+| **Integration Friendly**   | Commonly paired with NGINX, HAProxy, or AWS ALB for load balancing          |
+| **Extensible Hooks**       | Offers server hooks and signal handling for custom behavior                 |
 ---
 
 ## Use-Cases
