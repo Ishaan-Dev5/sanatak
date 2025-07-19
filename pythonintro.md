@@ -85,7 +85,7 @@ Popular use cases of Python across industries and domains:
 | Desktop Applications  | Developing software with GUI using Tkinter or PyQt                          |
 | Education             | Teaching programming due to Python's simplicity and readability              |
 | Internet of Things    | Programming hardware devices like Raspberry Pi for smart applications        |
-
+---
 ## Advantages of Python
 
 - Easy to Learn and Use
@@ -93,7 +93,15 @@ Popular use cases of Python across industries and domains:
 - Versatile Across Domains
 - Extensive Libraries and Frameworks  
 - Platform Independent
- 
+---
+## Limitations of Python
+
+- Slower Execution Speed
+- Mobile App Development
+- Memory Consumption
+- Runtime Errors
+- Threading Limitations
+---
 ## Getting Started
 ### Pre-requisites
 | License Type         | Description                                         | Commercial Use | Open Source            |
