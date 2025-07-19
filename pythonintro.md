@@ -132,24 +132,25 @@ print("Hello, Python!")
 
 ## FAQs
 
-- Is Python good for beginners?
+### 1. Is Python good for beginners?
 Yes! Python’s clear syntax and readability make it one of the best languages for beginners.
 
-- What’s the difference between Python 2 and Python 3?
+### 2. What’s the difference between Python 2 and Python 3?
 Python 3 is the current and future version with modern features. Python 2 is outdated and no longer supported as of 2020.
 
-- Which code editor should I use for Python?
+### 3. Which code editor should I use for Python?
 Popular options include IDLE (comes with Python), VS Code, PyCharm, and Jupyter Notebook.
 
-- Can Python be used for web development?
+### 4. Can Python be used for web development?
 Absolutely! Frameworks like Django, Flask, and FastAPI make Python powerful for building web apps.
 
-- Is Python fast?
+### 5. Is Python fast?
 Python is slower than compiled languages like C++ but fast enough for most applications and ideal for rapid development.
 
-- Where can I practice Python online?
+### 6. Where can I practice Python online?
 You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](https://replit.com), [LeetCode](https://leetcode.com), and [W3Schools](https://www.w3schools.com/python/).
 
+---
 ## Contact Information
 | Name         | Email address          |
 |--------------|------------------------|
