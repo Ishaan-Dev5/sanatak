@@ -43,19 +43,6 @@ WSGI comes into the picture because it basically provides that bridge of your ne
 Before the widespread use of Gunicorn, Python web applications were often deployed using a variety of methods, including: Flask's built-in development server (which is not suitable for production), other WSGI servers like Waitress or uWSGI, or directly through web servers like Apache or Nginx with a WSGI module
 
 ---
-##  Timeline
-
-| Year       | Milestone                                                       |
-|------------|------------------------------------------------------------------|
-| 1989       | Guido van Rossum begins developing Python during Christmas break |
-| 1991       | First release: Python 0.9.0                                      |
-| 2000       | Python 2.0 introduced list comprehensions, garbage collection    |
-| 2008       | Python 3.0 released—major overhaul, not backward compatible      |
-| 2020       | Official end of Python 2 support                                 |
-| 2023–2024  | Python 3.12 and 3.13 launched with speed and syntax improvements |
-| Present    | Widely used globally in AI, data science, web development, and more |
-
----
 
 
 ## Features Of Python
