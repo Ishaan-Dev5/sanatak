@@ -1,4 +1,4 @@
-# Gunicorn Documentation
+# Gunicorn (Green Unicorn) Documentation
 
 ---
 
