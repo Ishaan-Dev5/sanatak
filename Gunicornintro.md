@@ -16,7 +16,6 @@
 - [Use Cases](#use-cases)
 - [Advantages of Python](#advantages-of-python)
 - [Limitations of Python](#limitations-of-python)
-- [Getting Started](#getting-started-with-python)
 - [FAQs](#FAQs)
 - [Contact Information](#contact-information)
 - [References](#references)
@@ -108,31 +107,6 @@ Popular use cases of Python across industries and domains:
 - Threading Limitations
 ---
 
-##  Getting Started with Python
-
-### 1. Install Python
-- Visit: [python.org/downloads](https://www.python.org/downloads/)
-- Download the installer for your operating system:  
-  - **Windows**: `.exe` installer  
-  - **macOS**: `.pkg` installer  
-  - **Linux**: Use your terminal with: `sudo apt install python3`
-
-
-### 2. Choose a Code Editor (Cross-Platform Options)
-
-- **VS Code** – Lightweight and powerful
-- **PyCharm** – Full-featured IDE
-- **Jupyter Notebook** – Great for data science & interactive coding
-
-### 3.  Verify Installation
-Use terminal or command prompt on any OS:
-```bash
-python --version
-```
-### 4. Run Your First Python Program
-``` python
-print("Hello, Python!")
-```
 
 ---
 
