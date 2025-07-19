@@ -35,6 +35,8 @@ The standard web servers such as Apache, and NGINX don’t know how to communica
 Python web applications need an interface to connect with web servers — this is where WSGI (Web Server Gateway Interface) comes in.
 
 WSGI  basically provides that bridge of your need to communicate between your Web Server and Web Application. WSGI (Web Server Gateway Interface), is a set of rules which allow a WSGI compliant server to work with a WSGI compliant Python application. WSGI also handles scaling for web servers to be able to handle thousands of requests so you don’t have to think about accepting multiple requests at a time.
+
+
 <img width="1534" height="425" alt="image" src="https://github.com/user-attachments/assets/2a7b0f1c-0585-4346-afe5-8cb793c45248" />
 
 ---
