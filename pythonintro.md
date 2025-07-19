@@ -52,7 +52,19 @@ Python is a high-level, general-purpose programming language developed by Guido 
 
 
 ## Key features
-write key features that are the most important and standout parts of something that make it special or useful, like the main things that make something different from everything.
+
+| Feature                     | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| Simple Syntax               | Easy to read and write, almost like plain English                          |
+| Interpreted Language        | Executes code line-by-line, making debugging easier                        |
+| Cross-Platform Support      | Runs on Windows, macOS, Linux, and more                                    |
+| Rich Standard Library       | Built-in modules for various tasks like math, file I/O, and web services   |
+| Dynamically Typed           | No need to declare variable types—Python does it automatically             |
+| Multi-Paradigm Support      | Supports object-oriented, functional, and procedural programming styles     |
+| Strong Community            | Global community with forums, tutorials, and libraries                     |
+| Third-Party Packages        | Tools like NumPy, Pandas, TensorFlow, Flask expand its capabilities        |
+| Rapid Prototyping           | Ideal for quickly turning ideas into working apps                          |
+| Wide Application Areas      | Used in AI, automation, web, game dev, data science, and more              |
 
 ## Getting Started
 ### Pre-requisites
