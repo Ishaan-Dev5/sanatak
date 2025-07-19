@@ -4,7 +4,7 @@
 
 | Author      | Created on  | Version    | Last updated by | Last edited on |
 |-------------|-------------|------------|-----------------|----------------|
-| Ishaan    | 19-07-25    | version 1  | Ishaan        | 19-07-25       |
+| Ishaan    | 20-07-25    | version 1  | Ishaan        | 20-07-25       |
 
 ---
 
@@ -23,17 +23,18 @@
 
 ---
 
-## Introduction
-Python is a high-level, general-purpose programming language developed by Guido van Rossum in 1991.It is valued for its clear and readable syntax, making it accessible for beginners and powerful for professionals. Python supports multiple programming styles, including object-oriented and functional programming. It is widely used in web development, data science, automation, and artificial intelligence due to its extensive libraries and active global community.
+## What is gunicorn
+Gunicorn (Green Unicorn) is a WSGI compliant web server for Python Applications that receive requests sent to the Web Server from a Client and forwards them onto the Python applications or Web Frameworks (such as Flask or Django) in order to run the appropriate application code for the request.
+Gunicorn is one implementation of a WSGI server for Python applications.
 
 ---
 
-## History Of Python
+## Why we need gunicorn?
+The standard web servers such as Apache, and NGINX don’t know how to communicate with your Python applications. Web servers receive the request from a client(Web browser) and return a response. The web server doesn’t create the response, it only returns the response. So, a server needs to talk with a Web Application that can create a response.
 
-- **Creator**: Guido van Rossum  
-- **Initial Release**: 1991  
-- **Current Version**: Python 3.13.5
-- **Naming Origin**: Inspired by the British comedy show *Monty Python’s Flying Circus*
+And what Web Application can do? Anything your project needs it to do. I am sure you all have cool ideas to release to the world. We almost live on the web these days. So, what you build will need to communicate to the web servers in order to reach your users/audience over the internet. Therefore, we need an architecture, sort of a protocol, everyone agrees on, to bridge the request-response cycle between your web server and web application.
+
+WSGI comes into the picture because it basically provides that bridge of your need to communicate between your Web Server and Web Application. WSGI (Web Server Gateway Interface), is a set of rules which allow a WSGI compliant server to work with a WSGI compliant Python application. WSGI also handles scaling for web servers to be able to handle thousands of requests so you don’t have to think about accepting multiple requests at a time.
 
 ---
 
@@ -161,6 +162,6 @@ You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](ht
 ## References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| https://www.python.org/ | Python Official Site                       |
-|  https://www.geeksforgeeks.org/python/history-of-python/                                 | History Of Python |
+| https://docs.gunicorn.org/en/stable/# | Python Official Site                       |
+|  https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b                               | History Of Python |
 | https://www.geeksforgeeks.org/python/introduction-to-python/   | Introduction to Python |
