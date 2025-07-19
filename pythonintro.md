@@ -29,7 +29,7 @@ Python is a high-level, general-purpose programming language developed by Guido 
 
 - **Creator**: Guido van Rossum  
 - **Initial Release**: 1991  
-- **Current Version**: Python 3.x (Check the latest: [Python Downloads](https://www.python.org/downloads/))  
+- **Current Version**: Python 3.13.5
 - **Naming Origin**: Inspired by the British comedy show *Monty Python’s Flying Circus*
 
 ##  Timeline
