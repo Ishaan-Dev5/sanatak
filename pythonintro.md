@@ -115,6 +115,7 @@ Popular use cases of Python across industries and domains:
 
 
 ### 2. Choose a Code Editor (Cross-Platform Options)
+
 - **VS Code** – Lightweight and powerful
 - **PyCharm** – Full-featured IDE
 - **Jupyter Notebook** – Great for data science & interactive coding
@@ -122,7 +123,7 @@ Popular use cases of Python across industries and domains:
 ### 3.  Verify Installation
 Use terminal or command prompt on any OS:
 ```bash
-python --version.
+python --version
 ```
 ### 4. Run Your First Python Program
 ``` python
@@ -160,6 +161,6 @@ You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](ht
 ## References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| [https://www.jenkins.io/doc/book/installing/linux/#debianubuntu](https://www.jenkins.io/doc/book/installing/linux/#debianubuntu) | Document format followed from this link                         |
-| [https://amplifi.com/user-guide/FAQs.html](https://amplifi.com/user-guide/FAQs.html)                                     | Documentation referred for the table of contents to be included |
-| [https://thecontentauthority.com/blog/introduction-vs-overview](https://thecontentauthorit
+|  | Document format followed from this link                         |
+|                                   | Documentation referred for the table of contents to be included |
+| 
