@@ -16,7 +16,6 @@
 - [Use Cases](#use-cases)
 - [Advantages of Python](#advantages-of-python)
 - [Limitations of Python](#limitations-of-python)
-- [Getting Started](#getting-started-with-python)
 - [FAQs](#FAQs)
 - [Contact Information](#contact-information)
 - [References](#references)
