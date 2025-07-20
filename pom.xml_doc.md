@@ -77,7 +77,7 @@ Dependencies are defined inside the `<dependencies>` tag. Each dependency includ
 
 | Best Practice                         | Description                                                                 |
 |--------------------------------------|-----------------------------------------------------------------------------|
-| **Use `<dependencyManagement>`**     | Control versions in parent POM, override in child.                         |
+| **Use `<dependencyManagement>`**     | Centralize version control for dependencies.                         |
 | **Avoid SNAPSHOT in Production**     | Use release versions for production stability.                             |
 | **Use Properties for Versions**      | Declare version as a property for reuse and maintainability.               |
 | **Keep Dependencies Updated**        | Regularly update to avoid bugs/security issues.                            |
