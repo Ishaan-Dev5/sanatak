@@ -75,7 +75,7 @@ Dependencies are defined inside the `<dependencies>` tag. Each dependency includ
 | `groupId`     | The group or organization of the library  |
 | `artifactId`  | The library/module name                   |
 | `version`     | The specific version to use               |
-| `scope`       | (Optional) Scope like `compile`, `test`, etc. |
+
 
 ---
 
