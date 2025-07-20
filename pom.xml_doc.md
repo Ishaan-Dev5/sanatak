@@ -1,4 +1,4 @@
-# `pom.xml` (Project Object Model) Documentation
+# pom.xml (Project Object Model) Documentation
 
 ---
 
@@ -10,8 +10,8 @@
 
 ## Table of Contents
 
-- [What is `pom.xml`](#what-is-pomxml)
-- [Why We Use `pom.xml`](#why-we-use-pomxml)
+- [What is pom.xml](#what-is-pomxml)
+- [Why We Use pom.xml](#why-we-use-pomxml)
 - [Use Cases](#use-cases-of-pomxml)
 - [Defining Dependencies](#defining-dependencies)
 - [Versioning Best Practices](#versioning-best-practices)
@@ -21,14 +21,14 @@
 
 ---
 
-## What is `pom.xml`
+## What is pom.xml
 
 pom.xml (Project Object Model) is a fundamental file in Maven that defines the configuration, dependencies, and project information required for building a Java project. and this file contains details about the project and its dependencies (libraries or frameworks), plugins, goals, and build lifecycle. By managing dependencies in the pom.xml file, Maven automatically downloads the required libraries during the build process
 
 
 ---
 
-## Why We Use `pom.xml`
+## Why We Use pom.xml
 
 - **Dependency Management**: Automatically handles downloading and linking required libraries.
 - **Automates Builds**: Automates build processes by streamlining compilation, testing, and packaging and integrating with Maven plugins.
