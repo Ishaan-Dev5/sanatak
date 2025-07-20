@@ -79,7 +79,6 @@ Dependencies are defined inside the `<dependencies>` tag. Each dependency includ
 | **Avoid SNAPSHOT in Production**     | Use release versions for production stability.                             |
 | **Use Properties for Versions**      | Declare version as a property for reuse and maintainability.               |
 | **Keep Dependencies Updated**        | Regularly update to avoid bugs/security issues.                            |
-| **Lock Transitive Dependencies**     | Explicitly declare versions to avoid unexpected changes from deep dependencies. |
 
 ---
 
