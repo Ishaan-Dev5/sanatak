@@ -12,6 +12,7 @@
 
 - [Introduction](#what-is-jinja2)
 - [Why we use jinja2 template](#Why-we-use-jinja2-template)
+- [Where It's Used in Ansible](#where-its-used-in-ansible)
 - [Advantages of Jinja2 Templates](#advantages-of-jinja2-templates)
 - [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-templates)
 - [FAQs](#FAQs)
