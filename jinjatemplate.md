@@ -52,43 +52,43 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 ### Use jinja2 in ansible
 1. Templates are used with the template: module in playbooks.
 ```
-project/
-├── templates/
-│   └── hello.j2
-└── playbook.yml
+   project/
+   ├── templates/
+   │   └── hello.j2
+   └── playbook.yml
 ```
 2. Create a Template File (hello.j2)
-   ```
+```
    Hello, {{ name }}!
    {% if is_admin %}
    You have admin access.
    {% else %}
    You are a regular user.
    {% endif %}
-   ```
+```
    This file contains:
 - {{ name }} — **a variable**
 - {% if %} — **a control structure**
 
 3. playbook.yaml
 ```
-- name: Render Jinja2 template
-  hosts: localhost
-  vars:
-    name: Ishaan
-    is_admin: true
-  tasks:
-    - name: Create file from template
-      template:
-        src: templates/hello.j2
-        dest: /tmp/hello.txt
+   - name: Render Jinja2 template
+     hosts: localhost
+     vars:
+       name: Ishaan
+       is_admin: true
+     tasks:
+       - name: Create file from template
+         template:
+             src: templates/hello.j2
+             dest: /tmp/hello.txt
 
 ```
  4. Final Output (/tmp/hello.txt)
 ```
 
-  Hello, Ishaan!
-  You have admin access.
+    Hello, Ishaan!
+    You have admin access.
 
 ```
 
