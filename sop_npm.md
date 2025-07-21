@@ -12,18 +12,15 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 
 ## Table of Contents
 
-1. [Why ansible playbook?](#why-ansible-playbook)
-2. [What is ansible playbook?](#what-is-ansible-playbook)
+1. [Introduction to NPM](#introduction=to-npm)
+2. [ What does NPM stand for and why is it important?](#What-does-NPM-stand-for-and-why-is-it-important?)
 3. [Prerequisites](#Prerequisites)  
-4. [Required Inputs](#required-inputs)
-3. [Commands and usage](#commands--usage)
-     - [Run syntax check](#1-run-syntax-check-optional-but-recommended)
-     - [Run dry-run](#2-run-dry-run-optional)
-     - [Execute the playbook](#3-execute-the-playbook)
-4. [Troubleshooting](#troubleshooting)
-     - [Common errors](#common-errors)
-     - [Check logs](#check-logs--use--vvv-for-verbose-output)
-6. [Contacts](#contacts)
+4. [Installation Steps](#Installation-Steps)
+      - [For Windows](#For-Windows:)
+      - [For Ubuntu / Debian-based Linux](#For-Ubuntu-/-Debian-based-Linux:)
+      - [For macOS(using Homebrew)](#For-macOS(using-Homebrew):)
+5. [Troubleshooting](#troubleshooting)
+6. [Contact Information](#contact-information)
 7. [References](#references)
 
 
@@ -42,54 +39,103 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 
 ## Installation Steps
 
-### For Windows
+### For Windows:
 
 ### 1. Download Node.js Installer:
 - Visit: https://nodejs.org
 - Choose LTS version for stability.
-- 
+  
 ### 2. Run the Installer:
 - Double-click the downloaded .msi file.
 - Accept license agreement.
 - Choose default options.
 - Ensure the “npm package manager” option is selected during setup.
-- 
+  
 ### 3. Verify Installation:
 - node -v
 - npm -v
-
-## Troubleshooting
-
-### Common errors
-    - SSH permission denied → Check user/SSH key.
-    - Missing vars → Ensure all required variables are provided.
-    - Vault decryption failed → Verify vault password file.
-
-### Check logs : Use -vvv for verbose output
-
-```bash
-ansible-playbook site.yml -i inventory/prod.ini -vvv
+  
+### 4. Update NPM (optional)
+To update NPM, open your terminal or command prompt and run the following command:
+```
+npm install -g npm@latest
+```
+### 5.  Start using NPM
+To install a package, open your terminal or command prompt and navigate to your project directory. Then, run the following command:
+```
+npm install package-name
 ```
 
+### For Ubuntu / Debian-based Linux:
 
-## Contacts
+### 1. Update System Packages:
+```
+sudo apt update && sudo apt upgrade
 
-| Name            | Email Address                                 |
-|-----------------|-----------------------------------------------|
-| Nishkarsh Kumar | nishkarsh.kumar.snaatak@mygurukulam.co        |
+```
+### 2. Install Node.js and npm :
+```
+sudo apt install nodejs npm -y
+
+```
+
+### 3. Verify Installation:
+```
+- node -v
+- npm -v
+```
+
+### For macOS(using Homebrew):
+
+### 1. nstall Homebrew (if not already installed):
+
+
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
+```
+### 2. Install Node.js and npm :
+```
+brew install node
+
+```
+
+### 3. Verify Installation:
+```
+- node -v
+- npm -v
+```
+## Troubleshooting
+
+| **Issue**                           | **Resolution**                                                  |
+|------------------------------------|------------------------------------------------------------------|
+| `command not found: npm`           | Check if Node.js is properly installed and added to system PATH |
+| npm version is outdated            | Run `npm install -g npm` to update                              |
+| Permission denied errors on Linux  | Use `sudo`, or fix ownership with `chown`                       |
+
+
+
+## Contact Information
+
+| Name         | Email address          |
+|--------------|------------------------|
+| Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
+
+
 
 
 ## References
 
 | **Title**                                 | **Link**                                                                                      |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Ansible Playbooks – Official Documentation| [Visit](https://docs.ansible.com/ansible/latest/user_guide/playbooks.html)                    |
-| Ansible Inventory – Official Guide        | [Visit](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)              |
-| Passing Variables to Playbooks            | [Visit](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html)          |
-| Best Practices for Ansible Playbooks      | [Visit](https://docs.ansible.com/ansible/latest/tips_tricks/index.html)                       |
+| Node.js official site| [Visit](https://nodejs.org/en)                    |
+| npm documentation        | [Visit](https://docs.npmjs.com/about-npm)              |
+
 
 ---
-Collapse
+
 
 
 
