@@ -7,7 +7,7 @@
 | Ishaan    | 21-07-25    | version 1  | Ishaan        | 21-07-25       |
 
 ## Introduction
-This SOP outlines the standard procedure to execute the Ansible playbook reliably. It ensures consistent automation by detailing the objective, required inputs, validation checks, and step-by-step execution process.
+This SOP provides a standardized, step-by-step procedure to install Node Package Manager (NPM) on various operating systems..
 
 
 ## Table of Contents
@@ -27,58 +27,34 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 7. [References](#references)
 
 
-## Why ansible playbook?
+## Introduction to NPM
 **To explore benefits of playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#2-why-ansible-playbook)
 
-## What is ansible playbook?
+## What does NPM stand for and why is it important?
 **To get an overview of playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#3-what-is-ansible-playbook)
 
 ## Prerequisites
 
-**To get all prerequisites for playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#4-dependencies)
+- A system with internet access
+- Basic terminal/command line access
+- Administrative/root privileges
+- OS: Windows / Linux / macOS
 
+## Installation Steps
 
-## Required Inputs
+### For Windows
 
-| Parameter        | Description                                      |  Requirement                            |
-|------------------|--------------------------------------------------|-----------------------------------------|
-| `playbook`       | Path to the Ansible playbook file to execute     | Required                                |
-| `inventory`      | Inventory file or host group to target           | Required                                |
-| `vault_password` | Vault password file (if using encrypted secrets) | Required (if using Vault)               |
-| `extra_vars`     | Dynamic variables passed at runtime              | Required (if playbook expects variables)|
-
-
-## Commands & Usage
-
-### Execution Steps
-
-### 1. Run syntax check (optional but recommended)
-
-**To know what syntax check will do**: [Playbook CI](https://github.com/snaatak-Downtime-Crew/Documentation/blob/durgesh_scrums_49/common_stack/ansible/playbook/ci/README.md#step-5-syntax-check)
-
-```bash
-ansible-playbook site.yml --syntax-check
-```
-
-### 2. Run dry-run (optional)
-
-**To know what dry run will do**: [Playbook CI](https://github.com/snaatak-Downtime-Crew/Documentation/blob/durgesh_scrums_49/common_stack/ansible/playbook/ci/README.md#step-6-dry-run)
-
-```bash
-ansible-playbook site.yml --check -i inventory/prod.ini
-```
-
-### 3. Execute the playbook
-
-```bash
-ansible-playbook site.yml -i inventory/prod.ini 
-```
-or:
-
-```bash
-ansible-playbook site.yml -i inventory/prod.ini --extra-vars "env=prod" --vault-password-file ~/.ansible/.vault_pass.txt
-```
-
+###1. Download Node.js Installer:
+- Visit: https://nodejs.org
+- Choose LTS version for stability.
+###2. Run the Installer:
+- Double-click the downloaded .msi file.
+- Accept license agreement.
+- Choose default options.
+- Ensure the “npm package manager” option is selected during setup.
+###3. Verify Installation:
+- node -v
+- npm -v
 
 ## Troubleshooting
 
