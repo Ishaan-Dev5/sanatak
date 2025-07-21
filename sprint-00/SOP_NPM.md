@@ -130,6 +130,28 @@ brew install node
 
 
 ---
+## FAQs
+
+### 1.  Is npm installed automatically with Node.js?
+Yes. When you install Node.js, npm is automatically installed as part of the package.
+
+
+
+### 2. How do I check if npm is installed correctly?
+Run the following command in your terminal or command prompt:
+```
+npm -v
+```
+
+### 3. How do I update npm to the latest version?
+Use the command:
+```
+npm install -g npm@latest
+```
+
+
+
+---
 ## Contact Information
 
 | Name         | Email address          |
