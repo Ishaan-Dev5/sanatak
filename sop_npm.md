@@ -12,16 +12,17 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 ---
 ## Table of Contents
 
-1. [Introduction to NPM](#introduction=to-npm)
-2. [ What does NPM stand for and why is it important?](#What-does-NPM-stand-for-and-why-is-it-important?)
-3. [Prerequisites](#Prerequisites)  
-4. [Installation Steps](#Installation-Steps)
-      - [For Windows](#For-Windows:)
-      - [For Ubuntu / Debian-based Linux](#For-Ubuntu-Debian-based-Linux:)
-      - [For macOS(using Homebrew)](#For-macOS-using-Homebrew:)
-5. [Troubleshooting](#troubleshooting)
-6. [Contact Information](#contact-information)
+1. [Introduction to NPM](#introduction-to-npm)  
+2. [What does NPM stand for and why is it important?](#what-does-npm-stand-for-and-why-is-it-important)  
+3. [Prerequisites](#prerequisites)  
+4. [Installation Steps](#installation-steps)  
+   - [For Windows](#for-windows)  
+   - [For Ubuntu / Debian-based Linux](#for-ubuntu--debian-based-linux)  
+   - [For macOS (using Homebrew)](#for-macos-using-homebrew)  
+5. [Troubleshooting](#troubleshooting)  
+6. [Contact Information](#contact-information)  
 7. [References](#references)
+
 ---
 
 ## Introduction to NPM
