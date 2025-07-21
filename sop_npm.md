@@ -9,7 +9,7 @@
 ## Introduction
 This SOP provides a standardized, step-by-step procedure to install Node Package Manager (NPM) on various operating systems..
 
-
+---
 ## Table of Contents
 
 1. [Introduction to NPM](#introduction=to-npm)
@@ -22,20 +22,25 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 5. [Troubleshooting](#troubleshooting)
 6. [Contact Information](#contact-information)
 7. [References](#references)
-
+---
 
 ## Introduction to NPM
 **To explore benefits of playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#2-why-ansible-playbook)
 
+---
+
 ## What does NPM stand for and why is it important?
 **To get an overview of playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#3-what-is-ansible-playbook)
 
+---
 ## Prerequisites
 
 - A system with internet access
 - Basic terminal/command line access
 - Administrative/root privileges
 - OS: Windows / Linux / macOS
+
+---
 
 ## Installation Steps
 
@@ -65,6 +70,7 @@ To install a package, open your terminal or command prompt and navigate to your 
 ```
 npm install package-name
 ```
+---
 
 ### For Ubuntu / Debian-based Linux:
 
@@ -84,6 +90,7 @@ sudo apt install nodejs npm -y
 - node -v
 - npm -v
 ```
+---
 
 ### For macOS(using Homebrew):
 
@@ -107,6 +114,7 @@ brew install node
 - node -v
 - npm -v
 ```
+---
 ## Troubleshooting
 
 | **Issue**                           | **Resolution**                                                  |
@@ -116,7 +124,7 @@ brew install node
 | Permission denied errors on Linux  | Use `sudo`, or fix ownership with `chown`                       |
 
 
-
+---
 ## Contact Information
 
 | Name         | Email address          |
@@ -124,7 +132,7 @@ brew install node
 | Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
 
 
-
+---
 
 ## References
 
