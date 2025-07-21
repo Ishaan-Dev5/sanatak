@@ -28,10 +28,11 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 ---
 
 ## Why we use jinja2 template?
+
 | Dynamic Configuration    | Create files or settings that adapt based on variable values.       |
 | Avoid Redundancy         | Templates reduce repetition by letting you reuse logic.             |
 | Powerful Filters         | Format strings, dates, lists, and more.                             |
-| Logic Support            |Includes conditionals, loops, etc.                                   |
+| Logic Support            | Includes conditionals, loops, etc.                                   |
 
 
 ---
