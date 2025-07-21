@@ -141,7 +141,8 @@ brew install node
 |-------------------------------------------|-----------------------------------------------------------------------------------------------|
 | Node.js official site| [Visit](https://nodejs.org/en)                    |
 | npm documentation        | [Visit](https://docs.npmjs.com/about-npm)              |
-
+| installation | [Visit](https://www.ramotion.com/blog/how-to-install-npm/)    |
+ 
 
 ---
 
