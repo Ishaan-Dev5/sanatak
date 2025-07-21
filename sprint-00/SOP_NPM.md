@@ -2,9 +2,13 @@
 
 ---
 
-| Author      | Created on  | Version    | Last updated by | Last edited on |
-|-------------|-------------|------------|-----------------|----------------|
-| Ishaan    | 21-07-25    | version 1  | Ishaan        | 21-07-25       |
+### Author Information
+
+| Author      | Created on  | Version    |   Last updated on | Internal Reviewer | L0 Reviewer  | L1 Reviewer | L2 Reviewer      |
+|-------------|-------------|------------|-----------------|----------------|-------------------|---------------|----------------------------------|
+| Ishaan    | 21-07-25    | v1.0  |       21-07-25       | Rohit Chopra    |  Akshit/Nitik    | Taran        | Abhishek Dubey/ Rishab sharma |
+
+---
 
 ## Introduction
 This SOP provides a standardized, step-by-step procedure to install Node Package Manager (NPM) on various operating systems..
