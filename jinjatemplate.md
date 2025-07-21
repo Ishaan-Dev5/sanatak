@@ -40,13 +40,16 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 
 ---
 
-## Deplyoment Before GUnicorn
+###  Where It's Used in Ansible
 
-Before the widespread use of Gunicorn, Python web applications were often deployed using a variety of methods, including: Flask's built-in development server (which is not suitable for production), other WSGI servers like Waitress or uWSGI, or directly through web servers like Apache or Nginx with a WSGI module
+| Use Case        | Example Location           | Description                                 |
+|-----------------|----------------------------|---------------------------------------------|
+| Playbooks       | .yml                    | Inject variables or use conditionals        |
+| Templates       | templates/*.j2         | Generate dynamic configuration files        |
+| Roles           | roles/<role>/templates/  | Reusable templates for services/apps        |
+| Handlers, Tasks | tasks/main.yml          | Use conditionals, filters                   |
 
 ---
-
-
 ## Features of Gunicorn
 
 |  Feature                  |  Description |
