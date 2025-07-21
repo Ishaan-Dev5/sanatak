@@ -67,10 +67,10 @@ project/
    {% endif %}
    ```
    This file contains:
-   {{ name }} — **a variable**
-   {% if %} — **a control structure**
+- {{ name }} — **a variable**
+- {% if %} — **a control structure**
 
-playbook.yaml
+3. playbook.yaml
 ```
 - name: Render Jinja2 template
   hosts: localhost
@@ -84,7 +84,7 @@ playbook.yaml
         dest: /tmp/hello.txt
 
 ```
- Final Output (/tmp/hello.txt)
+ 4. Final Output (/tmp/hello.txt)
 ```
 
   Hello, Ishaan!
