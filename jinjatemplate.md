@@ -12,8 +12,8 @@
 
 - [Introduction](#what-is-jinja2)
 - [Why we use jinja2 template](#Why-we-use-jinja2-template)
-- [Advantages of Jinja2 Templates](#advantages-of-jinja2-template)
-- [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-template)
+- [Advantages of Jinja2 Templates](#advantages-of-jinja2-templates)
+- [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-templates)
 - [FAQs](#FAQs)
 - [Contact Information](#contact-information)
 - [References](#references)
