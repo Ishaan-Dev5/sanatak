@@ -125,6 +125,6 @@ Gunicorn is primarily designed for **Unix-like systems** (Linux/macOS) and is no
 ## References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| [Visit](#https://docs.gunicorn.org/en/stable/#) | Gunicorn Official Site                       |
-|  [Visit](#https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b)                               | What is Gunicorn |
+| [Visit](https://docs.gunicorn.org/en/stable/#) | Gunicorn Official Site                       |
+|  [Visit](https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b)                               | What is Gunicorn |
 
