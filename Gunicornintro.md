@@ -4,11 +4,9 @@
 
 ### Author Information
 
-| Created by      | Created on     | Version          | Last updated ON   | pre Reviewer       | L0 Reviewer     | L1 Reviewer   |    L2 Reviewer                 |
-|-----------------|----------------|------------------|-------------------|--------------------|-----------------|---------------|--------------------------------|
-| Ishaan  | 20-07-2025          | V 1.0            |     20-07-2025    |  Rohit Chopra      | Akshit/Nitik    |  Taran        |  Abhishek dubey/ Rishabh sharma|
-
----
+| Author      | Created on  | Version    |   Last updated on | Internal Reviewer | L0 Reviewer  | L1 Reviewer | L2 Reviewer      |
+|-------------|-------------|------------|-----------------|----------------|-------------------|---------------|----------------------------------|
+| Ishaan    | 20-07-25    | v1.0  |       20-07-25       | Rohit Chopra    |  Akshit/Nitik    | Taran        | Abhishek Dubey/ Rishab sharma |
 
 ## Table of Contents 
 
