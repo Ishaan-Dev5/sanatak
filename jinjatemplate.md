@@ -52,48 +52,49 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 ---
 
 ### Use jinja2 in ansible
-Here jinja 2 is used for dynamic confiuguration using variables and includes logic support.
 
 1. Templates are used with the template: module in playbooks.
 ```
    project/
    ├── templates/
-   │   └── hello.j2
+   │   └── nginx.conf.j2
    └── playbook.yml
 ```
-2. Create a Template File (hello.j2)
+2. Create a Template File (nginx.conf.j2)
 ```
-   Hello, {{ name }}!
-   {% if is_admin %}
-   You have admin access.
-   {% else %}
-   You are a regular user.
-   {% endif %}
+  server {
+    listen 80;
+    server_name {{ domain_name }};
+
+    location / {
+        proxy_pass http://{{ backend_host }}:{{ backend_port }};
+    }
+}
+
 ```
-   This file contains:
-- {{ name }} — **a variable**
-- {% if %} — **a control structure**
 
 3. playbook.yaml
 ```
-   - name: Render Jinja2 template
-     hosts: localhost
-     vars:
-       name: Ishaan
-       is_admin: true
-     tasks:
-       - name: Create file from template
-         template:
-             src: templates/hello.j2
-             dest: /tmp/hello.txt
+  - name: Render Nginx config from Jinja2 template
+  hosts: webserver
+  become: true
+  vars:
+    domain_name: example.com
+    backend_host: 127.0.0.1
+    backend_port: 8080
+  tasks:
+    - name: Deploy nginx config
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/{{ domain_name }}
+        owner: root
+        group: root
+        mode: '0644'
 
 ```
- 4. Final Output (/tmp/hello.txt)
+ 4. Run the playbook
 ```
-
-    Hello, Ishaan!
-    You have admin access.
-
+ansible-playbook -i inventory playbook.yml
 ```
 
 
