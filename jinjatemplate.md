@@ -22,22 +22,17 @@
 
 ---
 
-## What is gunicorn
-Gunicorn (Green Unicorn) is a WSGI-compliant HTTP server for Python web applications. It receives client requests via a web server (like Nginx) and forwards them to Python applications built with WSGI-compatible frameworks such as Flask, Django, or FastAPI.
-Gunicorn is one implementation of a WSGI server for Python applications.
+## What is Jinja2
+Jinja2 is a powerful templating engine for Python used in Ansible to dynamically generate configuration files, templates, and scripts. It allows you to inject variables, use logic (like loops and conditionals), and perform filters on data within YAML or template files.
 
 ---
 
-## Why we need gunicorn?
+## Why we use jinja2 template?
+| Dynamic Configuration| Create files or settings that adapt based on variable values.|
+|Avoid Redundancy| Templates reduce repetition by letting you reuse logic.|
+|Powerful Filters| Format strings, dates, lists, and more.|
+|Logic Support |Includes conditionals, loops, etc.|
 
-The standard web servers such as Apache, and NGINX don’t know how to communicate with your Python applications. Web servers receive the request from a client(Web browser) and return a response. The web server doesn’t create the response, it only returns the response. So, a server needs to talk with a Web Application that can create a response.
-
-Python web applications need an interface to connect with web servers — this is where WSGI (Web Server Gateway Interface) comes in.
-
-WSGI  basically provides that bridge of your need to communicate between your Web Server and Web Application. WSGI (Web Server Gateway Interface), is a set of rules which allow a WSGI compliant server to work with a WSGI compliant Python application. WSGI also handles scaling for web servers to be able to handle thousands of requests so you don’t have to think about accepting multiple requests at a time.
-
-
-<img width="1534" height="425" alt="image" src="https://github.com/user-attachments/assets/2a7b0f1c-0585-4346-afe5-8cb793c45248" />
 
 ---
 
