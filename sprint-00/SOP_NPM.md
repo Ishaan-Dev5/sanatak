@@ -84,17 +84,24 @@ npm install package-name
 sudo apt update && sudo apt upgrade
 
 ```
+<img width="1620" height="911" alt="image" src="https://github.com/user-attachments/assets/a216f497-5476-4b61-8241-d46b6a09834d" />
+
 ### 2. Install Node.js and npm :
 ```
 sudo apt install nodejs npm -y
 
 ```
+<img width="1918" height="409" alt="image" src="https://github.com/user-attachments/assets/eacebcae-0409-4b24-a8ca-3384214bb9c8" />
+
 
 ### 3. Verify Installation:
 ```
 - node -v
 - npm -v
 ```
+
+<img width="1179" height="226" alt="image" src="https://github.com/user-attachments/assets/ff070104-419c-493c-894d-2a9dde9c10eb" />
+
 ---
 
 ### For macOS using Homebrew:
