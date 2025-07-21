@@ -95,7 +95,7 @@ sudo apt install nodejs npm -y
 
 ### For macOS(using Homebrew):
 
-### 1. nstall Homebrew (if not already installed):
+### 1. Install Homebrew (if not already installed):
 
 
 
