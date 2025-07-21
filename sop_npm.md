@@ -44,15 +44,17 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 
 ### For Windows
 
-###1. Download Node.js Installer:
+### 1. Download Node.js Installer:
 - Visit: https://nodejs.org
 - Choose LTS version for stability.
-###2. Run the Installer:
+- 
+### 2. Run the Installer:
 - Double-click the downloaded .msi file.
 - Accept license agreement.
 - Choose default options.
 - Ensure the “npm package manager” option is selected during setup.
-###3. Verify Installation:
+- 
+### 3. Verify Installation:
 - node -v
 - npm -v
 
