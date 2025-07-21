@@ -10,12 +10,10 @@
 
 ## Table of Contents 
 
-- [Introduction](#what-is-gunicorn)
-- [Why We need Gunicorn](#why-we-need-gunicorn)
-- [Features](#Features-Of-Gunicorn)
-- [Use Cases](#use-cases-of-gunicorn)
-- [Advantages of Gunicorn](#advantages-of-gunicorn)
-- [Disadvantages of Gunicorn](#Disadvantages-of-gunicorn)
+- [Introduction](#what-is-jinja2)
+- [Why we use jinja2 template](#Why-we-use-jinja2-template)
+- [Advantages of Jinja2 Templates](#advantages-of-jinja2-template)
+- [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-template)
 - [FAQs](#FAQs)
 - [Contact Information](#contact-information)
 - [References](#references)
