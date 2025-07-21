@@ -18,7 +18,7 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 4. [Installation Steps](#installation-steps)  
    - [For Windows](#for-windows)  
    - [For Ubuntu / Debian-based Linux](#for-ubuntu--debian-based-linux)  
-   - [For macOS (using Homebrew)](#for-macos-using-homebrew)  
+   - [For macOS using Homebrew](#for-macos-using-homebrew)  
 5. [Troubleshooting](#troubleshooting)  
 6. [Contact Information](#contact-information)  
 7. [References](#references)
@@ -93,7 +93,7 @@ sudo apt install nodejs npm -y
 ```
 ---
 
-### For macOS(using Homebrew):
+### For macOS using Homebrew:
 
 ### 1. Install Homebrew (if not already installed):
 
