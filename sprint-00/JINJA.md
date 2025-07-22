@@ -107,6 +107,7 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 ansible-playbook -i inventory playbook.yml
 ```
 
+---
 
 ## 6. Advantages of Jinja2 Templates
 
@@ -166,6 +167,8 @@ Edit
 | Name         | Email address          |
 |--------------|------------------------|
 | Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
+
+---
 
 ## 11. References
 | Links                                             | Descriptions                                                    |
