@@ -13,26 +13,31 @@
 
 ## Table of Contents 
 
-1. [Introduction](#introduction)
-2. [What is Jinja2](#what-is-jinja2)
-3. [Why we use jinja2 template](#Why-we-use-jinja2-template)
-4. [Where It's Used in Ansible](#where-its-used-in-ansible)
-5. [Use jinja2 in ansible](#use-jinja2-in-ansible)
-6. [Advantages of Jinja2 Templates](#advantages-of-jinja2-templates)
-7. [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-templates)
-8. [Conclusiopn](#conclusion)
-9. [FAQs](#FAQs)
-10. [Contact Information](#contact-information)
-11. [References](#references)
+1. [Introduction](#1-introduction)
+2. [What is Jinja2](#2-what-is-jinja2)
+3. [Why we use jinja2 template](#3-Why-we-use-jinja2-template)
+4. [Where It's Used in Ansible](#4-where-its-used-in-ansible)
+5. [Use jinja2 in ansible](#5-use-jinja2-in-ansible)
+6. [Advantages of Jinja2 Templates](#6-advantages-of-jinja2-templates)
+7. [Disadvantages of Jinja2 Templates](#7-Disadvantages-of-jinja2-templates)
+8. [Conclusiopn](#8-conclusion)
+9. [FAQs](#9-FAQs)
+10. [Contact Information](#10-contact-information)
+11. [References](#11-references)
 
 ---
 
-## What is Jinja2
+## 1. Introduction
+
+
+---
+
+## 2. What is Jinja2
 Jinja2 is a powerful templating engine for Python used in Ansible to dynamically generate configuration files, templates, and scripts. It allows you to inject variables, use logic (like loops and conditionals), and perform filters on data within YAML or template files.
 
 ---
 
-## Why we use jinja2 template?
+## 3. Why we use jinja2 template?
 
 | Feature                | Description                                                        |
 |------------------------|---------------------------------------------------------------------|
@@ -45,7 +50,7 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 
 ---
 
-###  Where It's Used in Ansible
+## 4. Where It's Used in Ansible
 
 | Use Case        | Example Location           | Description                                 |
 |-----------------|----------------------------|---------------------------------------------|
@@ -56,7 +61,7 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 
 ---
 
-### Use jinja2 in ansible
+## 5. Use jinja2 in ansible
 
 1. Templates are used with the template: module in playbooks.
 ```
@@ -103,7 +108,7 @@ ansible-playbook -i inventory playbook.yml
 ```
 
 
-## Advantages of Jinja2 Templates
+## 6. Advantages of Jinja2 Templates
 
 | Advantage                     | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
@@ -116,7 +121,7 @@ ansible-playbook -i inventory playbook.yml
 | **Tool-Agnostic**            | Can be used in web frameworks (like Flask, Django) as well as tools like Ansible, SaltStack, etc. |
 
 ---
-## Disadvantages of Jinja2 Templates
+## 7. Disadvantages of Jinja2 Templates
 
 | Disadvantage                 | Description                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------|
@@ -125,8 +130,11 @@ ansible-playbook -i inventory playbook.yml
 | **Error-Prone with Undefined Variables** | Templates fail if variables aren't defined and `default()` isn't used. |
 
 ---
+## 8. Conclusion
 
-## FAQs
+---
+
+## 9. FAQs
 
 ### 1.What is Jinja2?
 Jinja2 is a Python-based templating engine that lets you embed variables, logic, and filters in text files. It is used by Ansible to generate dynamic files like configuration files, scripts, and templates.
@@ -154,13 +162,13 @@ Edit
 
 ---
 
-## Contact Information
+## 10. Contact Information
 | Name         | Email address          |
 |--------------|------------------------|
 | Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
 
-## References
+## 11. References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
 | jinja2 officail docs| [Visit](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html)                      |
- | templating with jinja 2|  [Visit](https://medium.com/@vinoji2005/day-12-templating-with-jinja2-enhancing-ansible-automation-cfe1be1b5d72)              |
+| templating with jinja 2|  [Visit](https://medium.com/@vinoji2005/day-12-templating-with-jinja2-enhancing-ansible-automation-cfe1be1b5d72)              |
