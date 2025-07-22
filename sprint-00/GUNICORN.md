@@ -24,13 +24,17 @@
 
 ---
 
-## What is gunicorn
+## 1. Introduction
+
+---
+
+## 2. What is gunicorn
 Gunicorn (Green Unicorn) is a WSGI-compliant HTTP server for Python web applications. It receives client requests via a web server (like Nginx) and forwards them to Python applications built with WSGI-compatible frameworks such as Flask, Django, or FastAPI.
 Gunicorn is one implementation of a WSGI server for Python applications.
 
 ---
 
-## Why we need gunicorn?
+## 3. Why we need gunicorn?
 
 The standard web servers such as Apache, and NGINX don’t know how to communicate with your Python applications. Web servers receive the request from a client(Web browser) and return a response. The web server doesn’t create the response, it only returns the response. So, a server needs to talk with a Web Application that can create a response.
 
@@ -41,16 +45,16 @@ WSGI  basically provides that bridge of your need to communicate between your We
 
 <img width="1534" height="425" alt="image" src="https://github.com/user-attachments/assets/2a7b0f1c-0585-4346-afe5-8cb793c45248" />
 
----
 
-## Deplyoment Before GUnicorn
+
+### Deplyoment Before GUnicorn
 
 Before the widespread use of Gunicorn, Python web applications were often deployed using a variety of methods, including: Flask's built-in development server (which is not suitable for production), other WSGI servers like Waitress or uWSGI, or directly through web servers like Apache or Nginx with a WSGI module
 
 ---
 
 
-## Features of Gunicorn
+## 4. Features of Gunicorn
 
 |  Feature                  |  Description |
 |----------------------------|----------------|
@@ -68,7 +72,7 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 ---
 
 
-##  Use Cases of Gunicorn
+##  5. Use Cases of Gunicorn
 
 |  Use Case |  Description |
 |-------------|----------------|
@@ -86,7 +90,7 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 ---
 
 
-##  Advantages of Gunicorn
+##  6. Advantages of Gunicorn
 
 - WSGI Compliant – Supports Django, Flask, and other WSGI apps.
 - Easy to Use – Simple CLI commands and minimal configuration needed.
@@ -94,7 +98,7 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 - Reverse Proxy Compatible – Works well behind Nginx/Apache.
 
 ---
-##  Disadvantages of Gunicorn
+##  7. Disadvantages of Gunicorn
 
 - No Windows Support – Limited or no native support for Windows.
 - No Static File Handling – Needs Nginx/Apache to serve static files.
@@ -103,7 +107,11 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 - Memory Overhead – Each worker is a separate process, increasing RAM usage.
 ---
 
-## FAQs
+## 8. Conclusion
+
+---
+
+## 9. FAQs
 
 ### 1. What is Gunicorn used for?
 Gunicorn is a WSGI HTTP server used to run Python web applications like Flask, Django, or FastAPI in production environments.
@@ -119,14 +127,14 @@ Gunicorn is primarily designed for **Unix-like systems** (Linux/macOS) and is no
 
 ---
 
-## Contact Information
+## 10. Contact Information
 | Name         | Email address          |
 |--------------|------------------------|
 | Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
 
-## References
+## 11. References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| [Visit](https://docs.gunicorn.org/en/stable/#) | Gunicorn Official Site                       |
-|  [Visit](https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b)                               | What is Gunicorn |
+| Gunicorn Official Site    | [Visit](https://docs.gunicorn.org/en/stable/#)                     |
+ | What is Gunicorn |  [Visit](https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b)                              |
 
