@@ -10,17 +10,17 @@
 
 ## Table of Contents 
 
-1. [Introduction](#introduction)
-2. [What is gunicorn](#what-is-gunicorn)
-3. [Why We need Gunicorn](#why-we-need-gunicorn)
-4. [Features](#Features-Of-Gunicorn)
-5. [Use Cases](#use-cases-of-gunicorn)
-6. [Advantages of Gunicorn](#advantages-of-gunicorn)
-7. [Disadvantages of Gunicorn](#Disadvantages-of-gunicorn)
-8. [Conclusion](#Conclusion)
-9. [FAQs](#FAQs)
-10. [Contact Information](#contact-information)
-11. [References](#references)
+1. [Introduction](#1-introduction)
+2. [What is gunicorn](#2-what-is-gunicorn)
+3. [Why We need Gunicorn](#3-why-we-need-gunicorn)
+4. [Features](#4-Features-Of-Gunicorn)
+5. [Use Cases](#5-use-cases-of-gunicorn)
+6. [Advantages of Gunicorn](#6-advantages-of-gunicorn)
+7. [Disadvantages of Gunicorn](#7-Disadvantages-of-gunicorn)
+8. [Conclusion](#8-Conclusion)
+9. [FAQs](#9-FAQs)
+10. [Contact Information](#10-contact-information)
+11. [References](#11-references)
 
 ---
 
