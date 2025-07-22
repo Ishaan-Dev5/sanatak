@@ -13,15 +13,17 @@
 
 ## Table of Contents 
 
-- [Introduction](#what-is-jinja2)
-- [Why we use jinja2 template](#Why-we-use-jinja2-template)
-- [Where It's Used in Ansible](#where-its-used-in-ansible)
-- [Use jinja2 in ansible](#use-jinja2-in-ansible)
-- [Advantages of Jinja2 Templates](#advantages-of-jinja2-templates)
-- [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-templates)
-- [FAQs](#FAQs)
-- [Contact Information](#contact-information)
-- [References](#references)
+1. [Introduction](#introduction)
+2. [What is Jinja2](#what-is-jinja2)
+3. [Why we use jinja2 template](#Why-we-use-jinja2-template)
+4. [Where It's Used in Ansible](#where-its-used-in-ansible)
+5. [Use jinja2 in ansible](#use-jinja2-in-ansible)
+6. [Advantages of Jinja2 Templates](#advantages-of-jinja2-templates)
+7. [Disadvantages of Jinja2 Templates](#Disadvantages-of-jinja2-templates)
+8. [Conclusiopn](#conclusion)
+9. [FAQs](#FAQs)
+10. [Contact Information](#contact-information)
+11. [References](#references)
 
 ---
 
@@ -160,5 +162,5 @@ Edit
 ## References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html | jinja2 officail docs                      |
-|  https://medium.com/@vinoji2005/day-12-templating-with-jinja2-enhancing-ansible-automation-cfe1be1b5d72               | templating with jinja 2|
+| jinja2 officail docs| [Visit](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html)                      |
+ | templating with jinja 2|  [Visit](https://medium.com/@vinoji2005/day-12-templating-with-jinja2-enhancing-ansible-automation-cfe1be1b5d72)              |
