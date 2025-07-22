@@ -1,7 +1,4 @@
 # SOP: Ansible Playbook
-<p align="left">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible Logo" width="120">
-</p>
 
 ---
 
