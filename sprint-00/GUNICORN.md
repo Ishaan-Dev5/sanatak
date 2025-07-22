@@ -92,19 +92,24 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 
 ##  6. Advantages of Gunicorn
 
-- WSGI Compliant – Supports Django, Flask, and other WSGI apps.
-- Easy to Use – Simple CLI commands and minimal configuration needed.
-- Multi-process Support – Handles concurrent requests via multiple workers.
-- Reverse Proxy Compatible – Works well behind Nginx/Apache.
+| Feature                  | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| WSGI Compliant           | Supports Django, Flask, and other WSGI apps.                               |
+| Easy to Use              | Simple CLI commands and minimal configuration needed.                      |
+| Multi-process Support    | Handles concurrent requests via multiple workers.                          |
+| Reverse Proxy Compatible | Works well behind Nginx/Apache.                                            |
 
 ---
 ##  7. Disadvantages of Gunicorn
 
-- No Windows Support – Limited or no native support for Windows.
-- No Static File Handling – Needs Nginx/Apache to serve static files.
-- Not Async by Default – Requires extra config for async support.
-- No SSL Handling – Cannot serve HTTPS directly.
-- Memory Overhead – Each worker is a separate process, increasing RAM usage.
+| Limitation               | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| No Windows Support       | Limited or no native support for Windows.                                  |
+| No Static File Handling  | Needs Nginx/Apache to serve static files.                                  |
+| Not Async by Default     | Requires extra config for async support.                                   |
+| No SSL Handling          | Cannot serve HTTPS directly.                                               |
+| Memory Overhead          | Each worker is a separate process, increasing RAM usage.                   |
+
 ---
 
 ## 8. Conclusion
