@@ -30,7 +30,13 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 ---
 
 ## Introduction to NPM
-**To explore benefits of playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#2-why-ansible-playbook)
+NPM (Node Package Manager) is the default package manager for Node.js.
+NPM is a tool that helps manage JavaScript packages (modules/libraries). It allows developers to:
+- Install, update, and remove packages (dependencies)
+- Share reusable code with others
+- Run scripts (e.g., build, test, start)
+- Manage project dependencies via a package.json file
+
 
 ---
 
