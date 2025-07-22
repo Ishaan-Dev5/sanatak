@@ -26,6 +26,8 @@
 
 ## 1. Introduction
 
+This document provides a structured overview of Gunicorn (Green Unicorn) — a WSGI-compliant HTTP server for running Python web applications. It explains what Gunicorn is, why it is needed, its core features.
+
 ---
 
 ## 2. What is gunicorn
@@ -113,6 +115,8 @@ Before the widespread use of Gunicorn, Python web applications were often deploy
 ---
 
 ## 8. Conclusion
+
+Gunicorn is a powerful, lightweight, and production-ready WSGI server designed to run Python web applications efficiently. Its multi-process architecture, easy configuration, and compatibility with popular frameworks make it a preferred choice for deploying apps behind web servers like Nginx. While it requires external support for static file handling, SSL, and Windows compatibility, Gunicorn remains a widely adopted solution in both cloud-native and containerized environments.
 
 ---
 
