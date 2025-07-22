@@ -17,15 +17,14 @@ This SOP provides a standardized, step-by-step procedure to install Node Package
 ## Table of Contents
 
 1. [Introduction to NPM](#introduction-to-npm)  
-2. [What does NPM stand for and why is it important?](#what-does-npm-stand-for-and-why-is-it-important)  
-3. [Prerequisites](#prerequisites)  
-4. [Installation Steps](#installation-steps)  
+2. [Prerequisites](#prerequisites)  
+3. [Installation Steps](#installation-steps)  
    - [For Windows](#for-windows)  
    - [For Ubuntu / Debian-based Linux](#for-ubuntu--debian-based-linux)  
    - [For macOS using Homebrew](#for-macos-using-homebrew)  
-5. [Troubleshooting](#troubleshooting)  
-6. [Contact Information](#contact-information)  
-7. [References](#references)
+4. [Troubleshooting](#troubleshooting)  
+5. [Contact Information](#contact-information)  
+6. [References](#references)
 
 ---
 
@@ -40,10 +39,6 @@ NPM is a tool that helps manage JavaScript packages (modules/libraries). It allo
 
 ---
 
-## What does NPM stand for and why is it important?
-**To get an overview of playbook**: [Playbook Introduction](https://github.com/snaatak-Downtime-Crew/Documentation/blob/adil_scrums_48/common_stack/ansible/playbook/intro/README.md#3-what-is-ansible-playbook)
-
----
 ## Prerequisites
 
 - A system with internet access
