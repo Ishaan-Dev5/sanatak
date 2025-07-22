@@ -132,6 +132,8 @@ Gunicorn is primarily designed for **Unix-like systems** (Linux/macOS) and is no
 |--------------|------------------------|
 | Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
 
+---
+
 ## 11. References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
