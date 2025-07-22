@@ -23,9 +23,10 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
    - [For Windows](#for-windows)  
    - [For Ubuntu / Debian-based Linux](#for-ubuntu--debian-based-linux)  
    - [For macOS using Homebrew](#for-macos-using-homebrew)  
-4. [Troubleshooting](#troubleshooting)  
-5. [Contact Information](#contact-information)  
-6. [References](#references)
+4. [Troubleshooting](#troubleshooting)
+5. [FAQs](#FAQs) 
+6. [Contact Information](#contact-information)  
+7. [References](#references)
 
 ---
 
