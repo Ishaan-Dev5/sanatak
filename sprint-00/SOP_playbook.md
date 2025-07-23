@@ -44,10 +44,12 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 
 ## Prerequisites
 
-- A system with internet access
-- Basic terminal/command line access
-- Administrative/root privileges
-- OS: Windows / Linux / macOS
+| **Requirement**         | **Why It's Needed**                                                                 |
+|-------------------------|--------------------------------------------------------------------------------------|
+| **Ansible**             | Main automation tool that runs your playbooks.                                      |
+| **SSH Access**          | For connecting to and managing remote hosts (Linux nodes).                          |
+| **Python 3**            | Required on both control node and target machines (Ansible depends on it).          |
+| **Basic YAML Knowledge**| Playbooks are written in YAML format, so understanding indentation & syntax is needed. |
 
 ---
 
