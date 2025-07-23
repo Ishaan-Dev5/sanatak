@@ -57,7 +57,7 @@ Jinja2 is a powerful templating engine for Python used in Ansible to dynamically
 |-----------------|----------------------------|---------------------------------------------|
 | Playbooks       | .yml                    | Inject variables or use conditionals        |
 | Templates       | templates/*.j2         | Generate dynamic configuration files        |
-| Roles           | roles/<role>/templates/  | Reusable templates for services/apps        |
+| Roles           | roles/templates/  | Reusable templates for services/apps        |
 | Handlers, Tasks | tasks/main.yml          | Use conditionals, filters                   |
 
 ---
@@ -116,7 +116,6 @@ ansible-playbook -i inventory playbook.yml
 |------------------------------|-----------------------------------------------------------------------------|
 | **Dynamic Content Generation** | Templates adapt based on variable input, enabling flexible configurations.  |
 | **Seamless Integration with Ansible** | Used directly in playbooks and roles with `template:` module.              |
-| **Clean Syntax**             | Python-like syntax is readable and easy to learn.                           |
 | **Supports Logic**           | Full control structures like `if`, `for`, and `else` enable complex logic.  |
 | **Lightweight & Fast**       | Efficient rendering even for large files or many variables.                 |
 | **Error Handling**           | Features like `default()` help avoid runtime errors from missing values.    |
