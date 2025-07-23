@@ -41,7 +41,7 @@ NPM is a tool that helps manage JavaScript packages (modules/libraries). It allo
 
 ## Prerequisites
 
-- A system with internet access
+- A system with internet access to download Node.js
 - Basic terminal/command line access
 - Administrative/root privileges
 - OS: Windows / Linux / macOS
