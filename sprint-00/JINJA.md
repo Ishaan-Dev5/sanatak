@@ -18,12 +18,13 @@
 3. [Why we use jinja2 template](#3-Why-we-use-jinja2-template)
 4. [Where It's Used in Ansible](#4-where-its-used-in-ansible)
 5. [Use jinja2 in ansible](#5-use-jinja2-in-ansible)
-6. [Advantages of Jinja2 Templates](#6-advantages-of-jinja2-templates)
-7. [Disadvantages of Jinja2 Templates](#7-Disadvantages-of-jinja2-templates)
-8. [Conclusiopn](#8-conclusion)
-9. [FAQs](#9-FAQs)
-10. [Contact Information](#10-contact-information)
-11. [References](#11-references)
+6. [Variable Rendering and Conditionals in Templates](#variable-rendering-conditionals-in-templates)
+7. [Advantages of Jinja2 Templates](#6-advantages-of-jinja2-templates)
+8. [Disadvantages of Jinja2 Templates](#7-Disadvantages-of-jinja2-templates)
+9. [Conclusiopn](#8-conclusion)
+10. [FAQs](#9-FAQs)
+11. [Contact Information](#10-contact-information)
+12. [References](#11-references)
 
 ---
 
@@ -110,32 +111,35 @@ ansible-playbook -i inventory playbook.yml
 
 ---
 
-## Variable Rendering and Conditionals in Templates
+## 6. Variable Rendering and Conditionals in Templates
 
-Variable Rendering ({{ variable }})
-jinja
+### Variable Rendering ({{ variable }})
 
 ```
+jinja
+
 Hello, {{ name }}!
 
 ```
+```
 yaml
 
-```
 vars:
   name: Ishaan
 
 ```
 ```
+output
+
 Hello, Ishaan!
 
 ```
 
-Conditional Statements ({% if ... %} {% else %} {% endif %})
-
-jinja
+### Conditional Statements ({% if ... %} {% else %} {% endif %})
 
 ```
+jinja
+
 {% if is_admin %}
 Welcome Admin {{ name }}!
 {% else %}
@@ -150,11 +154,12 @@ vars:
 
 ```
 ```
-
+output
+ 
 Welcome Admin Ishaan!
 
 ```
-## 6. Advantages of Jinja2 Templates
+## 7. Advantages of Jinja2 Templates
 
 | Advantage                     | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
@@ -166,7 +171,7 @@ Welcome Admin Ishaan!
 | **Tool-Agnostic**            | Can be used in web frameworks (like Flask, Django) as well as tools like Ansible, SaltStack, etc. |
 
 ---
-## 7. Disadvantages of Jinja2 Templates
+## 8. Disadvantages of Jinja2 Templates
 
 | Disadvantage                 | Description                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------|
@@ -175,13 +180,13 @@ Welcome Admin Ishaan!
 | **Error-Prone with Undefined Variables** | Templates fail if variables aren't defined and `default()` isn't used. |
 
 ---
-## 8. Conclusion
+## 9. Conclusion
 
 Jinja2 is an essential tool in automation workflows, especially within tools like Ansible. Its ability to generate dynamic content, apply logic, and integrate seamlessly with YAML and configuration files makes it a robust and flexible choice for DevOps engineers
 
 ---
 
-## 9. FAQs
+## 10. FAQs
 
 ### 1.What is Jinja2?
 Jinja2 is a Python-based templating engine that lets you embed variables, logic, and filters in text files. It is used by Ansible to generate dynamic files like configuration files, scripts, and templates.
@@ -209,14 +214,14 @@ Edit
 
 ---
 
-## 10. Contact Information
+## 11. Contact Information
 | Name         | Email address          |
 |--------------|------------------------|
 | Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
 
 ---
 
-## 11. References
+## 12. References
 | Links                                             | Descriptions                                                    |
 |---------------------------------------------------|-----------------------------------------------------------------|
 | jinja2 officail docs| [Visit](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html)                      |
