@@ -67,14 +67,14 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 ## Execution Steps
 
 ### 1. Run Connectivity Check
-   ```bash
+```bash
    ansible -i inventory all -m ping
 ```
 
 ### 2. Execute Playbook
 
 ```bash
-    ansible-playbook -i inventory playbook.yml
+   ansible-playbook -i inventory playbook.yml
 ```
 
 ### 3. Pass Extra Variables (if needed)
