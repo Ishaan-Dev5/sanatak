@@ -180,10 +180,10 @@ npm install -g npm@latest
 
 | **Title**                                 | **Link**                                                                                      |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Node.js official site| [Visit](https://nodejs.org/en)                    |
-| npm documentation        | [Visit](https://docs.npmjs.com/about-npm)              |
-| installation | [Visit](https://www.ramotion.com/blog/how-to-install-npm/)    |
- 
+| Ansible Playbooks – Official Documentation| [Visit](https://docs.ansible.com/ansible/latest/user_guide/playbooks.html)                    |
+| Ansible Inventory – Official Guide        | [Visit](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)              |
+| Passing Variables to Playbooks            | [Visit](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html)          |
+| Best Practices for Ansible Playbooks      | [Visit](https://docs.ansible.com/ansible/latest/tips_tricks/index.html)                       |
 
 ---
 
