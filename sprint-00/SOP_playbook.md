@@ -14,15 +14,16 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [What is Ansible Playbook?](#what-is-ansible-playbook)
-3. [Why Ansible Playbook](#why-ansible-playbook)
-4. [Prerequisites](#prerequisites)
-5. [Required Inputs](#required-inputs) 
-6. [Execution Steps](#execution-steps)    
+2. [Introduction to playbook](#introduction-to-playbook)
+3. [Prerequisites](#prerequisites)
+4. [Required Inputs](#required-inputs) 
+5. [Execution Steps](#execution-steps)
+6. [Validation Checks](#Validation-checks)    
 7. [Troubleshooting](#troubleshooting)
-8. [FAQs](#FAQs) 
-9. [Contact Information](#contact-information)  
-10. [References](#references)
+8. [Conclusion](#conclusion)
+9. [FAQs](#FAQs) 
+10. [Contact Information](#contact-information)  
+11. [References](#references)
 
 ---
 
@@ -122,6 +123,8 @@ ansible-playbook site.yml -i inventory/prod.ini -vvv
 ---
 
 ## Conclusion
+
+This SOP ensures reliable and secure execution of Ansible playbooks. Following the steps, validations, and best practices helps prevent errors and supports consistent automation. Always validate playbooks before use and check logs for troubleshooting
 
 
 ---
