@@ -61,36 +61,9 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 | `extra_vars`     | Dynamic variables passed at runtime              | Required (if playbook expects variables)|
 
 
-```
----
-## Troubleshooting
-
-| **Issue**                           | **Resolution**                                                  |
-|------------------------------------|------------------------------------------------------------------|
-| `command not found: npm`           | Check if Node.js is properly installed and added to system PATH |
-| npm version is outdated            | Run `npm install -g npm` to update                              |
-| Permission denied errors on Linux  | Use `sudo`, or fix ownership with `chown`                       |
 
 
----
 ## FAQs
-
-### 1.  Is npm installed automatically with Node.js?
-Yes. When you install Node.js, npm is automatically installed as part of the package.
-
-
-
-### 2. How do I check if npm is installed correctly?
-Run the following command in your terminal or command prompt:
-```
-npm -v
-```
-
-### 3. How do I update npm to the latest version?
-Use the command:
-```
-npm install -g npm@latest
-```
 
 
 
