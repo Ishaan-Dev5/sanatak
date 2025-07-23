@@ -13,7 +13,7 @@
 
 ## Table of Contents
 
-1. [Introduction to NPM](#introduction-to-npm)  
+1. [Introduction](#introduction)  
 2. [Prerequisites](#prerequisites)  
 3. [Installation Steps](#installation-steps)  
    - [For Windows](#for-windows)  
