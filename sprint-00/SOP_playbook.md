@@ -97,6 +97,9 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
    ansible-playbook site.yml --syntax-check
 ```
 
+<img width="1520" height="351" alt="image" src="https://github.com/user-attachments/assets/195a1ef8-a80e-40f7-88fa-5a63c743c58b" />
+
+
 ### 2. Dry Run / Check Mode
 
 **Purpose**: Simulates playbook execution without applying changes to the target systems.
