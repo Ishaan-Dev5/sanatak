@@ -110,6 +110,50 @@ ansible-playbook -i inventory playbook.yml
 
 ---
 
+## Variable Rendering and Conditionals in Templates
+
+Variable Rendering ({{ variable }})
+jinja
+
+```
+Hello, {{ name }}!
+
+```
+yaml
+
+```
+vars:
+  name: Ishaan
+
+```
+```
+Hello, Ishaan!
+
+```
+
+Conditional Statements ({% if ... %} {% else %} {% endif %})
+
+jinja
+
+```
+{% if is_admin %}
+Welcome Admin {{ name }}!
+{% else %}
+Welcome User {{ name }}!
+{% endif %}
+
+```
+```
+vars:
+  name: Ishaan
+  is_admin: true
+
+```
+```
+
+Welcome Admin Ishaan!
+
+```
 ## 6. Advantages of Jinja2 Templates
 
 | Advantage                     | Description                                                                 |
