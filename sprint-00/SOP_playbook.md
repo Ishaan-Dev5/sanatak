@@ -69,6 +69,9 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
    ansible -i inventory all -m ping
 ```
 
+<img width="1480" height="352" alt="image" src="https://github.com/user-attachments/assets/5b6f8543-a882-42df-b854-e098a72127d9" />
+
+
 ### 2. Execute Playbook
 
 ```bash
