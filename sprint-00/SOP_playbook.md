@@ -78,11 +78,17 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
    ansible-playbook -i inventory playbook.yml
 ```
 
+<img width="1919" height="368" alt="image" src="https://github.com/user-attachments/assets/c5aa8934-4711-4f61-a081-3d19cbea0efc" />
+
+
 ### 3. Pass Extra Variables (if needed)
 
 ```bash
    ansible-playbook -i inventory playbook.yml -e "env=dev version=1.0"
 ```
+
+<img width="1908" height="449" alt="image" src="https://github.com/user-attachments/assets/8dbcf6ad-8716-433e-b457-5ba97cdf8233" />
+
 
 ### 4. - Use Vault (if secrets are encrypted)
 
