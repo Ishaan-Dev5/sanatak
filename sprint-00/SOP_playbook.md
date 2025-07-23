@@ -86,6 +86,10 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
    ansible-playbook -i inventory playbook.yml --ask-vault-pass
 ```
 ---
+## Validation Checks
+
+
+---
 
 ## Troubleshooting
 
@@ -100,6 +104,7 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 ansible-playbook site.yml -i inventory/prod.ini -vvv
 ```
 
+---
 
 ## FAQs
 
