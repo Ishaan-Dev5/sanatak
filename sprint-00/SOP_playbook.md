@@ -88,6 +88,23 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 ---
 ## Validation Checks
 
+### 1. Syntax Check
+
+**Purpose**: Verifies that the playbook's YAML structure and Ansible syntax are valid.
+
+```bash
+   ansible-playbook site.yml --syntax-check
+```
+
+### 2.  Dry Run / Check Mode
+
+**Purpose**: Simulates playbook execution without applying changes to the target systems.
+
+
+```bash
+   ansible-playbook site.yml --check -i inventory/prod.ini
+```
+
 
 ---
 
