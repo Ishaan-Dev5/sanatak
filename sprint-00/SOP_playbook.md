@@ -10,11 +10,7 @@
 
 ---
 
-## Introduction
 
-This SOP outlines the standard procedure to execute the Ansible playbook reliably. It ensures consistent automation by detailing the objective, required inputs, validation checks, and step-by-step execution process.
-
----
 ## Table of Contents
 
 1. [Introduction to NPM](#introduction-to-npm)  
@@ -27,6 +23,12 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 5. [FAQs](#FAQs) 
 6. [Contact Information](#contact-information)  
 7. [References](#references)
+
+---
+
+## Introduction
+
+This SOP outlines the standard procedure to execute the Ansible playbook reliably. It ensures consistent automation by detailing the objective, required inputs, validation checks, and step-by-step execution process.
 
 ---
 
