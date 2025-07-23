@@ -13,16 +13,19 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)  
-2. [Prerequisites](#prerequisites)  
-3. [Installation Steps](#installation-steps)  
+1. [Introduction](#introduction)
+2. [What is Ansible Playbook?](#what-is-ansible-playbook)
+3. [Why Ansible Playbook](#why-ansible-playbook)
+4. [Prerequisites](#prerequisites)
+5. [Required Inputs](#required-inputs) 
+6. [Installation Steps](#installation-steps)  
    - [For Windows](#for-windows)  
    - [For Ubuntu / Debian-based Linux](#for-ubuntu--debian-based-linux)  
    - [For macOS using Homebrew](#for-macos-using-homebrew)  
-4. [Troubleshooting](#troubleshooting)
-5. [FAQs](#FAQs) 
-6. [Contact Information](#contact-information)  
-7. [References](#references)
+7. [Troubleshooting](#troubleshooting)
+8. [FAQs](#FAQs) 
+9. [Contact Information](#contact-information)  
+10. [References](#references)
 
 ---
 
