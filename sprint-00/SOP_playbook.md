@@ -96,15 +96,13 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
    ansible-playbook site.yml --syntax-check
 ```
 
-### 2.  Dry Run / Check Mode
+### 2. Dry Run / Check Mode
 
 **Purpose**: Simulates playbook execution without applying changes to the target systems.
-
 
 ```bash
    ansible-playbook site.yml --check -i inventory/prod.ini
 ```
-
 
 ---
 
