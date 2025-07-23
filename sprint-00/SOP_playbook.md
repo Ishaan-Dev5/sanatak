@@ -35,13 +35,9 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 
 ---
 
-## Introduction to NPM
-NPM (Node Package Manager) is the default package manager for Node.js.
-NPM is a tool that helps manage JavaScript packages (modules/libraries). It allows developers to:
-- Install, update, and remove packages (dependencies)
-- Share reusable code with others
-- Run scripts (e.g., build, test, start)
-- Manage project dependencies via a package.json file
+## Introduction to Playbook
+**To get an overview of playbook**: [Playbook Introduction]()
+
 
 
 ---
@@ -55,84 +51,16 @@ NPM is a tool that helps manage JavaScript packages (modules/libraries). It allo
 
 ---
 
-## Installation Steps
+## Required Inputs
 
-### For Windows:
-
-### 1. Download Node.js Installer:
-- Visit: https://nodejs.org
-- Choose LTS version for stability.
-  
-### 2. Run the Installer:
-- Double-click the downloaded .msi file.
-- Accept license agreement.
-- Choose default options.
-- Ensure the “npm package manager” option is selected during setup.
-  
-### 3. Verify Installation:
-- node -v
-- npm -v
-  
-### 4. Update NPM (optional)
-To update NPM, open your terminal or command prompt and run the following command:
-```
-npm install -g npm@latest
-```
-### 5.  Start using NPM
-To install a package, open your terminal or command prompt and navigate to your project directory. Then, run the following command:
-```
-npm install package-name
-```
----
-
-### For Ubuntu / Debian-based Linux:
-
-### 1. Update System Packages:
-```
-sudo apt update && sudo apt upgrade
-
-```
-<img width="1620" height="911" alt="image" src="https://github.com/user-attachments/assets/a216f497-5476-4b61-8241-d46b6a09834d" />
-
-### 2. Install Node.js and npm :
-```
-sudo apt install nodejs npm -y
-
-```
-<img width="1918" height="409" alt="image" src="https://github.com/user-attachments/assets/eacebcae-0409-4b24-a8ca-3384214bb9c8" />
+| Parameter        | Description                                      |  Requirement                            |
+|------------------|--------------------------------------------------|-----------------------------------------|
+| `playbook`       | Path to the Ansible playbook file to execute     | Required                                |
+| `inventory`      | Inventory file or host group to target           | Required                                |
+| `vault_password` | Vault password file (if using encrypted secrets) | Required (if using Vault)               |
+| `extra_vars`     | Dynamic variables passed at runtime              | Required (if playbook expects variables)|
 
 
-### 3. Verify Installation:
-```
-- node -v
-- npm -v
-```
-
-<img width="1179" height="226" alt="image" src="https://github.com/user-attachments/assets/ff070104-419c-493c-894d-2a9dde9c10eb" />
-
----
-
-### For macOS using Homebrew:
-
-### 1. Install Homebrew (if not already installed):
-
-
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-
-```
-### 2. Install Node.js and npm :
-```
-brew install node
-
-```
-
-### 3. Verify Installation:
-```
-- node -v
-- npm -v
 ```
 ---
 ## Troubleshooting
