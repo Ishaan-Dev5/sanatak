@@ -116,6 +116,7 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 ```bash
    ansible-playbook site.yml --check -i inventory/prod.ini
 ```
+<img width="1919" height="333" alt="image" src="https://github.com/user-attachments/assets/330a4a0b-dbcc-4632-aeb7-ac3225144424" />
 
 ---
 
