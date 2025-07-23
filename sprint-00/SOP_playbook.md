@@ -88,8 +88,20 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 ```bash
    ansible-playbook -i inventory playbook.yml --ask-vault-pass
 ```
+---
 
+## Troubleshooting
 
+### Common errors
+    - SSH permission denied → Check user/SSH key.
+    - Missing vars → Ensure all required variables are provided.
+    - Vault decryption failed → Verify vault password file.
+
+### Check logs : Use -vvv for verbose output
+
+```bash
+ansible-playbook site.yml -i inventory/prod.ini -vvv
+```
 
 
 ## FAQs
