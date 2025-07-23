@@ -62,6 +62,33 @@ This SOP outlines the standard procedure to execute the Ansible playbook reliabl
 | `vault_password` | Vault password file (if using encrypted secrets) | Required (if using Vault)               |
 | `extra_vars`     | Dynamic variables passed at runtime              | Required (if playbook expects variables)|
 
+---
+
+## Execution Steps
+
+### 1. Run Connectivity Check
+   ```bash
+   ansible -i inventory all -m ping
+```
+
+### 2. Execute Playbook
+
+```bash
+    ansible-playbook -i inventory playbook.yml
+```
+
+### 3. Pass Extra Variables (if needed)
+
+```bash
+   ansible-playbook -i inventory playbook.yml -e "env=dev version=1.0"
+```
+
+### 4. - Use Vault (if secrets are encrypted)
+
+```bash
+   ansible-playbook -i inventory playbook.yml --ask-vault-pass
+```
+
 
 
 
