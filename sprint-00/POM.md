@@ -1,12 +1,17 @@
+
+<img width="250" height="200" alt="images (2)" src="https://github.com/user-attachments/assets/4eaa64bf-329d-4ab6-9ea3-a164298efad2" />
+
+
+
 # pom.xml (Project Object Model) Documentation
 
 ---
 
 ### Author Information
 
-| Author      | Created on  | Version    |   Last updated on | Internal Reviewer | L0 Reviewer  | L1 Reviewer | L2 Reviewer      |
-|-------------|-------------|------------|-----------------|----------------|-------------------|---------------|----------------------------------|
-| Ishaan    | 20-07-25    | v1.0  |       20-07-25       | Rohit Chopra    |  Akshit/Nitik    | Taran        | Abhishek Dubey/ Rishab sharma |
+| **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
+|--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
+| Ishaan    | 20-07-25    | v1.0  |  Ishaan  |20-07-25   | Internal    | Rohit Chopra    | 
 ---
 
 ## Table of Contents
@@ -118,9 +123,9 @@ Use Maven `<profiles>` to define separate configurations for environments.
 
 ## 9. Contact Information
 
-| Name    | Email                             |
-|---------|-----------------------------------|
-| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co |
+| Name| Email Address      | GitHub | URL |
+|-----|--------------------------|-------------|---------|
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Snaatak-Apt-Get-Swag/documentation  |
 
 ---
 
