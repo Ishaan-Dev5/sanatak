@@ -1,9 +1,9 @@
 
-<img width="250" height="200" alt="image" src="https://github.com/user-attachments/assets/bad0589f-8bb1-4275-80d8-cbc9686612d4" />
+<img width="300" height="250" alt="images (1)" src="https://github.com/user-attachments/assets/132f42a1-8fa1-4298-990b-16088a091c93" />
 
 
 
-# Jinja Templating Documentation
+# Gunicorn (Green Unicorn) Documentation
 
 ---
 
@@ -13,18 +13,16 @@
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
 | Ishaan    | 20-07-25    | v1.0  |  Ishaan  |20-07-25   | Internal    | Rohit Chopra    | 
 
----
-
 ## Table of Contents 
 
 1. [Introduction](#1-introduction)
-2. [What is Jinja2](#2-what-is-jinja2)
-3. [Why we use jinja2 template](#3-Why-we-use-jinja2-template)
-4. [Where It's Used in Ansible](#4-where-its-used-in-ansible)
-5. [Use Of jinja2 in ansible](#5-use-of-jinja2-in-ansible)
-6. [Advantages of Jinja2 Templates](#6-advantages-of-jinja2-templates)
-7. [Disadvantages of Jinja2 Templates](#7-Disadvantages-of-jinja2-templates)
-8. [Conclusion](#8-conclusion)
+2. [What is gunicorn](#2-what-is-gunicorn)
+3. [Why We need Gunicorn](#3-why-we-need-gunicorn)
+4. [Features](#4-Features-Of-Gunicorn)
+5. [Use Cases](#5-use-cases-of-gunicorn)
+6. [Advantages of Gunicorn](#6-advantages-of-gunicorn)
+7. [Disadvantages of Gunicorn](#7-Disadvantages-of-gunicorn)
+8. [Conclusion](#8-Conclusion)
 9. [FAQs](#9-FAQs)
 10. [Contact Information](#10-contact-information)
 11. [References](#11-references)
@@ -33,150 +31,119 @@
 
 ## 1. Introduction
 
-This document provides a structured overview of Jinja2, a powerful templating engine used extensively in Ansible for generating dynamic configuration files.This documentation outlines what Jinja2 is, why it is useful, where it is applied in Ansible.
+This document provides a structured overview of Gunicorn (Green Unicorn) — a WSGI-compliant HTTP server for running Python web applications. It explains what Gunicorn is, why it is needed, its core features.
 
 ---
 
-## 2. What is Jinja2
-Jinja2 is a powerful templating engine for Python used in Ansible to dynamically generate configuration files, templates, and scripts. It allows you to inject variables, use logic (like loops and conditionals), and perform filters on data within YAML or template files.
+## 2. What is gunicorn
+Gunicorn (Green Unicorn) is a WSGI-compliant HTTP server for Python web applications. It receives client requests via a web server (like Nginx) and forwards them to Python applications built with WSGI-compatible frameworks such as Flask, Django, or FastAPI.
+Gunicorn is one implementation of a WSGI server for Python applications.
 
 ---
 
-## 3. Why we use jinja2 template?
+## 3. Why we need gunicorn?
 
-| Feature                | Description                                                        |
-|------------------------|---------------------------------------------------------------------|
-| Dynamic Configuration  | Create files or settings that adapt based on variable values.       |
-| Avoid Redundancy       | Templates reduce repetition by letting you reuse logic.             |
-| Logic Support          | Includes conditionals, loops, etc.                                  |
+The standard web servers such as Apache, and NGINX don’t know how to communicate with your Python applications. Web servers receive the request from a client(Web browser) and return a response. The web server doesn’t create the response, it only returns the response. So, a server needs to talk with a Web Application that can create a response.
 
+Python web applications need an interface to connect with web servers — this is where WSGI (Web Server Gateway Interface) comes in.
+
+WSGI  basically provides that bridge of your need to communicate between your Web Server and Web Application. WSGI (Web Server Gateway Interface), is a set of rules which allow a WSGI compliant server to work with a WSGI compliant Python application. WSGI also handles scaling for web servers to be able to handle thousands of requests.
+
+
+<img width="1534" height="425" alt="image" src="https://github.com/user-attachments/assets/2a7b0f1c-0585-4346-afe5-8cb793c45248" />
+
+
+
+#### Deplyoment Before GUnicorn
+
+Before the widespread use of Gunicorn, Python web applications were often deployed using a variety of methods, including: Flask's built-in development server (which is not suitable for production), other WSGI servers like Waitress or uWSGI, or directly through web servers like Apache or Nginx with a WSGI module
+
+---
+
+
+## 4. Features of Gunicorn
+
+|  Feature                  |  Description |
+|----------------------------|----------------|
+| **WSGI Compliance**        | Works well with Python web frameworks like Django, Flask, and FastAPI. |
+| **Supports Sync & Async**  | Can handle both traditional and simultaneous tasks |
+| **Lightweight & Fast**     | Runs quickly and doesn't use too many system resources. |
+| **Automatic Worker Management** | Automatically restarts or replaces stuck or slow workers. |
+| **Framework Agnostic**     | Can be used with any Python web framework that follows WSGI. |
 
 
 ---
 
-## 4. Where It's Used in Ansible
 
-| Use Case        | Example Location           | Description                                 |
-|-----------------|----------------------------|---------------------------------------------|
-| Playbooks       | .yml                    | Inject variables or use conditionals        |
-| Roles           | roles/templates/  | Reusable templates for services/apps        |
+##  5. Use Cases of Gunicorn
 
+|  Use Case |  Description |
+|-------------|----------------|
+| **Run Python Web Apps** | Helps run Python websites made with Flask, Django |
+| **For Live/Production Use** | Can handle real users and traffic, good for live websites. |
+| **Works with Nginx/Apache** | Often used behind Nginx or Apache, which handles static files and SSL. |
+| **Used in Docker/Kubernetes** | Works well inside containers and cloud platforms for microservices. |
+| **Simpler than uWSGI** | Easier to set up than uWSGI but does a similar job. |
 
----
-
-## 5. Use of jinja2 in ansible
-
-#### 1. These templates typically reside in a templates/ directory and use the .j2 (Jinja2) extension.
-```
-   project/
-   ├── templates/
-   │   └── nginx.conf.j2
-   └── playbook.yml
-```
-#### 2. Create a Template File (nginx.conf.j2)
-```
-  server {
-    listen 80;
-    server_name {{ domain_name }};
-
-    location / {
-        proxy_pass http://{{ backend_host }}:{{ backend_port }};
-    }
-}
-
-```
-
-#### 3. Create a playbook.yaml to use the jinja2 template
-```
-  - name: Render Nginx config from Jinja2 template
-  hosts: webserver
-  become: true
-  vars:
-    domain_name: example.com
-    backend_host: 127.0.0.1
-    backend_port: 8080
-  tasks:
-    - name: Deploy nginx config
-      template:
-        src: templates/nginx.conf.j2
-        dest: /etc/nginx/sites-available/{{ domain_name }}
-        owner: root
-        group: root
-        mode: '0644'
-
-```
- #### 4. Run the playbook
-```
-ansible-playbook -i inventory playbook.yml
-```
 
 ---
 
-## 6. Advantages of Jinja2 Templates
 
-| Advantage                     | Description                                                                 |
-|------------------------------|-----------------------------------------------------------------------------|
-| **Dynamic Content Generation** | Templates adapt based on variable input, enabling flexible configurations.  |
-| **Seamless Integration with Ansible** | Used directly in playbooks and roles with `template:` module.              |
-| **Supports Logic**           | Full control structures like `if`, `for`, and `else` enable complex logic.  |
-| **Lightweight & Fast**       | Efficient rendering even for large files or many variables.                 |
-| **Error Handling**           | Features like `default()` help avoid runtime errors from missing values.    |
-| **Tool-Agnostic**            | Can be used in web frameworks (like Flask, Django) as well as tools like Ansible, SaltStack, etc. |
+##  6. Advantages of Gunicorn
 
----
-## 7. Disadvantages of Jinja2 Templates
-
-| Disadvantage                 | Description                                                                 |
-|-----------------------------|-----------------------------------------------------------------------------|
-| **Debugging Complexity**    | Errors in templates can be hard to trace, especially in large or nested files. |
-| **Learning Curve**          | Beginners may struggle with Jinja syntax, especially when combined with Ansible logic. |
-| **Error-Prone with Undefined Variables** | Templates fail if variables aren't defined and `default()` isn't used. |
+| Feature                  | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **WSGI Compliant**           | Supports Django, Flask, and other WSGI apps.                               |
+| **Easy to Use**              | Simple CLI commands and minimal configuration needed.                      |
+| **Multi-process Support**    | Handles concurrent requests via multiple workers.                          |
+| **Reverse Proxy Compatible** | Works well behind Nginx/Apache.                                            |
 
 ---
+
+##  7. Disadvantages of Gunicorn
+
+| Limitation               | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **No Windows Support**       | Limited or no native support for Windows.                                  |
+| **No Static File Handling**  | Needs Nginx/Apache to serve static files.                                  |
+| **Not Async by Default**     | Requires extra config for async support.                                   |
+| **No SSL Handling**          | Cannot serve HTTPS directly.                                               |
+
+---
+
 ## 8. Conclusion
 
-Jinja2 is an essential tool in automation workflows, especially within tools like Ansible. Its ability to generate dynamic content, apply logic, and integrate seamlessly with YAML and configuration files makes it a robust and flexible choice for DevOps engineers
+Gunicorn is a powerful, lightweight, and production-ready WSGI server designed to run Python web applications efficiently. Its multi-process architecture, easy configuration, and compatibility with popular frameworks make it a preferred choice for deploying apps behind web servers like Nginx. While it requires external support for static file handling, SSL, and Windows compatibility, Gunicorn remains a widely adopted solution in both cloud-native and containerized environments.
 
 ---
 
 ## 9. FAQs
 
-#### 1. What is Jinja2?
-Jinja2 is a Python-based templating engine that lets you embed variables, logic, and filters in text files. It is used by Ansible to generate dynamic files like configuration files, scripts, and templates.
+#### 1. What is Gunicorn used for?
+Gunicorn is a WSGI HTTP server used to run Python web applications like Flask, Django, or FastAPI in production environments.
 
+#### 2. Can Gunicorn serve static files?
+No, Gunicorn does not serve static files (like images, CSS, or JS). It is recommended to use it behind a reverse proxy like **Nginx** to handle static files and SSL.
 
+#### 3. Is Gunicorn asynchronous?
+Gunicorn is synchronous by default, but it supports asynchronous workers like **gevent**, **eventlet**, and **gthread** for handling async tasks or long-lived connections.
 
-#### 2. What file extension should Jinja2 templates have?
-Templates usually use the .j2 extension to indicate they are Jinja2-based, e.g., nginx.conf.j2.
-
-
-
-#### 3. How do I use a Jinja2 template in an Ansible playbook?
-Use the template: module in your playbook like this:
-
-yaml
-```
-Copy
-Edit
-- name: Render config
-  template:
-    src: nginx.conf.j2
-    dest: /etc/nginx/nginx.conf
-```
-
+#### 4. Does Gunicorn work on Windows?
+Gunicorn is primarily designed for **Unix-like systems** (Linux/macOS) and is not fully supported on Windows.
 
 ---
 
 ## 10. Contact Information
 
 | Name| Email Address      | GitHub | URL |
-|-----|--------------------------|-------------|---------|
-| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
+|-----|--------------------------|----------|---------|
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  | https://github.com/Ishaan-Dev1  |
 
 ---
 
 ## 11. References
-| Description                                             | Links                                                    |
+| Title                                            | Links                                                 |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| jinja2 official docs| [Visit](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html)                      |
-| templating with jinja 2|  [Visit](https://medium.com/@vinoji2005/day-12-templating-with-jinja2-enhancing-ansible-automation-cfe1be1b5d72)              |
+| Gunicorn Official Site    | [Visit](https://docs.gunicorn.org/en/stable/#)                     |
+ | What is Gunicorn?|  [Visit](https://medium.com/@serdarilarslan/what-is-gunicorn-5e674fff131b)                              |
+
