@@ -9,6 +9,14 @@
 
 ---
 
+### Author Information
+
+| **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
+|--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
+| Ishaan    | 20-07-25    | v1.0  |  Ishaan  |20-07-25   | Internal    | Rohit Chopra    | 
+
+---
+
 ## Table of Contents
 
 1. [Introduction](#1-introduction)  
@@ -122,7 +130,7 @@ AWS allows up to 50 tags per resource, including both user-defined and AWS-gener
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
-| Shree | shreekadam2222htb@gmail.com|  ShreeKadam  |  https://github.com/ShreeKadam   |
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
 
 
 
