@@ -1,5 +1,4 @@
-
-<img width="250" height="200" alt="images (2)" src="https://github.com/user-attachments/assets/4eaa64bf-329d-4ab6-9ea3-a164298efad2" />
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/017db0a7-b576-480d-b079-82d2c1e772bb" />
 
 
 
@@ -20,11 +19,12 @@
 3. [Why We Use pom.xml](#3-why-we-use-pomxml)
 4. [Use Cases](#4-use-cases-of-pomxml)
 5. [Defining Dependencies](#5-defining-dependencies)
-6. [Versioning Best Practices](#6-versioning-best-practices)
-7. [Conclusion](#7-conclusion)
-8. [FAQs](#8-faqs)
-9. [Contact Information](#9-contact-information)
-10. [References](#10-references)
+6. [Dependency versioning](#6-dependency-versioning)
+7. [Best Practices](#7-best-practices)
+8. [Conclusion](#8-conclusion)
+9. [FAQs](#9-faqs)
+10. [Contact Information](#10-contact-information)
+11. [References](#11-references)
 
 ---
 ## 1. Introduction 
@@ -90,7 +90,63 @@ Dependencies are defined inside the `<dependencies>` tag. Each dependency includ
 
 ---
 
-## 6. Versioning Best Practices
+
+## 6. Dependency Versioning
+In Maven, dependency versioning refers to the practice of specifying the exact version (or a version range) of a dependency that your project depends on in the pom.xml file. 
+
+
+#### 1. Define Specific Version
+Declare a precise version (e.g., 4.13.2) to ensure your project always uses that exact version.
+
+##### xml
+```
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+</dependency>
+
+```
+#### 2. Version Ranges
+
+Maven allows defining version ranges to support flexibility while keeping control over which versions are acceptable.
+
+- [1.0, 2.0) – includes 1.0, excludes 2.0
+##### xml
+```
+<version>[1.0,2.0)</version>
+
+```
+#### 3. Properties for Centralized Management
+
+Useful in multi-module projects or when using the same version across multiple dependencies.
+
+- ##### define in `<properties>`
+
+##### xml
+
+```
+<properties>
+    <spring.version>5.3.20</spring.version>
+</properties>
+
+```
+- ##### Reference in dependencies
+
+##### xml
+
+```
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+
+```
+ 
+---
+
+## 7. Best Practices
 
 | Best Practice                         | Description                                                                 |
 |--------------------------------------|-----------------------------------------------------------------------------|
@@ -98,40 +154,41 @@ Dependencies are defined inside the `<dependencies>` tag. Each dependency includ
 | **Avoid SNAPSHOT in Production**     | Use release versions for production stability.                             |
 | **Use Properties for Versions**      | Declare version as a property for reuse and maintainability.               |
 | **Keep Dependencies Updated**        | Regularly update to avoid bugs/security issues.                            |
+| **Use `<profiles>`**        | Environment specific settings                           |
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 
 The pom.xml file plays a key role in managing Java projects with Maven. It helps in handling dependencies, automating builds, and organizing large projects. By using it correctly and following best practices, developers can save time, avoid version issues, and keep their projects clean and easy to manage.
 
 ---
 
-## 8. FAQs
+## 9. FAQs
 
-### 1. What is the purpose of `pom.xml`?
+#### 1. What is the purpose of `pom.xml`?
 It defines project dependencies, build settings, and plugin configurations for Maven to build and manage Java applications.
 
-### 2. Can I use multiple `pom.xml` files in a project?
+#### 2. Can I use multiple `pom.xml` files in a project?
 Yes. In multi-module projects, there is usually one parent `pom.xml` and several child POMs for modules.
 
-### 3. How do I define different settings for dev/prod?
+#### 3. How do I define different settings for dev/prod?
 Use Maven `<profiles>` to define separate configurations for environments.
 
 
 ---
 
-## 9. Contact Information
+## 10. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
-| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Snaatak-Apt-Get-Swag/documentation  |
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
 
 ---
 
-## 10. References
+## 11. References
 
-| Links                                         | Descriptions                     |
+|                      Descriptions                     |     Links              |
 |----------------------------------------------|----------------------------------|
 | Official Apache Maven site| [Visit](https://maven.apache.org)        |
 | Official guide to understanding `pom.xml`| [Visit](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)  |
