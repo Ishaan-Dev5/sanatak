@@ -1,12 +1,17 @@
+
+<img width="250" height="203" alt="python" src="https://github.com/user-attachments/assets/4d4cb096-760b-46db-b2eb-7864d0ad4f06" />
+
+
+
 # Python Documentation
 
 ---
 
 ### Author Information
 
-| Author      | Created on  | Version    |   Last updated on | Internal Reviewer | L0 Reviewer  | L1 Reviewer | L2 Reviewer      |
-|-------------|-------------|------------|-----------------|----------------|-------------------|---------------|----------------------------------|
-| Ishaan    | 19-07-25    | v1.0  |       19-07-25       | Rohit Chopra    |  Akshit/Nitik    | Taran        | Abhishek Dubey/ Rishab sharma |
+| **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
+|--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
+| Ishaan    | 19-07-25    | v1.0  |  Ishaan  |22-07-25   | Internal    | Rohit Chopra    |  
 
 ---
 
@@ -107,7 +112,6 @@ Popular use cases of Python across industries and domains:
 
 - Slower Execution Speed
 - Mobile App Development
-- Memory Consumption
 - Runtime Errors
 - Threading Limitations
 
@@ -121,28 +125,28 @@ Python has grown to become one of the most popular and versatile programming lan
 
 ## 10. FAQs
 
-### 1. Is Python good for beginners?
+#### 1. Is Python good for beginners?
 Yes! Python’s clear syntax and readability make it one of the best languages for beginners.
 
-### 2. Can Python be used for web development?
+#### 2. Can Python be used for web development?
 Absolutely! Frameworks like Django, Flask, and FastAPI make Python powerful for building web apps.
 
-### 3. Is Python fast?
+#### 3. Is Python fast?
 Python is slower than compiled languages like C++ but fast enough for most applications and ideal for rapid development.
 
-### 4. Where can I practice Python online?
+#### 4. Where can I practice Python online?
 You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](https://replit.com), [LeetCode](https://leetcode.com), and [W3Schools](https://www.w3schools.com/python/).
 
 ---
 ## 11. Contact Information
-| Name         | Email address          |
-|--------------|------------------------|
-| Ishaan         | ishaan.aggarwal.snaatak@mygurukulam.co    |
+| Name| Email Address      | GitHub | URL |
+|-----|--------------------------|----------|---------|
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |  https://github.com/Ishaan-Dev1 |
 
 ---
 
 ## 12. References
-| Links                                             | Descriptions                                                    |
+| Descriptions                                     | Links                                                  |
 |---------------------------------------------------|-----------------------------------------------------------------|
 | Python Official Site                       |  [Visit](https://www.python.org/) |
 | Introduction to Python|           [Visit](https://www.geeksforgeeks.org/python/introduction-to-python/)    |
