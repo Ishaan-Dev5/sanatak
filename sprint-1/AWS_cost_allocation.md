@@ -40,7 +40,7 @@ This document provides a structured overview of AWS Cost Allocation Tags.Cost Al
 
 ## 2. What are AWS Cost Allocation Tags?
 
-AWS Cost Allocation Tags help you track and manage costs in a granular way. By attaching metadata to AWS resources, tags enable accurate cost tracking by project, department, environment, and more. They are essential for cost transparency, chargebacks, and budgeting.
+AWS Cost Allocation Tags help you track and manage costs in a granular way. By attaching tags to AWS resources, tags enable accurate cost tracking by project, department, environment, and more. They are essential for cost transparency, chargebacks, and budgeting.
 Cost Allocation Tags are **key-value pairs** assigned to AWS resources. AWS uses these tags to **organize usage costs** across different dimensions (e.g., teams, workloads).
 
 There are **two types**:
