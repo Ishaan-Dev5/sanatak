@@ -94,7 +94,7 @@ graph TD
 | **Use Automation**                  | Enforce tags with AWS Config, Service Control Policies, or Lambda functions |
 | **Regular Audits**                  | Periodically verify tag coverage with AWS Tag Editor and reports           |
 | **Limit Number of Tags**            | Keep tag keys manageable to avoid confusion                                |
-| **Enable Tags for Cost Allocation** | Manually activate each tag for cost tracking in the Billing Console        |
+
 
 ---
 
