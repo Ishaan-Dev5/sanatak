@@ -31,7 +31,7 @@
 
 ## 1. Introduction
 
-
+This document explains AWS Service Control Policies (SCPs) — a tool used to manage permissions across AWS accounts in an organization. It covers how SCPs work, why they’re useful, and best practices for using them to improve security and governance.
 
 ---
 
