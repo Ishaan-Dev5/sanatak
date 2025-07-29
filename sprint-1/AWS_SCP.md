@@ -61,22 +61,17 @@ Service Control Policies are **JSON-based permission boundaries** applied at the
 ## 4. Workflow Diagram
 
 ```mermaid
-graph TD
-    A[Create SCP in Master Account] --> B[Attach SCP to OU or Account]
-    B --> C[IAM Permissions Evaluated]
-    C --> D[Combined with SCP]
-    D --> E[Final Allowed Actions]
-    E --> F[Access Granted or Denied]
-```
-```mermaid
 flowchart TD
     A[Create SCP in AWS Organizations] --> B[Attach SCP to OU or AWS Account]
     B --> C[User or Role Requests an Action]
-    C --> D{IAM Allows?}
-    D -- No --> E[Action Denied]
-    D -- Yes --> F{SCP Allows?}
-    F -- No --> E
-    F -- Yes --> G[Action Allowed]
+    C --> D[IAM Permissions Evaluated]
+    D --> E{IAM Allows?}
+    E -- No --> F[Action Denied]
+    E -- Yes --> G[Evaluate SCP]
+    G --> H{SCP Allows?}
+    H -- No --> F
+    H -- Yes --> I[Access Granted]
+
 
 ```
 ---
