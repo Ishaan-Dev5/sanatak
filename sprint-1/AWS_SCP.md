@@ -31,12 +31,13 @@
 
 ## 1. Introduction
 
-AWS Service Control Policies (SCPs) are a feature of AWS Organizations that help centrally manage permissions across AWS accounts. They allow you to define the maximum available permissions for accounts in your organization, helping enforce security, compliance, and governance policies.
+
 
 ---
 
 ## 2. What are Service Control Policies?
 
+AWS Service Control Policies (SCPs) are a feature of AWS Organizations that help centrally manage permissions across AWS accounts. They allow you to define the maximum available permissions for accounts in your organization, helping enforce security, compliance, and governance policies.
 Service Control Policies are **JSON-based permission boundaries** applied at the **organizational unit (OU)** or **account level** within AWS Organizations.
 
 - SCPs do **not grant permissions** but set the **maximum available permissions**.
