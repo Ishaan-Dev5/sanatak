@@ -68,7 +68,17 @@ graph TD
     D --> E[Final Allowed Actions]
     E --> F[Access Granted or Denied]
 ```
+```mermaid
+flowchart TD
+    A[Create SCP in AWS Organizations] --> B[Attach SCP to OU or AWS Account]
+    B --> C[User or Role Requests an Action]
+    C --> D{IAM Allows?}
+    D -- No --> E[Action Denied]
+    D -- Yes --> F{SCP Allows?}
+    F -- No --> E
+    F -- Yes --> G[Action Allowed]
 
+```
 ---
 
 ## 5. Advantages
