@@ -34,7 +34,7 @@
 
 ## 1. Introduction
 
-This document provides a structured overview of pom.xml.It covers the purpose of the file, common use cases in Maven-based projects, and best practices for managing dependency versions.
+This document provides a structured overview of AWS Cost Allocation Tags.Cost Allocation Tags allow organizations to improve cost transparency.
 
 ---
 
