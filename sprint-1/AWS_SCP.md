@@ -136,4 +136,3 @@ Yes, you can create SCPs that only allow specific actions like `Describe*` or `L
 | AWS SCPs Overview | [Link](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) |
 | AWS Organizations | [Link](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) |
 | IAM Access Analyzer | [Link](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html) |
-| Policy Simulator | [Link](https://policysim.aws.amazon.com/) |
