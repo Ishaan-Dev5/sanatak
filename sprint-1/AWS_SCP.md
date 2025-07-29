@@ -54,7 +54,7 @@ Service Control Policies are **JSON-based permission boundaries** applied at the
 | Restrict Services           | Prevent the use of unwanted or expensive AWS services                        |
 | Enhance Security    | Apply least privilege and ensure policy compliance                            |
 | Enforce Governance Rules   | Ensure only approved services and actions are used                          |
-|Block Unapproved Usage       | Avoid usage of unauthorized services                                        |
+|Block Unapproved Usage       | Prevent use of services not authorized by IT or security teams                                       |
 
 ---
 
