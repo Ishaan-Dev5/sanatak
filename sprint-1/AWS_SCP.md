@@ -88,7 +88,7 @@ graph TD
 | Best Practice                        | Description                                                                 |
 |-------------------------------------|-----------------------------------------------------------------------------|
 | **Attach to OUs, not individual accounts** | Promotes scalability and manageability                                   |
-| **Document All SCPs**               | Maintain versioned records for auditing                                    |
+| **Use Descriptive Naming for SCPs** |	Helps identify purpose and scope quickly during reviews and audits |
 | **Combine with IAM Policies**       | Use SCPs to limit IAM, not replace them                                    |
 | **Deny by Default**                  | Use explicit `Deny` rules instead of permissive `Allow`.                                         |
 | **Block Account Escape**             | Deny `organizations:LeaveOrganization` action.                                                  |
