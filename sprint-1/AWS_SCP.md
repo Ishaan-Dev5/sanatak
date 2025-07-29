@@ -89,7 +89,6 @@ graph TD
 |-------------------------------------|-----------------------------------------------------------------------------|
 | Start with `FullAWSAccess`       | Ensures baseline permissions are available during setup. |
 | **Attach to OUs, not individual accounts** | Promotes scalability and manageability                                   |
-| **Test with Simulations**           | Use IAM Access Analyzer to simulate SCP effects                            |
 | **Document All SCPs**               | Maintain versioned records for auditing                                    |
 | **Combine with IAM Policies**       | Use SCPs to limit IAM, not replace them                                    |
 | **Deny by Default**                  | Use explicit `Deny` rules instead of permissive `Allow`.                                         |
