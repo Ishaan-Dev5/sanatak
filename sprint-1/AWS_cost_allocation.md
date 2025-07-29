@@ -56,7 +56,7 @@ There are **two types**:
 | Cost Tracking               | Monitor resource spend across projects, teams, or environments              |
 | Budget Management           | Allocate costs to specific business units                                  |
 | Chargebacks/Showbacks       | Enable internal cost distribution                                          |
-| Governance & Compliance     | Ensure resources are tagged properly for audit/reporting                   |
+| Governance & Compliance     | Ensure resources are tagged properly for reporting                   |
 | Forecasting                 | Predict costs based on historical usage by tag                             |
 
 ---
@@ -81,7 +81,6 @@ graph TD
 | Fine-grained Cost Visibility | Helps breakdown costs by project, team, owner                             |
 | Scalability                | Works across all AWS accounts in Organizations                             |
 | Automation Support         | Easily integrated with tools like AWS Budgets, Cost Explorer, and Lambda   |
-| Governance Aid             | Helps enforce resource tagging through SCPs or tag policies                |
 | No Additional Cost         | Tagging and cost allocation is free to use                                 |
 
 ---
