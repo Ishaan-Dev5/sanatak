@@ -87,7 +87,6 @@ graph TD
 
 | Best Practice                        | Description                                                                 |
 |-------------------------------------|-----------------------------------------------------------------------------|
-| Start with `FullAWSAccess`       | Ensures baseline permissions are available during setup. |
 | **Attach to OUs, not individual accounts** | Promotes scalability and manageability                                   |
 | **Document All SCPs**               | Maintain versioned records for auditing                                    |
 | **Combine with IAM Policies**       | Use SCPs to limit IAM, not replace them                                    |
