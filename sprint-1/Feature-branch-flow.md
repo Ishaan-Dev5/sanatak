@@ -29,6 +29,7 @@
 ## 1. Introduction
 
 This document provides a structured overview of the Feature Branch Workflow — a Git-based development strategy used for managing code changes in a collaborative environment
+
 ---
 
 ## 2. Why Feature Branch Workflow?
