@@ -57,15 +57,21 @@ graph TD;
 
 | Benefit                  | Description                                                   |
 | ------------------------ | ------------------------------------------------------------- |
-| **Isolation of Work**    | Prevents incomplete or buggy code from affecting main branch. |
-| **Code Review Friendly** | Allows easy peer review through Pull Requests.                |
-| **Task Focused**         | Developers can focus on one feature at a time.                |
-| **CI/CD Friendly**       | Integrates well with automated testing pipelines.             |
+| **Isolation of Work**    | Each feature is developed in a separate branch, keeping experimental or incomplete code away from the stable main branch. |
+| **Code Review Friendly** |Changes are submitted through pull requests, allowing peer review and feedback before merging into the main branch.               |
+| **Easy Revert**         | If something goes wrong, it’s easy to roll back or discard a feature branch without affecting the rest of the project.               |
+| **CI/CD Friendly**       | Feature branches can be tested independently using automated pipelines before being merged, reducing bugs in production             |
 
 ---
 
 ## 5. Disadvantages
 
+| **Disadvantage** | Description | 
+| ---------------------------- | ------------------------------------------------------------------------------ |
+| **Merge Conflicts** |   If feature branches diverge too much from the main branch, merging them can lead to conflicts that are hard to resolve.  |  
+| **Feedback delay** | It might take too long for the changes to be merged into the main branch. |
+| **Delayed Integration** | Features are not tested in the main codebase until after merging, which can delay the discovery of integration issues. |
+| **Complex Dependency Handling** | When features depend on each other across branches, developers may need to frequently rebase or create temporary fixes |
 
 ---
 ## 6. Conclusion
