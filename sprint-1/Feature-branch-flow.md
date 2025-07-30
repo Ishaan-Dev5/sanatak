@@ -28,8 +28,7 @@
 
 ## 1. Introduction
 
-The **Feature Branch Workflow** is a Git-based development strategy where each new feature is developed in its own branch, isolated from the `main` or `production` codebase. It allows developers to work independently without interfering with the stable codebase.
-
+This document provides a structured overview of the Feature Branch Workflow — a Git-based development strategy used for managing code changes in a collaborative environment
 ---
 
 ## 2. Why Feature Branch Workflow?
