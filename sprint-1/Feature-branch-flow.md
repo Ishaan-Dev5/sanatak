@@ -5,6 +5,14 @@
 
 ---
 
+### Author Information
+
+| **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
+|--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
+| Ishaan    | 28-07-25    | v1.0  |  Ishaan  |28-07-25   | Internal    | Rohit Chopra    | 
+
+---
+
 ## Table of Contents
 
 1. [Introduction](#1-introduction)  
@@ -26,6 +34,7 @@ The **Feature Branch Workflow** is a Git-based development strategy where each n
 
 ## 2. Why Feature Branch Workflow?
 
+The **Feature Branch Workflow** is a Git-based development strategy where each new feature is developed in its own branch, isolated from the `main` or `production` codebase. It allows developers to work independently without interfering with the stable codebase.
 Feature branching provides a clean way to manage different streams of development while maintaining a stable main branch. It encourages collaboration and code reviews through pull requests and ensures features are tested before they’re merged.
 
 ###  Comparison Table
@@ -83,7 +92,7 @@ However, to prevent issues like merge conflicts and branch divergence, it’s im
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
-| Shree | shreekadam2222htb@gmail.com|  ShreeKadam  |  https://github.com/ShreeKadam   |
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
 
 ---
 ## 8. References
