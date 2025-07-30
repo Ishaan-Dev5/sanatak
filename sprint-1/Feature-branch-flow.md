@@ -66,11 +66,6 @@ graph TD;
 
 ## 5. Disadvantages
 
-| Limitation                | Impact                                                                      |
-| ------------------------- | --------------------------------------------------------------------------- |
-| **Merge Conflicts**       | May arise if branches diverge too much.                                     |
-| **Long-Lived Branches**   | Can lead to integration hell.                                               |
-| **Dependency Management** | Features dependent on others may require rebasing or temporary workarounds. |
 
 ---
 ## 6. Conclusion
