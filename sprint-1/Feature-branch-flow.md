@@ -86,7 +86,6 @@ However, to prevent issues like merge conflicts and branch divergence, it’s im
 
 | Resource Name   | Link                                                                                                           |
 | --------------- | -------------------------------------------------------------------------------------------------------------- |
-| Git SCM Docs    | [https://git-scm.com/doc](https://git-scm.com/doc)                                                             |
 | Atlassian Guide | [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) |
 | GitHub Flow     | [https://docs.github.com](https://docs.github.com/en/get-started/quickstart/github-flow)                       |
 
