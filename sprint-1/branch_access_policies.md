@@ -71,16 +71,20 @@ Unrestricted branch access can lead to unreviewed code, broken builds, or securi
 
 
 
-## 5. Workflow Controls
+## 5. Workflow 
 
-| Control Feature              | Description                                                               |
-|------------------------------|---------------------------------------------------------------------------|
-| **Linear History Requirement** | Prevents merge commits and enforces rebase workflow.                     |
-| **Auto-Merge Settings**       | Allows merging PRs automatically once all checks pass.                    |
-| **Draft Pull Requests**       | Allows work-in-progress PRs without triggering reviews or actions.        |
-| **Lock Branch**               | Temporarily disables all changes to a branch.                             |
 
----
+```mermaid
+flowchart TD
+    A[Go to Repository Settings] --> B[Click on 'Branches']
+    B --> C[Click 'Add Rule']
+    C --> D[Enter Branch Name or Pattern]
+    D --> E[Select Protection Options]
+    E --> F[Click 'Create']
+
+  
+```
+
 
 ## 6. Advantages
 
