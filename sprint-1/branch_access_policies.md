@@ -9,17 +9,17 @@
 
 | **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
-| Ishaan    | 30-07-25    | v1.0  |  Ishaan  |30-07-25   | Internal    | Rohit Chopra    | 
+| Ishaan    | 31-07-25    | v1.0  |  Ishaan  |31-07-25   | Internal    | Rohit Chopra    | 
 
 ---
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)  
-2. [Why Branch Access Policies ](#2-why-branch-access-policies)  
-3. [Branch Protection Rules](#3-branch-protection-rules)  
-4. [Access Policies](#4-access-policies)  
-5. [Workflow Controls](#5-workflow-controls)  
+1. [Introduction](#1-introduction)
+2. [What are Branch Access Policies?](#2-what-are-branch-access-policies) 
+3. [Why Branch Access Policies ](#3-why-branch-access-policies)  
+4. [Branch Protection Rules](#4-branch-protection-rules)  
+5. [Workflow](#5-workflow)
 6. [Advantages](#6-advantages)  
 7. [Disadvantages](#7-disadvantages)  
 8. [Best Practices](#8-best-practices)  
@@ -41,9 +41,9 @@ Branch Access Policy is a set of rules that control who can make changes to spec
 Git branch protection rules are a powerful configuration option that enables repository administrators to enforce security policies. This helps protect the git branches from unexpected code commits or deletion by any unauthorized person(s) / user group(s).
 Unrestricted branch access can lead to unreviewed code, broken builds, or security issues.
 
-## 2. Why Branch Access Policies 
+---
 
-
+## 3. Why Branch Access Policies 
 
 **Branch access policies help:**
 
@@ -55,7 +55,7 @@ Unrestricted branch access can lead to unreviewed code, broken builds, or securi
 
 ---
 
-## 3. Branch Protection Rules
+## 4. Branch Protection Rules
 
 | Rule                            | Description                                                                 |
 |----------------------------------|-----------------------------------------------------------------------------|
