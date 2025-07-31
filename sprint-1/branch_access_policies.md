@@ -3,6 +3,16 @@
 
 # Branch Access Policies Documentation
 
+---
+
+### Author Information
+
+| **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
+|--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
+| Ishaan    | 30-07-25    | v1.0  |  Ishaan  |30-07-25   | Internal    | Rohit Chopra    | 
+
+---
+
 ## Table of Contents
 
 1. [Introduction](#1-introduction)  
@@ -26,6 +36,9 @@ Branch access policies refer to the rules and restrictions enforced on branches 
 ---
 
 ## 2. Why Branch Access Policies Matter
+
+Branch access policies refer to the rules and restrictions enforced on branches within version control systems like Git. These policies help protect important branches (e.g., `main`, `develop`) from accidental changes, enforce code review processes, and standardize team workflows.
+
 
 Unrestricted branch access can lead to unreviewed code, broken builds, or security issues. Branch access policies help:
 
@@ -118,7 +131,8 @@ Branch access policies are essential for maintaining a secure, high-quality, and
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
-| Shree | shreekadam2222htb@gmail.com|  ShreeKadam  |  https://github.com/ShreeKadam   |
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
+
 
 ---
 
