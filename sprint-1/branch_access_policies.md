@@ -69,16 +69,7 @@ Unrestricted branch access can lead to unreviewed code, broken builds, or securi
 
 ---
 
-## 4. Access Policies
 
-| Policy Type               | Description                                                                |
-|---------------------------|----------------------------------------------------------------------------|
-| **Role-Based Access**     | Permissions are based on roles (e.g., Admin, Maintainer, Developer).       |
-| **Team-Based Access**     | Access rights assigned to user groups or teams.                            |
-| **Environment Rules**     | Restrict who can deploy or merge into environment-specific branches.       |
-| **Code Owner Enforcement**| Requires designated owners to review changes to specific files/paths.       |
-
----
 
 ## 5. Workflow Controls
 
