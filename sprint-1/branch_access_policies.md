@@ -63,8 +63,8 @@ Unrestricted branch access can lead to unreviewed code, broken builds, or securi
 | **Require status checks to pass before merging**      |     Ensures automated checks (like CI tests) pass before merging.                                      |
 | **Require conversation resolution before merging**             |    All review comments and discussions must be resolved before merging.            |
 | **Require signed commits**      |    Only commits with verified digital signatures are allowed.                 |
-| **Require linear history**        |                          | 	Enforces a clean commit history — no merge commits
-| **Require deployments to succeed before merging**          |     	Enforces a clean commit history — no merge commits                         |
+| **Require linear history**        |                           	Enforces a clean commit history — no merge commits |
+| **Require deployments to succeed before merging**          |     	Code can only be merged if deployment to an environment is successful.  |   
 |    **Lock branch**   |             Branch is read-only. Users cannot push to the branch    |
 
 ---
