@@ -23,9 +23,10 @@
 6. [Advantages](#6-advantages)  
 7. [Disadvantages](#7-disadvantages)  
 8. [Best Practices](#8-best-practices)  
-9. [Conclusion](#9-conclusion)  
-10. [Contact Information](#10-contact-information)  
-11. [References](#11-references)
+9. [Conclusion](#9-conclusion)
+10. [FAQs](#10-FAQs)  
+11. [Contact Information](#11-contact-information)  
+12. [References](#12-references)
 
 ---
 
@@ -124,13 +125,33 @@ flowchart TD
 
 ## 9. Conclusion
 
-Branch access policies are essential for maintaining a secure, high-quality, and collaborative development environment. They reduce the risk of errors, enforce process discipline, and ensure teams deliver reliable code to production.
-
- **Recommended Practice:** Protect the `main` and `release` branches with enforced PR reviews, CI status checks, and restricted write access for all team projects.
+Branch access policies are essential for maintaining a secure, high-quality, and collaborative development environment. 
+**Recommended Practice:** Protect the `main` and `release` branches with enforced PR reviews, CI status checks, and restricted write access for all team projects.
 
 ---
 
-## 10. Contact Information
+## 10. FAQs
+
+
+
+#### 1. Are branch protection rules mandatory?
+No, they are not mandatory by default. However, they are highly recommended in collaborative projects to enforce best practices and reduce risks.
+
+#### 2. Can admins bypass protection rules?
+Yes, admins with the right permissions can bypass protection rules. However, it's recommended to use this privilege cautiously to maintain workflow integrity.
+
+#### 3. What does commit signing mean?
+Commit signing means attaching a digital signature to verify the authenticity of a commit’s author. It helps prevent spoofing and ensures trust.
+
+#### 4. What happens if protection rules are misconfigured?
+Misconfiguration may unintentionally block valid contributions or allow insecure changes. It’s important to plan and test the rules before enforcing them.
+
+#### 5. How to apply rules to multiple branches?
+You can use wildcard patterns (like `release/*` or `feature/*`) when specifying branch names in protection rules to apply them to multiple branches.
+
+---
+
+## 11. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -139,7 +160,7 @@ Branch access policies are essential for maintaining a secure, high-quality, and
 
 ---
 
-## 11. References
+## 12. References
 
 | Source                          | Link                                                                 |
 |---------------------------------|----------------------------------------------------------------------|
