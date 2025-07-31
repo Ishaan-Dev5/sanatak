@@ -88,12 +88,14 @@ flowchart TD
 
 ## 6. Advantages
 
-| Benefit                       | Description                                                               |
-|-------------------------------|---------------------------------------------------------------------------|
-| **Improved Code Quality**     | Ensures peer review and automated checks are performed.                   |
-| **Increased Security**        | Restricts who can make changes to critical branches.                      |
-| **Stable Main Branch**        | Prevents breaking changes from entering production codebases.             |
-| **Audit Trail**               | Keeps history of who made changes and who approved them.                  |
+| Advantage                               | Description                                                                 |
+|-----------------------------------------|-----------------------------------------------------------------------------|
+| Improved Code Quality                   | Enforces code reviews before merging.                  |
+| Clean Git History                       | Disables force-pushes to maintain a linear commit history      |
+| Stronger Security                       | Prevents unauthorized changes to sensitive branches.                        |
+| Role-Based Control                      | Grants access based on developer roles (read, write, admin).                |
+
+
 
 ---
 
