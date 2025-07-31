@@ -145,6 +145,5 @@ Branch access policies are essential for maintaining a secure, high-quality, and
 | Source                          | Link                                                                 |
 |---------------------------------|----------------------------------------------------------------------|
 | Setup git protection rules | [Link](https://spectralops.io/blog/how-to-set-up-git-branch-protection-rules/) |
-
 | Branch Protection Best Practices | [Link](https://dev.to/n3wt0n/best-practices-for-branch-protection-2pe3)|
----
+
