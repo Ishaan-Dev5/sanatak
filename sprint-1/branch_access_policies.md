@@ -16,7 +16,7 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)  
-2. [Why Branch Access Policies Matter](#2-why-branch-access-policies-matter)  
+2. [Why Branch Access Policies ](#2-why-branch-access-policies)  
 3. [Branch Protection Rules](#3-branch-protection-rules)  
 4. [Access Policies](#4-access-policies)  
 5. [Workflow Controls](#5-workflow-controls)  
@@ -34,13 +34,16 @@
 Branch access policies in GitHub, often referred to as branch protection rules or rulesets, are a set of configurations that repository administrators can implement to control how changes are made to specific branches within a repository.
 
 ---
-
-## 2. Why Branch Access Policies 
+## 2. What are Branch Access Policies 
 
 Branch Access Policy is a set of rules that control who can make changes to specific branches in a GitHub repository and how those changes can be made.
 
 Git branch protection rules are a powerful configuration option that enables repository administrators to enforce security policies. This helps protect the git branches from unexpected code commits or deletion by any unauthorized person(s) / user group(s).
 Unrestricted branch access can lead to unreviewed code, broken builds, or security issues.
+
+## 2. Why Branch Access Policies 
+
+
 
 **Branch access policies help:**
 
@@ -48,7 +51,7 @@ Unrestricted branch access can lead to unreviewed code, broken builds, or securi
 - Enforce code reviews before merging the code to the branch
 - Maintain a healthy codebase without affecting collaboration
 - Maintain a commit history (by disallowing force pushes)
-- Prevent code from leaking into your public repositorie
+- Prevent code from leaking into your public repositories 
 
 ---
 
@@ -56,12 +59,13 @@ Unrestricted branch access can lead to unreviewed code, broken builds, or securi
 
 | Rule                            | Description                                                                 |
 |----------------------------------|-----------------------------------------------------------------------------|
-| **Require Pull Request Reviews** | Code must be reviewed before merging to protected branches.                 |
-| **Require Status Checks**        | CI tests must pass before merging.                                          |
-| **Restrict Pushes**              | Only specific users or teams can push to protected branches.                |
-| **Require Signed Commits**       | Only commits with verified GPG signatures are allowed.                      |
-| **Prevent Force Pushes**         | Disables force pushes to avoid overwriting history.                         |
-| **Prevent Deletions**            | Protects critical branches from being deleted.                              |
+| **Require a pull request before merging**|      Prevents direct pushes — changes must go through a pull request.           |
+| **Require status checks to pass before merging**      |     Ensures automated checks (like CI tests) pass before merging.                                      |
+| **Require conversation resolution before merging**             |    All review comments and discussions must be resolved before merging.            |
+| **Require signed commits**      |    Only commits with verified digital signatures are allowed.                 |
+| **Require linear history**        |                          | 	Enforces a clean commit history — no merge commits
+| **Require deployments to succeed before merging**          |     	Enforces a clean commit history — no merge commits                         |
+|    **Lock branch**   |             Branch is read-only. Users cannot push to the branch    |
 
 ---
 
