@@ -31,14 +31,13 @@
 
 ## 1. Introduction
 
-Branch access policies refer to the rules and restrictions enforced on branches within version control systems like Git. These policies help protect important branches (e.g., `main`, `develop`) from accidental changes, enforce code review processes, and standardize team workflows.
+Branch access policies in GitHub, often referred to as branch protection rules or rulesets, are a set of configurations that repository administrators can implement to control how changes are made to specific branches within a repository.
 
 ---
 
-## 2. Why Branch Access Policies Matter
+## 2. Why Branch Access Policies 
 
-Branch access policies refer to the rules and restrictions enforced on branches within version control systems like Git. These policies help protect important branches (e.g., `main`, `develop`) from accidental changes, enforce code review processes, and standardize team workflows.
-
+Branch access policies in GitHub, often referred to as branch protection rules or rulesets, are a set of configurations that repository administrators can implement to control how changes are made to specific branches within a repository.
 
 Unrestricted branch access can lead to unreviewed code, broken builds, or security issues. Branch access policies help:
 
