@@ -116,10 +116,9 @@ flowchart TD
 |----------------------------------|--------------------------------------------------------------------------|
 | **Protect Key Branches**         | Apply strict rules to `main`, `release`, and `production` branches.      |
 | **Enforce Reviews**              | Require at least 1–2 reviewers for every pull request.                   |
-| **Use Status Checks**            | Integrate CI/CD pipelines with branch protection.                        |
-| **Restrict Write Access**        | Allow direct push only for automation or authorized users.               |
-| **Document Policies Clearly**    | Make policies visible and understandable to all contributors.            |
-| **Enable Required Commit Signing** | Add commit verification via GPG for authenticity.                      |
+| **Use Status Checks**            | Integrate CI/CD pipelines to run automated tests.                        |
+| **Disallow Deletions**        | Prevent accidental or unauthorized deletion of critical branches.               |
+
 
 ---
 
