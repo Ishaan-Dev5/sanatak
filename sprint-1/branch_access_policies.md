@@ -138,8 +138,5 @@ Branch access policies are essential for maintaining a secure, high-quality, and
 
 | Source                          | Link                                                                 |
 |---------------------------------|----------------------------------------------------------------------|
-| GitHub Branch Protection Rules  | [https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/configuring-protected-branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/configuring-protected-branches) |
-| GitLab Protected Branches       | [https://docs.gitlab.com/ee/user/project/protected_branches.html](https://docs.gitlab.com/ee/user/project/protected_branches.html) |
-| Bitbucket Branch Permissions    | [https://support.atlassian.com/bitbucket-cloud/docs/enforce-branch-permissions/](https://support.atlassian.com/bitbucket-cloud/docs/enforce-branch-permissions/) |
-
+| Setup git protection rules | [Link](https://spectralops.io/blog/how-to-set-up-git-branch-protection-rules/) |
 ---
