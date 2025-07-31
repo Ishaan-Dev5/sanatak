@@ -101,12 +101,12 @@ flowchart TD
 
 ## 7. Disadvantages
 
-| Drawback                      | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
-| **Initial Setup Complexity**  | Requires careful planning and configuration for teams and roles.           |
-| **Reduced Flexibility**       | May slow down development in fast-paced teams if too strict.               |
-| **Access Bottlenecks**        | Merges may be delayed if reviewers or approvers are unavailable.           |
-| **Onboarding Overhead**       | New team members need to be trained on protected branch policies.          |
+| Disadvantage                          | Description                                                                 |
+|--------------------------------------|-----------------------------------------------------------------------------|
+| Slower Development Cycle             | Requires reviews and checks before merging, which can delay progress.       |
+| Learning Curve                | New developers may struggle to understand the enforced workflow.            |
+| Rule Conflicts            | Incorrect rules or permissions can unintentionally block valid work.        |
+| Delayed Delivery | Strict rules can slow down urgent fixes or feature releases. |
 
 ---
 
