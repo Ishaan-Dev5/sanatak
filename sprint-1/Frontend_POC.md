@@ -72,6 +72,8 @@ The OT-MICROSERVICES Frontend is a ReactJS web application that provides the mai
 sudo apt update
 sudo apt install make
 ```
+<img width="1919" height="804" alt="Screenshot 2025-08-01 000718" src="https://github.com/user-attachments/assets/201c9c86-d53b-4e0e-831a-269872ae93ba" />
+
 
 ### 2. Install Node.js version 16
 
@@ -79,32 +81,42 @@ sudo apt install make
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
+<img width="1919" height="876" alt="Screenshot 2025-08-01 001030" src="https://github.com/user-attachments/assets/ca73869e-d45a-4f49-8efe-017d3498dab8" />
 
-### 3. Clone the Repository
-
-```bash
-git clone https://github.com/OT-MICROSERVICES/frontend.git
-cd frontend
-```
-
-### 4. Check Node and npm Versions
+### 3. Check Node and npm Versions
 
 ```bash
 node -v
 npm -v
 ```
 
+### 4. Clone the Repository
+
+```bash
+git clone https://github.com/OT-MICROSERVICES/frontend.git
+cd frontend
+```
+<img width="1919" height="362" alt="Screenshot 2025-08-01 000853" src="https://github.com/user-attachments/assets/d96ff094-1a6a-4428-beaf-c9653df2ea6e" />
+
+
+
+
 ### 5. Install Project Dependencies
 
 ```bash
 make install
 ```
+<img width="1919" height="913" alt="Screenshot 2025-08-01 001232" src="https://github.com/user-attachments/assets/efb0b5a0-0334-438d-9367-5b0c0133475f" />
+
 
 ### 6. Build the Application
 
 ```bash
 npm run build
 ```
+
+<img width="1297" height="198" alt="Screenshot 2025-08-01 001520" src="https://github.com/user-attachments/assets/a1255a34-b709-4968-93c2-d26813b741ea" />
+
 - If you get “JavaScript heap out of memory”, run:
   ```bash
   NODE_OPTIONS="--max_old_space_size=4096" npm run build
@@ -117,6 +129,10 @@ npm run build
 sudo npm install -g serve
 serve -s build
 ```
+<img width="1293" height="441" alt="Screenshot 2025-08-01 001622" src="https://github.com/user-attachments/assets/128c2675-850a-455e-ac87-e7a385435450" />
+
+<img width="1919" height="868" alt="Screenshot 2025-08-01 001711" src="https://github.com/user-attachments/assets/9adc145e-c8b9-495a-bdb1-354e85b21b94" />
+
 
 ### 8. Optionally, create a systemd service for auto-start
 
@@ -147,6 +163,12 @@ sudo systemctl enable frontend.service
 sudo systemctl start frontend.service
 sudo systemctl status frontend.service
 ```
+<img width="1651" height="546" alt="Screenshot 2025-08-01 002032" src="https://github.com/user-attachments/assets/1b961ae3-a922-4493-93c7-0eac2f53a1d4" />
+
+
+<img width="1919" height="869" alt="Screenshot 2025-08-01 001721" src="https://github.com/user-attachments/assets/dc0008a9-0745-4f85-855c-76869d7396db" />
+
+
 
 ---
 
@@ -205,6 +227,4 @@ sudo systemctl status frontend.service
 |------------------------------------|----------------------------------------------------------------------|
 | Frontend API                       | https://github.com/OT-MICROSERVICES/frontend                         |
 | Javascript heap out of memory      | https://geekflare.com/fix-javascript-heap-out-of-memory-error/       |
-| Create React App Deployment Docs   | https://bit.ly/CRA-deploy                                            |
-
 
