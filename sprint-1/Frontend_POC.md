@@ -12,27 +12,27 @@
 
 ## Table of Contents
 
-1. [Purpose](#purpose)  
-2. [Pre-Requisites](#pre-requisites)  
-3. [System Requirements](#system-requirements)   
-4. [Ports](#ports)  
-5. [Setup and Execution](#setup-and-execution)  
-6. [Monitoring and Logging](#monitoring-and-logging)  
-7. [Troubleshooting](#troubleshooting)  
-8. [Disaster Recovery & High Availability](#disaster-recovery--high-availability)  
-9. [FAQ](#faq)  
-10. [Contact Information](#contact-information)  
-11. [References](#references)  
+1. [Purpose](#1-purpose)  
+2. [Pre-Requisites](#2-pre-requisites)  
+3. [System Requirements](#3-system-requirements)   
+4. [Ports](#4-ports)  
+5. [Setup and Execution](#5-setup-and-execution)  
+6. [Monitoring and Logging](#6-monitoring-and-logging)  
+7. [Troubleshooting](#7-troubleshooting)  
+8. [Disaster Recovery & High Availability](#8-disaster-recovery--high-availability)  
+9. [FAQs](#9-faqs)  
+10. [Contact Information](#10-contact-information)  
+11. [References](#11-references)  
 
 ---
 
-## Purpose
+## 1. Purpose
 
 The OT-MICROSERVICES Frontend is a ReactJS web application that provides the main user interface for the OT-Microservices stack. It enables management and visualization of employee, attendance, and salary information by communicating with the backend REST APIs.
 
 ---
 
-## Pre-Requisites
+## 2. Pre-Requisites
 
 - Node.js (v12.22.9 or later recommended)
 - npm (v8.5.1 or later)
@@ -44,7 +44,7 @@ The OT-MICROSERVICES Frontend is a ReactJS web application that provides the mai
 
 ---
 
-## System Requirements
+## 3. System Requirements
 
 | Hardware/Software | Minimum Recommendation  |
 |-------------------|------------------------|
@@ -55,7 +55,7 @@ The OT-MICROSERVICES Frontend is a ReactJS web application that provides the mai
 
 ---
 
-## Ports
+## 4. Ports
 
 | Port | Service              | Description                         |
 |------|---------------------|-------------------------------------|
@@ -64,7 +64,7 @@ The OT-MICROSERVICES Frontend is a ReactJS web application that provides the mai
 
 ---
 
-## Setup and Execution
+## 5. Setup and Execution
 
 ### 1. Install System Dependencies
 
@@ -118,7 +118,7 @@ sudo npm install -g serve
 serve -s build
 ```
 
-### 9. Optionally, create a systemd service for auto-start
+### 8. Optionally, create a systemd service for auto-start
 
 ```bash
 sudo nano /etc/systemd/system/frontend.service
@@ -150,7 +150,7 @@ sudo systemctl status frontend.service
 
 ---
 
-## Monitoring and Logging
+## 6. Monitoring and Logging
 
 - **Process Monitoring:** Use `htop`, `top` for CPU/RAM.
 - **Logs:** Terminal output of `serve`/`npm start`. For errors, check the browser console.
@@ -158,27 +158,26 @@ sudo systemctl status frontend.service
 
 ---
 
-## Troubleshooting
+## 7. Troubleshooting
 
 | Issue                        | Solution                                                         |
 |------------------------------|------------------------------------------------------------------|
 | JS heap out of memory        | Use `NODE_OPTIONS="--max_old_space_size=4096" npm run build`     |
 | Port 3000 in use             | Run `serve -s build -l 3001` or kill previous process            |
 | Cannot access externally     | Check firewall/security group for port 3000                      |
-| Deprecated/vulnerable deps   | Run `npm audit fix` (optional, not blocking for deployment)      |
-| Clipboard error (xsel)       | Ignore or run `sudo apt install xsel`                            |
-| Compiled with warnings       | Not fatal; can be fixed during code refactor                     |
+| Deprecated/vulnerable deps   | Run `npm audit fix` (optional, not blocking for deployment)      |                           |
+| Compiled with warnings       | Not fatal                     |
 
 ---
 
-## Disaster Recovery & High Availability
+## 8. Disaster Recovery & High Availability
 
 - **Recovery:** Keep a backup of the `build/` folder and your repo.
 - **HA:** Use `pm2` or a systemd service to keep `serve` running if needed.
 
 ---
 
-## FAQ
+## 9. FAQs
 
 - **Is this application free?**  
   Yes, open-source.
@@ -191,7 +190,7 @@ sudo systemctl status frontend.service
 
 ---
 
-## Contact Information
+## 10. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -200,7 +199,7 @@ sudo systemctl status frontend.service
 
 ---
 
-## References
+## 11. References
 
 | Description                       | Link                                                                 |
 |------------------------------------|----------------------------------------------------------------------|
@@ -208,4 +207,4 @@ sudo systemctl status frontend.service
 | Javascript heap out of memory      | https://geekflare.com/fix-javascript-heap-out-of-memory-error/       |
 | Create React App Deployment Docs   | https://bit.ly/CRA-deploy                                            |
 
----
+
