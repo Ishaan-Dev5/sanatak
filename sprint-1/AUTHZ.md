@@ -16,23 +16,27 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
-2. [What are Branch Access Policies?](#2-what-are-branch-access-policies) 
-3. [Why Branch Access Policies ](#3-why-branch-access-policies)  
-4. [Branch Protection Rules](#4-branch-protection-rules)  
-5. [Workflow](#5-workflow)
-6. [Advantages](#6-advantages)  
-7. [Disadvantages](#7-disadvantages)  
-8. [Best Practices](#8-best-practices)  
-9. [Conclusion](#9-conclusion)
-10. [FAQs](#10-FAQs)  
-11. [Contact Information](#11-contact-information)  
-12. [References](#12-references)
+2. [What is Authorization Strategy](#2-what-is-authorization-strategy) 
+3. [Why Authorization Strategy Matters ](#3-why-Authorization-Strategy-Matters)  
+4. [Access Levels in VCS](#4-Access-Levels-in-VCS)  
+5. [Audit Trails](#5-Audit-Trails)
+6. [Integration with Identity Providers](#6-Integration-with-Identity-Providers)  
+7. [Advantages](#7-Advantages)  
+8. [Disadvantages](#8-Disadvantages)  
+9. [Best Practices](#9-Best-Practices)
+10. [Conclusion](#10-Conclusion)  
+11. [FAQs](#11-FAQs)
+12. [Contact Information](#12-Contact-Information) 
+13. [References](#13-references)
 
 ---
 ## 1. Introduction
 
 
-## 2. What are Authorization Strategy
+---
+
+
+## 2. What is Authorization Strategy
 
 Version Control Systems (VCS) like Git, GitHub, GitLab, and Bitbucket help developers manage changes to code. A key part of keeping them secure is the authorization strategy, which controls who can access or change what. A clear strategy keeps the code safe, makes teams more accountable, and helps everyone work better together.
 
@@ -136,14 +140,27 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-##  10. Conclusion
+## 10. Conclusion
 
 A well-designed **Authn & Authz** strategy in VCS ensures secure, auditable, and efficient collaboration.  
 We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audit logging for all production-level repositories.
 
 ---
 
-## 11. Contact Information
+## 11. FAQs
+
+**Q1. What’s the difference between authentication and authorization?**  
+Authentication confirms the user's identity. Authorization defines what that user can access or do.
+
+**Q2. Can I use GitHub without an IdP?**  
+Yes, but integrating with an Identity Provider improves security and centralized control.
+
+**Q3. What happens if an SSO/IdP service is down?**  
+Users may be temporarily blocked from accessing the VCS. Plan for backups or break-glass accounts.
+
+---
+
+## 12. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -152,7 +169,7 @@ We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audi
 
 ---
 
-## 12. References
+## 13. References
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
