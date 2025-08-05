@@ -1,6 +1,7 @@
-<img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo" width="120"/>
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/518f6847-6dca-4ffc-b8b7-6735b62adb64" />
 
-# VCS Authorization Strategy
+
+# VCS Authorization 
 
 ---
 
@@ -28,15 +29,17 @@
 12. [References](#12-references)
 
 ---
+## 1. Introduction
 
-## 1. What are Authorization Strategy
+
+## 2. What are Authorization Strategy
 
 Version Control Systems (VCS) like Git, GitHub, GitLab, and Bitbucket help developers manage changes to code. A key part of keeping them secure is the authorization strategy, which controls who can access or change what. A clear strategy keeps the code safe, makes teams more accountable, and helps everyone work better together.
 
 
 ---
 
-## Why Authorization Strategy Matters
+## 3. Why Authorization Strategy Matters
 
 Authorization is a core part of access control. While [**authentication**](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-102-mansoor/VCS/Security-Access/Authentication-Docs/README.md) verifies *who* a user is, **authorization** defines *what* that user can do. Without proper authorization strategies:
 
@@ -47,7 +50,7 @@ A secure authorization strategy helps enforce the **principle of least privilege
 
 ---
 
-## Access Levels in VCS
+## 4. Access Levels in VCS
 
 Most VCS platforms provide role-based access control (RBAC) with common roles such as:
 
@@ -63,7 +66,7 @@ Most VCS platforms provide role-based access control (RBAC) with common roles su
 ---
 
 
-##  Audit Trails
+##  5. Audit Trails
 
 Audit trails are chronological records of system or user activities that provide a detailed history of who did what, when, where, and how within a system or platform.
 
@@ -88,7 +91,7 @@ Audit logs are vital for:
 
 ---
 
-## Integration with Identity Providers
+## 6. Integration with Identity Providers
 
 Modern VCS platforms support integration with Identity Providers (IdPs) to centralize and streamline access management. Common protocols and services include:
 
@@ -100,7 +103,7 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## Advantages
+## 7. Advantages
 
 | Advantage                                             | Description                                                                 |
 |-------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -110,7 +113,7 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## Disadvantages
+## 8. Disadvantages
 
 | Disadvantage                                             | Description                                                                 |
 |-------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -120,7 +123,7 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## Best Practices
+## 9. Best Practices
 
 | Practice                          | Description                             |
 |-----------------------------------|-----------------------------------------|
@@ -131,14 +134,16 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 |  Use Personal Access Tokens     | For CLI usage instead of passwords      |
 |  Monitor Audit Logs             | Regular review for anomalies            |
 
-##  Conclusion
+---
+
+##  10. Conclusion
 
 A well-designed **Authn & Authz** strategy in VCS ensures secure, auditable, and efficient collaboration.  
 We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audit logging for all production-level repositories.
 
 ---
 
-## 9. Contact Information
+## 11. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -147,7 +152,7 @@ We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audi
 
 ---
 
-## 10. References
+## 12. References
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
