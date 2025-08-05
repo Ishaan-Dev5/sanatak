@@ -38,7 +38,7 @@ Version Control Systems (VCS) like Git, GitHub, GitLab, and Bitbucket help devel
 
 ## Why Authorization Strategy Matters
 
-Authorization is a core part of access control. While [**authentication**]() verifies *who* a user is, **authorization** defines *what* that user can do. Without proper authorization strategies:
+Authorization is a core part of access control. While [**authentication**](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-102-mansoor/VCS/Security-Access/Authentication-Docs/README.md) verifies *who* a user is, **authorization** defines *what* that user can do. Without proper authorization strategies:
 
 - Unauthorized users may access or modify sensitive code.
 - Compliance and audit requirements may not be met.
