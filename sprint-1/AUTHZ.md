@@ -120,4 +120,37 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
+## Best Practices
+
+| Practice                          | Description                             |
+|-----------------------------------|-----------------------------------------|
+|  Enforce MFA                    | Add another layer of security           |
+|  Disable Direct Push to Main    | Use protected branches                  |
+|  Enable Code Review Workflow    | Require approval before merge           |
+|  Regularly Audit Access         | Remove stale or unused accounts         |
+|  Use Personal Access Tokens     | For CLI usage instead of passwords      |
+|  Monitor Audit Logs             | Regular review for anomalies            |
+
+##  Conclusion
+
+A well-designed **Authn & Authz** strategy in VCS ensures secure, auditable, and efficient collaboration.  
+We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audit logging for all production-level repositories.
+
+---
+
+## 9. Contact Information
+
+| Name| Email Address      | GitHub | URL |
+|-----|--------------------------|-------------|---------|
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
+
+
+---
+
+## 10. References
+
+| Resource                         |  Link                                                                 |
+|--------------------------------|--------------------------------------------------------------------------------|
+| Branch Access Policies |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-112-ishaan/VCS/VCS-Policies/Branch-Access-Policies/README.md) |
+| Authentication Documentation  |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-102-mansoor/VCS/Security-Access/Authentication-Docs/README.md)  |
 
