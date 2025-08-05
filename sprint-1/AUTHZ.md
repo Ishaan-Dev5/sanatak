@@ -32,6 +32,8 @@
 ---
 ## 1. Introduction
 
+This document outlines key authorization strategies in Version Control Systems (VCS) to ensure secure, role-based access to code. It covers access levels, audit trails, IdP integration, and best practices for managing permissions effectively.
+
 
 ---
 
