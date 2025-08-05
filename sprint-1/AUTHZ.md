@@ -63,3 +63,61 @@ Most VCS platforms provide role-based access control (RBAC) with common roles su
 ---
 
 
+##  Audit Trails
+
+Audit trails are chronological records of system or user activities that provide a detailed history of who did what, when, where, and how within a system or platform.
+
+| Audit Event Type               | Description                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| Branch Creation/Deletion	   | 	Captures who created or deleted which branch and when                         |
+| Permission or Role Changes     | Logs when user permissions or roles are modified.                          |
+| Repository Changes             | Includes push, merge, delete, and other git-related changes.               |
+| Merge Requests / Pull Requests | Tracks PR creation, reviewers, approvals, merge status    |
+| User Activity Monitoring       | Records user actions during their session to support traceability.         |
+
+Stored in:
+- Git logs
+- VCS platform logs (GitHub/GitLab)
+- External SIEM tools (Splunk, ELK)
+
+
+Audit logs are vital for:
+- Meeting compliance requirements (e.g., SOC 2, ISO 27001)
+- Detecting unusual or unauthorized behavior
+- Root cause analysis of production issue
+
+---
+
+## Integration with Identity Providers
+
+Modern VCS platforms support integration with Identity Providers (IdPs) to centralize and streamline access management. Common protocols and services include:
+
+| Protocol / Service  | Description                                               |
+|---------------------|-----------------------------------------------------------|
+| OAuth2              | Authorization framework used by GitHub, Google, etc.     |
+| LDAP / Active Directory | Directory service used in enterprise environments.     |
+| SSO (Single Sign-On)| One-click access via corporate credentials.              |
+
+---
+
+## Advantages
+
+| Advantage                                             | Description                                                                 |
+|-------------------------------------------------------|-----------------------------------------------------------------------------|
+| Enhanced Security                                     | Prevents unauthorized access and changes to code.                          |
+|Enables Role-Based Team Structure                             |  Separate roles across devs, reviewers, and admins              |
+| IdP/SSO Integration                                   | Streamlines access management across multiple systems.                     |
+
+---
+
+## Disadvantages
+
+| Disadvantage                                             | Description                                                                 |
+|-------------------------------------------------------|-----------------------------------------------------------------------------|
+| Configuration Complexity                                | Requires careful setup and management to avoid misconfigurations.          |
+| Risk of Over-Permission                                 | Mistakes in role assignment can expose sensitive data.                      |
+| External Dependency on IdPs                             | Downtime in SSO/IdP services can block access for all users.                |
+
+---
+
+
