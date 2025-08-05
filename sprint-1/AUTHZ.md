@@ -35,3 +35,31 @@ Version Control Systems (VCS) like Git, GitHub, GitLab, and Bitbucket help devel
 
 
 ---
+
+## Why Authorization Strategy Matters
+
+Authorization is a core part of access control. While [**authentication**]() verifies *who* a user is, **authorization** defines *what* that user can do. Without proper authorization strategies:
+
+- Unauthorized users may access or modify sensitive code.
+- Compliance and audit requirements may not be met.
+
+A secure authorization strategy helps enforce the **principle of least privilege**, ensuring users have access only to the resources they need.
+
+---
+
+## Access Levels in VCS
+
+Most VCS platforms provide role-based access control (RBAC) with common roles such as:
+
+| Role        | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| Admin       | Full control over repositories, user management, and settings.              |
+| Maintainer  | Manage repository settings but limited in user/group-level control.         |
+| Developer   | Can push code, manage issues, merge requests, and CI/CD pipelines.          |
+| Reporter    | Read-only access to code, issues, and documentation.                        |
+| Guest       | Minimal access, often limited to viewing public documentation or issues.    |
+
+
+---
+
+
