@@ -29,7 +29,9 @@
 
 ---
 
-## 1. Introduction
+## 1. What are Authorization Strategy
+
+Version Control Systems (VCS) like Git, GitHub, GitLab, and Bitbucket help developers manage changes to code. A key part of keeping them secure is the authorization strategy, which controls who can access or change what. A clear strategy keeps the code safe, makes teams more accountable, and helps everyone work better together.
 
 
 ---
