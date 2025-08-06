@@ -56,6 +56,39 @@ A secure authorization strategy helps enforce the **principle of least privilege
 
 ---
 
+## 4. Different Authorization Strategies:
+
+#### 1. Personal Access Tokens (PATs)
+| Attribute           | Description                                                                                   |
+|---------------------|-----------------------------------------------------------------------------------------------|
+| **Purpose**         | Authenticate users to GitHub APIs and the command line.                                       |
+| **Scope & Permissions** | PATs can be fine-grained, granting access to specific repositories or actions (like read/write on issues, code, or workflows). |
+| **Usage**           | Replaces passwords for HTTPS Git operations and API requests.                                 |
+| **Management**      | Users generate and manage their PATs; tokens can be revoked at any time.                      |
+| **Security**        | Tokens should be kept secret and never shared or committed to code.                           |
+
+
+
+#### 2. Role-Based Access Control (RBAC)
+| Attribute          | Description                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Purpose**        | Assigns permissions to users based on their roles within an organization or repository.                                                                        |
+| **Typical Roles**  | - **Owner:** Full administrative access to the organization and all repositories.<br>- **Admin:** Manage repository settings and teams.<br>- **Maintainer:** Manage teams or repositories but with some limits.<br>- **Member:** Standard access, usually restricted to specific repositories or actions.<br>- **Outside Collaborator:** Access to specific repositories without being an org member. |
+| **Granularity**    | Roles can be set at the organization or repository level, and custom roles can be created for finer control.                                                   |
+#### 3. Organization-Based Authorization
+| Attribute              | Description                                                                                                                                                                                                          |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Purpose**            | Controls access and permissions across all repositories and resources within an organization.                                                                                                                        |
+| **Organization Settings** | - **Repository Access:** Control who can read, write, or administer each repository.<br>- **Team-Based Access:** Create teams with custom access levels to groups of repositories.<br>- **SAML SSO:** Require authentication through an identity provider. |
+| **Repository Visibility** | Private, internal, or public.                                                                                                                                                                                     |
+| **Security Policies**  | Enforce 2FA, IP allow-lists, and secret scanning.                                                                                                                             |
+| **Audit & Compliance** | Organizations can monitor activity, enforce policies, and review authorization logs.        |
+
+
+
+---
+
+
 ## 4. Access Levels in VCS
 
 Most VCS platforms provide role-based access control (RBAC) with common roles such as:
