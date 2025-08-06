@@ -17,17 +17,18 @@
 
 1. [Introduction](#1-introduction)
 2. [What is Authorization Strategy](#2-what-is-authorization-strategy) 
-3. [Why Authorization Strategy Matters ](#3-why-Authorization-Strategy-Matters)  
-4. [Access Levels in VCS](#4-Access-Levels-in-VCS)  
-5. [Audit Trails](#5-Audit-Trails)
-6. [Integration with Identity Providers](#6-Integration-with-Identity-Providers)  
-7. [Advantages](#7-Advantages)  
-8. [Disadvantages](#8-Disadvantages)  
-9. [Best Practices](#9-Best-Practices)
-10. [Conclusion](#10-Conclusion)  
-11. [FAQs](#11-FAQs)
-12. [Contact Information](#12-Contact-Information) 
-13. [References](#13-references)
+3. [Why Authorization Strategy Matters ](#3-why-Authorization-Strategy-Matters)
+4. [Different Authorization Strategies](#4-Different-Authorization-Strategies)
+5. [Access Levels in VCS](#5-Access-Levels-in-VCS)  
+6. [Audit Trails](#6-Audit-Trails)
+7. [Integration with Identity Providers](#7-Integration-with-Identity-Providers)  
+8. [Advantages](#8-Advantages)  
+9. [Disadvantages](#9-Disadvantages)  
+10. [Best Practices](#10-Best-Practices)
+11. [Conclusion](#11-Conclusion)  
+12. [FAQs](#12-FAQs)
+13. [Contact Information](#13-Contact-Information) 
+14. [References](#14-references)
 
 ---
 ## 1. Introduction
@@ -67,6 +68,7 @@ A secure authorization strategy helps enforce the **principle of least privilege
 | **Management**      | Users generate and manage their PATs; tokens can be revoked at any time.                      |
 | **Security**        | Tokens should be kept secret and never shared or committed to code.                           |
 
+<img width="1904" height="855" alt="Screenshot 2025-08-06 194314" src="https://github.com/user-attachments/assets/b328043d-0c36-4ca8-a6be-399f41b65e7c" />
 
 
 #### 2. Role-Based Access Control (RBAC)
@@ -74,7 +76,11 @@ A secure authorization strategy helps enforce the **principle of least privilege
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Purpose**        | Assigns permissions to users based on their roles within an organization or repository.                                                                        |
 | **Typical Roles**  | - **Owner:** Full administrative access to the organization and all repositories.<br>- **Admin:** Manage repository settings and teams.<br>- **Maintainer:** Manage teams or repositories but with some limits.<br>- **Member:** Standard access, usually restricted to specific repositories or actions.<br>- **Outside Collaborator:** Access to specific repositories without being an org member. |
-| **Granularity**    | Roles can be set at the organization or repository level, and custom roles can be created for finer control.                                                   |
+| **Granularity**    | Roles can be set at the organization or repository level, and custom roles can be created for finer control.     
+
+
+<img width="1901" height="827" alt="Screenshot 2025-08-06 193859" src="https://github.com/user-attachments/assets/349a9441-33dc-43e4-9830-cc8db0a5c606" />
+
 #### 3. Organization-Based Authorization
 | Attribute              | Description                                                                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -84,28 +90,36 @@ A secure authorization strategy helps enforce the **principle of least privilege
 | **Security Policies**  | Enforce 2FA, IP allow-lists, and secret scanning.                                                                                                                             |
 | **Audit & Compliance** | Organizations can monitor activity, enforce policies, and review authorization logs.        |
 
+<img width="1915" height="474" alt="Screenshot 2025-08-06 194514" src="https://github.com/user-attachments/assets/6dca9bfb-a4a4-4057-b99f-d1091cd277a6" />
 
 
 ---
 
 
-## 4. Access Levels in VCS
+## 5. Access Levels in VCS
 
-Most VCS platforms provide role-based access control (RBAC) with common roles such as:
+The official GitHub repository access levels are:
 
-| Role        | Description                                                                 |
-|-------------|-----------------------------------------------------------------------------|
-| Admin       | Full control over repositories, user management, and settings.              |
-| Maintainer  | Manage repository settings but limited in user/group-level control.         |
-| Developer   | Can push code, manage issues, merge requests, and CI/CD pipelines.          |
-| Reporter    | Read-only access to code, issues, and documentation.                        |
-| Guest       | Minimal access, often limited to viewing public documentation or issues.    |
+| Access Level | Description                                                                                      |
+|--------------|--------------------------------------------------------------------------------------------------|
+| **Read**     | Can view and clone the repository, view issues and pull requests.                                |
+| **Triage**   | Can manage issues and pull requests (label, assign, close/open) without code write access.       |
+| **Write**    | Can push to branches, manage issues and pull requests.                                           |
+| **Maintain** | Can manage repository settings (except sensitive/admin settings), perform some admin tasks.       |
+| **Admin**    | Full control over the repository, including settings, collaborators, and deletion.               |
 
+At the organization level, the roles are:
+
+| Org Role          | Description                                                               |
+|-------------------|---------------------------------------------------------------------------|
+| **Member**        | Standard organization user, access based on repo-level permissions.        |
+| **Owner**         | Full control over all organization settings and repositories.              |
+| **Billing Manager** | Can manage billing, but not code or repo settings.                      |
 
 ---
 
 
-##  5. Audit Trails
+##  6. Audit Trails
 
 Audit trails are chronological records of system or user activities that provide a detailed history of who did what, when, where, and how within a system or platform.
 
@@ -130,7 +144,7 @@ Audit logs are vital for:
 
 ---
 
-## 6. Integration with Identity Providers
+## 7. Integration with Identity Providers
 
 Modern VCS platforms support integration with Identity Providers (IdPs) to centralize and streamline access management. Common protocols and services include:
 
@@ -142,7 +156,7 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## 7. Advantages
+## 8. Advantages
 
 | Advantage                                             | Description                                                                 |
 |-------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -152,7 +166,7 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## 8. Disadvantages
+## 9. Disadvantages
 
 | Disadvantage                                             | Description                                                                 |
 |-------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -162,7 +176,7 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## 9. Best Practices
+## 10. Best Practices
 
 | Practice                          | Description                             |
 |-----------------------------------|-----------------------------------------|
@@ -175,14 +189,14 @@ Modern VCS platforms support integration with Identity Providers (IdPs) to centr
 
 ---
 
-## 10. Conclusion
+## 11. Conclusion
 
 A well-designed **Authn & Authz** strategy in VCS ensures secure, auditable, and efficient collaboration.  
 We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audit logging for all production-level repositories.
 
 ---
 
-## 11. FAQs
+## 12. FAQs
 
 **Q1. What’s the difference between authentication and authorization?**  
 Authentication confirms the user's identity. Authorization defines what that user can access or do.
@@ -195,7 +209,7 @@ Users may be temporarily blocked from accessing the VCS. Plan for backups or bre
 
 ---
 
-## 12. Contact Information
+## 13. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -204,7 +218,7 @@ Users may be temporarily blocked from accessing the VCS. Plan for backups or bre
 
 ---
 
-## 13. References
+## 14. References
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
