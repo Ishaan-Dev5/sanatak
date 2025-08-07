@@ -17,19 +17,17 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
-2. [](#2) 
-3. [s ](#)
-4. [Different Authorization Strategies](#)
-5. [Access Levels in VCS](#)  
-6. [Audit Trails](#)
-7. [Integration with Identity Providers](#)  
-8. [Advantages](#)  
-9. [Disadvantages](#)  
-10. [Best Practices](#)
-11. [Conclusion)  
-12. [FAQs](#1s)
-13. [Contact Information](#) 
-14. [References](#)
+2. [Purpose](#2-Purpose) 
+3. [Pre-requisites ](#3-Pre-requisites)
+4. [ System Requirements](#4-System-Requirements)
+5. [Dependencies](#5-Dependencies)  
+6. [Ports](#6-Ports)
+7. [Architecture](#7-Architecture)  
+8. [API Setup and Execution](#8-API-Setup-and-Execution)  
+9. [Troubleshooting](#9-Troubleshooting)  
+10. [Conclusion](10-conclusion)  
+11. [Contact Information](#11-contact-information) 
+12. [References](#12-refrences)
 
 ---
 
@@ -122,6 +120,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 | Attendance API | [Configure Attendance API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/12db0585666ba06c440dd3f49d5346fa6c342599/OT-Microservices/Application/Attendance-API/POC/README.md) |
 | Salary API     | [Configure Salary API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-74-sharik/OT-Microservices/Applications/Salary-API/POC/README.md)    |
 | Frontend API   | [Configure Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-76-ishaan/OT-Microservices/Applications/Frontend-API/POC/README.md)               |
+| Notification Worker | [Configure Notification Worker](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-66-sunny/OT-Microservices/Application/Notification/POC/README.md) |
 
 
 ---
