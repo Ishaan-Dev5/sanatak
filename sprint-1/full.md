@@ -118,10 +118,10 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 | API Name       | Link                                                                                                                                                                   |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Employee API   | [Configure Employee API](https://github.com/Snaatak-Cloudops-Crew/documentation/blob/SCRUM-67-Sneha-Joshi/OT-Microservices/Applications/Employee-API/POC/README.md)            |
-| Attendance API | [Configure Attendance API](https://github.com/Snaatak-Cloudops-Crew/documentation/blob/scrum-7-aryan-mishra/OT-Microservices/Applications/Attendance-Api/Introduction/README.md) |
-| Salary API     | [Configure Salary API](https://github.com/Snaatak-Cloudops-Crew/documentation/tree/e64036f22062fc2620205cbcfbba243c15db701f/OT-Microservices/Applications/Salary-API/POC)    |
-| Frontend API   | [Configure Frontend API](https://github.com/Snaatak-Cloudops-Crew/documentation/blob/SCRUM-71-Ashutosh/OT-Microservices/Applications/frontend-api/POC/README.md)               |
+| Employee API   | [Configure Employee API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-72-sachin/OT-Microservices/Applications/Employee-api/POC/README.md)            |
+| Attendance API | [Configure Attendance API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/12db0585666ba06c440dd3f49d5346fa6c342599/OT-Microservices/Application/Attendance-API/POC/README.md) |
+| Salary API     | [Configure Salary API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-74-sharik/OT-Microservices/Applications/Salary-API/POC/README.md)    |
+| Frontend API   | [Configure Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-76-ishaan/OT-Microservices/Applications/Frontend-API/POC/README.md)               |
 
 
 
