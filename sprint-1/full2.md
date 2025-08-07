@@ -31,7 +31,7 @@
 10. [FAQs](#10-faqs)
 11. [Conclusion](11-conclusion)  
 12. [Contact Information](#12-contact-information) 
-13. [References](#13-refrences)
+13. [References](#13-References)
 
 ---
 
