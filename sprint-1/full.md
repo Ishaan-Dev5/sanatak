@@ -68,23 +68,26 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 ---
 
 ## Dependencies
-### Build time Dependency
-| Name           | Version | Description        |
-|----------------|---------|--------------------|
-| `<application>` | `<version>` | `<Description>` |
-| `<application>` | `<version>` | `<Description>` |
+### A. **Build-Time Tools**
 
-###  Run time Dependency
-| Name           | Version    | Description        |
-| -------------- | ---------- | ------------------ |
-| `<application>` | `<version>`| `<Description>`   |
-| `<application>` | `<version>`| `<Description>`   |
+| **Tool**  | **Version** | **Used For**                            |
+| --------- | ----------- | --------------------------------------- |
+| Python    | 3.11+       | `attendance-api`, `notification-worker` |
+| Go        | 1.20+       | `employee-api`                          |
+| Java      | 17+         | `salary-api`                            |
+| pip / npm | Latest      | Python & React dependencies             |
 
-### Other Dependency
-| Name           | Version    | Description        |
-| -------------- | ---------- | ------------------ |
-| `<application>` | `<version>`| `<Description>`   |
-| `<application>` | `<version>`| `<Description>`   |
+
+
+### B. **Runtime Dependencies**
+
+| **Service**           | **Libraries/Tools Used**       |
+| --------------------- | ------------------------------ |
+| `employee-api`        | Go Redis client, Scylla driver |
+| `attendance-api`      | Flask, psycopg2, Redis         |
+| `salary-api`          | Spring Boot, JPA, MySQL/ES     |
+| `notification-worker` | Redis Queue, smtplib           |
+| `frontend`            | React, Axios, Traefik          |
 
 
 
