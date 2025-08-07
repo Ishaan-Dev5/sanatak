@@ -48,10 +48,10 @@
 
 The Full Stack API application has dependencies on other REST APIs from **[OT-Microservices](https://github.com/OT-MICROSERVICES)**. To run the application successfully, ensure the following APIs are configured and running:
 
-* **[Employee API](https://github.com/Snaatak-Cloudops-Crew/documentation/blob/SCRUM-67-Sneha-Joshi/OT-Microservices/Applications/Employee-API/POC/README.md)**
-* **[Attendance API](https://github.com/Snaatak-Cloudops-Crew/documentation/blob/scrum-7-aryan-mishra/OT-Microservices/Applications/Attendance-Api/Introduction/README.md)**
-* **[Salary API](https://github.com/Snaatak-Cloudops-Crew/documentation/tree/e64036f22062fc2620205cbcfbba243c15db701f/OT-Microservices/Applications/Salary-API/POC)**
-* **[Frontend API](https://github.com/Snaatak-Cloudops-Crew/documentation/blob/SCRUM-71-Ashutosh/OT-Microservices/Applications/frontend-api/POC/README.md)**
+* **[Employee API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-73-kawalpreet/OT-Microservices/Applications/Employee-API/Introduction/README.md)**
+* **[Attendance API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-71-mansoor/OT-Microservices/Applications/Attendance-API/Introduction/README.md)**
+* **[Salary API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-75-mansoor/OT-Microservices/Applications/Salary-API/Introduction/README.md)**
+* **[Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-77-sunny/OT-Microservices/Frontend-api/Introduction/README.md)**
 
 ---
 
