@@ -24,10 +24,11 @@
 6. [Ports](#6-Ports)
 7. [Architecture](#7-Architecture)  
 8. [API Setup and Execution](#8-API-Setup-and-Execution)  
-9. [Troubleshooting](#9-Troubleshooting)  
-10. [Conclusion](10-conclusion)  
-11. [Contact Information](#11-contact-information) 
-12. [References](#12-refrences)
+9. [Troubleshooting](#9-Troubleshooting)
+10. [FAQs](#10-faqs)
+11. [Conclusion](11-conclusion)  
+12. [Contact Information](#12-contact-information) 
+13. [References](#13-refrences)
 
 ---
 
@@ -137,7 +138,20 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-## 10. Conclusion
+## 10. FAQs
+
+#### 1. Is this application free?
+Yes, OT-Microservices is open-source.
+
+#### 2. Can I deploy this application on all Cloud platforms?
+Yes, it is cloud-agnostic and can run anywhere Docker is supported.
+
+#### 3. Do you offer an enterprise version of this application?
+No, only the open-source version is available
+
+---
+
+## 11. Conclusion
 
 This full-stack enables robust attendance tracking, salary computation, and employee management through modular microservices. Its scalable design allows independent development and deployment of services while maintaining performance and observability. Redis and databases serve as the backbone for service communication and data persistence.
 
@@ -145,7 +159,7 @@ This full-stack enables robust attendance tracking, salary computation, and empl
 ---
 
 
-## 11. Contact Information
+## 12. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -154,7 +168,7 @@ This full-stack enables robust attendance tracking, salary computation, and empl
 
 ---
 
-## 12. References
+## 13. References
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
