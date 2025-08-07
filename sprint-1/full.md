@@ -35,7 +35,7 @@
 
 # Introduction
 
-This documentation walks you through the end-to-end setup of the Full Stack API, including installation of required tools, configuration, and deployment. It covers backend technologies (Java, Python, Golang), databases (ScyllaDB, PostgreSQL), cache (Redis), and frontend (ReactJS, Swagger UI for API testing). You will also learn how to connect your frontend (this repo) to multiple backend APIs.
+
 
 ---
 
