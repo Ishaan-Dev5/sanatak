@@ -1,7 +1,8 @@
-<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/518f6847-6dca-4ffc-b8b7-6735b62adb64" />
+<img width="800" height="701" alt="image" src="https://github.com/user-attachments/assets/f32ddb1e-44a5-4182-b335-13c31d0fd2b3" />
 
 
-# VCS Authorization 
+
+# Full Stack Document 
 
 ---
 
@@ -16,19 +17,19 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
-2. [What is Authorization Strategy](#2-what-is-authorization-strategy) 
-3. [Why Authorization Strategy Matters ](#3-why-Authorization-Strategy-Matters)
-4. [Different Authorization Strategies](#4-Different-Authorization-Strategies)
-5. [Access Levels in VCS](#5-Access-Levels-in-VCS)  
-6. [Audit Trails](#6-Audit-Trails)
-7. [Integration with Identity Providers](#7-Integration-with-Identity-Providers)  
-8. [Advantages](#8-Advantages)  
-9. [Disadvantages](#9-Disadvantages)  
-10. [Best Practices](#10-Best-Practices)
-11. [Conclusion](#11-Conclusion)  
-12. [FAQs](#12-FAQs)
-13. [Contact Information](#13-Contact-Information) 
-14. [References](#14-references)
+2. [](#2) 
+3. [s ](#)
+4. [Different Authorization Strategies](#)
+5. [Access Levels in VCS](#)  
+6. [Audit Trails](#)
+7. [Integration with Identity Providers](#)  
+8. [Advantages](#)  
+9. [Disadvantages](#)  
+10. [Best Practices](#)
+11. [Conclusion)  
+12. [FAQs](#1s)
+13. [Contact Information](#) 
+14. [References](#)
 
 ---
 
