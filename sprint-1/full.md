@@ -112,6 +112,38 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
+```mermaid
+flowchart TD
+    subgraph Frontend
+        A[ReactJS Web UI]
+    end
+
+    subgraph Backend
+        B[Employee API - Go, ScyllaDB, Redis]
+        C[Attendance API - Python, PostgreSQL, Redis]
+        D[Salary API - Java, ScyllaDB, Redis]
+    end
+
+    subgraph Data
+        E[ScyllaDB]
+        F[PostgreSQL]
+        G[Redis]
+    end
+
+    A -->|REST| B
+    A -->|REST| C
+    A -->|REST| D
+
+    B -->|DB| E
+    D -->|DB| E
+    C -->|DB| F
+
+    B -->|Cache| G
+    C -->|Cache| G
+
+
+```
+
 
 # 8. API Setup and Execution
 
