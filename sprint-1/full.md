@@ -67,12 +67,28 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-# Architecture
+## Dependencies
+### Build time Dependency
+| Name           | Version | Description        |
+|----------------|---------|--------------------|
+| `<application>` | `<version>` | `<Description>` |
+| `<application>` | `<version>` | `<Description>` |
 
-<img width="2912" height="1156" alt="frontend (1)" src="https://github.com/user-attachments/assets/357cc233-d73c-4615-b625-e35342c782e9" />
+###  Run time Dependency
+| Name           | Version    | Description        |
+| -------------- | ---------- | ------------------ |
+| `<application>` | `<version>`| `<Description>`   |
+| `<application>` | `<version>`| `<Description>`   |
+
+### Other Dependency
+| Name           | Version    | Description        |
+| -------------- | ---------- | ------------------ |
+| `<application>` | `<version>`| `<Description>`   |
+| `<application>` | `<version>`| `<Description>`   |
+
+
 
 ---
-
 # Ports
 
 | Port  | Protocol/Service  | Description                                         |
@@ -85,6 +101,13 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 |||
 
 ---
+
+# Architecture
+
+<img width="2912" height="1156" alt="frontend (1)" src="https://github.com/user-attachments/assets/357cc233-d73c-4615-b625-e35342c782e9" />
+
+---
+
 
 # API Setup and Execution
 
