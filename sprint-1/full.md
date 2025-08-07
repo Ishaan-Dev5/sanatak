@@ -77,12 +77,12 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 | Port  | Protocol/Service  | Description                                         |
 |-------|-------------------|-----------------------------------------------------|
-| 22    | SSH               | Secure shell access to the server                   |
 | 8080  | HTTP (Swagger UI) | Access Swagger UI for API documentation             |
 | 9042  | ScyllaDB          | Default port for ScyllaDB NoSQL database            |
 | 6379  | Redis             | Default port for Redis cache                        |
 | 80    | HTTP              | Standard web traffic                                |
 | 443   | HTTPS             | Secure web traffic                                  |
+|||
 
 ---
 
