@@ -124,26 +124,27 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 | Frontend API   | [Configure Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-76-ishaan/OT-Microservices/Applications/Frontend-API/POC/README.md)               |
 
 
+---
 
-## 11. Conclusion
+## 8. Troubleshooting
 
-A well-designed **Authn & Authz** strategy in VCS ensures secure, auditable, and efficient collaboration.  
-We recommend adopting **Role-Based Access Control (RBAC)** and **SSO** with audit logging for all production-level repositories.
+| **Issue**              | **Solution**                                              |
+| ---------------------- | --------------------------------------------------------- |
+| Redis not connecting   | Ensure Redis is running and accessible on port 6379       |
+| DB connection fails    | Validate `.env` credentials and check firewall            |
+| API not responding     | Ensure all services are running and healthy               |
+| SMTP errors            | Check email credentials, SMTP port, and service status    |
+| CORS / frontend issues | Validate proxy setup via Traefik and update CORS policies |
 
 ---
 
-## 12. FAQs
+## 9. Conclusion
 
-**Q1. What’s the difference between authentication and authorization?**  
-Authentication confirms the user's identity. Authorization defines what that user can access or do.
+This full-stack enables robust attendance tracking, salary computation, and employee management through modular microservices. Its scalable design allows independent development and deployment of services while maintaining performance and observability. Redis and databases serve as the backbone for service communication and data persistence.
 
-**Q2. Can I use GitHub without an IdP?**  
-Yes, but integrating with an Identity Provider improves security and centralized control.
-
-**Q3. What happens if an SSO/IdP service is down?**  
-Users may be temporarily blocked from accessing the VCS. Plan for backups or break-glass accounts.
 
 ---
+
 
 ## 13. Contact Information
 
@@ -158,6 +159,6 @@ Users may be temporarily blocked from accessing the VCS. Plan for backups or bre
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
-| Branch Access Policies |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-112-ishaan/VCS/VCS-Policies/Branch-Access-Policies/README.md) |
-| Authentication Documentation  |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-102-mansoor/VCS/Security-Access/Authentication-Docs/README.md)  |
+|  | |
+|   | |
 
