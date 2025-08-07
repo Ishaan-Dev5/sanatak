@@ -36,13 +36,13 @@
 ---
 
 # 1. Introduction
-
+This document provides a comprehensive overview of the Full Stack Microservices Architecture built under the OT-Microservices ecosystem. 
 
 
 ---
 
 # 2. Purpose
-
+This application streamlines employee operations by managing employee data, tracking attendance, and processing salaries using a modular microservices architecture. It uses Redis for caching, PostgreSQL and ScyllaDB for storage, and a ReactJS frontend for user interaction — enabling scalable, efficient, and maintainable service delivery.
 
 ---
 
@@ -276,5 +276,9 @@ This full-stack enables robust attendance tracking, salary computation, and empl
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
-|  | |
-|   | |
+| Full Stack POC |[Link]() |
+| OT-Microservices README | [Link](https://github.com/opstree/OT-Microservices) |
+| Frontend documentation  | [Link](http://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-77-sunny/OT-Microservices/Frontend-api/Introduction/README.md) |
+| Employee API documentation | [Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-73-kawalpreet/OT-Microservices/Applications/Employee-API/Introduction/README.md)                                     |
+| Attendance API documentation | [Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-71-mansoor/OT-Microservices/Applications/Attendance-API/Introduction/README.md)                                  |
+| Salary API documentation   | [Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-75-mansoor/OT-Microservices/Applications/Salary-API/Introduction/README.md)                                  |
