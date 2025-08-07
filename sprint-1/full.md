@@ -44,7 +44,7 @@
 
 ---
 
-## Pre-requisites
+# 3. Pre-requisites
 
 The Full Stack API application has dependencies on other REST APIs from **[OT-Microservices](https://github.com/OT-MICROSERVICES)**. To run the application successfully, ensure the following APIs are configured and running:
 
@@ -55,7 +55,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-# System Requirements
+# 4. System Requirements
 
 | Requirement   | Details                      |
 |---------------|-----------------------------|
@@ -67,7 +67,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-## Dependencies
+# 5. Dependencies
 ### A. **Build-Time Tools**
 
 | **Tool**  | **Version** | **Used For**                            |
@@ -92,7 +92,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 
 ---
-# Ports
+# 6. Ports
 
 | Port  | Protocol/Service  | Description                                         |
 |-------|-------------------|-----------------------------------------------------|
@@ -105,14 +105,14 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-# Architecture
+# 7. Architecture
 
 <img width="2912" height="1156" alt="frontend (1)" src="https://github.com/user-attachments/assets/357cc233-d73c-4615-b625-e35342c782e9" />
 
 ---
 
 
-# API Setup and Execution
+# 8. API Setup and Execution
 
 ## Setup Backend and Frontend API
 
@@ -126,7 +126,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-## 8. Troubleshooting
+## 9. Troubleshooting
 
 | **Issue**              | **Solution**                                              |
 | ---------------------- | --------------------------------------------------------- |
@@ -138,7 +138,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
 This full-stack enables robust attendance tracking, salary computation, and employee management through modular microservices. Its scalable design allows independent development and deployment of services while maintaining performance and observability. Redis and databases serve as the backbone for service communication and data persistence.
 
@@ -146,7 +146,7 @@ This full-stack enables robust attendance tracking, salary computation, and empl
 ---
 
 
-## 13. Contact Information
+## 11. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -155,7 +155,7 @@ This full-stack enables robust attendance tracking, salary computation, and empl
 
 ---
 
-## 14. References
+## 12. References
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
