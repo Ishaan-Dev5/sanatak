@@ -1,3 +1,5 @@
+
+
 <img width="800" height="701" alt="image" src="https://github.com/user-attachments/assets/f32ddb1e-44a5-4182-b335-13c31d0fd2b3" />
 
 
@@ -12,7 +14,7 @@
 
 | **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
-| Ishaan    | 5-08-25    | v1.0  |  Ishaan  |5-08-25   | Internal    | Rohit Chopra    | 
+| Ishaan    | 6-08-25    | v1.0  |  Ishaan  |8-08-25   | Internal    | Rohit Chopra    | 
 
 ---
 
@@ -28,20 +30,23 @@
 8. [API Setup and Execution](#8-API-Setup-and-Execution)  
 9. [Troubleshooting](#9-Troubleshooting)
 10. [FAQs](#10-faqs)
-11. [Conclusion](11-conclusion)  
+11. [Conclusion](#11-conclusion)  
 12. [Contact Information](#12-contact-information) 
-13. [References](#13-refrences)
+13. [References](#13-References)
 
 ---
 
 # 1. Introduction
-
+This document provides a comprehensive overview of the Full Stack Microservices Architecture built under the OT-Microservices ecosystem. 
 
 
 ---
 
 # 2. Purpose
 
+A full-stack application is a unified software solution that includes both the frontend (user interface and interactions) and the backend (server-side logic, databases, and processing). It provides an end-to-end system capable of handling all aspects of functionality, from user experience to data management.
+
+This application streamlines employee operations by managing employee data, tracking attendance, and processing salaries using a modular microservices architecture. It uses Redis for caching, PostgreSQL and ScyllaDB for storage, and a ReactJS frontend for user interaction — enabling scalable, efficient, and maintainable service delivery.
 
 ---
 
@@ -53,6 +58,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 * **[Attendance API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-71-mansoor/OT-Microservices/Applications/Attendance-API/Introduction/README.md)**
 * **[Salary API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-75-mansoor/OT-Microservices/Applications/Salary-API/Introduction/README.md)**
 * **[Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-77-sunny/OT-Microservices/Frontend-api/Introduction/README.md)**
+* **[Notification Worker](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-67-tina/OT-Microservices/Applications/Notification/Introduction/README.md)**
 
 ---
 
@@ -60,7 +66,7 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 | Requirement   | Details                      |
 |---------------|-----------------------------|
-| **OS**        | Ubuntu or other Linux-based OS |
+| **OS**        | Ubuntu 22.04 |
 | **RAM**       | 4 GB minimum                |
 | **Disk Space**| 40 GB                       |
 | **Processor** | Dual-core recommended       |
@@ -73,10 +79,10 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 | **Tool**  | **Version** | **Used For**                            |
 | --------- | ----------- | --------------------------------------- |
-| Python    | 3.11+       | `attendance-api`, `notification-worker` |
-| Go        | 1.20+       | `employee-api`                          |
+| Python    | 3.10.12      | `attendance-api`, `notification-worker` |
+| Go        | 1.21.6+       | `employee-api`                          |
 | Java      | 17+         | `salary-api`                            |
-| pip / npm | Latest      | Python & React dependencies             |
+|  npm | 8+      |  `React dependencies`             |
 
 
 
@@ -84,78 +90,52 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 | **Service**           | **Libraries/Tools Used**       |
 | --------------------- | ------------------------------ |
-| `employee-api`        | Go Redis client, Scylla driver |
-| `attendance-api`      | Flask, psycopg2, Redis         |
-| `salary-api`          | Spring Boot, JPA, MySQL/ES     |
-| `notification-worker` | Redis Queue, smtplib           |
-| `frontend`            | React, Axios, Traefik          |
+| `employee-api`        | Redis, Scylla db |
+| `attendance-api`      | Redis , Liquibase        |
+| `salary-api`          |Scylladb, Redis    |
+| `notification-worker` | Elastic search, smtplib           |
+| `frontend`            | React         |
 
 
 
 ---
 # 6. Ports
 
-| Port  | Protocol/Service  | Description                                         |
-|-------|-------------------|-----------------------------------------------------|
-| 8080  | HTTP (Swagger UI) | Access Swagger UI for API documentation             |
-| 9042  | ScyllaDB          | Default port for ScyllaDB NoSQL database            |
-| 6379  | Redis             | Default port for Redis cache                        |
-| 80    | HTTP              | Standard web traffic                                |
-| 443   | HTTPS             | Secure web traffic                                  |
-|||
-
+| Port  |   Description                                         |
+|-------|-----------------------------------------------------|
+| 8080 |   Used By Employee API     |
+| 8081 | Used by Salary API                        |
+|   5000  |   Used By Attendance API                              |
+|   5432 |    Used By PostgreSQL                                |
+|6379    | Used by Redis         |
+|3000| Used by Frontend |
+| 9042 |    Used By ScyllaDb      |
 ---
 
 # 7. Architecture
 
-<img width="2912" height="1156" alt="frontend (1)" src="https://github.com/user-attachments/assets/357cc233-d73c-4615-b625-e35342c782e9" />
+<img width="1375" height="780" alt="image" src="https://github.com/user-attachments/assets/53a1bd8c-3e0a-49d3-b32c-1775134c776b" />
+
+
+
 
 ---
 
-```mermaid
-flowchart TD
-    subgraph Frontend
-        A[ReactJS Web UI]
-    end
 
-    subgraph Backend
-        B[Employee API - Go, ScyllaDB, Redis]
-        C[Attendance API - Python, PostgreSQL, Redis]
-        D[Salary API - Java, ScyllaDB, Redis]
-    end
-
-    subgraph Data
-        E[ScyllaDB]
-        F[PostgreSQL]
-        G[Redis]
-    end
-
-    A -->|REST| B
-    A -->|REST| C
-    A -->|REST| D
-
-    B -->|DB| E
-    D -->|DB| E
-    C -->|DB| F
-
-    B -->|Cache| G
-    C -->|Cache| G
-
-
-```
 
 
 # 8. API Setup and Execution
 
 ## Setup Backend and Frontend API
 
-| API Name       | Link                                                                                                                                                                   |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Employee API   | [Configure Employee API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-72-sachin/OT-Microservices/Applications/Employee-api/POC/README.md)            |
-| Attendance API | [Configure Attendance API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/12db0585666ba06c440dd3f49d5346fa6c342599/OT-Microservices/Application/Attendance-API/POC/README.md) |
-| Salary API     | [Configure Salary API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-74-sharik/OT-Microservices/Applications/Salary-API/POC/README.md)    |
-| Frontend API   | [Configure Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-76-ishaan/OT-Microservices/Applications/Frontend-API/POC/README.md)               |
-| Notification Worker | [Configure Notification Worker](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-66-sunny/OT-Microservices/Application/Notification/POC/README.md) |
+| Component             | Setup Link                                                                                                                                           | Description                                      |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| Employee API          | [Configure Employee API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-72-sachin/OT-Microservices/Applications/Employee-api/POC/README.md)         |The Employee API is a  Golang microservice that manages employee data using ScyllaDB  |
+| Attendance API        | [Configure Attendance API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/12db0585666ba06c440dd3f49d5346fa6c342599/OT-Microservices/Application/Attendance-API/POC/README.md) | The Attendance API is a Python microservice that tracks employee attendance                     |
+| Salary API            | [Configure Salary API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-74-sharik/OT-Microservices/Applications/Salary-API/POC/README.md)             | The Salary API is a Java microservice that manages salary processing and records using ScyllaDB for storage |
+| Frontend              | [Configure Frontend API](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-76-ishaan/OT-Microservices/Applications/Frontend-API/POC/README.md)         | The OT-Microservices Frontend is a ReactJS app that provides a user interface for managing employee, attendance, and salary       |
+| Notification Worker   | [Configure Notification Worker](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-66-sunny/OT-Microservices/Application/Notification/POC/README.md)     | The Notification Worker is a Python service that sends email alerts via SMTP to automate and streamline notification delivery             |
+
 
 
 ---
@@ -206,6 +186,8 @@ This full-stack enables robust attendance tracking, salary computation, and empl
 
 | Resource                         |  Link                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------|
-|  | |
-|   | |
-
+| OT-Microservices README | [Link](https://github.com/opstree/OT-Microservices) |
+| Frontend documentation  | [Link](http://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-77-sunny/OT-Microservices/Frontend-api/Introduction/README.md) |
+| Employee API documentation | [Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-73-kawalpreet/OT-Microservices/Applications/Employee-API/Introduction/README.md)                                     |
+| Attendance API documentation | [Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-71-mansoor/OT-Microservices/Applications/Attendance-API/Introduction/README.md)                                  |
+| Salary API documentation   | [Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-75-mansoor/OT-Microservices/Applications/Salary-API/Introduction/README.md)                                  |
