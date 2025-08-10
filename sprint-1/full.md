@@ -114,7 +114,8 @@ The Full Stack API application has dependencies on other REST APIs from **[OT-Mi
 
 # 7. Architecture
 
-<img width="1375" height="780" alt="image" src="https://github.com/user-attachments/assets/53a1bd8c-3e0a-49d3-b32c-1775134c776b" />
+<img width="1375" height="780" alt="Screenshot 2025-08-11 004526" src="https://github.com/user-attachments/assets/d3b23f4a-0bdb-4ab0-8965-5a0624bc2270" />
+
 
 
 
