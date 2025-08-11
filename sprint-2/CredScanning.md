@@ -1,12 +1,12 @@
 
 
 
-<img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS Logo" width="150"/>
+<img width="300" height="400" alt="Screenshot 2025-08-11 173720" src="https://github.com/user-attachments/assets/e6642c3d-7931-4014-9baa-449f320e8cc7" />
 
 
 
 
-# AWS Cost Allocation Tags Documentation
+# Cred Scanning
 
 ---
 
@@ -14,7 +14,7 @@
 
 | **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
-| Ishaan    | 28-07-25    | v1.0  |  Ishaan  |28-07-25   | Internal    | Rohit Chopra    | 
+| Ishaan    | 11-08-25    | v1.0  |  Ishaan  |12-08-25   | Internal    | Rohit Chopra    | 
 
 ---
 
@@ -35,22 +35,18 @@
 
 ## 1. Introduction
 
-This document provides a structured overview of AWS Cost Allocation Tags.Cost Allocation Tags allow organizations to improve cost transparency.
 
 ---
 
-## 2. What are AWS Cost Allocation Tags?
+## 2. What is  Credential Scanning?
 
-AWS Cost Allocation Tags help you track and manage costs in a granular way. By attaching tags to AWS resources, tags enable accurate cost tracking by project, department, environment, and more. They are essential for cost transparency, chargebacks, and budgeting.
-Cost Allocation Tags are **key-value pairs** assigned to AWS resources. AWS uses these tags to **organize usage costs** across different dimensions (e.g.,environments).
 
-There are **two types**:
-- **AWS-generated tags**: Automatically created by AWS (e.g., `aws:createdBy`).
-- **User-defined tags**: Created and managed by users (e.g., `Project: ML-App`).
+Credential scanning in continuous integration (CI) involves automatically inspecting code and configuration files for hardcoded secrets, such as passwords, API keys, and other sensitive information, to prevent them from being exposed in production environments
 
 ---
 
-## 3. Why Use Cost Allocation Tags?
+## 3. Why need Credential Scanning?
+
 
 | Purpose                      | Description                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------|
