@@ -126,7 +126,17 @@ flowchart TD
 
 ## 8. Conclusion
 
-Cost Allocation Tags are **vital tools** for managing and optimizing your AWS costs. When implemented correctly, they enable **full visibility, accountability, and control** over cloud spending. Integrating them into your infrastructure strategy ensures a cost-effective and transparent AWS environment.
+Credential scanning is an essential practice to safeguard applications and infrastructure from accidental secret leaks.
+We chose Gitleaks as our primary credential scanning tool because it is lightweight, fast, easy to integrate with Jenkins, customizable with regex patterns, capable of scanning Git history, and actively maintained as an open-source project, ensuring early detection of secrets to strengthen our security posture.
+
+
+
+
+
+
+
+
+
 
 
 
