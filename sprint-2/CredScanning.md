@@ -47,28 +47,42 @@ Credential scanning in continuous integration (CI) involves automatically inspec
 
 ## 3. Why need Credential Scanning?
 
-
-| Purpose                      | Description                                                                 |
-|-----------------------------|-----------------------------------------------------------------------------|
-| Cost Tracking               | Monitor resource spend across projects, teams, or environments              |
-| Budget Management           | Allocate costs to specific business units                                  |
-| Chargebacks/Showbacks       | Enable internal cost distribution                                          |
-| Governance & Compliance     | Ensure resources are tagged properly for reporting                   |
-| Forecasting                 | Predict costs based on historical usage by tag                             |
+| Benefit | Description |
+|---------|-------------|
+| **Prevent Data Breaches** | Secrets like API keys, database passwords, and access tokens can grant attackers unauthorized access if exposed. Credential scanning identifies and removes them before exploitation. |
+| **Reduces the Attack Surface** | Minimizing exposed secrets lowers the potential entry points for malicious actors. |
+| **Early Detection** | Stops secrets from leaving the developer's local environment. |
+| **Automates Security Checks** | Integrates into CI pipelines to ensure consistent and regular scanning for vulnerabilities. |
+| **Improves Security Posture** | Proactively addresses secret exposures to build secure applications and infrastructure. |
+| **Compliance** | Supports adherence to security standards like GDPR, HIPAA, and PCI-DSS. |
 
 ---
 
 ## 4. Workflow Diagram
 
 ```mermaid
-graph TD
-    A[Tag Resources] --> B[Activate Cost Allocation Tags]
-    B --> C[AWS Collects Usage Data]
-    C --> D[Tags Appear in Cost Explorer & CUR]
-    D --> E[Analyze Costs by Tag]
-    E --> F[Generate Reports / Apply Budgets]
-```
+flowchart TD
+    A[Code Commit] --> B[Trigger CI/CD Pipeline]
+    B --> C[Build Stage<br>Compile & Prepare Application]
+    C --> D[Credential Scanning<br>Tools: GitGuardian, Trivy, etc.]
+    D --> E[Result Analysis<br>Severity Categorization]
+    
+    E --> F1{Critical Secrets Found?}
+    
+    F1 -->|Yes| G1[Fail Build<br>Stop Pipeline]
+    F1 -->|No| F2{Low/Medium Severity?}
+    
+    F2 -->|Yes| G2[Trigger Alert<br>Email/Notification]
+    G2 --> H[Developer Remediation<br>Rotate & Update Secrets]
+    H --> I[Recommit Code]
+    I --> B
+    
+    F2 -->|No| J[Proceed to Testing & Deployment]
 
+    G1 --> K[Developer Remediation<br>Rotate & Update Secrets]
+    K --> I
+
+```
 ---
 
 ## 5. Advantages
