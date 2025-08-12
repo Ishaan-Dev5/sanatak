@@ -46,12 +46,14 @@ The goal is to automatically scan source code for sensitive data (API keys, toke
 
 ## 3. System Requirements
 
-| Hardware/Software | Minimum Recommendation  |
-|-------------------|------------------------|
-| Processor         | 1 CPU (t2.micro EC2)   |
-| RAM               | 1 GiB                  |
-| Disk              | 8 GB                   |
-| OS                | Ubuntu 22.04 LTS       |
+| **Hardware/Software** | **Minimum Requirement** |
+| --------------------- | ----------------------- |
+| Processor             | 1 CPU (t2.micro EC2)    |
+| RAM                   | 1 GiB                   |
+| Disk                  | 8 GB                    |
+| OS                    | Ubuntu 22.04 LTS        |
+| Jenkins Version       | 2.375+                  |
+| Git                   | 2.20+                   |
 
 ---
 
