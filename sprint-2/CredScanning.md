@@ -84,16 +84,28 @@ flowchart TD
 
 ```
 ---
+## 5. Different Tools
+
+| Tool | Description | Key Features | Integrations | Pricing |
+|------|-------------|--------------|--------------|---------|
+| **TruffleHog** | Scans for high entropy strings and secrets in code, Git history, cloud storage, and Docker images. | Regex + entropy detection, deep history scan, multi-source scanning | GitHub, GitLab, Bitbucket, S3, local FS, Docker | Open-source |
+| **Gitleaks** | Lightweight secret scanner for Git repos. | Fast, customizable regex rules, history scanning | GitHub Actions, GitLab CI, Jenkins | Open-source |
+| **GitHub Secret Scanning** | Native GitHub feature for private/public repos. | Real-time scanning, partner patterns | GitHub only | Built-in for Enterprise |
+| **Detect Secrets** | Yelp’s Python-based secret scanner. | Baseline file, plugin-based detection | CI/CD pipelines, pre-commit | Open-source |
+| **GitGuardian** | SaaS secret detection & monitoring. | Dashboard, real-time alerts, remediation help | GitHub, GitLab, Bitbucket | Paid with free tier |
+
+
+---
 
 ## 5. Advantages
 
-| Advantage                   | Explanation                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| Fine-grained Cost Visibility | Helps breakdown costs by project, team, owner                             |
-| Scalability                | Works across all AWS accounts in Organizations                             |
-| Automation Support         | Easily integrated with tools like AWS Budgets, Cost Explorer, and Lambda   |
-| No Additional Cost         | Tagging and cost allocation is free to use                                 |
-
+| Advantage                    | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| Early Detection             | Catches exposed secrets before they reach production or public repos.       |
+| Automated Enforcement       | Scans every commit/build automatically—no manual effort needed.             |
+| Developer Feedback Loop     | Alerts developers instantly during CI runs for quick remediation.           |
+| Reduced Breach Risk         | Prevents leaks of sensitive data like API keys, tokens, and passwords.      |
+| Easy CI Integration         | Works smoothly with CI tools like GitHub Actions, GitLab CI, and Jenkins.   |
 ---
 
 ## 6.  Best Practices
