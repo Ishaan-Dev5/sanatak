@@ -36,6 +36,7 @@
 
 ## 1. Introduction
 
+This document explains credential scanning — the process of detecting and preventing hardcoded secrets like API keys, passwords, and tokens in codebases. It covers how credential scanning works, why it’s important for security, and the tools and best practices.
 
 ---
 
@@ -134,20 +135,22 @@ Cost Allocation Tags are **vital tools** for managing and optimizing your AWS co
 
 ## 9. Frequently Asked Questions (FAQs)
 
-### 1. **Do I need to pay to use Cost Allocation Tags?**
-No, AWS does not charge for tagging or viewing cost allocation tags.
 
-### 2. **Are tags automatically applied to all resources?**
-No, you must apply tags manually or automate them using tools like AWS Lambda, IaC, or SCPs.
 
-### 3. **How long does it take for tags to show in Cost Explorer?**
-Tags typically appear in Cost Explorer within 24 hours after being activated.
+### 1. **Do I need to pay for credential scanning tools?**
+Many popular tools like **TruffleHog**, **Gitleaks**, and **Detect Secrets** are open-source and free. Some services like **GitGuardian** offer paid plans with additional features.
 
-### 4. **Can I modify tags after a resource is created?**
-Yes, tags can be edited anytime through the AWS Console, CLI, or SDKs.
+### 2. **Can credential scanning run automatically?**  
+Yes, you can integrate scanners into your **CI/CD pipelines** to scan every commit and pull request automatically.
 
-### 5. **What is the maximum number of tags per resource?**
-AWS allows up to 50 tags per resource, including both user-defined and AWS-generated tags.
+### 3. **Will credential scanning slow down my CI builds?**  
+Minimal impact, but deep Git history scans (like TruffleHog) may take longer depending on repository size.
+
+### 4. **What should I do if a secret is found?**  
+Remove it from the codebase, **rotate the secret**, and update configurations to use the new value securely.
+
+### 5. **Does credential scanning guarantee complete protection?**  
+No, it reduces risk but should be combined with other security practices like proper secret storage (**Vault**, **AWS Secrets Manager**).
 
 ---
 
@@ -165,8 +168,9 @@ AWS allows up to 50 tags per resource, including both user-defined and AWS-gener
 
 | Resource | Link |
 |----------|------|
-| AWS Official Documentation – Cost Allocation Tags | [Link](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) |
-| AWS Tagging Best Practices | [Link](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) |
-| AWS Billing and Cost Management User Guide | [Link](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html) |
-| AWS Cost Explorer | [Link](https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-cost-explorer.html) |
+| TruffleHog Documentation | [Link](https://github.com/trufflesecurity/trufflehog) |
+| Gitleaks Documentation | [Link](https://github.com/gitleaks/gitleaks) |
+| GitHub Secret Scanning Docs | [Link](https://docs.github.com/en/code-security/secret-scanning) |
+| Detect Secrets Documentation | [Link](https://github.com/Yelp/detect-secrets) |
+| GitGuardian Documentation | [Link](https://www.gitguardian.com) |
 
