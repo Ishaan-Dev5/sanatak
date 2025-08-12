@@ -64,7 +64,7 @@ Credential scanning in continuous integration (CI) involves automatically inspec
 flowchart TD
     A[Code Commit] --> B[Trigger CI/CD Pipeline]
     B --> C[Build Stage<br>Compile & Prepare Application]
-    C --> D[Credential Scanning<br>Tools: GitGuardian, Trivy, etc.]
+    C --> D[Credential Scanning<br>Tools: GItleaks, Trufflehog, etc.]
     D --> E[Result Analysis<br>Severity Categorization]
     
     E --> F1{Critical Secrets Found?}
