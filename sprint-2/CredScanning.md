@@ -21,15 +21,16 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)  
-2. [What are AWS Cost Allocation Tags?](#2-what-are-aws-cost-allocation-tags)  
-3. [Why Use Cost Allocation Tags?](#3-why-use-cost-allocation-tags)  
-4. [Workflow Diagram](#4-workflow-diagram)  
-5. [Advantages](#5-advantages)  
-6. [Best Practices](#6-best-practices)  
-7. [Conclusion](#7-conclusion)  
-8. [FAQs](#8-faqs)  
-9. [Contact Information](#9-contact-information)  
-10. [References](#10-references)
+2. [What is  Credential Scanning?](#2-What-is-Credential-Scanning)  
+3. [Why need Credential Scanning?](#3-Why-need-Credential-Scanning)  
+4. [Workflow Diagram](#4-workflow-diagram)
+5. [Different Tools](5-Different-Tools)  
+6. [Advantages](#6-advantages)  
+7. [Best Practices](#7-best-practices)  
+8. [Conclusion](#8-conclusion)  
+9. [FAQs](#9-faqs)  
+10. [Contact Information](#10-contact-information)  
+11. [References](#11-references)
 
 ---
 
@@ -122,7 +123,7 @@ flowchart TD
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 
 Cost Allocation Tags are **vital tools** for managing and optimizing your AWS costs. When implemented correctly, they enable **full visibility, accountability, and control** over cloud spending. Integrating them into your infrastructure strategy ensures a cost-effective and transparent AWS environment.
 
@@ -131,7 +132,7 @@ Cost Allocation Tags are **vital tools** for managing and optimizing your AWS co
 
 ---
 
-## 8. Frequently Asked Questions (FAQs)
+## 9. Frequently Asked Questions (FAQs)
 
 ### 1. **Do I need to pay to use Cost Allocation Tags?**
 No, AWS does not charge for tagging or viewing cost allocation tags.
@@ -150,7 +151,7 @@ AWS allows up to 50 tags per resource, including both user-defined and AWS-gener
 
 ---
 
-## 9. Contact Information
+## 10. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -160,7 +161,7 @@ AWS allows up to 50 tags per resource, including both user-defined and AWS-gener
 
 ---
 
-## 10. References
+## 11. References
 
 | Resource | Link |
 |----------|------|
