@@ -110,13 +110,14 @@ flowchart TD
 
 ## 6.  Best Practices
 
-| Best Practice                        | Description                                                                 |
-|-------------------------------------|-----------------------------------------------------------------------------|
-| **Tag Early and Consistently**      | Apply tags at launch time using IaC, Lambda, or policies                   |
-| **Standardize Tag Keys**            | Use consistent formats (e.g., `Environment`, `Owner`, `CostCenter`)        |
-| **Use Automation**                  | Enforce tags with AWS Config, Service Control Policies, or Lambda functions |
-| **Regular Audits**                  | Periodically verify tag coverage with AWS Tag Editor and reports           |
-| **Limit Number of Tags**            | Keep tag keys manageable to avoid confusion                                |
+| Best Practice                          | Why It Works Across All Tools                                              |
+|----------------------------------------|----------------------------------------------------------------------------|
+| **Automate Scanning in CI/CD**         | All tools support CLI or CI integration—ensures secrets are caught early. |
+| **Use Pre-Commit Hooks**               | Tools like Detect Secrets and Gitleaks support this—prevents secrets before commit. |
+| **Maintain a Baseline File**           | Helps track known secrets and reduce noise—supported by Detect Secrets, Gitleaks. |
+| **Regularly Update Detection Rules**   | Keeps regex and entropy logic current—most tools allow custom rule sets.  |
+| **Scan Git History Periodically**      | Deep scans catch secrets in older commits—TruffleHog and Gitleaks excel here. |
+| **Avoid Logging Secrets in CI Output** | Prevents accidental exposure—applies to all CI environments and scanners.  |
 
 
 ---
