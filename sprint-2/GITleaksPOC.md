@@ -1,3 +1,4 @@
+<img width="430" height="159" alt="gitleaks-ci" src="https://github.com/user-attachments/assets/eada7ff1-5f8d-4074-b294-ed9e6c73e040" />
 
 # GitLeaks POC
 
