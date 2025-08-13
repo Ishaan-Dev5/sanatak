@@ -39,30 +39,32 @@
 
 ---
 ## 2. What is Disaster Recovery?
-
+Disaster recovery (DR) is the process and plan an organization uses to restore its IT infrastructure and operations after a disruption or disaster.
+In Jenkins, disaster recovery refers to the processes and strategies employed to restore Jenkins functionality and data after a disruptive event, such as a server failure or data corruption.
 
 
 ---
 
 ## 3. Why we need disaster recovery in Jenkins?
 
+Disaster recovery in Jenkins is crucial because a Jenkins master server represents a single point of failure (SPOF) for an organization's Continuous Integration/Continuous Delivery (CI/CD) pipeline. The loss or inaccessibility of the Jenkins master can severely impact the ability to build, test, and release software
+
+
+ | **Reason**                       | **Explanation**                                                                                  |
+|----------------------------------|--------------------------------------------------------------------------------------------------|
+| Protect Against Data Loss        | Jenkins stores jobs, pipeline configs, build history, plugins, and credentials. DR prevents losing all this data due to crashes or accidental deletion. |
+| Ensure Business Continuity       | If Jenkins fails, builds and deployments stop. DR keeps the pipeline running with minimal downtime. |
+| Minimize Downtime                | A good DR plan brings Jenkins back quickly, reducing lost productivity and stalled releases.    |
+| Handle Unexpected Failures       | Servers can fail due to hardware, OS, network issues, or human error. DR ensures the pipeline is not affected. |
+| Compliance & Audit Requirements  | Logs, build artifacts, and pipeline history may be needed for audits. DR helps preserve them.  |
+| Plugin & Configuration Recovery  | Jenkins uses many plugins. DR allows restoring all configs and plugin versions consistently.    |
+
+
 
 
 ---
 
-## 4. Branch Protection Rules
 
-| Rule                            | Description                                                                 |
-|----------------------------------|-----------------------------------------------------------------------------|
-| **Require a pull request before merging**|      Prevents direct pushes — changes must go through a pull request.           |
-| **Require status checks to pass before merging**      |     Ensures automated checks (like CI tests) pass before merging.                                      |
-| **Require conversation resolution before merging**             |    All review comments and discussions must be resolved before merging.            |
-| **Require signed commits**      |    Only commits with verified digital signatures are allowed.                 |
-| **Require linear history**        |                           	Enforces a clean commit history — no merge commits |
-| **Require deployments to succeed before merging**          |     	Code can only be merged if deployment to an environment is successful.  |   
-|    **Lock branch**   |             Branch is read-only. Users cannot push to the branch    |
-
----
 
 
 
@@ -71,11 +73,14 @@
 
 ```mermaid
 flowchart TD
-    A[Go to Repository Settings] --> B[Click on 'Branches']
-    B --> C[Click 'Add Rule']
-    C --> D[Enter Branch Name or Pattern]
-    D --> E[Select Protection Options]
-    E --> F[Click 'Create']
+    A[Jenkins Master Failure] --> B{Check Backup Available?}
+    B -- Yes --> C[Restore Jenkins Home from Backup]
+    B -- No --> D[Manual Recovery / Rebuild Jenkins]
+    C --> E[Restore Jobs, Pipelines, Plugins, and Configurations]
+    E --> F[Restart Jenkins Master]
+    F --> G[Verify Build Jobs & Pipeline Functionality]
+    D --> G
+    G --> H[Pipeline Operational - Disaster Recovery Complete]
 
   
 ```
