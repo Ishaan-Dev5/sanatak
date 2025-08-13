@@ -3,6 +3,8 @@
 <img width="824" height="302" alt="image" src="https://github.com/user-attachments/assets/555bfaa7-565f-4428-9be7-76407f0474fa" />
 
 
+
+
 # Jenkins Disaster Recovery
 
 ---
@@ -11,7 +13,7 @@
 
 | **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
-| Ishaan    | 31-07-25    | v1.0  |  Ishaan  |31-07-25   | Internal    | Rohit Chopra    | 
+| Ishaan    | 13-08-25    | v1.0  |  Ishaan  |13-08-25   | Internal    | Rohit Chopra    | 
 
 ---
 
@@ -34,27 +36,17 @@
 
 ## 1. Introduction
 
-Branch access policies in GitHub, often referred to as branch protection rules or rulesets, are a set of configurations that repository administrators can implement to control how changes are made to specific branches within a repository.
 
 ---
-## 2. What are Branch Access Policies 
+## 2. What is Disaster Recovery?
 
-Branch Access Policy is a set of rules that control who can make changes to specific branches in a GitHub repository and how those changes can be made.
 
-Git branch protection rules are a powerful configuration option that enables repository administrators to enforce security policies. This helps protect the git branches from unexpected code commits or deletion by any unauthorized person(s) / user group(s).
-Unrestricted branch access can lead to unreviewed code, broken builds, or security issues.
 
 ---
 
-## 3. Why Branch Access Policies 
+## 3. Why we need disaster recovery in Jenkins?
 
-**Branch access policies help:**
 
-- Avoid unnecessary code commits to the branch
-- Enforce code reviews before merging the code to the branch
-- Maintain a healthy codebase without affecting collaboration
-- Maintain a commit history (by disallowing force pushes)
-- Prevent code from leaking into your public repositories 
 
 ---
 
