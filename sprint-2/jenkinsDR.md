@@ -168,7 +168,6 @@ Average time to restore Jenkins after a failure.
 
 ## 8. Best Practices
 
-# Best Practices for Jenkins Disaster Recovery
 
 | Best Practice                            | Description |
 |------------------------------------------|------------|
