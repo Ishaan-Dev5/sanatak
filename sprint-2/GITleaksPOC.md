@@ -18,12 +18,11 @@
 2. [Pre-Requisites](#2-pre-requisites)  
 3. [System Requirements](#3-system-requirements)
 4. [Setup and Execution](#4-setup-and-execution)  
-5. [Monitoring and Logging](#5-monitoring-and-logging)  
-6. [Troubleshooting](#6-troubleshooting)  
-7. [Disaster Recovery & High Availability](#7-disaster-recovery--high-availability)  
-8. [FAQs](#8-faqs)  
-9. [Contact Information](#9-contact-information)  
-10. [References](#10-references)  
+5. [Troubleshooting](#5-Troubleshooting)  
+6. [Best Practices](#6-Best-Practices)  
+7. [FAQs](#7-FAQs)   
+8. [Contact Information](#8-contact-information)  
+9. [References](#9-references)  
 
 ---
 
@@ -37,10 +36,11 @@ The goal is to automatically scan source code for sensitive data (API keys, toke
 ## 2. Pre-Requisites
 
 - Jenkins server installed and running
-- Git installed on the Jenkins agent
-- Gitleaks binary installed on the Jenkins agent or master (agent recommended)
+- Git installed 
+- Gitleaks binary installed 
 - Access to the Git repository to be scanned
 - Basic understanding of Jenkins Pipeline syntax
+- Port 8080 should be available
 
 ---
 
@@ -52,110 +52,97 @@ The goal is to automatically scan source code for sensitive data (API keys, toke
 | RAM                   | 1 GiB                   |
 | Disk                  | 8 GB                    |
 | OS                    | Ubuntu 22.04 LTS        |
-| Jenkins Version       | 2.375+                  |
-| Git                   | 2.20+                   |
+| Jenkins Version       | 2.516.1                  |
+| Git                   | 2.34.1                   |
 
 ---
 
 ## 4. Setup and Execution
 
-### 1. Install System Dependencies
+### 1. Fetch the latest Gitleaks version.
 
 ```bash
-sudo apt update
-sudo apt install make
+    GITLEAKS_VERSION=$(curl -s "https://api.github.com/repos/gitleaks/gitleaks/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
 ```
 
 
 
-### 2. Install Node.js version 16
+### 2. Download the Gitleaks binary
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt install -y nodejs
+    wget -qO gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz
 ```
 
 
-### 3. Check Node and npm Versions
+### 3. Extract the executable 
 
 ```bash
-node -v
-npm -v
+    sudo tar xf gitleaks.tar.gz -C /usr/local/bin gitleaks
 ```
 
-### 4. Clone the Repository
+### 4. verify the installation
 
 ```bash
-git clone https://github.com/OT-MICROSERVICES/frontend.git
-cd frontend
+    gitleaks version
+```
+<img width="1919" height="314" alt="image" src="https://github.com/user-attachments/assets/79ada9f9-ef69-4cf2-82a1-5fa1757124cf" />
+
+
+### 5.  Create a Jenkins Pipeline Job
+
+- Go to Jenkins Dashboard → New Item
+- Select Pipeline
+- Choose Pipeline script in configuration
+
+
+<img width="1844" height="858" alt="Screenshot 2025-08-13 114157" src="https://github.com/user-attachments/assets/9e585ae6-6cc2-41bb-85a7-18f7e0aa1c78" />
+
+
+### 6. Jenkins Pipeline Script
+
+```groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/employee-api.git'
+            }
+        }
+
+        stage('Run Gitleaks Scan') {
+            steps {
+                sh '''
+                echo "Running Gitleaks Secret Scan..."
+                gitleaks detect --source . --report-format json --report-path gitleaks-report.json
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'gitleaks-report.json', onlyIfSuccessful: false
+        }
+        failure {
+            echo "Secrets found! Please review gitleaks-report.json."
+        }
+    }
+}
+
 ```
 
+### 7. Execution and Review
 
 
+- Run the Jenkins job.
+- If secrets are detected:
+  - The build will fail.
+  - A gitleaks-report.json will be archived in Jenkins for review.
+- If no secrets are found, the build will pass successfully
 
-
-### 5. Install Project Dependencies
-
-```bash
-make install
-```
-
-
-
-### 6. Build the Application
-
-```bash
-npm run build
-```
-
-
-
-- If you get “JavaScript heap out of memory”, run:
-  ```bash
-  NODE_OPTIONS="--max_old_space_size=4096" npm run build
-  ```
-  *(For low-RAM systems, use 512/1024 instead of 4096.)*
-
-### 7. Install and Use Serve (for static hosting)
-
-```bash
-sudo npm install -g serve
-serve -s build
-```
-
-
-
-### 8. Optionally, create a systemd service for auto-start
-
-```bash
-sudo nano /etc/systemd/system/frontend.service
-```
-_Sample Service File:_
-```
-[Unit]
-Description=OT-MICROSERVICES Frontend ReactJS Service
-After=network.target
-
-[Service]
-User=ubuntu
-WorkingDirectory=/home/ubuntu/frontend
-ExecStart=/usr/bin/serve -s build
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Enable and start the service:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable frontend.service
-sudo systemctl start frontend.service
-sudo systemctl status frontend.service
-```
-
-
+<img width="1919" height="862" alt="Screenshot 2025-08-13 114612" src="https://github.com/user-attachments/assets/48bfb59e-ed30-454f-a302-c223c77cb46e" />
 
 
 
@@ -163,39 +150,38 @@ sudo systemctl status frontend.service
 
 
 
-## 7. Troubleshooting
+## 5. Troubleshooting
 
-| Issue                        | Solution                                                         |
-|------------------------------|------------------------------------------------------------------|
-| JS heap out of memory        | Use `NODE_OPTIONS="--max_old_space_size=4096" npm run build`     |
-| Port 3000 in use             | Run `serve -s build -l 3001` or kill previous process            |
-| Cannot access externally     | Check firewall/security group for port 3000                      |
-| Deprecated/vulnerable deps   | Run `npm audit fix` (optional, not blocking for deployment)      |                           |
-| Compiled with warnings       | Not fatal                     |
+| Issue                           | Solution                                                                              |
+| ------------------------------- | ------------------------------------------------------------------------------------- |
+| `gitleaks: command not found`   | Ensure Gitleaks binary is installed in `/usr/local/bin` and executable                |
+| Job fails with permission error | Add execute permissions: `chmod +x /usr/local/bin/gitleaks`                           |
+| Report file empty               | Check that the repository contains code to scan and that `--source .` path is correct |
 
 ---
 
-## 8. Disaster Recovery & High Availability
+## 6. Best Practices
 
-- **Recovery:** Keep a backup of the `build/` folder and your repo.
-- **HA:** Use `pm2` or a systemd service to keep `serve` running if needed.
-
----
-
-## 9. FAQs
-
-- **Is this application free?**  
-  Yes, open-source.
-
-- **Can I deploy on any cloud?**  
-  Yes, on VM/container with Node.js.
-
-- **Is there an enterprise version?**  
-  No, only open-source.
+- Run scans on Jenkins agents, not master nodes.
+- Fail builds automatically if secrets are found in strict CI policies.
+- Combine with git-secrets for defense in depth.
 
 ---
 
-## 10. Contact Information
+
+
+
+## 7. FAQs
+
+#### 1. **Can Gitleaks run on Windows agents?**
+Yes, download the Windows binary and update the path in the pipeline.
+
+#### 2. **Does Gitleaks scan commit history?**
+Yes, with the --no-git flag removed (default behavior scans git history).
+
+---
+
+## 8. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -204,9 +190,9 @@ sudo systemctl status frontend.service
 
 ---
 
-## 11. References
+## 9. References
 
 | Description                       | Link                                                                 |
 |------------------------------------|----------------------------------------------------------------------|
-| Frontend API                       | https://github.com/OT-MICROSERVICES/frontend                         |
-| Javascript heap out of memory      | https://geekflare.com/fix-javascript-heap-out-of-memory-error/       |
+| Credential scanning document                       | [Link]()                         |
+|  Gitleaks GitHub Repo | [Link](https://github.com/gitleaks/gitleaks) |
