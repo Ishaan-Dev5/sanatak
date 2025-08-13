@@ -23,7 +23,7 @@
 2. [What is Disaster Recovery?](#2-What-is-Disaster-Recovery?) 
 3. [Why we need disaster recovery in Jenkins?](#3-Why-we-need-disaster-recovery-in-Jenkins?)  
 4. [Workflow](#5-workflow)
-5. [Jenkins Backup, Recovery, and MTTR](#Jenkins-Backup-Recovery-and-MTTR)
+5. [Jenkins Backup, Recovery, and MTTR](#5-jenkins-backup-recovery-and-mttr)
 6. [Advantages](#6-advantages)  
 7. [Disadvantages](#7-disadvantages)  
 8. [Best Practices](#8-best-practices)  
