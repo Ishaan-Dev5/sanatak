@@ -86,6 +86,9 @@ flowchart TD
 ```
 
 
+
+```
+
 ## 6. Advantages
 
 | Advantage                               | Description                                                                 |
