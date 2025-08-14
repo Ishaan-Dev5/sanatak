@@ -46,7 +46,7 @@ SonarQube is a widely used open-source platform for continuous inspection of cod
 
 High Availability refers to the deployment strategy that ensures continuous operation of SonarQube services without significant downtime.
 
-**Note**: High Availibility is available only in Data Center Edition.
+**Note**: High Availibility is available only in SonarQube Server's Data Center Edition.
 
 ---
 
