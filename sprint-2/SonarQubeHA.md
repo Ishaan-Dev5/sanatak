@@ -114,12 +114,6 @@ flowchart TB
 | Configuration File Backup            | Backup `sonar.properties`, `wrapper.conf`, and other configuration files to a secure version-controlled repository. |
 | Plugin Backup                        | Maintain copies of all installed plugins from `$SONARQUBE_HOME/extensions/plugins`. |
 | Application Binary Backup            | Keep a copy of SonarQube binaries (same version) for quick redeployment. |
-| Log Files Preservation               | Backup `$SONARQUBE_HOME/logs` for post-incident troubleshooting. |
-| Restore Procedure Testing            | Periodically test the disaster recovery process in a staging environment. |
-| Environment Documentation            | Maintain updated records of SonarQube version, DB credentials, customizations, and host details. |
-| Automated Backup Scripts             | Use cron jobs or Jenkins jobs to automate and verify backups. |
-| Offsite Backup Storage               | Store backups in secure offsite/cloud storage to protect against physical disasters. |
-| Version Control for Customizations   | Store custom rules, quality profiles, and configurations in source control for quick redeployment. |
 
 For Detailed SonarQube Disaster Recovery follow [Link]()
 
