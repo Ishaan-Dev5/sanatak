@@ -121,6 +121,8 @@ flowchart TB
 | Offsite Backup Storage               | Store backups in secure offsite/cloud storage to protect against physical disasters. |
 | Version Control for Customizations   | Store custom rules, quality profiles, and configurations in source control for quick redeployment. |
 
+For Detailed SonarQube Disaster Recovery follow [Link]()
+
 
     
 ---
