@@ -1,12 +1,13 @@
 
 
 
-<img width="824" height="302" alt="image" src="https://github.com/user-attachments/assets/555bfaa7-565f-4428-9be7-76407f0474fa" />
+<img width="341" height="213" alt="Screenshot 2025-08-13 193419" src="https://github.com/user-attachments/assets/388c288c-a662-4b57-8c03-1821ea3a3c5a" />
 
 
 
 
-# Jenkins Disaster Recovery
+
+# SonarQube High Availibility
 
 ---
 
@@ -37,30 +38,30 @@
 
 ## 1. Introduction
 
-This document provides a comprehensive overview of Jenkins Disaster Recovery, including best practices, Mean Time to Recovery (MTTR), workflow diagrams, advantages and disadvantages. 
+This document provides a comprehensive overview of , workflow diagrams, advantages and disadvantages. 
 
 ---
-## 2. What is Disaster Recovery?
-Disaster recovery (DR) is the process and plan an organization uses to restore its IT infrastructure and operations after a disruption or disaster.
-In Jenkins, disaster recovery refers to the processes and strategies employed to restore Jenkins functionality and data after a disruptive event, such as a server failure or data corruption.
+## 2. What is SonarQube?
+SonarQube is a widely used open-source platform for continuous inspection of code quality. It helps developers identify bugs, code smells, vulnerabilities, and technical debt across multiple programming languages.
 
+High Availability refers to the deployment strategy that ensures continuous operation of SonarQube services without significant downtime.
+
+**Note**: High Availibility is available only in Data Center Edition.
 
 ---
 
-## 3. Why we need disaster recovery in Jenkins?
-
-Disaster recovery in Jenkins is crucial because a Jenkins master server represents a single point of failure (SPOF) for an organization's Continuous Integration/Continuous Delivery (CI/CD) pipeline. The loss or inaccessibility of the Jenkins master can severely impact the ability to build, test, and release software
+## 3. Why we need High Availibility in SonarQube?
 
 
- | **Reason**                       | **Explanation**                                                                                  |
-|----------------------------------|--------------------------------------------------------------------------------------------------|
-| Protect Against Data Loss        | Jenkins stores jobs, pipeline configs, build history, plugins, and credentials. DR prevents losing all this data due to crashes or accidental deletion. |
-| Ensure Business Continuity       | If Jenkins fails, builds and deployments stop. DR keeps the pipeline running with minimal downtime. |
-| Minimize Downtime                | A good DR plan brings Jenkins back quickly, reducing lost productivity and stalled releases.    |
-| Handle Unexpected Failures       | Servers can fail due to hardware, OS, network issues, or human error. DR ensures the pipeline is not affected. |
-| Compliance & Audit Requirements  | Logs, build artifacts, and pipeline history may be needed for audits. DR helps preserve them.  |
-| Plugin & Configuration Recovery  | Jenkins uses many plugins. DR allows restoring all configs and plugin versions consistently.    |
-
+| Reason | Description |
+|--------|-------------|
+| **Minimize Downtime** | Without HA, any SonarQube outage directly impacts CI/CD pipelines, delaying code analysis and releases. HA ensures uninterrupted availability. |
+| **Reduced Risk of Data Loss** | While HA doesn't directly prevent data loss, it often incorporates redundancy (e.g., shared storage, replicated databases), improving data resilience and enabling faster recovery after failures. |
+| **Ensure Business Continuity** | For organizations with frequent builds, SonarQube downtime interrupts automated quality checks. HA maintains continuous service, avoiding workflow disruptions. |
+| **Scalability for Performance** | HA with clustering supports horizontal scaling—adding more nodes to handle larger workloads and improve responsiveness, especially for large codebases or concurrent analyses. |
+| **Support for Critical Development Workflows** | SonarQube is central to code quality, security, and compliance checks. HA minimizes risks of delays, ensuring critical workflows proceed without interruption. |
+| **Resilience to Failures** | HA architecture prevents single points of failure (SPOF) at the application level, maintaining system stability and reliability. |
+| **Meeting Business Requirements** | For organizations with strict uptime requirements, HA ensures SonarQube’s capabilities are consistently available to meet business and operational needs. |
 
 ---
 
@@ -68,6 +69,7 @@ Disaster recovery in Jenkins is crucial because a Jenkins master server represen
 
 
 ```mermaid
+
 flowchart TD
     A[Jenkins Master Failure] --> B{Check Backup Available?}
     B -- Yes --> C[Restore Jenkins Home from Backup]
@@ -78,7 +80,6 @@ flowchart TD
     D --> G
     G --> H[Pipeline Operational - Disaster Recovery Complete]
 
-  
 ```
 
 ---
