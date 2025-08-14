@@ -105,62 +105,21 @@ flowchart TB
 ```
 
 ---
-## 5. Jenkins Backup, Recovery, and MTTR
-
-### 1. Backup
-
-#### What to backup
-- Entire `JENKINS_HOME` folder (`/var/lib/jenkins`)
-  - Jobs (`jobs/`)
-  - Build history (`builds/`)
-  - Plugins (`plugins/`)
-  - Credentials & secrets (`credentials.xml`, `secrets/`)
-  - Configurations (`config.xml`)
-
-#### How to backup
-
-| Method                | Description                                         |
-|-----------------------|-----------------------------------------------------|
-| Cloud/S3              | Use scripts or Jenkins job to sync backups to AWS S3 |
-| ThinBackup Plugin     | Plugin-based scheduled backup of jobs and configs   |
+## 5. SonarQube Disaster Recovery and Backup
 
 
-#### Frequency
-- Nightly or after critical changes
-
-
-
-### 2. Recovery
-
-### Steps to restore Jenkins
-1. Install Jenkins on a new server
-2. Stop Jenkins service:
-   ```bash
-   sudo systemctl stop jenkins
-   ```
-3. Restore JENKINS_HOME from backup (local or S3):
-   ```bash
-     tar -xzf jenkins_backup.tar.gz -C /var/lib/jenkins
-     sudo chown -R jenkins:jenkins /var/lib/jenkins
-   ```
-4. Start Jenkins:
-   ```bash
-   sudo systemctl start jenkins
-   ```
-
-### 3. MTTR (Mean Time to Recovery)
-Average time to restore Jenkins after a failure.
-#### Factors affecting MTTR
-- Backup method (cloud vs local)
-- Size of Jenkins data (jobs + build history)
-- Automation level (manual restore vs IaC automated restore)
-
-| Backup Method                          | Estimated MTTR      |
-|----------------------------------------|-------------------|
-| ThinBackup plugin + local restore       | 1–2 hours         |
-| Cloud backup (S3) + manual restore     | 1–3 hours         |
-| IaC automated restore (Terraform/Ansible) | 15–30 minutes    |
-| High Availability (HA) setup           | <5 minutes (failover) |
+| **Method**                           | **Description** |
+|--------------------------------------|-----------------|
+| Database Backup & Restore            | Regular full and incremental backups of the SonarQube database (PostgreSQL/MySQL) using tools like `pg_dump` or `mysqldump`. |
+| Configuration File Backup            | Backup `sonar.properties`, `wrapper.conf`, and other configuration files to a secure version-controlled repository. |
+| Plugin Backup                        | Maintain copies of all installed plugins from `$SONARQUBE_HOME/extensions/plugins`. |
+| Application Binary Backup            | Keep a copy of SonarQube binaries (same version) for quick redeployment. |
+| Log Files Preservation               | Backup `$SONARQUBE_HOME/logs` for post-incident troubleshooting. |
+| Restore Procedure Testing            | Periodically test the disaster recovery process in a staging environment. |
+| Environment Documentation            | Maintain updated records of SonarQube version, DB credentials, customizations, and host details. |
+| Automated Backup Scripts             | Use cron jobs or Jenkins jobs to automate and verify backups. |
+| Offsite Backup Storage               | Store backups in secure offsite/cloud storage to protect against physical disasters. |
+| Version Control for Customizations   | Store custom rules, quality profiles, and configurations in source control for quick redeployment. |
 
 
     
