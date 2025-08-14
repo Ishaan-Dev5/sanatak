@@ -67,19 +67,41 @@ High Availability refers to the deployment strategy that ensures continuous oper
 
 ## 4. Workflow 
 
-
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 100, "rankSpacing": 80}}}%%
+flowchart TB
+  LB[Application Load Balancer]
 
-flowchart TD
-    A[Jenkins Master Failure] --> B{Check Backup Available?}
-    B -- Yes --> C[Restore Jenkins Home from Backup]
-    B -- No --> D[Manual Recovery / Rebuild Jenkins]
-    C --> E[Restore Jobs, Pipelines, Plugins, and Configurations]
-    E --> F[Restart Jenkins Master]
-    F --> G[Verify Build Jobs & Pipeline Functionality]
-    D --> G
-    G --> H[Pipeline Operational - Disaster Recovery Complete]
+  subgraph SonarQube_Cluster
+  SQ1[SonarQube Node 1]
+  SQ2[SonarQube Node 2]
+  end
 
+  subgraph Shared_Services
+  DB[(Shared DB Cluster PostgreSQL )]
+  FS[(Network File System)]
+  ES[(Elasticsearch Cluster)]
+  
+  end
+
+  LB --> SQ1
+  LB --> SQ2
+  
+
+  SQ1 --> DB
+  SQ2 --> DB
+  
+
+
+  SQ1 --- FS
+  SQ2 --- FS
+  
+
+  SQ1 --> ES
+  SQ2 --> ES
+  
+
+  
 ```
 
 ---
