@@ -61,7 +61,7 @@ High Availability refers to the deployment strategy that ensures continuous oper
 | **Scalability for Performance** | HA with clustering supports horizontal scaling—adding more nodes to handle larger workloads and improve responsiveness, especially for large codebases or concurrent analyses. |
 | **Support for Critical Development Workflows** | SonarQube is central to code quality, security, and compliance checks. HA minimizes risks of delays, ensuring critical workflows proceed without interruption. |
 | **Resilience to Failures** | HA architecture prevents single points of failure (SPOF) at the application level, maintaining system stability and reliability. |
-| **Meeting Business Requirements** | For organizations with strict uptime requirements, HA ensures SonarQube’s capabilities are consistently available to meet business and operational needs. |
+
 
 ---
 
