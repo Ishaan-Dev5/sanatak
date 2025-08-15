@@ -141,7 +141,7 @@ flowchart TD
 
 ---
 
-## 9. POC -Static Code Analysis for Python
+## 9. POC Static Code Analysis for Python
 _Follow this link for POC_  
 (**[Click here to view Setup guide]()**)
 
