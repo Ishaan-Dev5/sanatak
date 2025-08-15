@@ -184,8 +184,8 @@ _Follow this link for POC_
 
 ## 14. References
 
-| Resource | Description | Link |
-|----------|-------------|------|
+| Resource | Link |
+|----------|------|
 | **Different tools for python static code analysis** |[Link](https://blog.codacy.com/python-static-analysis-tools)|
 | **SonarQube Documentation** | [Link](https://docs.sonarqube.org/latest/) |
 
