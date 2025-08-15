@@ -47,15 +47,16 @@
 
 ##  Introduction
 
-This guide explains a straightforward approach to implementing Static Code Analysis in a React project using SonarQube. It helps automatically detect coding errors, style violations, and potential security issues early in development, ensuring cleaner, more maintainable, and secure code.
+This guide explains a straightforward approach to implementing Static Code Analysis in a Python project using SonarQube. It helps automatically detect coding errors, style violations, and potential security issues early in development, ensuring cleaner, more maintainable, and secure code.
 
 
 ---
 ## What is Static Code Analysis?
+
 Static Code Analysis is the process of examining source code without actually executing it. It relies on automated tools to identify issues such as syntax errors, code smells, potential security vulnerabilities, and violations of coding standards, helping developers improve code quality, maintainability, and security early in the development lifecycle.
 
 ---
-## Why Use Static Code Analysis in React CI?
+## Why Use Static Code Analysis ?
 | Reason                         | Description                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
 | **Early Issue Detection**      | Identify problems during development rather than at runtime. |
@@ -79,28 +80,31 @@ flowchart TD
 ```
 
 ---
-##  Diffrent Tools for React Static Code Analysis
+##  Different Tools for React Static Code Analysis
 
-| Tool      | Definition                                                      |
-| --------- | --------------------------------------------------------------- |
-| ESLint    | Lints JavaScript/React code to enforce style and detect issues. |
-| Prettier  | Formats code for consistent style automatically.                |
-| SonarQube | Analyzes code to find bugs, vulnerabilities, and code smells.   |
-| Stylelint | Lints CSS/SCSS to maintain consistent styling.                  |
-| JSHint    | Checks JavaScript for syntax errors and potential problems.     |
+| Tool       | Definition                                                                 |
+| ---------- | -------------------------------------------------------------------------- |
+| **Pylint** | Lints Python code to enforce style, detect errors, and improve code quality. |
+| **Flake8** | Checks Python code for PEP 8 compliance, syntax errors, and complexity.    |
+| **Black**  | Automatically formats Python code for a consistent style.                  |
+| **Bandit** | Scans Python code for common security issues and vulnerabilities.          |
+| **Mypy**   | Performs static type checking using Python type hints.                      |
+| **SonarQube** | Analyzes Python code to detect bugs, vulnerabilities, code smells, and maintainability issues. |
+
 
 
 ---
 
 
 ##  Tool Comparison
-| Criteria               | ESLint  | Prettier           | SonarQube      | Stylelint |
-| ---------------------- | ------- | ------------------ | -------------- | --------- |
-| Language Support       | JS, JSX | JS, JSX, CSS, HTML | Multi-language | CSS, SCSS |
-| Code Style Enforcement | Yes     | Yes                | Yes            | Yes       |
-| Error Detection        | Yes     | No                 | Yes            | No        |
-| Security Scans         | No      | No                 | Yes            | No        |
-| Integration with CI/CD | Yes     | Yes                | Yes            | Yes       |
+| Criteria               | Pylint | Flake8 | Black | Bandit | Mypy | SonarQube      |
+| ---------------------- | ------ | ------ | ----- | ------ | ---- | -------------- |
+| Language Support       | Python | Python | Python | Python | Python | Multi-language |
+| Code Style Enforcement | Yes    | Yes    | Yes   | No     | No   | Yes            |
+| Error Detection        | Yes    | Yes    | No    | No     | Yes  | Yes            |
+| Security Scans         | No     | No     | No    | Yes    | No   | Yes            |
+| Integration with CI/CD | Yes    | Yes    | Yes   | Yes    | Yes  | Yes            |
+
 
 
 ---
