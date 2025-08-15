@@ -29,34 +29,35 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [What is Static Code Analysis?](#What-is-Static-Code-Analysis?)
-3. [Why Use Static Code Analysis?](#Why-Use-Static-Code-Analysis-in-React-CI?)
-4. [Workflow Diagram](#Workflow-Diagram)
-5. [Diffrent Tools for Python Static Code Analysis](#Diffrent-Tools-for-Python-Static-Code-Analysis)
-6. [Tool Comparison](#Tool-Comparison)
-7. [Advantages](#Advantages)
-8. [POC](#POC)
-9. [best practices](#best-practices)
-10. [Conclusion](#conclusion)
-11. [FAQ](#FAQ)
-12. [Contact Information](#contact-Information)
-13. [References](#references)
+1. [Introduction](#1-introduction)
+2. [What is Static Code Analysis?](#2-What-is-Static-Code-Analysis?)
+3. [Why Use Static Code Analysis?](#3-Why-Use-Static-Code-Analysis-in-React-CI?)
+4. [Workflow Diagram](#4-Workflow-Diagram)
+5. [Diffrent Tools for Python Static Code Analysis](#5-Diffrent-Tools-for-Python-Static-Code-Analysis)
+6. [Tool Comparison](#6-Tool-Comparison)
+7. [Advantages](#7-Advantages)
+8. [Disadvantages](#8-disadvantages)
+9. [POC](#9-POC)
+10. [best practices](#10-best-practices)
+11. [Conclusion](#11-conclusion)
+12. [FAQs](#12-fAQs)
+13. [Contact Information](#13-contact-Information)
+14. [References](#14-references)
 
 ---
 
-##  Introduction
+## 1. Introduction
 
 This guide explains a straightforward approach to implementing Static Code Analysis in a Python project using SonarQube. It helps automatically detect coding errors, style violations, and potential security issues early in development, ensuring cleaner, more maintainable, and secure code.
 
 
 ---
-## What is Static Code Analysis?
+## 2. What is Static Code Analysis?
 
 Static Code Analysis is the process of examining source code without actually executing it. It relies on automated tools to identify issues such as syntax errors, code smells, potential security vulnerabilities, and violations of coding standards, helping developers improve code quality, maintainability, and security early in the development lifecycle.
 
 ---
-## Why Use Static Code Analysis ?
+## 3. Why Use Static Code Analysis ?
 | Reason                         | Description                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
 | **Early Issue Detection**      | Identify problems during development rather than at runtime. |
@@ -67,7 +68,7 @@ Static Code Analysis is the process of examining source code without actually ex
 
 
 ---
-## Workflow Diagram
+## 4. Workflow Diagram
 
 ```mermaid
 flowchart TD
@@ -80,7 +81,7 @@ flowchart TD
 ```
 
 ---
-##  Different Tools for Python Static Code Analysis
+## 5. Different Tools for Python Static Code Analysis
 
 | Tool       | Definition                                                                 |
 | ---------- | -------------------------------------------------------------------------- |
@@ -96,7 +97,8 @@ flowchart TD
 ---
 
 
-##  Tool Comparison
+## 6. Tool Comparison
+
 | Criteria               | Pylint | Flake8 | Black | Bandit | Mypy | SonarQube      |
 | ---------------------- | ------ | ------ | ----- | ------ | ---- | -------------- |
 | Language Support       | Python | Python | Python | Python | Python | Multi-language |
@@ -112,7 +114,7 @@ flowchart TD
 
 
 
-##  Advantages
+## 7. Advantages
 
 | Benefit                           | Description |
 | --------------------------------- | ----------- |
@@ -126,14 +128,27 @@ flowchart TD
 
 
 ---
-## POC -Static Code Analysis for Python
+
+## 8. Disadvantages
+
+| Disadvantage                      | Description |
+| --------------------------------- | ----------- |
+| **Limited Runtime Context**       | These tools analyze code without executing it, so they cannot catch certain runtime errors, environment-specific bugs, or integration issues. |
+| **Performance Overhead in Large Projects** | Analyzing large Python codebases can be slow and may require significant computing resources. |
+| **Initial Setup and Configuration Effort** | Tools like SonarQube or Pylint require configuration to match project needs, which can be time-consuming for beginners. |
+
+
+
+---
+
+## 9. POC -Static Code Analysis for Python
 _Follow this link for POC_  
 (**[Click here to view Setup guide]()**)
 
 
 ---
 
-## Best Practice
+## 10. Best Practices
 
 | **Best Practice**                | **Description**                                                                                           |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -145,16 +160,19 @@ _Follow this link for POC_
 
 
 ---
-##  Conclusion
+## 11. Conclusion
 
 Integrating static code analysis into a React CI pipeline ensures that only clean, secure, and maintainable code reaches production. By using tools like ESLint, Prettier, and SonarQube, teams can enforce consistent coding standards, catch issues early, and reduce technical debt, ultimately improving code quality and development efficiency.
 
 ---
+## 12. FAQs
 
 
 
 
-##  Contact Information
+---
+
+## 13. Contact Information
 
 
 | Name| Email Address      | GitHub | URL |
@@ -164,7 +182,7 @@ Integrating static code analysis into a React CI pipeline ensures that only clea
 
 ---
 
-##  References
+## 14. References
 
 | Resource | Description | Link |
 |----------|-------------|------|
