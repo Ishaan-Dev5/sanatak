@@ -48,7 +48,7 @@
 
 ## 1. Introduction
 
-This guide explains a straightforward approach to implementing Static Code Analysis in a Python project using SonarQube. It helps automatically detect coding errors, style violations, and potential security issues early in development, ensuring cleaner, more maintainable, and secure code.
+
 
 
 ---
@@ -162,7 +162,7 @@ _Follow this link for POC_
 ---
 ## 11. Conclusion
 
-Integrating static code analysis into a React CI pipeline ensures that only clean, secure, and maintainable code reaches production. By using tools like ESLint, Prettier, and SonarQube, teams can enforce consistent coding standards, catch issues early, and reduce technical debt, ultimately improving code quality and development efficiency.
+
 
 ---
 ## 12. FAQs
@@ -192,5 +192,4 @@ Integrating static code analysis into a React CI pipeline ensures that only clea
 
 
 
----
- |
+
