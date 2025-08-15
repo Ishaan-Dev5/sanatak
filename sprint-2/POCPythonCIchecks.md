@@ -2,15 +2,17 @@
 
 # POC OF python CI Checks – Static Code Analysis
 
+---
+
 ## Author Information
 
-| Last Updated On | Version | Author           | Level           | Reviewer               |
-|-----------------|---------|------------------|-----------------|------------------------|
-| 13-08-2025      | V1.1    |  Sunny Kumar | Internal Review | Aman Raj                 |
-|                 |       | Sunny Kumar  | L0              | Shikha Tripathi        |
-|                 |         | Sunny Kumar  | L1              | Kirti Nehra            |
-|                 |         | Sunny Kumar  | L2              | Ashwini Singh/Deepak Nishad |
 
+| **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
+|--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
+| Ishaan    | 15-08-25    | v1.0  |  Ishaan  |15-08-25   | Internal    | Rohit Chopra    | 
+| Ishaan    |     |   |  Ishaan  |   | L0    |     | 
+| Ishaan    |     | v1.0  |  Ishaan  |15-08-25   | L1    |     | 
+| Ishaan    |     | v1.0  |  Ishaan  |15-08-25   | L2    |    | 
 
 ---
 
