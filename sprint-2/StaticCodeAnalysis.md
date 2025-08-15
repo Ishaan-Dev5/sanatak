@@ -150,9 +150,11 @@ Integrating static code analysis into a React CI pipeline ensures that only clea
 
 ##  Contact Information
 
-| Name             | Email                                         |
-|------------------|-----------------------------------------------|
-| Sunny Kumar  | sunny.kumar.snaatak@mygurukulam.co        |
+
+| Name| Email Address      | GitHub | URL |
+|-----|--------------------------|-------------|---------|
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
+
 
 ---
 
