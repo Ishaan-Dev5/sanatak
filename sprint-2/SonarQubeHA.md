@@ -22,10 +22,10 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
-2. [What is Disaster Recovery?](#2-What-is-Disaster-Recovery?) 
-3. [Why we need disaster recovery in Jenkins?](#3-Why-we-need-disaster-recovery-in-Jenkins?)  
+2. [What is SonarQube High Availability?](#2-What-is-SonarQube-High-Availability?) 
+3. [Why we need High Availability in SonarQube?](#3-Why-we-need-High-Availability-in-SonarQube?)  
 4. [Workflow](#5-workflow)
-5. [Jenkins Backup, Recovery, and MTTR](#5-jenkins-backup-recovery-and-mttr)
+5. [SonarQube Disaster Recovery and Backup](#5-SonarQube-Disaster-Recovery-and-Backup)
 6. [Advantages](#6-advantages)  
 7. [Disadvantages](#7-disadvantages)  
 8. [Best Practices](#8-best-practices)  
@@ -38,11 +38,13 @@
 
 ## 1. Introduction
 
-This document provides a comprehensive overview of , workflow diagrams, advantages and disadvantages. 
+This document provides an overview of implementing High Availability (HA) for SonarQube, including its purpose, workflow architecture, advantages, disadvantages, best practices, and disaster recovery considerations
 
 ---
-## 2. What is SonarQube?
+
+## 2. What is SonarQube High Availability?
 SonarQube is a widely used open-source platform for continuous inspection of code quality. It helps developers identify bugs, code smells, vulnerabilities, and technical debt across multiple programming languages.
+By deploying SonarQube in a clustered architecture with multiple application and search nodes, supported by a load balancer and a highly available database, organizations can maintain continuous code quality checks as part of their CI/CD pipelines.
 
 High Availability refers to the deployment strategy that ensures continuous operation of SonarQube services without significant downtime.
 
@@ -50,7 +52,7 @@ High Availability refers to the deployment strategy that ensures continuous oper
 
 ---
 
-## 3. Why we need High Availibility in SonarQube?
+## 3. Why we need High Availability in SonarQube?
 
 
 | Reason | Description |
@@ -167,35 +169,26 @@ For Detailed SonarQube Disaster Recovery follow [Link]()
 ## 9. Conclusion
 
 
-Disaster Recovery in Jenkins is a vital component of any CI/CD strategy, helping organizations quickly recover from failures and maintain uninterrupted software delivery. 
-By combining regular backups, cloud storage, automated recovery, and High Availability configurations, teams can safeguard their jobs, pipelines, plugins, and credentials. 
-A well-planned DR approach reduces downtime, minimizes data loss, and ensures business continuity, enabling development teams to focus on delivering quality software with confidence.
+High Availability in SonarQube ensures that code quality analysis remains uninterrupted, even during node failures or planned maintenance.
+By distributing workloads across multiple application and search nodes, supported by a clustered database and load balancing, organizations can minimize downtime, enhance performance, and improve resilience.
 
 ---
 
 ## 10. FAQs
 
 
-#### 1. What is Jenkins Disaster Recovery?
-Jenkins DR is the process of backing up and restoring Jenkins data and configurations to ensure continuous operation in case of failure.
+#### 1. Is High Availability available in all SonarQube editions?
+No. True HA with clustering is available only in the Data Center Edition.
 
-#### 2. What should be backed up for DR in Jenkins?
-The entire `JENKINS_HOME` folder, including jobs, plugins, build history, credentials, and configuration files.
+#### 2. Do I need a clustered database for HA?
+Yes. A single database instance becomes a single point of failure without clustering or a managed HA database service
 
-#### 3. How often should Jenkins be backed up?
-At least nightly, and more frequently if critical jobs are frequently updated.
+#### 3. What are the key components of HA architecture in SonarQube?
+Load balancer, multiple application nodes, multiple search nodes, shared storage, and a HA database.
 
-#### 4. Can Jenkins DR be automated?
-Yes, using Infrastructure as Code tools like Terraform or Ansible for provisioning and restoring Jenkins instances.
+#### 4. How many nodes are recommended for HA SonarQube?
+At least two application nodes and three Elasticsearch (search) nodes are recommended for fault tolerance.
 
-#### 5. What is MTTR in Jenkins DR?
-MTTR (Mean Time to Recovery) is the average time it takes to restore Jenkins to operational status after a failure.
-
-#### 6. How do cloud backups help in Jenkins DR?
-Cloud backups (AWS S3, GCP, Azure) provide offsite storage, enabling restoration even if the primary server is completely unavailable.
-
-#### 7. What are common DR strategies for Jenkins?
-Regular backups, HA setup, snapshotting instances, automated recovery scripts, and offsite storage.
 
 
 
@@ -214,6 +207,6 @@ Regular backups, HA setup, snapshotting instances, automated recovery scripts, a
 
 | Source                          | Link                                                                 |
 |---------------------------------|----------------------------------------------------------------------|
-|Jenkins Backup Documentation | [Link](https://www.jenkins.io/doc/book/system-administration/backing-up/) |
-| Disaster Recovery Guide	 | [Link](https://medium.com/clarusway/disaster-recovery-guide-for-jenkins-2-6463e255964d)|
-|Best practices for Disaster Recovery |[Link](https://www.geeksforgeeks.org/devops/best-practices-for-disaster-recovery-in-jenkins-and-aws-workflows/#1-regular-backups-of-jenkins-and-configuration)|
+|SonarQube DR  Documentation | [Link]() |
+| SonarQube Data Center guide	 | [Link](https://docs.sonarsource.com/sonarqube-server/10.8/setup-and-upgrade/install-the-server-as-a-cluster/)|
+
