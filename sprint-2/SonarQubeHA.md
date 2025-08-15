@@ -123,23 +123,25 @@ For Detailed SonarQube Disaster Recovery follow [Link]()
 
 ## 6. Advantages
 
-| Advantage               | Description |
-|-------------------------|------------|
-| High Availability       | Jenkins' distributed nature keeps pipelines running even if a node fails. |
-| Minimal Downtime        | Quick restoration of Jenkins instances reduces downtime during disasters. |
-| Data Protection         | Backup and restore of configurations and jobs preserves critical data. ||
-| Reduced Business Impact | DR strategy minimizes delays and disruptions to software delivery. |
+| **Advantage** | **Description** |
+|---------------|-----------------|
+| **Minimized Downtime** | If one node fails, others take over, ensuring SonarQube remains accessible. |
+| **Continuous Code Analysis** | Builds and code scans can proceed without interruption, avoiding CI/CD pipeline delays. |
+| **Faster Disaster Recovery** | Failover happens automatically without needing full service restarts or manual intervention. |
+| **Support for Large Teams & Projects** | HA ensures that even during heavy usage, response times remain fast and stable. |
+| **Compliance & SLAs** | Meets uptime requirements for critical business processes where SonarQube is integral to DevOps pipelines. |
 
 ---
 
 ## 7. Disadvantages
 
-| Disadvantage                 | Description |
-|-------------------------------|------------|
-| Complexity                    | Setting up DR with backups, cloud, or HA can be technically complex. |
-| Storage Requirements          | Backing up full `JENKINS_HOME` can consume large storage space. |
-| Partial Recovery Risk         | Some data like running builds or workspace files may be lost. |
-| Cost (Optional)               | Cloud storage, extra servers, or HA setup can increase costs. |
+| **Disadvantage** | **Description** |
+|------------------|-----------------|
+| **Higher Infrastructure Cost** | Requires multiple servers/nodes, increasing hardware or cloud expenses. |
+| **Complex Setup & Configuration** | HA deployment needs load balancers, clustering, and proper network configuration. ||
+| **Database Dependency** | Even with HA for the application, the database can still be a single point of failure unless separately clustered. |
+| **Version & Edition Limitations** | True HA is only supported in SonarQube Data Center Edition, not in Community  Editions. |
+
 
 
 
@@ -148,15 +150,16 @@ For Detailed SonarQube Disaster Recovery follow [Link]()
 ## 8. Best Practices
 
 
-| Best Practice                            | Description |
-|------------------------------------------|------------|
-| Regular Backups                           | Schedule daily or frequent backups of `JENKINS_HOME` including jobs, plugins, configs, and credentials. |
-| Offsite Storage                           | Store backups on cloud (S3, GCP, Azure) or a remote server to protect against local failures. |
-| Version Control Configurations            | Store Jenkinsfiles, scripts, and pipeline configurations in Git for easy recovery and rollback. |
-| Use Plugins Wisely                         | Utilize plugins like ThinBackup or Job Configuration History for automated and incremental backups. |
-| Use Infrastructure as Code (IaC) for Jenkins | Automate setup and recovery using Terraform, Ansible, or similar tools. |
-| Highly Available Jenkins Setup             | Implement HA with multiple masters or agents to reduce downtime risk. |
-| Snapshotting Jenkins Instances             | Take periodic snapshots of Jenkins server or VM to quickly restore to a known state. |
+| **Best Practice** | **Description** |
+|-------------------|-----------------|
+| **Use the Data Center Edition** | Only SonarQube Data Center Edition supports true HA with multiple application and search nodes. |
+| **Deploy Multiple Application & Search Nodes** | Separate web/compute nodes from search (Elasticsearch) nodes for performance and fault tolerance. |
+| **Implement a Load Balancer** | Use a reverse proxy/load balancer to distribute traffic and handle failover between nodes. |
+| **Cluster the Database** | Use a HA database solution  to avoid DB as a single point of failure. |
+| **Enable Monitoring & Alerting** | Integrate with tools like Prometheus, Grafana to detect failures quickly. |
+| **Plan for Disaster Recovery** | Have backups of database, configuration, and extensions; test restoration regularly. |
+| **Keep All Nodes in Sync** | Ensure identical versions, plugins, and configurations across nodes. |
+| **Perform Rolling Upgrades** | Upgrade nodes one by one to maintain availability during maintenance. |
 
 ---
 
