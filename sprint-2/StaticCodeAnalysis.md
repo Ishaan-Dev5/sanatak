@@ -187,7 +187,7 @@ _Follow this link for POC_
 | Resource | Description | Link |
 |----------|-------------|------|
 | **Different tools for python static code analysis** |[Link](https://blog.codacy.com/python-static-analysis-tools)|
-| **SonarQube Documentation** | Documentation for SonarQube code quality and security analysis. | [Link](https://docs.sonarqube.org/latest/) |
+| **SonarQube Documentation** | [Link](https://docs.sonarqube.org/latest/) |
 
 
 
