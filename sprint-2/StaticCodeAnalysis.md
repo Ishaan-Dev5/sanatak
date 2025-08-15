@@ -2,12 +2,13 @@
 
 
 
-<img width="300" height="400" alt="Screenshot 2025-08-11 173720" src="https://github.com/user-attachments/assets/e6642c3d-7931-4014-9baa-449f320e8cc7" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/72c79336-e3f0-46ce-9c06-be58831b8c17" />
 
 
 
 
-# Cred Scanning
+
+# Static Code Analysis
 
 ---
 
@@ -15,7 +16,7 @@
 
 | **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
-| Ishaan    | 11-08-25    | v1.0  |  Ishaan  |12-08-25   | Internal    | Rohit Chopra    | 
+| Ishaan    | 15-08-25    | v1.0  |  Ishaan  |15-08-25   | Internal    | Rohit Chopra    | 
 
 ---
 
@@ -37,11 +38,11 @@
 
 ## 1. Introduction
 
-This document explains credential scanning — the process of detecting and preventing hardcoded secrets like API keys, passwords, and tokens in codebases. It covers how credential scanning works, why it’s important for security, and the tools and best practices.
+This document explains , and the tools and best practices.
 
 ---
 
-## 2. What is  Credential Scanning?
+## 2. What is  Static Code Analysis?
 
 
 Credential scanning in continuous integration (CI) involves automatically inspecting code and configuration files for hardcoded secrets, such as passwords, API keys, and other sensitive information, to prevent them from being exposed in production environments
