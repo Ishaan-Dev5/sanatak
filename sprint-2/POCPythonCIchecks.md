@@ -1,4 +1,4 @@
-
+<img width="341" height="213" alt="Screenshot 2025-08-13 193419" src="https://github.com/user-attachments/assets/388c288c-a662-4b57-8c03-1821ea3a3c5a" />
 
 # POC OF python CI Checks – Static Code Analysis
 
