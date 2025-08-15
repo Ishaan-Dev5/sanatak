@@ -1,6 +1,8 @@
 
 
 
+
+
 <img width="300" height="400" alt="Screenshot 2025-08-11 173720" src="https://github.com/user-attachments/assets/e6642c3d-7931-4014-9baa-449f320e8cc7" />
 
 
@@ -62,27 +64,22 @@ Credential scanning in continuous integration (CI) involves automatically inspec
 
 ## 4. Workflow Diagram
 
+
+
+
 ```mermaid
 flowchart TD
     A[Code Commit] --> B[Trigger CI/CD Pipeline]
     B --> C[Build Stage<br>Compile & Prepare Application]
-    C --> D[Credential Scanning<br>Tools: GItleaks,Trufflehog,etc.]
-    D --> E[Result Analysis<br>Severity Categorization]
-    
-    E --> F1{Critical Secrets Found?}
-    
-    F1 -->|Yes| G1[Fail Build<br>Stop Pipeline]
-    F1 -->|No| F2{Low/Medium Severity?}
-    
-    F2 -->|Yes| G2[Trigger Alert<br>Email/Notification]
-    G2 --> H[Developer Remediation<br>Rotate & Update Secrets]
-    H --> I[Recommit Code]
-    I --> B
-    
-    F2 -->|No| J[Proceed to Testing & Deployment]
+    C --> D[Credential Scanning<br>Tools: Gitleaks, Trufflehog, etc.]
+    D --> E{Secrets Found?}
 
-    G1 --> K[Developer Remediation<br>Rotate & Update Secrets]
-    K --> I
+    E -->|Yes| F[Send Email Alert<br>Stop Pipeline]
+    F --> G[Developer Remediation<br>Rotate & Update Secrets]
+    G --> H[Recommit Code]
+    H --> B
+
+    E -->|No| I[Proceed to Testing & Production]
 
 ```
 ---
@@ -183,4 +180,4 @@ No, it reduces risk but should be combined with other security practices like pr
 | GitHub Secret Scanning Docs | [Link](https://docs.github.com/en/code-security/secret-scanning) |
 | Detect Secrets Documentation | [Link](https://github.com/Yelp/detect-secrets) |
 | GitGuardian Documentation | [Link](https://www.gitguardian.com) |
-
+| GitLeaks POC |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-146-ishaan/Applications/CI-Design/Generic-CI-Operation/Cred-Scanning/POC/README.md) |
