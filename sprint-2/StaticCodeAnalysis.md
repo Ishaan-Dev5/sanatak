@@ -37,7 +37,7 @@
 6. [Tool Comparison](#6-Tool-Comparison)
 7. [Advantages](#7-Advantages)
 8. [Disadvantages](#8-disadvantages)
-9. [POC](#9-POC)
+9. [POC](#9-POC-Static-Code-Analysis-for-Python)
 10. [best practices](#10-best-practices)
 11. [Conclusion](#11-conclusion)
 12. [FAQs](#12-fAQs)
