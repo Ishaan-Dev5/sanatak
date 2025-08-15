@@ -31,9 +31,9 @@
 
 1. [Introduction](#introduction)
 2. [What is Static Code Analysis?](#What-is-Static-Code-Analysis?)
-3. [Why Use Static Code Analysis in  CI?](#Why-Use-Static-Code-Analysis-in-React-CI?)
+3. [Why Use Static Code Analysis?](#Why-Use-Static-Code-Analysis-in-React-CI?)
 4. [Workflow Diagram](#Workflow-Diagram)
-5. [Diffrent Tools for  Static Code Analysis](#Diffrent-Tools-for-React-Static-Code-Analysis)
+5. [Diffrent Tools for Python Static Code Analysis](#Diffrent-Tools-for-Python-Static-Code-Analysis)
 6. [Tool Comparison](#Tool-Comparison)
 7. [Advantages](#Advantages)
 8. [POC](#POC)
@@ -80,7 +80,7 @@ flowchart TD
 ```
 
 ---
-##  Different Tools for React Static Code Analysis
+##  Different Tools for Python Static Code Analysis
 
 | Tool       | Definition                                                                 |
 | ---------- | -------------------------------------------------------------------------- |
@@ -114,32 +114,34 @@ flowchart TD
 
 ##  Advantages
 
-| Criteria               | ESLint  | Prettier           | SonarQube      | Stylelint |
-| ---------------------- | ------- | ------------------ | -------------- | --------- |
-| Language Support       | JS, JSX | JS, JSX, CSS, HTML | Multi-language | CSS, SCSS |
-| Code Style Enforcement | Yes     | Yes                | Yes            | Yes       |
-| Error Detection        | Yes     | No                 | Yes            | No        |
-| Security Scans         | No      | No                 | Yes            | No        |
-| Integration with CI/CD | Yes     | Yes                | Yes            | Yes       |
+| Benefit                           | Description |
+| --------------------------------- | ----------- |
+| **Early Bug Detection**           | Identifies potential bugs, errors, and vulnerabilities in the code before execution, reducing the cost and effort of fixing issues later in the development cycle. |
+| **Improved Code Quality and Reliability** | Enforces coding standards, promotes consistent style, and identifies potential anti-patterns, leading to cleaner, more readable, and maintainable code. |
+| **Enhanced Security**             | Detects common security vulnerabilities like SQL injection, cross-site scripting (XSS), insecure API usage, and hard-coded credentials, helping to prevent security breaches. |
+| **Automated Code Review and Efficiency** | Automates aspects of code review, providing immediate feedback to developers and accelerating development by catching issues earlier than manual reviews, reducing the need for extensive dynamic testing and debugging. |
+| **Compliance and Standards Adherence** | Ensures that the codebase adheres to industry standards, internal coding guidelines, and regulatory requirements, crucial in regulated industries. |
+| **Scalability**                    | Can be easily integrated into CI/CD pipelines and applied consistently across large codebases. |
 
 
 
 ---
-## POC -Static Code Analysis for React
+## POC -Static Code Analysis for Python
 _Follow this link for POC_  
-(**[Click here to view Setup guide](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/scrum-152-sunny/Application%20CI%20Design/React%20CI%20Checks/Static%20Code%20Analysis/POC/README.md)**)
+(**[Click here to view Setup guide]()**)
 
 
 ---
 
 ## Best Practice
 
-| **Best Practice**                | **Description**                                                                             |
-| -------------------------------- | ------------------------------------------------------------------------------------------- |
-| Use a consistent coding standard | Define and follow a style guide (e.g., Airbnb for JavaScript) to maintain code consistency. |
-| Integrate into CI/CD pipeline    | Run static analysis automatically during builds to catch issues early.                      |
-| Regularly update analysis tools  | Keep tools like ESLint, SonarQube, or Prettier up-to-date for latest rules and bug fixes.   |
-| Address warnings promptly        | Fix reported issues as soon as possible to prevent technical debt accumulation.             |
+| **Best Practice**                | **Description**                                                                                           |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Use a consistent coding standard | Define and follow a style guide (e.g., PEP 8) to maintain readability and consistency in Python code.     |
+| Run analysis before committing   | Execute static analysis locally (e.g., Pylint, Flake8, Black, Bandit) before committing code to catch issues early. |
+| Regularly update analysis tools  | Keep tools like Pylint, Flake8, Bandit, Mypy, or SonarQube updated for latest rules, security checks, and bug fixes. |
+| Address warnings promptly        | Fix reported issues as soon as possible to prevent technical debt accumulation and maintain code quality. |
+
 
 
 ---
@@ -166,11 +168,10 @@ Integrating static code analysis into a React CI pipeline ensures that only clea
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| **ESLint Documentation** | Official documentation for ESLint rules, setup, and usage. | [Visit](https://eslint.org/docs/latest/) |
-| **Prettier Documentation** | Official guide for Prettier code formatting tool. | [Visit](https://prettier.io/docs/en/) |
-| **SonarQube Documentation** | Documentation for SonarQube code quality and security analysis. | [Visit](https://docs.sonarqube.org/latest/) |
-| **Stylelint Documentation** | Official documentation for Stylelint CSS/SCSS linter. | [Visit](https://stylelint.io/) |
-| **GitHub Actions** | Guide to automate workflows using GitHub Actions. | [Visit](https://docs.github.com/en/actions) |
+| **Different tools for python static code analysis** |[Link](https://blog.codacy.com/python-static-analysis-tools)|
+| **SonarQube Documentation** | Documentation for SonarQube code quality and security analysis. | [Link](https://docs.sonarqube.org/latest/) |
+
+
 
 
 ---
