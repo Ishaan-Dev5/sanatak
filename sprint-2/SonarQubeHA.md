@@ -7,7 +7,7 @@
 
 
 
-# SonarQube High Availibility
+# SonarQube High Availability
 
 ---
 
