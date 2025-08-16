@@ -18,14 +18,14 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [System Requirements](#System-Requirements)
-4. [Procedure](#procedure)
-6. [Conclusion](#conclusion)
-7. [FAQ](#FAQ)
-8. [Contact Information](#contact-Information)
-9. [References](#references)
+1. [Introduction](#1-introduction)
+2. [Prerequisites](#2-prerequisites)
+3. [System Requirements](#3-System-Requirements)
+4. [Setup and Execution](#4-Setup-and-Execution)
+5. [Troubleshooting](#5-troubleshooting)
+6. [FAQs](#6-FAQs)
+7. [Contact Information](#7-contact-Information)
+8. [References](#8-references)
 
 
 ---
@@ -35,7 +35,7 @@
 
 
 ---
-## Prerequisites
+## 2. Prerequisites
 
 | Dependency            | Version                   |
 | --------------------- | ------------------------- |
@@ -44,7 +44,7 @@
 | **SonarQube Scanner** | Latest compatible version |
 
 ---
-## System Requirements
+## 3. System Requirements
 
 | Hardware/Software | Minimum Recommendation                     |
 | ----------------- | ------------------------------------------ |
@@ -56,7 +56,7 @@
 ---
 
 
-## Procedure
+## 4. Setup and Execution
 
 ### Step 1: Update System Packages
 
@@ -195,39 +195,37 @@ cd directory
 
 ---
 
-
-
-## FAQs
-
-
+## 5. Troubleshooting
 
 ---
-##  Conclusion
 
-Integrating static code analysis into a React CI pipeline ensures that only clean, secure, and maintainable code reaches production. By using tools like ESLint, Prettier, and SonarQube, teams can enforce consistent coding standards, catch issues early, and reduce technical debt, ultimately improving code quality and development efficiency.
+## 6. FAQs
+
+
 
 ---
 
 
 
 
-##  Contact Information
 
-| Name             | Email                                         |
-|------------------|-----------------------------------------------|
-| Sunny Kumar  | sunny.kumar.snaatak@mygurukulam.co        |
+
+
+## 7. Contact Information
+
+| Name| Email Address      | GitHub | URL |
+|-----|--------------------------|-------------|---------|
+| Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
 
 ---
 
-##  References
+## 8. References
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| **ESLint Documentation** | Official documentation for ESLint rules, setup, and usage. | [Visit](https://eslint.org/docs/latest/) |
-| **Prettier Documentation** | Official guide for Prettier code formatting tool. | [Visit](https://prettier.io/docs/en/) |
+
 | **SonarQube Documentation** | Documentation for SonarQube code quality and security analysis. | [Visit](https://docs.sonarqube.org/latest/) |
-| **Stylelint Documentation** | Official documentation for Stylelint CSS/SCSS linter. | [Visit](https://stylelint.io/) |
-| **GitHub Actions** | Guide to automate workflows using GitHub Actions. | [Visit](https://docs.github.com/en/actions) |
+
 
 
 ---
