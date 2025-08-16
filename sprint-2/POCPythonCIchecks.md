@@ -22,11 +22,6 @@
 2. [Prerequisites](#prerequisites)
 3. [System Requirements](#System-Requirements)
 4. [Procedure](#procedure)
-    - [Step 1: Update System Packages](#step-1-update-system-packages)
-    - [Step 2: Check Existing Python Installation](#step-2-check-existing-Python-installation)
-    - [Step 3: Install Pyhton](#step-3-install-Python)
-    - [Step 4: Verify Installation](#step-4-verify-installation)
-5. [Notes](#notes)
 6. [Conclusion](#conclusion)
 7. [FAQ](#FAQ)
 8. [Contact Information](#contact-Information)
@@ -93,7 +88,7 @@ mv sonarqube-10.5.1.90531 sonarqube
 <img width="1917" height="298" alt="Screenshot 2025-08-16 162720" src="https://github.com/user-attachments/assets/4e89030b-dd21-4798-b5d0-18a1ce1544d6" />
 
 ---
-### Step 5: Create Systemd Service File
+### Step 4: Create Systemd Service File
 
 ```bash
 sudo nano /etc/systemd/system/sonarqube.service
@@ -116,7 +111,7 @@ Restart=always
 [Install] WantedBy=multi-user.target
 ```
 ---
-### Step 6: Reload, Enable & start the Service
+### Step 5: Reload, Enable & start the Service
 
 ```bash
 sudo systemctl daemon-reload
@@ -126,7 +121,7 @@ sudo systemctl enable sonarqube
 <img width="1918" height="470" alt="Screenshot 2025-08-16 162738" src="https://github.com/user-attachments/assets/23a87118-b2eb-428b-abdf-d9838e1482bb" />
 
 ---
-### Step 7: Access the Dashboard
+### Step 6: Access the Dashboard
 
 ```bash
 http://<INSTANCE_PUBLIC_IP>:9000
@@ -135,7 +130,7 @@ with the help of `username : admin ` and `password : admin`
 
 ---
 
-### Step 8: Create a Project in SonarQube
+### Step 7: Create a Project in SonarQube
 
 1. Go to **Projects** → **Create Project**  
 2. Select **Manually**  
@@ -152,51 +147,57 @@ with the help of `username : admin ` and `password : admin`
 
 
 ---
-### Step 9: Install SonarScanner
+### Step 8: Install SonarScanner
 
 ```bash
-wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+ wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
 unzip sonar-scanner-cli-5.0.1.3006-linux.zip
 sudo mv sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner
 echo 'export PATH=$PATH:/opt/sonar-scanner/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-and verify :
+<img width="1919" height="344" alt="Screenshot 2025-08-16 162752" src="https://github.com/user-attachments/assets/85f75415-824c-4e9d-88c0-261f2f21cf47" />
 
-```
-sonar-scanner --version
-```
+
 ---
 
-### Step 10: Clone the project repo and navigate into it
+### Step 9: Clone the project repo and navigate into it
 
 ```bash
 git clone <url>
 cd directory
 ```
----
-### Step 11: Configure Your React Project
 
-Inside your React project root, create a file:
-```
-touch sonar-project.properties
-```
-and paste these line:
+<img width="1893" height="214" alt="Screenshot 2025-08-16 162817" src="https://github.com/user-attachments/assets/8337a765-4df4-4154-a078-6b5bb40ebb76" />
+
+---
+### Step 10: To run analysis on project copy the commands from sonarqube UI
+<img width="1919" height="713" alt="Screenshot 2025-08-16 162944" src="https://github.com/user-attachments/assets/7dad235c-c538-4ea1-bfc8-acd3a2ab802f" />
+
+
 
 ```bash
-sonar-scanner \
-  -Dsonar.projectKey=frontend \
-  -Dsonar.sources=src \
-  -Dsonar.host.url=http://<SONARQUBE_URL> \
-  -Dsonar.login=sqp_edeca9095551edb1cb346522bd5554d49fd2a54c
-
+ sonar-scanner \
+  -Dsonar.projectKey=python \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://13.233.84.84:9000 \
+  -Dsonar.token=sqp_1ec179e8e7f92fbe73e2f72ac8a21334bd831b38
 ```
+### Step 11. Now paste these commands in the project root folder
+
+<img width="1919" height="963" alt="Screenshot 2025-08-16 162836" src="https://github.com/user-attachments/assets/6c192713-36e6-471f-a1ef-02f7e38c2462" />
+
+
+### Step 12. Check the report on Sonarqube UI
+
+<img width="1906" height="860" alt="Screenshot 2025-08-16 162852" src="https://github.com/user-attachments/assets/6a250a93-9e92-4502-b745-f3f732c69f64" />
+
 ---
-### Step 12: Configure Your React Project
 
 
-## FAQ
+
+## FAQs
 
 
 
