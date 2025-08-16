@@ -221,10 +221,9 @@ cd directory
 
 ## 8. References
 
-| Resource | Description | Link |
-|----------|-------------|------|
-
-| **SonarQube Documentation** | Documentation for SonarQube code quality and security analysis. | [Visit](https://docs.sonarqube.org/latest/) |
+| Resource |  Link |
+|----------|------|
+| **SonarQube Documentation** |  [Visit](https://docs.sonarqube.org/latest/) |
 
 
 
