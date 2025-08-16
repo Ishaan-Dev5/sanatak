@@ -37,17 +37,14 @@
 
 ## 1. Introduction
 
-This guide outlines a simple workflow to perform Static Code Analysis for React applications using SonarQube. This ensures code quality, detects potential bugs, and enforces coding standards before integration, improving maintainability and reducing technical debt.
+
 
 ---
 ## Prerequisites
 
 | Dependency            | Version                   |
 | --------------------- | ------------------------- |
-| **Node.js**           | v12.22.9                  |
-| **npm**               | v8.5.1                    |
 | **Java**              | JDK 11+                   |
-| **Make**              | v4.3                      |
 | **SonarQube**         | v9.x or above             |
 | **SonarQube Scanner** | Latest compatible version |
 
@@ -69,8 +66,9 @@ This guide outlines a simple workflow to perform Static Code Analysis for React 
 ### Step 1: Update System Packages
 
 ```bash
-sudo apt update && sudo apt upgrade -y
+sudo apt update 
 ```
+<img width="1447" height="612" alt="Screenshot 2025-08-16 162620" src="https://github.com/user-attachments/assets/e002874b-a32d-469b-9db7-ecb859703478" />
 
 ---
 ### Step 2: Install java and verify
@@ -79,26 +77,21 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install openjdk-17-jdk -y
 java -version
 ```
+<img width="1522" height="493" alt="Screenshot 2025-08-16 162628" src="https://github.com/user-attachments/assets/c0fb479f-c7f2-4f58-a0e3-1a0376c43a7d" />
 
 ---
-### Step 3: Create a SonarQube User
 
-```bash
-sudo adduser --system --no-create-home --group --disabled-login sonarqube
-```
-<img width="1147" height="184" alt="image" src="https://github.com/user-attachments/assets/00ca0b6a-e266-454e-920d-ea43c3ffd6ee" />
-
----
-### Step 4: Install SonarQube
+### Step 3: Install SonarQube
 
 ```bash
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
 sudo apt install unzip -y
 unzip sonarqube-10.5.1.90531.zip
-sudo mv sonarqube-10.5.1.90531 /opt/sonarqube
-sudo chown -R sonarqube:sonarqube /opt/sonarqube
+mv sonarqube-10.5.1.90531 sonarqube
 
 ```
+<img width="1917" height="298" alt="Screenshot 2025-08-16 162720" src="https://github.com/user-attachments/assets/4e89030b-dd21-4798-b5d0-18a1ce1544d6" />
+
 ---
 ### Step 5: Create Systemd Service File
 
@@ -114,23 +107,21 @@ After=syslog.target network.target
 
 [Service]
 Type=forking
-User=sonarqube
-Group=sonarqube
-ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
-ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
-LimitNOFILE=65536
+ExecStart=/home/ubuntu/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/home/ubuntu/sonarqube/bin/linux-x86-64/sonar.sh stop
+User=ubuntu
+Group=ubuntu
 Restart=always
 
-[Install]
-WantedBy=multi-user.target
+[Install] WantedBy=multi-user.target
 ```
 ---
 ### Step 6: Reload, Enable & start the Service
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable sonarqube
 sudo systemctl start sonarqube
+sudo systemctl enable sonarqube
 ```
 
 ---
