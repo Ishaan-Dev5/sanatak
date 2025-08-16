@@ -197,10 +197,31 @@ cd directory
 
 ## 5. Troubleshooting
 
+| Issue | Possible Cause | Solution |
+|-------|----------------|----------|
+| SonarQube service not starting | Insufficient RAM (needs 2GB+ free) | Allocate more memory or increase swap space |
+| Port 9000 not accessible | Firewall blocking / Security Group not open | Allow inbound traffic on port 9000 |
+| "Java not found" error | Java not installed or PATH not set | Verify with `java -version` and install JDK 11+ |
+| SonarScanner not recognized | PATH not updated | Run `source ~/.bashrc` or add scanner bin path manually |
+| Authentication failed (token) | Wrong/expired token used | Regenerate token in SonarQube UI and update command |
+
 ---
 
 ## 6. FAQs
+**1. Do I need PostgreSQL for SonarQube?**  
+→ For production use, yes. For POC/testing, embedded H2 DB works but data resets on restart.  
 
+**2. Can I use OpenJDK 17 instead of JDK 11?**  
+→ Yes, SonarQube 9.x+ supports JDK 11 and 17.  
+
+**3. How do I reset the admin password?**  
+→ Use default `admin/admin`. If changed and forgotten, update `users` table in DB or reset via DB query.  
+
+**4. Can SonarQube analyze multiple languages?**  
+→ Yes, it supports 20+ languages (Python, Java, JS, C#, etc.) with built-in plugins.  
+
+**5. How do I stop SonarQube service?**  
+→ Run `sudo systemctl stop sonarqube`.  
 
 
 ---
