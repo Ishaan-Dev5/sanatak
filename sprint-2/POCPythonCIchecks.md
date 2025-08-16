@@ -123,6 +123,7 @@ sudo systemctl daemon-reload
 sudo systemctl start sonarqube
 sudo systemctl enable sonarqube
 ```
+<img width="1918" height="470" alt="Screenshot 2025-08-16 162738" src="https://github.com/user-attachments/assets/23a87118-b2eb-428b-abdf-d9838e1482bb" />
 
 ---
 ### Step 7: Access the Dashboard
@@ -139,10 +140,16 @@ with the help of `username : admin ` and `password : admin`
 1. Go to **Projects** → **Create Project**  
 2. Select **Manually**  
 3. Enter:  
-   - **Project Key** → `react-ci-poc`  
-   - **Project Name** → `React CI POC`  
-4. Choose **Locally**  
+   - **Project Key** → `python`  
+   - **Project Name** → `python`  
+4. Choose **Locally**
+
+<img width="1919" height="607" alt="Screenshot 2025-08-16 162914" src="https://github.com/user-attachments/assets/43989c71-ed43-448d-ae2a-44dc9b263ebc" />
+ 
 5. Generate a **Token** → copy it (we will need it in config)
+
+   <img width="1846" height="656" alt="Screenshot 2025-08-16 162933" src="https://github.com/user-attachments/assets/f032f656-dd75-4f4e-96ef-1f3fddc115d5" />
+
 
 ---
 ### Step 9: Install SonarScanner
