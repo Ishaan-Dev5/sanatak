@@ -48,7 +48,7 @@
 
 ## 1. Introduction
 
-
+This document provides a comprehensive guide for performing Python Static Code Analysis as part of CI checks. It explains the concept and benefits of static code analysis, introduces widely used tools for Python, compares their features, and presents a detailed Proof of Concept (POC) using SonarQube.
 
 
 ---
@@ -162,11 +162,29 @@ _Follow this link for POC_
 ---
 ## 11. Conclusion
 
+Static code analysis is essential for ensuring reliable, maintainable, and secure software development.While lightweight tools like Pylint, Flake8, Black, and Bandit provide targeted checks for style, formatting, and security, they often work in isolation. For projects that require a comprehensive view of code quality with centralized dashboards, multi-language support.
+
 
 
 ---
 ## 12. FAQs
 
+
+**1. What is the difference between static and dynamic code analysis?**
+Static analysis inspects the source code without executing it (detecting bugs, code smells, and vulnerabilities early).
+Dynamic analysis requires executing the code to monitor runtime behavior (e.g., unit tests, code coverage, profiling).
+
+**2. Do I need a database to use SonarQube?**
+Yes. By default, SonarQube runs on an embedded H2 database (for testing/demo).
+For production use, it is recommended to use PostgreSQL for scalability and reliability.
+
+**3. Can SonarQube run without internet access?**
+Yes. SonarQube and SonarScanner can run completely offline once installed, as long as the scanner can connect to the SonarQube server within the same network.
+
+
+**4. How can I reset the admin password in SonarQube if I forget it?**
+Default credentials are admin/admin.
+If forgotten, the password can be reset directly in the SonarQube database (H2 for demo, PostgreSQL in production).
 
 
 
