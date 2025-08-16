@@ -32,7 +32,7 @@
 
 ## 1. Introduction
 
-
+This document provides a Proof of Concept (POC) for implementing Python  checks using SonarQube for static code analysis
 
 ---
 ## 2. Prerequisites
