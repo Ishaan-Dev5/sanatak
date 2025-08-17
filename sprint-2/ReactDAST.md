@@ -148,7 +148,9 @@ flowchart TD
 
 ---
 
-## 9. Proof of Concept (POC
+## 9. Proof of Concept (POC)
+_Follow this link for POC_  
+(**[Click here to view Setup guide]()**)
 
 ---
 ## 10.  Best Practices
