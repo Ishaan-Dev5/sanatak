@@ -190,21 +190,27 @@ flowchart TD
 ## 12. Frequently Asked Questions (FAQs)
 
 
+### 1. **Do I need access to the source code to run DAST?**
+No, DAST works as a black-box scanner, so it only requires access to the running application and its endpoints.
 
-### 1. **Do I need to pay for credential scanning tools?**
-Many popular tools like **TruffleHog**, **Gitleaks**, and **Detect Secrets** are open-source and free. Some services like **GitGuardian** offer paid plans with additional features.
+### 2. **Can DAST test Single Page Applications (SPAs) like React apps?**
+Yes, modern DAST tools (e.g., StackHawk, OWASP ZAP, Acunetix) can render JavaScript and crawl dynamic routes in SPAs.
 
-### 2. **Can credential scanning run automatically?**  
-Yes, you can integrate scanners into your **CI/CD pipelines** to scan every commit and pull request automatically.
+### 3. **How does DAST handle authentication (OAuth/JWT)?**
+Most modern DAST tools support OAuth, JWT, and session-based authentication. Configuration may involve providing tokens or scripts to log in before scanning protected endpoints.
 
-### 3. **Will credential scanning slow down my CI builds?**  
-Minimal impact, but deep Git history scans (like TruffleHog) may take longer depending on repository size.
+### 4. **Can DAST detect SQL Injection or XSS vulnerabilities?**
+Yes, DAST tools can detect common runtime vulnerabilities such as SQL Injection, Cross-Site Scripting (XSS), HTML Injection, CSRF, and more.
 
-### 4. **What should I do if a secret is found?**  
-Remove it from the codebase, **rotate the secret**, and update configurations to use the new value securely.
+### 5. **Should DAST be run in production?**
+It’s recommended to run DAST in a **staging/test environment** to avoid impacting real users and production data.
 
-### 5. **Does credential scanning guarantee complete protection?**  
-No, it reduces risk but should be combined with other security practices like proper secret storage (**Vault**, **AWS Secrets Manager**).
+### 6. **Can DAST be automated in CI/CD pipelines?**
+Yes, DAST tools like StackHawk, GitLab DAST, and OWASP ZAP can be integrated into CI/CD pipelines for continuous security testing.
+
+
+### 7. **Can DAST tools test third-party applications?**
+Yes, since DAST works without source code, it can be used to assess the security of externally developed applications or vendor-provided software.
 
 ---
 
