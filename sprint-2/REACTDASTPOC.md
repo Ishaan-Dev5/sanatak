@@ -115,18 +115,17 @@ zaproxy
 
 ## 5. Troubleshooting
 
-| Issue | Possible Cause | Solution |
-|-------|----------------|----------|
-| SonarQube service not starting | Insufficient RAM (needs 2GB+ free) | Allocate more memory or increase swap space |
-| Port 9000 not accessible | Firewall blocking / Security Group not open | Allow inbound traffic on port 9000 |
-| "Java not found" error | Java not installed or PATH not set | Verify with `java -version` and install JDK 11+ |
-| SonarScanner not recognized | PATH not updated | Run `source ~/.bashrc` or add scanner bin path manually |
-| Authentication failed (token) | Wrong/expired token used | Regenerate token in SonarQube UI and update command |
+| Issue                                  | Possible Cause                                         | Solution                                                                            |
+| -------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| Java not found                         | Java not installed or PATH not set                     | Install JDK 11+ (`sudo apt install openjdk-17-jdk`) and verify with `java -version` |
+| Target URL not reachable               | App not running or firewall blocking                   | Ensure your React app is running and ports are accessible                           |
+| Scan fails in CI/CD pipeline           | Headless flags missing or network issues               | Use `-daemon -headless` and verify network connectivity in pipeline agent           |
+| Reports not generated                  | Incorrect report path or permissions                   | Specify a valid output path with write permissions using `-report` option           |
 
 ---
 
 ## 6. FAQs
-## FAQs
+
 
 **1. Do I need a database for ZAP?**  
 → No, ZAP is standalone. Reports are generated locally and do not require a database.
