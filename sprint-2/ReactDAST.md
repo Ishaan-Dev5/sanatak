@@ -116,33 +116,55 @@ flowchart TD
 
 ## 5. Advantages
 
-| Advantage                    | Description                                                                 |
-|-----------------------------|-----------------------------------------------------------------------------|
-| Early Detection             | Catches exposed secrets before they reach production or public repos.       |
-| Automated Enforcement       | Scans every commit/build automatically—no manual effort needed.             |
-| Developer Feedback Loop     | Alerts developers instantly during CI runs for quick remediation.           |
-| Reduced Breach Risk         | Prevents leaks of sensitive data like API keys, tokens, and passwords.      |
-| Easy CI Integration         | Works smoothly with CI tools like GitHub Actions, GitLab CI, and Jenkins.   |
----
+| **Advantage**                | **Explanation** |
+|-------------------------------|-----------------|
+| **Real-World Testing**        | Simulates real attacker behavior against the running application, identifying exploitable vulnerabilities. |
+| **No Source Code Needed**     | Works as a black-box test, making it useful even when source code is unavailable (e.g., third-party apps). |
+| **Detects Runtime Issues**    | Finds vulnerabilities that only appear when the app is live, such as session handling flaws or misconfigurations. |
+| **Broad Technology Coverage** | Language-agnostic; works with any application stack (Go, Java, React, Node, etc.) since it tests exposed interfaces. |
+| **OWASP Top 10 Coverage**     | Detects common vulnerabilities like SQL Injection, XSS, CSRF, HTML Injection, and authentication flaws. |
+| **CI/CD Integration**         | Many tools integrate seamlessly into DevOps pipelines, enabling continuous security testing. |
+| **Compliance Support**        | Helps organizations meet industry standards and regulations like PCI-DSS, HIPAA, and GDPR. |
+| **Cost-Effective**            | Automated scanning reduces reliance on manual penetration testing, saving time and resources. |
+| **Third-Party Validation**    | Can test applications from vendors where internal teams don’t have source code access. |
+| **Improves Security Posture** | Provides remediation guidance, helping organizations strengthen overall application security. |
 
+---
+## 7. Disadvantages
+
+| **Disadvantage**              | **Explanation** |
+|-------------------------------|-----------------|
+| **Limited Code Insight**       | Cannot see the source code, so it may miss hidden vulnerabilities not exposed at runtime. |
+| **False Positives/Negatives**  | May report issues that don’t exist (false positives) or miss real vulnerabilities (false negatives) depending on configuration and coverage. |
+| **Requires Running App**       | Needs a deployed/staging environment to test, unlike SAST which can run on code before deployment. |
+| **Authentication Complexity**  | Handling logins, sessions, and OAuth/JWT flows can be tricky and requires extra configuration. |
+| **Longer Scan Times**          | Deep scans of large applications can take significant time and resources. |
+| **Limited Business Logic Testing** | Struggles with detecting flaws in custom business logic or complex workflows. |
+| **Environmental Constraints**  | Can be blocked by WAFs, rate limits, or CAPTCHAs, reducing scan effectiveness. |
+| **Cannot Ensure Full Coverage**| Crawlers may miss hidden or unlinked endpoints in Single Page Applications (SPAs) or APIs without specifications. |
+
+---
 ## 6.  Best Practices
 
-| Best Practice                          | Why It Works Across All Tools                                              |
-|----------------------------------------|----------------------------------------------------------------------------|
-| **Automate Scanning in CI/CD**         | All tools support CLI or CI integration—ensures secrets are caught early. |
-| **Use Pre-Commit Hooks**               | Tools like Detect Secrets and Gitleaks support this—prevents secrets before commit. |
-| **Maintain a Baseline File**           | Helps track known secrets and reduce noise—supported by Detect Secrets, Gitleaks. |
-| **Regularly Update Detection Rules**   | Keeps regex and entropy logic current—most tools allow custom rule sets.  |
-| **Scan Git History Periodically**      | Deep scans catch secrets in older commits—TruffleHog and Gitleaks excel here. |
-| **Avoid Logging Secrets in CI Output** | Prevents accidental exposure—applies to all CI environments and scanners.  |
+| **Best Practice**                  | **Explanation** |
+|-----------------------------------|-----------------|
+| **Use a Staging/Test Environment** | Run scans against a non-production environment and seed realistic test data to avoid impacting real users. |
+| **Integrate into CI/CD Pipelines** | Automate scans after deployment to staging or nightly builds; include authenticated endpoints. |
+| **Handle Authentication Properly** | Configure login scripts, OAuth/JWT tokens, or session management; test with different user roles. |
+| **Include API and SPA Coverage**   | Provide OpenAPI/Swagger specs for APIs; ensure JS-heavy SPAs are crawled and rendered properly. |
+| **Whitelist Scanner IPs**          | Prevent blocking by WAFs, rate limits, or CAPTCHAs in the test environment. |
+| **Start with Baseline, Then Full Scans** | Use quick baseline scans for overview and full scans for in-depth testing of complex endpoints. |
+| **Tune and Customize Payloads**    | Adjust payloads for app technology and frameworks; reduce false positives by excluding irrelevant endpoints. |
+| **Prioritize Findings**            | Focus on high-severity vulnerabilities (e.g., SQLi, XSS, CSRF) and validate manually if needed. |
+| **Maintain Regular Scans**         | Scan after major releases, code changes, or dependency updates; track trends over time. |
+| **Combine with Other Security Testing** | Use alongside SAST and SCA to cover code-level and dependency vulnerabilities; DAST finds runtime/exploitable flaws. |
+
 
 
 ---
 
 ## 8. Conclusion
 
-Credential scanning is an essential practice to safeguard applications and infrastructure from accidental secret leaks.
-We chose Gitleaks as our primary credential scanning tool because it is lightweight, fast, easy to integrate with Jenkins, customizable with regex patterns, capable of scanning Git history, and actively maintained as an open-source project, ensuring early detection of secrets to strengthen our security posture.
 
 
 
@@ -194,9 +216,5 @@ No, it reduces risk but should be combined with other security practices like pr
 | Resource | Link |
 |----------|------|
 | What is DAST? | [Link](https://www.ibm.com/think/topics/dynamic-application-security-testing) |
-| Gitleaks Documentation | [Link](https://github.com/gitleaks/gitleaks) |
-| GitHub Secret Scanning Docs | [Link](https://docs.github.com/en/code-security/secret-scanning) |
-| Detect Secrets Documentation | [Link](https://github.com/Yelp/detect-secrets) |
-| GitGuardian Documentation | [Link](https://www.gitguardian.com) |
-| GitLeaks POC |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-146-ishaan/Applications/CI-Design/Generic-CI-Operation/Cred-Scanning/POC/README.md) |
+
 
