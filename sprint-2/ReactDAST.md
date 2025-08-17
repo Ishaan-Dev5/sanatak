@@ -60,7 +60,7 @@ Dynamic Application Security Testing (DAST) is crucial because it identifies rea
 
 ---
 
-## 4. Workflow Diagram
+## 4. Workflow 
 
 
 
@@ -114,7 +114,7 @@ flowchart TD
 ---
 
 
-## 5. Advantages
+## 7. Advantages
 
 | **Advantage**                | **Explanation** |
 |-------------------------------|-----------------|
@@ -130,7 +130,7 @@ flowchart TD
 | **Improves Security Posture** | Provides remediation guidance, helping organizations strengthen overall application security. |
 
 ---
-## 7. Disadvantages
+## 8. Disadvantages
 
 | **Disadvantage**              | **Explanation** |
 |-------------------------------|-----------------|
@@ -144,7 +144,11 @@ flowchart TD
 | **Cannot Ensure Full Coverage**| Crawlers may miss hidden or unlinked endpoints in Single Page Applications (SPAs) or APIs without specifications. |
 
 ---
-## 6.  Best Practices
+
+## 9. POC
+
+---
+## 10.  Best Practices
 
 | **Best Practice**                  | **Explanation** |
 |-----------------------------------|-----------------|
@@ -163,7 +167,7 @@ flowchart TD
 
 ---
 
-## 8. Conclusion
+## 11. Conclusion
 
 
 
@@ -180,7 +184,7 @@ flowchart TD
 
 ---
 
-## 9. Frequently Asked Questions (FAQs)
+## 12. Frequently Asked Questions (FAQs)
 
 
 
@@ -201,7 +205,7 @@ No, it reduces risk but should be combined with other security practices like pr
 
 ---
 
-## 10. Contact Information
+## 13. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
@@ -211,7 +215,7 @@ No, it reduces risk but should be combined with other security practices like pr
 
 ---
 
-## 11. References
+## 14. References
 
 | Resource | Link |
 |----------|------|
