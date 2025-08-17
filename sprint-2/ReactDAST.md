@@ -1,5 +1,6 @@
 
-<img width="341" height="213" alt="Screenshot 2025-08-13 193419" src="https://github.com/user-attachments/assets/388c288c-a662-4b57-8c03-1821ea3a3c5a" />
+<img width="400" height="373" alt="image" src="https://github.com/user-attachments/assets/280157e6-597c-47a4-a5e5-0d812bb05702" />
+
 
 # REACT DAST
 
@@ -19,231 +20,163 @@
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-2. [Prerequisites](#2-prerequisites)
-3. [System Requirements](#3-System-Requirements)
-4. [Setup and Execution](#4-Setup-and-Execution)
-5. [Troubleshooting](#5-troubleshooting)
-6. [FAQs](#6-FAQs)
-7. [Contact Information](#7-contact-Information)
-8. [References](#8-references)
-
+1. [Introduction](#1-introduction)  
+2. [What is  Credential Scanning?](#2-What-is-Credential-Scanning)  
+3. [Why need Credential Scanning?](#3-Why-need-Credential-Scanning)  
+4. [Workflow Diagram](#4-workflow-diagram)
+5. [Different Tools](5-Different-Tools)  
+6. [Advantages](#6-advantages)  
+7. [Best Practices](#7-best-practices)  
+8. [Conclusion](#8-conclusion)  
+9. [FAQs](#9-faqs)  
+10. [Contact Information](#10-contact-information)  
+11. [References](#11-references)
 
 ---
 
 ## 1. Introduction
 
-This document provides a Proof of Concept (POC) for implementing Python  checks using SonarQube for static code analysis
-
----
-## 2. Prerequisites
-
-| Dependency            | Version                   |
-| --------------------- | ------------------------- |
-| **Java**              | JDK 11+                   |
-| **SonarQube**         | v9.x or above             |
-| **SonarQube Scanner** | Latest compatible version |
-
----
-## 3. System Requirements
-
-| Hardware/Software | Minimum Recommendation                     |
-| ----------------- | ------------------------------------------ |
-| **Processor**     | 2 CPU cores                                |
-| **RAM**           | 4 GiB                                      |
-| **Disk**          | 10 GB                                      |
-| **OS**            | Ubuntu 22.04 LTS / Windows 10+ / macOS 11+ |
+This document explains credential scanning — the process of detecting and preventing hardcoded secrets like API keys, passwords, and tokens in codebases. It covers how credential scanning works, why it’s important for security, and the tools and best practices.
 
 ---
 
+## 2. What is  Credential Scanning?
 
-## 4. Setup and Execution
 
-### Step 1: Update System Packages
-
-```bash
-sudo apt update 
-```
-<img width="1447" height="612" alt="Screenshot 2025-08-16 162620" src="https://github.com/user-attachments/assets/e002874b-a32d-469b-9db7-ecb859703478" />
-
----
-### Step 2: Install java and verify
-
-```bash
-sudo apt install openjdk-17-jdk -y
-java -version
-```
-<img width="1522" height="493" alt="Screenshot 2025-08-16 162628" src="https://github.com/user-attachments/assets/c0fb479f-c7f2-4f58-a0e3-1a0376c43a7d" />
+Credential scanning in continuous integration (CI) involves automatically inspecting code and configuration files for hardcoded secrets, such as passwords, API keys, and other sensitive information, to prevent them from being exposed in production environments
 
 ---
 
-### Step 3: Install SonarQube
+## 3. Why need Credential Scanning?
 
-```bash
-wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-sudo apt install unzip -y
-unzip sonarqube-10.5.1.90531.zip
-mv sonarqube-10.5.1.90531 sonarqube
+| Benefit | Description |
+|---------|-------------|
+| **Prevent Data Breaches** | Secrets like API keys, database passwords, and access tokens can grant attackers unauthorized access if exposed. Credential scanning identifies and removes them before exploitation. |
+| **Reduces the Attack Surface** | Minimizing exposed secrets lowers the potential entry points for malicious actors. |
+| **Early Detection** | Stops secrets from leaving the developer's local environment. |
+| **Automates Security Checks** | Integrates into CI pipelines to ensure consistent and regular scanning for vulnerabilities. |
+| **Improves Security Posture** | Proactively addresses secret exposures to build secure applications and infrastructure. |
+| **Compliance** | Supports adherence to security standards like GDPR, HIPAA, and PCI-DSS. |
+
+---
+
+## 4. Workflow Diagram
+
+
+
+
+```mermaid
+flowchart TD
+    A[Code Commit] --> B[Trigger CI/CD Pipeline]
+    B --> C[Build Stage<br>Compile & Prepare Application]
+    C --> D[Credential Scanning<br>Tools: Gitleaks, Trufflehog, etc.]
+    D --> E{Secrets Found?}
+
+    E -->|Yes| F[Send Email Alert<br>Stop Pipeline]
+    F --> G[Developer Remediation<br>Rotate & Update Secrets]
+    G --> H[Recommit Code]
+    H --> B
+
+    E -->|No| I[Proceed to Testing & Production]
 
 ```
-<img width="1917" height="298" alt="Screenshot 2025-08-16 162720" src="https://github.com/user-attachments/assets/4e89030b-dd21-4798-b5d0-18a1ce1544d6" />
-
 ---
-### Step 4: Create Systemd Service File
+## 5. Different Tools
 
-```bash
-sudo nano /etc/systemd/system/sonarqube.service
-```
-and paste these line 
-
-```bash
-[Unit]
-Description=SonarQube service
-After=syslog.target network.target
-
-[Service]
-Type=forking
-ExecStart=/home/ubuntu/sonarqube/bin/linux-x86-64/sonar.sh start
-ExecStop=/home/ubuntu/sonarqube/bin/linux-x86-64/sonar.sh stop
-User=ubuntu
-Group=ubuntu
-Restart=always
-
-[Install] WantedBy=multi-user.target
-```
----
-### Step 5: Reload, Enable & start the Service
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl start sonarqube
-sudo systemctl enable sonarqube
-```
-<img width="1918" height="470" alt="Screenshot 2025-08-16 162738" src="https://github.com/user-attachments/assets/23a87118-b2eb-428b-abdf-d9838e1482bb" />
-
----
-### Step 6: Access the Dashboard
-
-```bash
-http://<INSTANCE_PUBLIC_IP>:9000
-```
-with the help of `username : admin ` and `password : admin`
-
----
-
-### Step 7: Create a Project in SonarQube
-
-1. Go to **Projects** → **Create Project**  
-2. Select **Manually**  
-3. Enter:  
-   - **Project Key** → `python`  
-   - **Project Name** → `python`  
-4. Choose **Locally**
-
-<img width="1919" height="607" alt="Screenshot 2025-08-16 162914" src="https://github.com/user-attachments/assets/43989c71-ed43-448d-ae2a-44dc9b263ebc" />
- 
-5. Generate a **Token** → copy it (we will need it in config)
-
-   <img width="1846" height="656" alt="Screenshot 2025-08-16 162933" src="https://github.com/user-attachments/assets/f032f656-dd75-4f4e-96ef-1f3fddc115d5" />
-
-
----
-### Step 8: Install SonarScanner
-
-```bash
- wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-unzip sonar-scanner-cli-5.0.1.3006-linux.zip
-sudo mv sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner
-echo 'export PATH=$PATH:/opt/sonar-scanner/bin' >> ~/.bashrc
-source ~/.bashrc
-```
-
-<img width="1919" height="344" alt="Screenshot 2025-08-16 162752" src="https://github.com/user-attachments/assets/85f75415-824c-4e9d-88c0-261f2f21cf47" />
+| Tool | Description | Key Features | Integrations | Pricing |
+|------|-------------|--------------|--------------|---------|
+| **TruffleHog** | Scans for high entropy strings and secrets in code, Git history, cloud storage, and Docker images. | Regex + entropy detection, deep history scan, multi-source scanning | GitHub, GitLab, Bitbucket, S3, local FS, Docker | Open-source |
+| **Gitleaks** | Lightweight secret scanner for Git repos. | Fast, customizable regex rules, history scanning | GitHub Actions, GitLab CI, Jenkins | Open-source |
+| **GitHub Secret Scanning** | Native GitHub feature for private/public repos. | Real-time scanning, partner patterns | GitHub only | Built-in for Enterprise |
+| **Detect Secrets** | Yelp’s Python-based secret scanner. | Baseline file, plugin-based detection | CI/CD pipelines, pre-commit | Open-source |
+| **GitGuardian** | SaaS secret detection & monitoring. | Dashboard, real-time alerts, remediation help | GitHub, GitLab, Bitbucket | Paid with free tier |
 
 
 ---
 
-### Step 9: Clone the project repo and navigate into it
+## 5. Advantages
 
-```bash
-git clone <url>
-cd directory
-```
-
-<img width="1893" height="214" alt="Screenshot 2025-08-16 162817" src="https://github.com/user-attachments/assets/8337a765-4df4-4154-a078-6b5bb40ebb76" />
-
----
-### Step 10: To run analysis on project copy the commands from sonarqube UI
-<img width="1919" height="713" alt="Screenshot 2025-08-16 162944" src="https://github.com/user-attachments/assets/7dad235c-c538-4ea1-bfc8-acd3a2ab802f" />
-
-
-
-```bash
- sonar-scanner \
-  -Dsonar.projectKey=python \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://13.233.84.84:9000 \
-  -Dsonar.token=sqp_1ec179e8e7f92fbe73e2f72ac8a21334bd831b38
-```
-### Step 11. Now paste these commands in the project root folder
-
-<img width="1919" height="963" alt="Screenshot 2025-08-16 162836" src="https://github.com/user-attachments/assets/6c192713-36e6-471f-a1ef-02f7e38c2462" />
-
-
-### Step 12. Check the report on Sonarqube UI
-
-<img width="1906" height="860" alt="Screenshot 2025-08-16 162852" src="https://github.com/user-attachments/assets/6a250a93-9e92-4502-b745-f3f732c69f64" />
-
+| Advantage                    | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| Early Detection             | Catches exposed secrets before they reach production or public repos.       |
+| Automated Enforcement       | Scans every commit/build automatically—no manual effort needed.             |
+| Developer Feedback Loop     | Alerts developers instantly during CI runs for quick remediation.           |
+| Reduced Breach Risk         | Prevents leaks of sensitive data like API keys, tokens, and passwords.      |
+| Easy CI Integration         | Works smoothly with CI tools like GitHub Actions, GitLab CI, and Jenkins.   |
 ---
 
-## 5. Troubleshooting
+## 6.  Best Practices
 
-| Issue | Possible Cause | Solution |
-|-------|----------------|----------|
-| SonarQube service not starting | Insufficient RAM (needs 2GB+ free) | Allocate more memory or increase swap space |
-| Port 9000 not accessible | Firewall blocking / Security Group not open | Allow inbound traffic on port 9000 |
-| "Java not found" error | Java not installed or PATH not set | Verify with `java -version` and install JDK 11+ |
-| SonarScanner not recognized | PATH not updated | Run `source ~/.bashrc` or add scanner bin path manually |
-| Authentication failed (token) | Wrong/expired token used | Regenerate token in SonarQube UI and update command |
-
----
-
-## 6. FAQs
-**1. Do I need PostgreSQL for SonarQube?**  
-→ For production use, yes. For POC/testing, embedded H2 DB works but data resets on restart.  
-
-**2. Can I use OpenJDK 17 instead of JDK 11?**  
-→ Yes, SonarQube 9.x+ supports JDK 11 and 17.  
-
-**3. How do I reset the admin password?**  
-→ Use default `admin/admin`. If changed and forgotten, update `users` table in DB or reset via DB query.  
-
-**4. Can SonarQube analyze multiple languages?**  
-→ Yes, it supports 20+ languages (Python, Java, JS, C#, etc.) with built-in plugins.  
-
-**5. How do I stop SonarQube service?**  
-→ Run `sudo systemctl stop sonarqube`.  
+| Best Practice                          | Why It Works Across All Tools                                              |
+|----------------------------------------|----------------------------------------------------------------------------|
+| **Automate Scanning in CI/CD**         | All tools support CLI or CI integration—ensures secrets are caught early. |
+| **Use Pre-Commit Hooks**               | Tools like Detect Secrets and Gitleaks support this—prevents secrets before commit. |
+| **Maintain a Baseline File**           | Helps track known secrets and reduce noise—supported by Detect Secrets, Gitleaks. |
+| **Regularly Update Detection Rules**   | Keeps regex and entropy logic current—most tools allow custom rule sets.  |
+| **Scan Git History Periodically**      | Deep scans catch secrets in older commits—TruffleHog and Gitleaks excel here. |
+| **Avoid Logging Secrets in CI Output** | Prevents accidental exposure—applies to all CI environments and scanners.  |
 
 
 ---
 
+## 8. Conclusion
+
+Credential scanning is an essential practice to safeguard applications and infrastructure from accidental secret leaks.
+We chose Gitleaks as our primary credential scanning tool because it is lightweight, fast, easy to integrate with Jenkins, customizable with regex patterns, capable of scanning Git history, and actively maintained as an open-source project, ensuring early detection of secrets to strengthen our security posture.
 
 
 
 
 
 
-## 7. Contact Information
+
+
+
+
+
+
+
+---
+
+## 9. Frequently Asked Questions (FAQs)
+
+
+
+### 1. **Do I need to pay for credential scanning tools?**
+Many popular tools like **TruffleHog**, **Gitleaks**, and **Detect Secrets** are open-source and free. Some services like **GitGuardian** offer paid plans with additional features.
+
+### 2. **Can credential scanning run automatically?**  
+Yes, you can integrate scanners into your **CI/CD pipelines** to scan every commit and pull request automatically.
+
+### 3. **Will credential scanning slow down my CI builds?**  
+Minimal impact, but deep Git history scans (like TruffleHog) may take longer depending on repository size.
+
+### 4. **What should I do if a secret is found?**  
+Remove it from the codebase, **rotate the secret**, and update configurations to use the new value securely.
+
+### 5. **Does credential scanning guarantee complete protection?**  
+No, it reduces risk but should be combined with other security practices like proper secret storage (**Vault**, **AWS Secrets Manager**).
+
+---
+
+## 10. Contact Information
 
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|-------------|---------|
 | Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |   https://github.com/Ishaan-Dev1  |
 
+
+
 ---
 
-## 8. References
+## 11. References
 
-| Resource |  Link |
+| Resource | Link |
 |----------|------|
-| **SonarQube Documentation** |  [Visit](https://docs.sonarqube.org/latest/) |
+| TruffleHog Documentation | [Link](https://github.com/trufflesecurity/trufflehog) |
+| Gitleaks Documentation | [Link](https://github.com/gitleaks/gitleaks) |
+| GitHub Secret Scanning Docs | [Link](https://docs.github.com/en/code-security/secret-scanning) |
+| Detect Secrets Documentation | [Link](https://github.com/Yelp/detect-secrets) |
+| GitGuardian Documentation | [Link](https://www.gitguardian.com) |
+| GitLeaks POC |[Link](https://github.com/Snaatak-Apt-Get-Swag/documentation/blob/SCRUM-146-ishaan/Applications/CI-Design/Generic-CI-Operation/Cred-Scanning/POC/README.md) |
 
