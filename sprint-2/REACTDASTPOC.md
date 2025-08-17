@@ -62,142 +62,56 @@ This document provides a Proof of Concept (POC) for implementing
 
 ## 4. Setup and Execution
 
-### Step 1: Update System Packages
+### Step 1: Install Java 
 
 ```bash
-sudo apt update 
-```
-<img width="1447" height="612" alt="Screenshot 2025-08-16 162620" src="https://github.com/user-attachments/assets/e002874b-a32d-469b-9db7-ecb859703478" />
-
----
-### Step 2: Install java and verify
-
-```bash
+ sudo apt update
 sudo apt install openjdk-17-jdk -y
-java -version
 ```
-<img width="1522" height="493" alt="Screenshot 2025-08-16 162628" src="https://github.com/user-attachments/assets/c0fb479f-c7f2-4f58-a0e3-1a0376c43a7d" />
+<img width="1247" height="524" alt="image" src="https://github.com/user-attachments/assets/aadc74f4-3f7f-46fc-910b-52b3db58d1b5" />
+
 
 ---
-
-### Step 3: Install SonarQube
+### Step 2: Install Zap
 
 ```bash
-wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.5.1.90531.zip
-sudo apt install unzip -y
-unzip sonarqube-10.5.1.90531.zip
-mv sonarqube-10.5.1.90531 sonarqube
+sudo snap install zaproxy --classic
 
 ```
-<img width="1917" height="298" alt="Screenshot 2025-08-16 162720" src="https://github.com/user-attachments/assets/4e89030b-dd21-4798-b5d0-18a1ce1544d6" />
-
 ---
-### Step 4: Create Systemd Service File
 
+### Step 3: Start Zap
 ```bash
-sudo nano /etc/systemd/system/sonarqube.service
+zaproxy
+
 ```
-and paste these line 
-
-```bash
-[Unit]
-Description=SonarQube service
-After=syslog.target network.target
-
-[Service]
-Type=forking
-ExecStart=/home/ubuntu/sonarqube/bin/linux-x86-64/sonar.sh start
-ExecStop=/home/ubuntu/sonarqube/bin/linux-x86-64/sonar.sh stop
-User=ubuntu
-Group=ubuntu
-Restart=always
-
-[Install] WantedBy=multi-user.target
-```
----
-### Step 5: Reload, Enable & start the Service
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl start sonarqube
-sudo systemctl enable sonarqube
-```
-<img width="1918" height="470" alt="Screenshot 2025-08-16 162738" src="https://github.com/user-attachments/assets/23a87118-b2eb-428b-abdf-d9838e1482bb" />
+<img width="1907" height="814" alt="Screenshot 2025-08-18 004630" src="https://github.com/user-attachments/assets/8980231c-c7e7-471d-b5d3-b2ba5123a885" />
 
 ---
-### Step 6: Access the Dashboard
+### Step 4: Click on Automated scan and enter the url 
+<img width="1915" height="628" alt="image" src="https://github.com/user-attachments/assets/100c3345-d3c3-4299-b750-1533b0449eba" />
 
-```bash
-http://<INSTANCE_PUBLIC_IP>:9000
-```
-with the help of `username : admin ` and `password : admin`
+           
 
----
 
-### Step 7: Create a Project in SonarQube
+### Step 5: Click on Generate Report
 
-1. Go to **Projects** → **Create Project**  
-2. Select **Manually**  
-3. Enter:  
-   - **Project Key** → `python`  
-   - **Project Name** → `python`  
-4. Choose **Locally**
-
-<img width="1919" height="607" alt="Screenshot 2025-08-16 162914" src="https://github.com/user-attachments/assets/43989c71-ed43-448d-ae2a-44dc9b263ebc" />
- 
-5. Generate a **Token** → copy it (we will need it in config)
-
-   <img width="1846" height="656" alt="Screenshot 2025-08-16 162933" src="https://github.com/user-attachments/assets/f032f656-dd75-4f4e-96ef-1f3fddc115d5" />
-
+<img width="788" height="699" alt="image" src="https://github.com/user-attachments/assets/d068df51-c5b0-41c5-8bdb-89fa13a9cf25" />
 
 ---
-### Step 8: Install SonarScanner
+### Step 6: Access the report
 
-```bash
- wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-unzip sonar-scanner-cli-5.0.1.3006-linux.zip
-sudo mv sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner
-echo 'export PATH=$PATH:/opt/sonar-scanner/bin' >> ~/.bashrc
-source ~/.bashrc
-```
-
-<img width="1919" height="344" alt="Screenshot 2025-08-16 162752" src="https://github.com/user-attachments/assets/85f75415-824c-4e9d-88c0-261f2f21cf47" />
+<img width="880" height="868" alt="image" src="https://github.com/user-attachments/assets/b5050b51-e65f-4bb0-b26a-e6713ce38926" />
 
 
 ---
 
-### Step 9: Clone the project repo and navigate into it
-
-```bash
-git clone <url>
-cd directory
-```
-
-<img width="1893" height="214" alt="Screenshot 2025-08-16 162817" src="https://github.com/user-attachments/assets/8337a765-4df4-4154-a078-6b5bb40ebb76" />
+### Step 7. Analyze the alerts 
+<img width="633" height="849" alt="image" src="https://github.com/user-attachments/assets/50c50dad-7b55-42e9-bc8d-3dbd6b97f400" />
 
 ---
-### Step 10: To run analysis on project copy the commands from sonarqube UI
-<img width="1919" height="713" alt="Screenshot 2025-08-16 162944" src="https://github.com/user-attachments/assets/7dad235c-c538-4ea1-bfc8-acd3a2ab802f" />
 
 
-
-```bash
- sonar-scanner \
-  -Dsonar.projectKey=python \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://13.233.84.84:9000 \
-  -Dsonar.token=sqp_1ec179e8e7f92fbe73e2f72ac8a21334bd831b38
-```
-### Step 11. Now paste these commands in the project root folder
-
-<img width="1919" height="963" alt="Screenshot 2025-08-16 162836" src="https://github.com/user-attachments/assets/6c192713-36e6-471f-a1ef-02f7e38c2462" />
-
-
-### Step 12. Check the report on Sonarqube UI
-
-<img width="1906" height="860" alt="Screenshot 2025-08-16 162852" src="https://github.com/user-attachments/assets/6a250a93-9e92-4502-b745-f3f732c69f64" />
-
----
 
 ## 5. Troubleshooting
 
