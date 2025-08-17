@@ -43,7 +43,7 @@ This document explains, and the tools and best practices.
 
 ---
 
-## 2. What is  Dynamic Application Security Testing?
+## 2.What is Dynamic Application Security Testing (DAST)
 Dynamic Application Security Testing (DAST) is a method of testing web applications for security vulnerabilities by simulating real-world attacks on a running application. It analyzes the application from an "outside-in" perspective, much like a malicious hacker would, without needing access to the application's source code.
 
 
@@ -148,7 +148,7 @@ flowchart TD
 
 ---
 
-## 9. POC
+## 9. Proof of Concept (POC
 
 ---
 ## 10.  Best Practices
