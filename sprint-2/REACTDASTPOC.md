@@ -37,23 +37,25 @@
 This document provides a Proof of Concept (POC) for implementing 
 
 ---
+
 ## 2. Prerequisites
 
-| Dependency            | Version                   |
-| --------------------- | ------------------------- |
-| **Java**              | JDK 11+                   |
-| **SonarQube**         | v9.x or above             |
-| **SonarQube Scanner** | Latest compatible version |
+
+
+- **Java 11+** installed (`sudo apt install openjdk-17-jdk`)  
+- **React app or target application running** for scanning  
+
 
 ---
 ## 3. System Requirements
 
-| Hardware/Software | Minimum Recommendation                     |
-| ----------------- | ------------------------------------------ |
-| **Processor**     | 2 CPU cores                                |
-| **RAM**           | 4 GiB                                      |
-| **Disk**          | 10 GB                                      |
-| **OS**            | Ubuntu 22.04 LTS / Windows 10+ / macOS 11+ |
+| **Requirement** | **Minimum**          | **Recommended**      |
+|-----------------|--------------------|--------------------|
+| **OS**          | Ubuntu 20.04+       | Ubuntu 22.04+       |
+| **CPU**         | 2 cores             | 4 cores or more     |
+| **RAM**         | 2 GB                | 4 GB or more        |
+| **Disk Space**  | 500 MB              | 1 GB or more        |
+| **Ports**       | Any free port (default: 8080) | 8080 or custom free port |
 
 ---
 
