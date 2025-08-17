@@ -21,16 +21,19 @@
 ## Table of Contents
 
 1. [Introduction](#1-introduction)  
-2. [What is  Credential Scanning?](#2-What-is-Credential-Scanning)  
-3. [Why need Credential Scanning?](#3-Why-need-Credential-Scanning)  
-4. [Workflow Diagram](#4-workflow-diagram)
-5. [Different Tools](5-Different-Tools)  
-6. [Advantages](#6-advantages)  
-7. [Best Practices](#7-best-practices)  
-8. [Conclusion](#8-conclusion)  
-9. [FAQs](#9-faqs)  
-10. [Contact Information](#10-contact-information)  
-11. [References](#11-references)
+2. [What is Dynamic Application Security Testing (DAST)?](#2-what-is-dynamic-application-security-testing-dast)  
+3. [Why Need DAST?](#3-why-need-dast)  
+4. [Workflow](#4-workflow)  
+5. [Different Tools](#5-different-tools)  
+6. [Comparison](#6-comparison)  
+7. [Advantages](#7-advantages)  
+8. [Disadvantages](#8-disadvantages)  
+9. [Proof of Concept (POC)](#9-proof-of-concept-poc)  
+10. [Best Practices](#10-best-practices)  
+11. [Conclusion](#11-conclusion)  
+12. [Frequently Asked Questions (FAQs)](#12-frequently-asked-questions-faqs)  
+13. [Contact Information](#13-contact-information)  
+14. [References](#14-references)  
 
 ---
 
