@@ -126,20 +126,22 @@ zaproxy
 ---
 
 ## 6. FAQs
-**1. Do I need PostgreSQL for SonarQube?**  
-→ For production use, yes. For POC/testing, embedded H2 DB works but data resets on restart.  
+## FAQs
 
-**2. Can I use OpenJDK 17 instead of JDK 11?**  
-→ Yes, SonarQube 9.x+ supports JDK 11 and 17.  
+**1. Do I need a database for ZAP?**  
+→ No, ZAP is standalone. Reports are generated locally and do not require a database.
 
-**3. How do I reset the admin password?**  
-→ Use default `admin/admin`. If changed and forgotten, update `users` table in DB or reset via DB query.  
+**2. Can I scan a React app running locally?**  
+→ Yes, you can scan any running app. Make sure the URL is accessible (e.g., `http://localhost:3000`).
 
-**4. Can SonarQube analyze multiple languages?**  
-→ Yes, it supports 20+ languages (Python, Java, JS, C#, etc.) with built-in plugins.  
+**3. Which Java version is required?**  
+→ ZAP requires Java 11+. OpenJDK 17 is recommended for newer versions.
 
-**5. How do I stop SonarQube service?**  
-→ Run `sudo systemctl stop sonarqube`.  
+**4. Can I integrate ZAP with Jenkins?**  
+→ Yes, you can run ZAP scans in Jenkins pipelines using headless mode and generate reports automatically.
+
+**5. How do I access the scan report?**  
+→ Reports can be exported as HTML, XML, or JSON from the ZAP GUI or CLI in headless mode.
 
 
 ---
