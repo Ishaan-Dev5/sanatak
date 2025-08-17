@@ -39,7 +39,7 @@
 
 ## 1. Introduction
 
-This document explains, and the tools and best practices.
+This document provides a comprehensive overview of **Dynamic Application Security Testing (DAST)**, focusing on its purpose, workflow, tools, and best practices for web applications
 
 ---
 
@@ -69,19 +69,14 @@ Dynamic Application Security Testing (DAST) is crucial because it identifies rea
 
 
 ```mermaid
+
 flowchart TD
-    A[Code Commit] --> B[Trigger CI/CD Pipeline]
-    B --> C[Build Stage<br>Compile & Prepare Application]
-    C --> D[Credential Scanning<br>Tools: Gitleaks, Trufflehog, etc.]
-    D --> E{Secrets Found?}
-
-    E -->|Yes| F[Send Email Alert<br>Stop Pipeline]
-    F --> G[Developer Remediation<br>Rotate & Update Secrets]
-    G --> H[Recommit Code]
-    H --> B
-
-    E -->|No| I[Proceed to Testing & Production]
-
+    A[Application Deployment] --> B[DAST Tool Scan Initiated]
+    B --> C{Vulnerabilities Detected?}
+    C -->|Yes| D[Generate Report & Notify Team]
+    D --> E[Developer Fix]
+    E --> A
+    C -->|No| F[Application Secure / Continue Development]
 ```
 ---
 ## 5. Different Tools
@@ -175,7 +170,11 @@ _Follow this link for POC_
 ## 11. Conclusion
 
 
-
+DAST provides organizations with an external, real-world perspective on application security by simulating potential attacks on live systems.
+Using tools like OWASP ZAP enables security teams to:
+- Identify runtime vulnerabilities and misconfigurations.
+- Automate scanning in CI/CD pipelines for continuous security monitoring.
+- Generate detailed reports with actionable remediation guidance.
 
 
 
