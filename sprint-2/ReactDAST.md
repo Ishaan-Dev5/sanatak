@@ -36,27 +36,27 @@
 
 ## 1. Introduction
 
-This document explains credential scanning — the process of detecting and preventing hardcoded secrets like API keys, passwords, and tokens in codebases. It covers how credential scanning works, why it’s important for security, and the tools and best practices.
+This document explains, and the tools and best practices.
 
 ---
 
-## 2. What is  Credential Scanning?
+## 2. What is  Dynamic Application Security Testing?
+Dynamic Application Security Testing (DAST) is a method of testing web applications for security vulnerabilities by simulating real-world attacks on a running application. It analyzes the application from an "outside-in" perspective, much like a malicious hacker would, without needing access to the application's source code.
 
-
-Credential scanning in continuous integration (CI) involves automatically inspecting code and configuration files for hardcoded secrets, such as passwords, API keys, and other sensitive information, to prevent them from being exposed in production environments
 
 ---
 
-## 3. Why need Credential Scanning?
+## 3. Why need DAST?
 
-| Benefit | Description |
-|---------|-------------|
-| **Prevent Data Breaches** | Secrets like API keys, database passwords, and access tokens can grant attackers unauthorized access if exposed. Credential scanning identifies and removes them before exploitation. |
-| **Reduces the Attack Surface** | Minimizing exposed secrets lowers the potential entry points for malicious actors. |
-| **Early Detection** | Stops secrets from leaving the developer's local environment. |
-| **Automates Security Checks** | Integrates into CI pipelines to ensure consistent and regular scanning for vulnerabilities. |
-| **Improves Security Posture** | Proactively addresses secret exposures to build secure applications and infrastructure. |
-| **Compliance** | Supports adherence to security standards like GDPR, HIPAA, and PCI-DSS. |
+Dynamic Application Security Testing (DAST) is crucial because it identifies real-world vulnerabilities in running applications, which could be exploited by attackers, and it does so without needing access to the source code.
+
+| **Reason**                               | **Explanation**                                                                 |
+|------------------------------------------|---------------------------------------------------------------------------------|
+| **Simulates real-world attacks**          | DAST tools mimic how attackers interact with a live app, finding vulnerabilities other methods may miss. |
+| **Identifies runtime issues**             | Detects vulnerabilities that only appear when the application is running (e.g., session flaws, XSS). |
+| **Reduces risk of breaches and data leaks** | Finds vulnerabilities early in SDLC to fix before exploitation, lowering breach and data leak risks. |
+| **Verifies security of third-party apps** | Assesses the security of externally built/vendor applications without source code. |
+| **Language-independent**                     | Works with apps written in any language since it interacts from the outside.     |
 
 ---
 
@@ -173,7 +173,7 @@ No, it reduces risk but should be combined with other security practices like pr
 
 | Resource | Link |
 |----------|------|
-| TruffleHog Documentation | [Link](https://github.com/trufflesecurity/trufflehog) |
+| What is DAST? | [Link](https://www.ibm.com/think/topics/dynamic-application-security-testing) |
 | Gitleaks Documentation | [Link](https://github.com/gitleaks/gitleaks) |
 | GitHub Secret Scanning Docs | [Link](https://docs.github.com/en/code-security/secret-scanning) |
 | Detect Secrets Documentation | [Link](https://github.com/Yelp/detect-secrets) |
