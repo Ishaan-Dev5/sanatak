@@ -83,16 +83,36 @@ flowchart TD
 ---
 ## 5. Different Tools
 
-| Tool | Description | Key Features | Integrations | Pricing |
-|------|-------------|--------------|--------------|---------|
-| **TruffleHog** | Scans for high entropy strings and secrets in code, Git history, cloud storage, and Docker images. | Regex + entropy detection, deep history scan, multi-source scanning | GitHub, GitLab, Bitbucket, S3, local FS, Docker | Open-source |
-| **Gitleaks** | Lightweight secret scanner for Git repos. | Fast, customizable regex rules, history scanning | GitHub Actions, GitLab CI, Jenkins | Open-source |
-| **GitHub Secret Scanning** | Native GitHub feature for private/public repos. | Real-time scanning, partner patterns | GitHub only | Built-in for Enterprise |
-| **Detect Secrets** | Yelp’s Python-based secret scanner. | Baseline file, plugin-based detection | CI/CD pipelines, pre-commit | Open-source |
-| **GitGuardian** | SaaS secret detection & monitoring. | Dashboard, real-time alerts, remediation help | GitHub, GitLab, Bitbucket | Paid with free tier |
+| **Tool**        | **Description** |
+|-----------------|-----------------|
+| **OWASP ZAP**   | Open-source DAST tool widely used for finding vulnerabilities in web apps and APIs. Supports automation via CLI and Docker. |
+| **Burp Suite**  | Powerful security testing tool with manual and automated DAST capabilities. Popular among penetration testers. |
+| **StackHawk**   | Developer-focused DAST tool built for CI/CD pipelines, with strong support for APIs, JWT/OAuth, and modern apps. |
+| **Invicti (Netsparker)** | Commercial scanner with advanced automation and accurate vulnerability verification for web apps and SPAs. |
+| **Acunetix**    | Comprehensive commercial DAST tool that scans web apps, APIs, and complex SPAs with strong reporting features. |
+| **Detectify**   | SaaS-based DAST tool leveraging crowd-sourced payloads from ethical hackers to find vulnerabilities. |
+| **Probely**     | API-first DAST platform designed for continuous security testing and CI/CD integration. |
+| **GitLab DAST** | GitLab-integrated scanner (based on OWASP ZAP) for automated security testing inside GitLab CI/CD pipelines. |
+
 
 
 ---
+
+## 6. Comparison
+
+| **Tool**        | **License**       | **SPA/JS Support** | **API Testing** | **OAuth/JWT Support** | **CI/CD Integration** | **Ease of Use** |
+|-----------------|-------------------|--------------------|-----------------|-----------------------|------------------------|-----------------|
+| **OWASP ZAP**   | Open-source (Free) | Yes (AJAX Spider)  | Yes (OpenAPI, SOAP) | Yes (via scripts/Zest, Selenium) | Good (Docker, CLI)     | Moderate (setup/auth config needed) |
+| **Burp Suite**  | Commercial (Pro/Enterprise) | Yes | Yes | Yes (manual + extensions) | Good (CLI for Pro, automation in Enterprise) | Moderate to Advanced |
+| **StackHawk**   | Commercial (Subscription) | Yes (modern SPAs) | Yes (OpenAPI, GraphQL) | Yes (built-in OIDC/JWT config) | Excellent (built for CI/CD) | Easy (Dev-first approach) |
+| **Invicti (Netsparker)** | Commercial | Yes | Yes | Yes (token-based, OAuth2 flows) | Very Good (pipeline plugins, APIs) | Easy (automation-focused) |
+| **Acunetix**    | Commercial | Yes | Yes | Yes (OAuth2, JWT, SAML) | Very Good (Jenkins, GitLab, etc.) | Easy (UI-driven, reports) |
+| **Detectify**   | SaaS (Commercial) | Yes | Limited (basic API) | Limited (requires token injection) | Very Good (SaaS integrations) | Very Easy (plug-and-scan) |
+| **Probely**     | SaaS (Commercial) | Yes | Yes | Yes (OAuth2, JWT, API tokens) | Very Good (API-first, CI hooks) | Easy (automation-friendly) |
+| **GitLab DAST** | Open-source (GitLab Premium/Ultimate) | Yes (ZAP-based) | Yes | Yes (via ZAP auth config in CI) | Excellent (native in GitLab CI) | Easy if using GitLab, Moderate otherwise |
+
+---
+
 
 ## 5. Advantages
 
