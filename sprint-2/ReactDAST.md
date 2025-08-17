@@ -169,12 +169,7 @@ _Follow this link for POC_
 
 ## 11. Conclusion
 
-
-DAST provides organizations with an external, real-world perspective on application security by simulating potential attacks on live systems.
-Using tools like OWASP ZAP enables security teams to:
-- Identify runtime vulnerabilities and misconfigurations.
-- Automate scanning in CI/CD pipelines for continuous security monitoring.
-- Generate detailed reports with actionable remediation guidance.
+DAST provides organizations with a real-world, external perspective on application security by simulating attacks on live systems. OWASP ZAP, a free and open-source DAST tool, enables security teams to identify runtime vulnerabilities and misconfigurations, automate scans in CI/CD pipelines, generate detailed actionable reports, and test modern SPAs and APIs effectively. Its extensive vulnerability coverage, community support, and extensibility make it an ideal choice for continuous application security monitoring.
 
 
 
