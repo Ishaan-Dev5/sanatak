@@ -34,8 +34,7 @@
 
 ## 1. Introduction
 
-This document provides a Proof of Concept (POC) for implementing 
-
+This document provides a **Proof of Concept (POC)** for implementing **Dynamic Application Security Testing (DAST)** on a React application using **OWASP ZAP (Zed Attack Proxy)**.
 ---
 
 ## 2. Prerequisites
@@ -163,5 +162,5 @@ zaproxy
 
 | Resource |  Link |
 |----------|------|
-| **SonarQube Documentation** |  [Visit](https://docs.sonarqube.org/latest/) |
+| **DAST Document** |  [Visit]() |
 
