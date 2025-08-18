@@ -102,10 +102,73 @@ flowchart TB
   SQ1 --> ES
   SQ2 --> ES
   
+```
+```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 100, "rankSpacing": 80}}}%%
+flowchart TB
+  LB[Application Load Balancer]
 
-  
+  subgraph SonarQube_ASG
+  SQ1["SonarQube Node (ASG min=1 max=1)"]
+  end
+
+  subgraph Shared_Services
+  DB["RDS PostgreSQL (Multi AZ)"]
+  FS["EFS (Plugins & Configs)"]
+  end
+
+  LB --> SQ1
+
+  SQ1 --> DB
+  SQ1 --- FS
+
+```
+```mermaid
+graph TD
+  subgraph Internet
+    Browser[Developer Browser]
+  end
+
+  subgraph AWS
+    ALB[ALB<br/>HTTP/HTTPS]
+    subgraph ASG["Auto Scaling Group<br/>Desired=1, Min=1, Max=1"]
+      EC2[EC2 SonarQube Node]
+    end
+    EFS[EFS: /opt/sonarqube/data]
+    RDS[(RDS PostgreSQL<br/>Multi-AZ)]
+    S3[S3: Backups & Snapshots]
+    CW[CloudWatch Logs & Metrics]
+  end
+
+  Browser -->|80/443| ALB
+  ALB -->|Port 9000| EC2
+  EC2 --> EFS
+  EC2 --> RDS
+  EC2 --> CW
+  RDS -->|Automated Snapshots| S3
+  EFS -->|Lifecycle backups| S3
 ```
 
+```mermaid
+graph TD
+  subgraph Internet
+    Browser[Developer Browser]
+  end
+
+  subgraph AWS
+    ALB[ALB<br/>HTTP/HTTPS]
+    subgraph ASG["Auto Scaling Group<br/>Desired=1, Min=1, Max=1"]
+      EC2[EC2 SonarQube Node]
+    end
+    EFS[EFS: /opt/sonarqube/data]
+    RDS[(RDS PostgreSQL<br/>Multi-AZ)]
+  end
+
+  Browser -->|80/443| ALB
+  ALB -->|9000| EC2
+  EC2 --> EFS
+  EC2 --> RDS
+```
 ---
 ## 5. SonarQube Disaster Recovery and Backup
 
