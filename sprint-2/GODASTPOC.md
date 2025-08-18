@@ -4,7 +4,7 @@
 <img width="860" height="277" alt="1586766458581" src="https://github.com/user-attachments/assets/3d9b5d52-156d-49fa-a89c-1c427840585c" />
 
 
-# POC of REACT DAST
+# POC of GO DAST
 
 ---
 
@@ -138,7 +138,7 @@ sudo systemctl status zap.service
 ```
 
 <img width="1917" height="446" alt="image" src="https://github.com/user-attachments/assets/341df366-c40a-4a98-b6dd-efad0b1d85cf" />
-
+---
 ### Step 5: Create Python virtual environment for zap-cli
 ```bash
 sudo apt install -y python3.10-venv
@@ -149,7 +149,7 @@ pip install git+https://github.com/Grunny/zap-cli.git
 
 ```
 
-           
+---          
 
 
 ### Step 6: Verify ZAP daemon status
@@ -176,19 +176,19 @@ zap-cli -p 8080 spider http://13.48.67.195:8080/swagger/index.html
 ```bash
 zap-cli -p 8080 active-scan http://13.48.67.195:8080/swagger/index.html
 ```
-
+---
 ### Step 9. Generate HTML report
 ```bash
 mkdir -p ~/zap_reports
 zap-cli -p 8080 report -o ~/zap_reports/zap_report.html -f html
 ```
-
+---
 ### Step 10. Serve the report on browser
 ```bash
 cd ~/zap_reports
 python3 -m http.server 8000
 ```
-
+---
 ### Step 11: Web Dashboard
 
 ```
@@ -199,7 +199,7 @@ http://13.201.87.100:8000/zap_report.html
 <img width="1763" height="359" alt="image" src="https://github.com/user-attachments/assets/110d1bf9-e36e-446b-a0da-7b03c70de884" />
 <img width="1917" height="470" alt="image" src="https://github.com/user-attachments/assets/9e2addba-730c-4d2b-85ea-c0f2ff0e211b" />
 
-
+---
 
 ## 5. Troubleshooting
 
