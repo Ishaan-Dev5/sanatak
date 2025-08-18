@@ -36,7 +36,7 @@
 
 ## 1. Introduction
 
-This document provides a **Proof of Concept (POC)** for implementing **Dynamic Application Security Testing (DAST)** on a React application using **OWASP ZAP (Zed Attack Proxy)**.
+This document provides a **Proof of Concept (POC)** for implementing **Dynamic Application Security Testing (DAST)** on a GO application using **OWASP ZAP (Zed Attack Proxy)**.
 
 ---
 
