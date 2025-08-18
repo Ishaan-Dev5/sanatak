@@ -207,14 +207,15 @@ http://13.201.87.100:8000/zap_report.html
 
 ## 5. Troubleshooting
 
-| Issue                                  | Possible Cause                                         | Solution                                                                            |
-| -------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| Java not found                         | Java not installed or PATH not set                     | Install JDK 11+ (`sudo apt install openjdk-17-jdk`) and verify with `java -version` |
-| Target URL not reachable               | App not running or firewall blocking                   | Ensure your React app is running and ports are accessible                           |
-| Scan fails in CI/CD pipeline           | Headless flags missing or network issues               | Use `-daemon -headless` and verify network connectivity in pipeline agent           |
-| Reports not generated                  | Incorrect report path or permissions                   | Specify a valid output path with write permissions using `-report` option           |
+| **Issue**                                  | **Possible Cause**                                                 | **Solution**                                                                                                                                                                                |
+| ------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ZAP is not running**                     | - ZAP service not started<br>- Wrong port in zap-cli               | 1. Check service: `sudo systemctl status zap.service`<br>2. Restart if needed: `sudo systemctl restart zap.service`<br>3. Ensure zap-cli uses correct port (e.g., `zap-cli -p 8080 status`) |
+| **`zap-cli: command not found`**           | zap-cli installed only inside virtual environment                  | 1. Activate venv: `source ~/zap-env/bin/activate`<br>2. If still missing, reinstall: `pip install git+https://github.com/Grunny/zap-cli.git`                                                |
+| **Virtual environment creation failed**    | Missing `python3-venv` package                                     | Install it: `sudo apt install -y python3.10-venv` then recreate: `python3 -m venv ~/zap-env`                                                                                                |
+| **`ensurepip is not available` error**     | Python venv was created without pip                                | Install pip in venv: `sudo apt install python3-pip` and recreate the venv                                                                                                                   |
+| **Java not found / version mismatch**      | Java not installed, or version < 11                                | Install OpenJDK: `sudo apt install openjdk-17-jdk -y` and verify with `java -version`                                                                                                       |
+| **Reports not opening in browser**         | HTTP server not started or wrong port                              | Start: `python3 -m http.server 8000` in report directory, then visit `http://<server-ip>:8000/zap_report.html`                                                                              |
 
----
 
 ## 6. FAQs
 
