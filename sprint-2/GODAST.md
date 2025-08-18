@@ -62,6 +62,9 @@ Dynamic Application Security Testing (DAST) is crucial because it identifies rea
 | **Verifies security of third-party apps** | Assesses the security of externally built/vendor applications without source code. |
 | **Language-independent**                     | Works with apps written in any language since it interacts from the outside.     |
 
+- Go’s static binaries may hide vulnerabilities until runtime—DAST helps uncover these real-world issues.
+- Generate OpenAPI (Swagger) specs for Go apps with [swaggo/swag](https://github.com/swaggo/swag) or [go-swagger](https://github.com/go-swagger/go-swagger).
+- Pass these specs to DAST tools for deep API testing.
 ---
 
 ## 4. Workflow 
@@ -82,16 +85,17 @@ flowchart TD
 ---
 ## 5. Different Tools
 
-| **Tool**        | **Description** |
-|-----------------|-----------------|
-| **OWASP ZAP**   | Open-source DAST tool widely used for finding vulnerabilities in web apps and APIs. Supports automation via CLI and Docker. |
-| **Burp Suite**  | Powerful security testing tool with manual and automated DAST capabilities. Popular among penetration testers. |
-| **StackHawk**   | Developer-focused DAST tool built for CI/CD pipelines, with strong support for APIs, JWT/OAuth, and modern apps. |
-| **Invicti (Netsparker)** | Commercial scanner with advanced automation and accurate vulnerability verification for web apps and SPAs. |
-| **Acunetix**    | Comprehensive commercial DAST tool that scans web apps, APIs, and complex SPAs with strong reporting features. |
-| **Detectify**   | SaaS-based DAST tool leveraging crowd-sourced payloads from ethical hackers to find vulnerabilities. |
-| **Probely**     | API-first DAST platform designed for continuous security testing and CI/CD integration. |
-| **GitLab DAST** | GitLab-integrated scanner (based on OWASP ZAP) for automated security testing inside GitLab CI/CD pipelines. |
+| Tool           | Notes for Go Projects |
+|----------------|----------------------|
+| **OWASP ZAP**  | Free, supports REST APIs, Docker; can use OpenAPI specs from Go code (Swagger). |
+| **Burp Suite** | Powerful, manual & automated; good for custom Go endpoints, supports API scanning. |
+| **StackHawk**  | Dev-focused, CI/CD integration; built for modern apps, supports Go APIs via OpenAPI. |
+| **Invicti**    | Commercial, accurate scanning, supports OAuth/JWT—useful for Go auth flows. |
+| **Acunetix**   | Comprehensive, strong SPA/API scanning; works well with Go web servers. |
+| **Detectify**  | SaaS, plug-and-play; good for public-facing Go sites. |
+| **Probely**    | API-first, excellent for Go microservices and continuous testing. |
+| **GitLab DAST**| CI/CD native, works with Dockerized Go apps, based on ZAP. |
+
 
 
 
@@ -99,16 +103,16 @@ flowchart TD
 
 ## 6. Comparison
 
-| **Tool**        | **License**       | **SPA/JS Support** | **API Testing** | **OAuth/JWT Support** | **CI/CD Integration** | **Ease of Use** |
-|-----------------|-------------------|--------------------|-----------------|-----------------------|------------------------|-----------------|
-| **OWASP ZAP**   | Open-source (Free) | Yes (AJAX Spider)  | Yes (OpenAPI, SOAP) | Yes (via scripts/Zest, Selenium) | Good (Docker, CLI)     | Moderate (setup/auth config needed) |
-| **Burp Suite**  | Commercial (Pro/Enterprise) | Yes | Yes | Yes (manual + extensions) | Good (CLI for Pro, automation in Enterprise) | Moderate to Advanced |
-| **StackHawk**   | Commercial (Subscription) | Yes (modern SPAs) | Yes (OpenAPI, GraphQL) | Yes (built-in OIDC/JWT config) | Excellent (built for CI/CD) | Easy (Dev-first approach) |
-| **Invicti (Netsparker)** | Commercial | Yes | Yes | Yes (token-based, OAuth2 flows) | Very Good (pipeline plugins, APIs) | Easy (automation-focused) |
-| **Acunetix**    | Commercial | Yes | Yes | Yes (OAuth2, JWT, SAML) | Very Good (Jenkins, GitLab, etc.) | Easy (UI-driven, reports) |
-| **Detectify**   | SaaS (Commercial) | Yes | Limited (basic API) | Limited (requires token injection) | Very Good (SaaS integrations) | Very Easy (plug-and-scan) |
-| **Probely**     | SaaS (Commercial) | Yes | Yes | Yes (OAuth2, JWT, API tokens) | Very Good (API-first, CI hooks) | Easy (automation-friendly) |
-| **GitLab DAST** | Open-source (GitLab Premium/Ultimate) | Yes (ZAP-based) | Yes | Yes (via ZAP auth config in CI) | Excellent (native in GitLab CI) | Easy if using GitLab, Moderate otherwise |
+| Tool        | License         | SPA/API | Auth Support | CI/CD | Go Integration | Ease of Use   |
+|-------------|-----------------|---------|--------------|-------|---------------|---------------|
+| ZAP         | OSS/Free        | Yes     | Yes (script) | Good  | Docker, API   | Moderate      |
+| Burp Suite  | Commercial      | Yes     | Yes          | Good  | Manual/API    | Advanced      |
+| StackHawk   | Commercial      | Yes     | Yes          | Excellent | API, OIDC   | Easy          |
+| Invicti     | Commercial      | Yes     | Yes          | Very Good | API         | Easy          |
+| Acunetix    | Commercial      | Yes     | Yes          | Very Good | API         | Easy          |
+| Detectify   | SaaS            | Yes     | Limited      | Very Good | Web         | Very Easy     |
+| Probely     | SaaS            | Yes     | Yes          | Very Good | API         | Easy          |
+| GitLab DAST | OSS w/GitLab    | Yes     | Yes (ZAP)    | Excellent | Docker      | Moderate      |
 
 ---
 
