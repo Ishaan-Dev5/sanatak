@@ -83,6 +83,7 @@ sudo apt install openjdk-17-jdk -y
 
 
 ---
+
 ### Step 2: Download and extract ZAP
 
 ```bash
@@ -138,8 +139,11 @@ sudo systemctl status zap.service
 ```
 
 <img width="1917" height="446" alt="image" src="https://github.com/user-attachments/assets/341df366-c40a-4a98-b6dd-efad0b1d85cf" />
+
 ---
+
 ### Step 5: Create Python virtual environment for zap-cli
+
 ```bash
 sudo apt install -y python3.10-venv
 python3 -m venv ~/zap-env
