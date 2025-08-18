@@ -169,6 +169,35 @@ graph TD
   EC2 --> EFS
   EC2 --> RDS
 ```
+
+```mermaid
+flowchart LR
+    subgraph LB[Load Balancer]
+    end
+    subgraph N1[App Node 1]
+    end
+    subgraph N2[App Node 2]
+    end
+    subgraph N3[App Node 3]
+    end
+    subgraph DB[PostgreSQL Database]
+    end
+    subgraph ES[Elasticsearch Cluster]
+    end
+
+    LB --> N1
+    LB --> N2
+    LB --> N3
+
+    N1 --> DB
+    N2 --> DB
+    N3 --> DB
+
+    N1 --> ES
+    N2 --> ES
+    N3 --> ES
+```
+
 ---
 ## 5. SonarQube Disaster Recovery and Backup
 
