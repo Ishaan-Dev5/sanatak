@@ -69,143 +69,38 @@ High Availability refers to the deployment strategy that ensures continuous oper
 
 ## 4. Workflow 
 
-```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 100, "rankSpacing": 80}}}%%
-flowchart TB
-  LB[Application Load Balancer]
 
-  subgraph SonarQube_Cluster
-  SQ1[SonarQube Node 1]
-  SQ2[SonarQube Node 2]
-  end
-
-  subgraph Shared_Services
-  DB[(Shared DB Cluster PostgreSQL )]
-  FS[(Network File System)]
-  ES[(Elasticsearch Cluster)]
-  
-  end
-
-  LB --> SQ1
-  LB --> SQ2
-  
-
-  SQ1 --> DB
-  SQ2 --> DB
-  
-
-
-  SQ1 --- FS
-  SQ2 --- FS
-  
-
-  SQ1 --> ES
-  SQ2 --> ES
-  
-```
-```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 100, "rankSpacing": 80}}}%%
-flowchart TB
-  LB[Application Load Balancer]
-
-  subgraph SonarQube_ASG
-  SQ1["SonarQube Node (ASG min=1 max=1)"]
-  end
-
-  subgraph Shared_Services
-  DB["RDS PostgreSQL (Multi AZ)"]
-  FS["EFS (Plugins & Configs)"]
-  end
-
-  LB --> SQ1
-
-  SQ1 --> DB
-  SQ1 --- FS
-
-```
 ```mermaid
 graph TD
-  subgraph Internet
-    Browser[Developer Browser]
-  end
-
-  subgraph AWS
+ 
     ALB[ALB<br/>HTTP/HTTPS]
-    subgraph ASG["Auto Scaling Group<br/>Desired=1, Min=1, Max=1"]
+    subgraph ASG
       EC2[EC2 SonarQube Node]
     end
     EFS[EFS: /opt/sonarqube/data]
     RDS[(RDS PostgreSQL<br/>Multi-AZ)]
-    S3[S3: Backups & Snapshots]
     CW[CloudWatch Logs & Metrics]
   end
 
-  Browser -->|80/443| ALB
-  ALB -->|Port 9000| EC2
+  ALB --> EC2
   EC2 --> EFS
   EC2 --> RDS
   EC2 --> CW
-  RDS -->|Automated Snapshots| S3
-  EFS -->|Lifecycle backups| S3
 ```
 
-```mermaid
-graph TD
-  subgraph Internet
-    Browser[Developer Browser]
-  end
 
-  subgraph AWS
-    ALB[ALB<br/>HTTP/HTTPS]
-    subgraph ASG["Auto Scaling Group<br/>Desired=1, Min=1, Max=1"]
-      EC2[EC2 SonarQube Node]
-    end
-    EFS[EFS: /opt/sonarqube/data]
-    RDS[(RDS PostgreSQL<br/>Multi-AZ)]
-  end
-
-  Browser -->|80/443| ALB
-  ALB -->|9000| EC2
-  EC2 --> EFS
-  EC2 --> RDS
-```
-
-```mermaid
-flowchart LR
-    subgraph LB[Load Balancer]
-    end
-    subgraph N1[App Node 1]
-    end
-    subgraph N2[App Node 2]
-    end
-    subgraph N3[App Node 3]
-    end
-    subgraph DB[PostgreSQL Database]
-    end
-    subgraph ES[Elasticsearch Cluster]
-    end
-
-    LB --> N1
-    LB --> N2
-    LB --> N3
-
-    N1 --> DB
-    N2 --> DB
-    N3 --> DB
-
-    N1 --> ES
-    N2 --> ES
-    N3 --> ES
-```
+<img width="968" height="446" alt="image" src="https://github.com/user-attachments/assets/51cce9b8-db76-47a7-ae2a-99c27988bc8c" />
 
 ---
 ## 5. SonarQube Disaster Recovery and Backup
 
 
+
+
 | **Method**                           | **Description** |
 |--------------------------------------|-----------------|
 | Database Backup & Restore            | Regular full and incremental backups of the SonarQube database (PostgreSQL/MySQL) using tools like `pg_dump` or `mysqldump`. |
-| Configuration File Backup            | Backup `sonar.properties`, `wrapper.conf`, and other configuration files to a secure version-controlled repository. |
+| Configuration File Backup            | Backup `sonar.properties`,  and other configuration files to a secure version-controlled repository. |
 | Plugin Backup                        | Maintain copies of all installed plugins from `$SONARQUBE_HOME/extensions/plugins`. |
 | Application Binary Backup            | Keep a copy of SonarQube binaries (same version) for quick redeployment. |
 
