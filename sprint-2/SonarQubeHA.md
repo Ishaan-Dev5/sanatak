@@ -69,25 +69,23 @@ High Availability refers to the deployment strategy that ensures continuous oper
 
 ## 4. Workflow 
 
-
 ```mermaid
 graph TD
- 
-    ALB[ALB<br/>HTTP/HTTPS]
-    subgraph ASG
-      EC2[EC2 SonarQube Node]
-    end
-    EFS[EFS: /opt/sonarqube/data]
-    RDS[(RDS PostgreSQL<br/>Multi-AZ)]
-    CW[CloudWatch Logs & Metrics]
+  ALB[ALB]
+
+  subgraph ASG["Auto Scaling Group"]
+    EC2[EC2 SonarQube Node]
   end
+
+  EFS [Shared Service]
+  RDS[(RDS PostgreSQL)]
+  CW[CloudWatch Logs & Metrics]
 
   ALB --> EC2
   EC2 --> EFS
   EC2 --> RDS
   EC2 --> CW
 ```
-
 
 <img width="968" height="446" alt="image" src="https://github.com/user-attachments/assets/51cce9b8-db76-47a7-ae2a-99c27988bc8c" />
 
