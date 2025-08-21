@@ -31,48 +31,64 @@
 
 ## 2. Prerequisites
 
+- **Java**: Java 17 (JDK/JRE)   
+- **Internet Access**: To update CVE database (NVD, NPM, etc.)   
+- **Build Tool**: Maven/Gradle 
+- **NVD API Key (optional but recommended)**: To updates NVD databases fast  
 ---
 
 
 ## 3. System Requirements
 
+
+| Requirement        | Minimum                | Recommended                       |
+|--------------------|------------------------|-----------------------------------|
+| CPU                | 1 vCPU                | 2+ vCPU                           |
+| RAM                | 2 GB                  | 4+ GB                             |
+| Disk Space         | 2 GB (for CVE DB cache) | 5+ GB (large CVE database + reports) |
+
+
+
 ---
 
 ## 4.Setup and execution
 
-### Before starting dependency test, ensure that you have Maven installed on your system. 
+```bash
 
-####  Step 1. Clone the repo from github
-
-```
-sudo git clone https://github.com/OT-MICROSERVICES/salary-api.git
-```
-
-<img width="600" height="187" alt="image" src="https://github.com/user-attachments/assets/b7270856-908e-4309-9bee-42955c6c8144" />
-
-
-#### Step 2. Change the repo choose the github repo which is cloned already
-
-```
-cd salary-api
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+java -version
 ```
 
-<img width="600" height="81" alt="image" src="https://github.com/user-attachments/assets/92cd41a7-4e8a-41f2-8dbb-619bd94bd199" />
-
-
-####  Step 3. Dependency checking
+```bash
+wget https://github.com/jeremylong/DependencyCheck/releases/download/v12.1.0/dependency-check-12.1.0-release.zip
+ unzip dependency-check-12.1.0-release.zip
+cd dependency-check
 ```
-mvn org.owasp:dependency-check-maven:check
+
+```bash
+./bin/dependency-check.sh --updateonly
 ```
 
 
-
-#### Step 4. View the Dependency Result 
-
+```bash
+sudo apt install maven -y
 ```
-google-chrome target/site/index.html
 
+```bash
+mvn clean package -DskipTests
 ```
+
+```bash
+ dependency-check.sh --project salary --scan /home/ubuntu/salary-api/target --format HTML --out /home/ubuntu/dc-report.html
+```
+
+```bash
+ python3 -m http.server 8080
+```
+
+http://13.203.25.45:8080/dc-report.html
+
 
 ---
 
