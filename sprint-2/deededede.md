@@ -26,6 +26,7 @@
 
 ## 1. Introduction
 
+This Proof of Concept (POC) demonstrates how to integrate dependency scanning into a Java project.  It uses OWASP Dependency-Check to identify known vulnerabilities in third-party libraries.  The POC showcases setup, execution, and report generation steps in a CI pipeline.  The goal is to ensure early detection of risks and improve overall application security posture.  
 
 ---
 
@@ -94,9 +95,22 @@ http://13.203.25.45:8080/dc-report.html
 
 ## 5. Conclusion
 
+Dependency-Check helps identify vulnerable libraries early in the build process.  
+
+
 ---
 
 ## 6. Troubleshooting
+
+
+| Issue | Possible Cause | Solution |
+|-------|----------------|----------|
+| `dependency-check.sh: command not found` | Dependency-Check binaries not in PATH | Run from extracted folder (`./bin/dependency-check.sh`) or add it to PATH |
+| Empty / Blank HTML report | Wrong scan path (scanning `pom.xml` instead of compiled JAR/classes) | Use target folder after build: `--scan /home/ubuntu/salary-api/target` |
+| `mvn: command not found` | Maven not installed | Install Maven: `sudo apt install maven -y` |
+
+
+
 
 ---
 
