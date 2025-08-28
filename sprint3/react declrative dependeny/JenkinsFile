@@ -1,1 +1,64 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs "nodejs"
+    }
+
+    environment {
+        SHARED_NVD_DB = "/var/lib/jenkins/shared/nvd-data"
+    }
+
+    stages {
+        stage('Clean Workspace') {
+            steps { cleanWs() }
+        }
+
+        stage('Checkout') {
+            steps { git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/frontend.git' }
+        }
+
+        stage('Install Dependencies') {
+            steps { sh 'npm install' }
+        }
+
+        stage('Update Dependency-Check Database') {
+            steps {
+                sh "mkdir -p ${SHARED_NVD_DB}"
+                dependencyCheck odcInstallation: 'OWASP-DC',
+                                additionalArguments: "--updateonly --data ${SHARED_NVD_DB} || true"
+            }
+        }
+
+        stage('Dependency Scan') {
+            steps {
+                sh "mkdir -p dependency-check-report"
+                dependencyCheck odcInstallation: 'OWASP-DC',
+                                additionalArguments: "--data ${SHARED_NVD_DB} --scan ./package.json --project FrontendApp --format HTML --out dependency-check-report/dc-report.html"
+            }
+        }
+
+        stage('Publish HTML Report') {
+            steps {
+                script {
+                    if (fileExists('dependency-check-report/dc-report.html')) {
+                        echo "Report found, publishing..."
+                        archiveArtifacts artifacts: 'dependency-check-report/dc-report.html', allowEmptyArchive: false
+
+                        publishHTML(target: [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'dependency-check-report',   
+                            reportFiles: 'dc-report.html',
+                            reportName: 'Dependency-Check Report'
+                        ])
+                    } else {
+                        error "dc-report.html not found!"
+                    }
+                }
+            }
+        }
+    }
+}
 
