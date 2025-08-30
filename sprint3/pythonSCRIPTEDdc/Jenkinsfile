@@ -1,0 +1,53 @@
+node {
+    stage('Clean Workspace') {
+        cleanWs()
+    }
+
+    stage('Checkout') {
+        git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/attendance-api.git'
+    }
+
+    stage('Setup Python venv') {
+        sh '''
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+        '''
+    }
+
+    stage('Install Poetry 1.5') {
+        sh '''
+            . venv/bin/activate
+            pip install "poetry==1.5.1"
+        '''
+    }
+
+    stage('Export Dependencies') {
+        sh '''
+            . venv/bin/activate
+            poetry export -f requirements.txt --without-hashes -o requirements.txt
+        '''
+    }
+
+    stage('Install Safety') {
+        sh '''
+            . venv/bin/activate
+            pip install safety==1.10.3
+        '''
+    }
+
+    stage('Run Safety Scan') {
+        sh '''
+            . venv/bin/activate
+            # Print ASCII report to Jenkins console
+            safety check -r requirements.txt || true
+
+            # Save JSON report for archiving
+            safety check -r requirements.txt --json > safety_report.json || true
+        '''
+    }
+
+    stage('Archive Safety Report') {
+        archiveArtifacts artifacts: 'safety_report.json', allowEmptyArchive: true
+    }
+}
