@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh "mkdir -p dependency-check-report"
                 dependencyCheck odcInstallation: 'OWASP-DC',
-                                additionalArguments: "--data ${SHARED_NVD_DB} --scan ./package.json --project FrontendApp --format HTML --out dependency-check-report/dc-report.html"
+                                additionalArguments: "--data ${SHARED_NVD_DB} --scan . --project FrontendApp --format HTML --out dependency-check-report/dc-report.html"
             }
         }
 
@@ -49,7 +49,7 @@ pipeline {
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: 'dependency-check-report',   
+                            reportDir: 'dependency-check-report',   // folder containing HTML
                             reportFiles: 'dc-report.html',
                             reportName: 'Dependency-Check Report'
                         ])
@@ -61,4 +61,3 @@ pipeline {
         }
     }
 }
-
