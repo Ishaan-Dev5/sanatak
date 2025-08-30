@@ -3,24 +3,24 @@ node {
         git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/salary-api.git'
     }
 
-    stage('Build') {
-        // Build using Jenkins-managed Maven
-        withMaven(maven: 'Maven') {
-            sh 'mvn clean install -DskipTests'
-        }
+    stage('Build') 
+    { // Build using Jenkins-managed Maven 
+    withMaven(maven: 'Maven') { 
+        sh 'mvn clean install -DskipTests' 
+        } 
     }
 
     stage('SonarQube Analysis') {
-        withMaven(maven: 'Maven') {
-            withSonarQubeEnv('sonarqube') {
-               sh "mvn sonar:sonar -Dsonar.projectKey=salary-api -Dsonar.projectName='Salary API' -Dsonar.projectVersion=${BUILD_NUMBER}"
-           }
+        withSonarQubeEnv('sonarqube') {
+            def scannerHome = tool 'sonar-scanner'
+            sh """
+                ${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=salary-api \
+                    -Dsonar.projectName='Salary API' \
+                    -Dsonar.projectVersion=${BUILD_NUMBER} \
+                    -Dsonar.sources=. \
+                    -Dsonar.java.binaries=target/classes
+            """
         }
     }
 }
-
-
-
-
-
-
