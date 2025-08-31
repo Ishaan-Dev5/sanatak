@@ -65,7 +65,6 @@ This document provides a  of practical use cases.
 | **Composability**              | Easily nests modules within modules to build higher-order constructs                                  | Monolithic file tree where dependencies aren’t explicit                            |
 | **Namespace Isolation**        | Allocates distinct namespaces for module resources, reducing chance of resource name collisions       | Resources share a single namespace, increasing risk of accidental overlaps         |
 | **Testability**                | Modules can be tested in isolation as independent units                                               | Tests must run against the entire config, so isolating logic is hard               |
-| **Code Organization**          | Clear hierarchy (`modules/`, `env/`, `examples/`) separates concerns                                  | Flat/ad-hoc layouts; root mixes all resources                                      |
 ---
 
 | Maintainability Aspect           | Terraform Modules                                                                                     | Static Configuration                                                                     |
