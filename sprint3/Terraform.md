@@ -92,7 +92,7 @@ This document provides a  of practical use cases.
 
 
 
-## 6.  Best Practices
+## 6. Best Practices
 
 | Aspect                | Terraform Modules (Best Practices)                                            | Static Configuration (Best Practices)                                              |
 | --------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
