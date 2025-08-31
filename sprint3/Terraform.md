@@ -52,40 +52,22 @@ This document provides a  of practical use cases.
 
 ## Reusability Comparison
 
-| Aspect                           | Terraform Modules                                           | Static Configuration                                     |
-|----------------------------------|-------------------------------------------------------------|----------------------------------------------------------|
-| Reuse Across Projects            | Encapsulated logic can be imported into multiple projects   | Must copy-paste or rewrite blocks for each new project   |
-| Parameterization                 | Exposes variables and inputs to customize per use case      | Hard-coded values require manual edits for each instance |
-| Abstraction & Encapsulation      | Hides implementation details, exposing only interface inputs| Implementation details are fully exposed in each file    |
-| Versioning & Lifecycle           | Can version modules independently for controlled updates    | No separate versioning; changes affect all usages at once|
-| Consistency                      | Enforces uniform patterns and naming across teams           | Risk of drift and configuration divergence over time     |
-| Maintenance Overhead             | Single module update propagates to every consumer          | Updates must be manually applied in each static file     |
-| Sharing & Collaboration          | Registry or private module repositories enable sharing      | Teams must share snippets or templates informally        |
 
----
-| Aspect                     | Terraform Modules                                                                                     | Static Configuration                                                               |
-|----------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| DRY (Don’t Repeat Yourself) | Centralizes common logic once—uses `module` blocks to avoid duplication                                | Encourages copy-pasting, which leads to drift and inconsistencies over time |
-| Composability              | Easily nests modules within modules to build higher-order constructs                                  | You end up with a monolithic file tree where dependencies aren’t explicit|
-| Namespace Isolation        | Allocates distinct namespaces for module resources, reducing the chance of resource name collisions    | Resources share a single namespace, increasing risk of accidental overlaps|
-
-
-
-
----
-| Reusability Aspect        | Static Configuration Patterns                                                                           | Terraform Modules                                                                 |
-|---------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Testability               | Tests must run against the entire config, so isolating logic for unit tests is hard                     | You can treat modules as units and test them in isolation   |
-| Refactoring Effort        | Every change must be propagated manually across each project’s files                                    | Refactor once inside the module; bump module version to roll out to all consumers  |
-
-
----
-| Factor                          | Terraform Modules                                                                                  | Static Configuration                                                                     |
-|---------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| Code Organization & Structure   | Clear folder hierarchy (`modules/`, `env/`, `examples/`) separates concerns                       | Flat or ad-hoc directory layouts; root module mixes all resources  |
-
-
-
+| Aspect / Factor                | Terraform Modules                                                                                     | Static Configuration                                                               |
+|--------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **Reuse Across Projects**      | Encapsulated logic can be imported into multiple projects                                             | Must copy-paste or rewrite blocks for each new project                             |
+| **Parameterization**           | Exposes variables and inputs to customize per use case                                                | Hard-coded values require manual edits for each instance                           |
+| **Abstraction & Encapsulation**| Hides implementation details, exposing only interface inputs                                          | Implementation details are fully exposed in each file                              |
+| **Versioning & Lifecycle**     | Can version modules independently for controlled updates                                              | No separate versioning; changes affect all usages at once                          |
+| **Consistency**                | Enforces uniform patterns and naming across teams                                                     | Risk of drift and configuration divergence over time                               |
+| **Maintenance Overhead**       | Single module update propagates to every consumer                                                     | Updates must be manually applied in each static file                               |
+| **Sharing & Collaboration**    | Registry or private module repositories enable sharing                                                | Teams must share snippets or templates informally                                  |
+| **DRY (Don’t Repeat Yourself)**| Centralizes common logic once—uses `module` blocks to avoid duplication                               | Encourages copy-pasting, which leads to drift and inconsistencies over time        |
+| **Composability**              | Easily nests modules within modules to build higher-order constructs                                  | Monolithic file tree where dependencies aren’t explicit                            |
+| **Namespace Isolation**        | Allocates distinct namespaces for module resources, reducing chance of resource name collisions       | Resources share a single namespace, increasing risk of accidental overlaps         |
+| **Testability**                | Modules can be tested in isolation as independent units                                               | Tests must run against the entire config, so isolating logic is hard               |
+| **Refactoring Effort**         | Refactor once inside the module; bump module version to roll out everywhere                           | Every change must be manually propagated across project files                      |
+| **Code Organization**          | Clear hierarchy (`modules/`, `env/`, `examples/`) separates concerns                                  | Flat/ad-hoc layouts; root mixes all resources                                      |
 ---
 
 | Maintainability Aspect           | Terraform Modules                                                                                     | Static Configuration                                                                     |
@@ -103,28 +85,7 @@ This document provides a  of practical use cases.
 
 ---
 
-## Terraform Modules vs Static Configuration (Reusability Comparison)
 
-| Aspect / Factor                | Terraform Modules                                                                                  | Static Configuration                                                                     |
-|--------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| Reuse Across Projects          | Encapsulated logic can be imported into multiple projects                                          | Must copy-paste or rewrite blocks for each new project                                   |
-| Parameterization & Flexibility | Rich variables (types, scoped inputs) to customize behavior                                        | Hard-coded values or limited `locals`/`maps`; require manual edits                       |
-| Abstraction & Encapsulation    | Hides implementation details behind input/output contracts                                         | All implementation details exposed in root config                                        |
-| DRY (Don’t Repeat Yourself)    | Common logic centralized once and reused via `module` blocks                                      | Copy-paste is common; drift and inconsistencies over time                                |
-| Composability & Dependencies   | Modules can call other modules; explicit input/output wiring makes dependencies clear              | Monolithic structure; dependencies implicit or manual                                    |
-| Naming & Standardization       | Consistent naming/tagging enforced through module design                                          | Relies on discipline; prone to drift                                                     |
-| Code Organization              | Clear hierarchy (`modules/`, `env/`, `examples/`) separates concerns                              | Flat or ad-hoc layouts; root mixes all resources                                         |
-| Versioning & Pinning           | Semantic versioning and pinning allow controlled rollouts                                         | No native versioning; every change affects all usages immediately                        |
-| Namespace & State Isolation    | Module scopes isolate resources; parent state backend keeps them organized                        | Resources share namespace; collisions prevented manually                                |
-| Consistency                    | Enforces uniform patterns and practices across teams                                              | Risk of divergence and drift                                                             |
-| Maintenance Overhead           | Update module once and propagate everywhere                                                      | Must update every file manually                                                          |
-| Sharing & Discoverability      | Public/private registries and catalogs make modules easy to find and consume                      | Snippets shared informally; discoverability is manual                                    |
-| Documentation                  | README, examples, and registry metadata provide structured guidance                               | Inline comments or external docs only; harder to locate                                  |
-| Testability                    | Modules can be unit-tested in isolation (Terratest, Kitchen-Terraform)                           | Entire config must be tested; isolating logic is harder                                  |
-| Refactoring Effort             | Refactor once in module, bump version, apply everywhere                                           | Manual updates across all projects                                                       |
-| Onboarding Speed               | New engineers scaffold projects quickly using standard modules                                    | Must learn custom file structures and boilerplate                                        |
-| Collaboration & Ownership      | Clear ownership boundaries; teams maintain modules independently                                 | Multiple contributors in same files; merge conflicts and unclear ownership               |
-| Governance                     | Fine-grained ownership and registry permissions                                                  | Coarse repo/folder-level ownership; merge conflicts common                               |
 
 
 
