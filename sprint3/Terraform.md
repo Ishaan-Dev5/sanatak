@@ -68,12 +68,10 @@ This document provides a  of practical use cases.
 | Parameterization  | Exposes variables at any level (resource, submodule) so you can tweak exactly what you need            | Values are hard-coded or require manual search/replace across files                |
 | Encapsulation              | Hides implementation details behind a clear input/output contract                                      | All details live in the root config, making it hard to separate concerns           |
 | DRY (Don’t Repeat Yourself) | Centralizes common logic once—uses `module` blocks to avoid duplication                                | Encourages copy-pasting, which leads to drift and inconsistencies over time        |
-| Composability              | Easily nests modules within modules to build higher-order constructs                                  | You end up with a monolithic file tree where dependencies aren’t explicit         |
-
-| Version Pinning            | Supports semantic versioning (`// v1.2.0`) so you control when upgrades land                         | No native versioning—every change immediately impacts all consumers                |
-| Namespace Isolation        | Allocates distinct namespaces for module resources, reducing the chance of resource name collisions    | Resources share a single namespace, increasing risk of accidental overlaps        |
-
-| Refactoring Effort         | Refactoring inside a module propagates to all consumers once bumped—minimal per-consumer work         | Every reference must be updated manually across each static file                  |
+| Composability              | Easily nests modules within modules to build higher-order constructs                                  | You end up with a monolithic file tree where dependencies aren’t explicit  
+| Version Pinning            | Supports semantic versioning (`// v1.2.0`) so you control when upgrades land                         | No native versioning—every change immediately impacts all consumers      |
+| Namespace Isolation        | Allocates distinct namespaces for module resources, reducing the chance of resource name collisions    | Resources share a single namespace, increasing risk of accidental overlaps|
+| Refactoring Effort         | Refactoring inside a module propagates to all consumers once bumped—minimal per-consumer work         | Every reference must be updated manually across each static file         |
 
 
 
