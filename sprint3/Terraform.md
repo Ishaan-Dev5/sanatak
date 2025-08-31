@@ -96,6 +96,21 @@ This document provides a  of practical use cases.
 
 ## 5. 
 
+| Aspect                | Terraform Modules (Best Practices)                                            | Static Configuration (Best Practices)                                              |
+| --------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Design Approach**   | Keep modules small, focused, and reusable (VPC, EC2, RDS, IAM).               | Keep it simple, use static configs only for small or highly customized projects.   |
+| **Code Organization** | Clear folder hierarchy: `modules/`, `envs/`, `examples/`.                     | Split by resource type: `vpc.tf`, `ec2.tf`, `rds.tf`, not everything in `main.tf`. |
+| **Parameterization**  | Expose inputs via `variables.tf`, use sensible defaults.                      | Use `variables.tf` + `locals.tf` to reduce hardcoding.                             |
+| **Outputs**           | Expose only necessary values in `outputs.tf`.                                 | Use outputs minimally to avoid clutter.                                            |
+| **Reusability & DRY** | Avoid duplication by centralizing common patterns in modules.                 | Reduce repetition with `for_each`, `count`, and `locals`.                          |
+| **Versioning**        | Pin module versions (`version = "x.y.z"`), avoid `latest`.                    | Use git version control for configs, commit often with clear history.              |
+| **Testing**           | Test modules in isolation with **Terratest**, `terraform validate`, `tflint`. | Run `terraform validate` and `tflint` on full config.                              |
+| **Documentation**     | Auto-generate with `terraform-docs`, keep README + examples per module.       | Use inline comments + a project README to explain structure.                       |
+| **State Management**  | Separate state per environment, use remote backend (S3/GCS + locking).        | Even for small projects, prefer remote state to avoid conflicts.                   |
+| **Collaboration**     | Assign module ownership, avoid mega-modules, enforce naming conventions.      | Standardize naming, keep configs consistent across files.                          |
+| **Refactoring**       | Refactor inside module once, bump version → consumers upgrade smoothly.       | Refactor carefully across multiple `.tf` files, use search/replace consistently.   |
+| **Onboarding**        | Provide documented modules and examples → easy for new engineers.             | Keep project layout simple so new users can quickly understand configs.            |
+
 
 ---
 
