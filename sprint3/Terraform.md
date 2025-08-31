@@ -65,11 +65,8 @@ This document provides a  of practical use cases.
 ---
 | Aspect                     | Terraform Modules                                                                                     | Static Configuration                                                               |
 |----------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-
-
-| DRY (Don’t Repeat Yourself) | Centralizes common logic once—uses `module` blocks to avoid duplication                                | Encourages copy-pasting, which leads to drift and inconsistencies over time        |
-| Composability              | Easily nests modules within modules to build higher-order constructs                                  | You end up with a monolithic file tree where dependencies aren’t explicit  
-
+| DRY (Don’t Repeat Yourself) | Centralizes common logic once—uses `module` blocks to avoid duplication                                | Encourages copy-pasting, which leads to drift and inconsistencies over time |
+| Composability              | Easily nests modules within modules to build higher-order constructs                                  | You end up with a monolithic file tree where dependencies aren’t explicit|
 | Namespace Isolation        | Allocates distinct namespaces for module resources, reducing the chance of resource name collisions    | Resources share a single namespace, increasing risk of accidental overlaps|
 
 
