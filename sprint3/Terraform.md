@@ -68,11 +68,11 @@ This document provides a  of practical use cases.
 
 | Maintainability Aspect           | Terraform Modules                                                                                     | Static Configuration                                                                     |
 |----------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| Update Propagation               | Centralized updates in one place; bump module version to roll out fixes                               | Manual edits in every file; higher risk of missing updates                               |
-| Code Duplication Reduction       | Abstracts common patterns into one module                                                             | Copy-paste boilerplate everywhere leads to redundant code                                |
-| Readability & Organization       | Clear folder hierarchy and module boundaries                                                          | Monolithic root configs with mixed concerns                                              |
-| Dependency Management            | Explicit inputs/outputs make dependencies clear                                                       | Implicit in-file dependencies; tracing resource relationships can be challenging         |
-| Version Control & Rollbacks      | Semantic versioning enables safe rollbacks to previous module releases                                | No isolated versioning; rollbacks affect entire codebase                                 |
+| **Update Propagation**               | Centralized updates in one place; bump module version to roll out fixes                               | Manual edits in every file; higher risk of missing updates                               |
+| **Code Duplication Reduction**      | Abstracts common patterns into one module                                                             | Copy-paste boilerplate everywhere leads to redundant code                                |
+| **Readability & Organization**       | Clear folder hierarchy and module boundaries                                                          | Monolithic root configs with mixed concerns                                              |
+| **Dependency Management**           | Explicit inputs/outputs make dependencies clear                                                       | Implicit in-file dependencies; tracing resource relationships can be challenging         |
+| **Version Control & Rollbacks**      | Semantic versioning enables safe rollbacks to previous module releases                                | No isolated versioning; rollbacks affect entire codebase                                 |
 | **Refactoring Effort**         | Refactor once inside the module; bump module version to roll out everywhere                           | Every change must be manually propagated across project files                      |
 | **Maintenance Overhead**       | Single module update propagates to every consumer                                                     | Updates must be manually applied in each static file                               |
 ---
