@@ -67,6 +67,8 @@ This document provides a  of practical use cases.
 | **Testability**                | Modules can be tested in isolation as independent units                                               | Tests must run against the entire config, so isolating logic is hard               |
 ---
 
+## Maintainability Comparison
+
 | Maintainability Aspect           | Terraform Modules                                                                                     | Static Configuration                                                                     |
 |----------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | Update Propagation               | Centralized updates in one place; bump module version to roll out fixes                               | Manual edits in every file; higher risk of missing updates                               |
