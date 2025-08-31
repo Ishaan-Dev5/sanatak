@@ -19,15 +19,12 @@
 1. [Introduction](#1-introduction)
 2. [What is Terraform Static Code?](#2-what-is-python)
 3. [What are Terraform Modules?](#3-history-of-python)
-4. [Timeline](#4-timeline)
-5. [Features](#5-features-Of-Python)
-6. [Use Cases](#6-use-cases)
-7. [Advantages of Python](#7-advantages-of-python)
-8. [Limitations of Python](#8-limitations-of-python)
-9. [Conclusion](#9-Conclusion)
-10. [FAQs](#10-FAQs)
-11. [Contact Information](#11-contact-information)
-12. [References](#12-references)
+4. [Comparison between Static Code and Modules](#4-Comparison-between-Static-Code-and-Modules)
+5. [Use Cases](#5-use-cases)
+6. [Best Practices](#6-Best-Practices)
+7. [FAQs](#7-FAQs)
+8. [Contact Information](#8-contact-information)
+9. [References](#9-references)
 
 ---
 
@@ -79,6 +76,7 @@ This document provides a  of practical use cases.
 | **Refactoring Effort**         | Refactor once inside the module; bump module version to roll out everywhere                           | Every change must be manually propagated across project files                      |
 | **Maintenance Overhead**       | Single module update propagates to every consumer                                                     | Updates must be manually applied in each static file                               |
 ---
+## 5. Use Cases
 
 | Use Case                                              | Terraform Modules                                                                                                                            | Static Configuration                                                                  | Recommended Usage   |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------- |
@@ -94,7 +92,7 @@ This document provides a  of practical use cases.
 
 
 
-## 5. 
+## 6.  Best Practices
 
 | Aspect                | Terraform Modules (Best Practices)                                            | Static Configuration (Best Practices)                                              |
 | --------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -115,7 +113,7 @@ This document provides a  of practical use cases.
 ---
 
 
-## 10. FAQs
+## 7. FAQs
 
 #### 1. Is Python good for beginners?
 Yes! Python’s clear syntax and readability make it one of the best languages for beginners.
@@ -130,14 +128,14 @@ Python is slower than compiled languages like C++ but fast enough for most appli
 You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](https://replit.com), [LeetCode](https://leetcode.com), and [W3Schools](https://www.w3schools.com/python/).
 
 ---
-## 11. Contact Information
+## 8. Contact Information
 | Name| Email Address      | GitHub | URL |
 |-----|--------------------------|----------|---------|
 | Ishaan | ishaan.aggarwal.snaatak@mygurukulam.co|  Ishaan-Dev1  |  https://github.com/Ishaan-Dev1 |
 
 ---
 
-## 12. References
+## 9. References
 | Descriptions                                     | Links                                                  |
 |---------------------------------------------------|-----------------------------------------------------------------|
 |       Terraform modules guide                 |  [Visit](https://www.env0.com/blog/terraform-modules) |
