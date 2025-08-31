@@ -65,13 +65,13 @@ This document provides a  of practical use cases.
 ---
 | Aspect                     | Terraform Modules                                                                                     | Static Configuration                                                               |
 |----------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Parameterization  | Exposes variables at any level (resource, submodule) so you can tweak exactly what you need            | Values are hard-coded or require manual search/replace across files                |
-| Encapsulation              | Hides implementation details behind a clear input/output contract                                      | All details live in the root config, making it hard to separate concerns           |
+
+
 | DRY (Don’t Repeat Yourself) | Centralizes common logic once—uses `module` blocks to avoid duplication                                | Encourages copy-pasting, which leads to drift and inconsistencies over time        |
 | Composability              | Easily nests modules within modules to build higher-order constructs                                  | You end up with a monolithic file tree where dependencies aren’t explicit  
-| Version Pinning            | Supports semantic versioning (`// v1.2.0`) so you control when upgrades land                         | No native versioning—every change immediately impacts all consumers      |
+
 | Namespace Isolation        | Allocates distinct namespaces for module resources, reducing the chance of resource name collisions    | Resources share a single namespace, increasing risk of accidental overlaps|
-| Refactoring Effort         | Refactoring inside a module propagates to all consumers once bumped—minimal per-consumer work         | Every reference must be updated manually across each static file         |
+
 
 
 
@@ -88,11 +88,9 @@ This document provides a  of practical use cases.
 ---
 | Factor                          | Terraform Modules                                                                                  | Static Configuration                                                                     |
 |---------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| Abstraction & Design            | Single-purpose modules with clear inputs/outputs hide implementation details and support nesting   | All logic lives in the root config; implementation details are exposed and tightly coupled |
+
 | Code Organization & Structure   | Clear folder hierarchy (`modules/`, `env/`, `examples/`) separates concerns                       | Flat or ad-hoc directory layouts; root module mixes all resources                         |
-| Versioning & Lifecycle          | Supports semantic versioning and registry publishing for controlled upgrades                      | No native code versioning; every change immediately affects all consumers                 |
-| Testing & Validation            | Enables isolated unit tests (Terratest, Kitchen-Terraform) and per-module linting                  | CI tests exercise entire config; isolating and validating specific logic is harder        |
-| State Management & Isolation    | Namespaces resources under module scopes to avoid collisions; state remains in parent backend     | Relies on workspaces or manual naming to prevent state collisions; no automatic namespacing |
+
 
 
 ---
