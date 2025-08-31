@@ -1,6 +1,5 @@
 
-<img width="250" height="203" alt="python" src="https://github.com/user-attachments/assets/4d4cb096-760b-46db-b2eb-7864d0ad4f06" />
-
+<img width="778" height="271" alt="image" src="https://github.com/user-attachments/assets/0dea0fea-725e-40c8-b1ad-383564364632" />
 
 
 # Terraform Module/Static Comparison Documentation
