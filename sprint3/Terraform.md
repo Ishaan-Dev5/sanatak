@@ -75,9 +75,7 @@ This document provides a  of practical use cases.
 ---
 | Reusability Aspect        | Static Configuration Patterns                                                                           | Terraform Modules                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Encapsulation             | All logic lives in the root module; you can’t hide implementation details                               | Modules hide internals behind a clean interface and support nested sub-modules     |
-| DRY                        | Achieved via `for_each`/`dynamic`/locals in one module, but copy-paste still common                     | Native DRY: define once, invoke via `module` blocks wherever needed                |
-| Composability             | Chaining snippets or templates by hand; dependencies aren’t explicit                                     | Modules can call other modules, making complex stacks easy to assemble             |
+| Encapsulation             | All logic lives in the root module; you can’t hide implementation details                               | Modules hide internals behind a clean interface and support nested sub-modules |
 | Testability               | Tests must run against the entire config, so isolating logic for unit tests is hard                     | You can treat modules as units and test them in isolation   |
 | Refactoring Effort        | Every change must be propagated manually across each project’s files                                    | Refactor once inside the module; bump module version to roll out to all consumers  |
 
@@ -85,8 +83,7 @@ This document provides a  of practical use cases.
 ---
 | Factor                          | Terraform Modules                                                                                  | Static Configuration                                                                     |
 |---------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-
-| Code Organization & Structure   | Clear folder hierarchy (`modules/`, `env/`, `examples/`) separates concerns                       | Flat or ad-hoc directory layouts; root module mixes all resources                         |
+| Code Organization & Structure   | Clear folder hierarchy (`modules/`, `env/`, `examples/`) separates concerns                       | Flat or ad-hoc directory layouts; root module mixes all resources  |
 
 
 
