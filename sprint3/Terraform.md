@@ -115,17 +115,21 @@ This document provides a  of practical use cases.
 
 ## 7. FAQs
 
-#### 1. Is Python good for beginners?
-Yes! Python’s clear syntax and readability make it one of the best languages for beginners.
+#### 1. What is the difference between Terraform modules and static configuration?
+Static configuration is writing all resources directly in .tf files, while modules encapsulate reusable, parameterized infrastructure logic.
 
-#### 2. Can Python be used for web development?
-Absolutely! Frameworks like Django, Flask, and FastAPI make Python powerful for building web apps.
+#### 2. When should I use Terraform modules?
+Use modules for enterprise-scale infra, multi-environment deployments, team collaboration, and whenever you want reusability + consistency..
 
-#### 3. Is Python fast?
-Python is slower than compiled languages like C++ but fast enough for most applications and ideal for rapid development.
+#### 3. When is static configuration better?
+For small POCs, demos, or one-off highly customized infra, static .tf configs are faster and simpler than building modules.
 
-#### 4. Where can I practice Python online?
-You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](https://replit.com), [LeetCode](https://leetcode.com), and [W3Schools](https://www.w3schools.com/python/).
+#### 4. How do I version control Terraform modules?
+Use semantic versioning (e.g., v1.0.0) and pin module versions in your configs. Avoid latest to ensure reproducibility
+
+#### 5. How do teams collaborate using modules?
+A platform/infra team can publish modules (internal registry/Git repo) that app teams consume, ensuring consistent infra patterns.
+
 
 ---
 ## 8. Contact Information
