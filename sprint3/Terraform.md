@@ -114,20 +114,6 @@ This document provides a  of practical use cases.
 
 ---
 
-## 6. 
-
-
----
-## 7. 
----
-
-## 8.
-
----
-
-## 9. 
-
----
 
 ## 10. FAQs
 
@@ -154,6 +140,5 @@ You can try platforms like [HackerRank](https://www.hackerrank.com), [Replit](ht
 ## 12. References
 | Descriptions                                     | Links                                                  |
 |---------------------------------------------------|-----------------------------------------------------------------|
-| Python Official Site                       |  [Visit](https://www.python.org/) |
-| Introduction to Python|           [Visit](https://www.geeksforgeeks.org/python/introduction-to-python/)    |
-| History Of Python |      [Visit](https://www.geeksforgeeks.org/python/history-of-python/) |                
+|       Terraform modules guide                 |  [Visit](https://www.env0.com/blog/terraform-modules) |
+               
