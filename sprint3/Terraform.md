@@ -78,30 +78,22 @@ This document provides a  of practical use cases.
 ---
 | Reusability Aspect        | Static Configuration Patterns                                                                           | Terraform Modules                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Parameterization          | Uses `locals`, map/list variables or `templatefile()` to inject values, but scope is limited to one repo | First-class inputs (`variables {}`) and outputs (`outputs {}`) usable across repos |
 | Encapsulation             | All logic lives in the root module; you can’t hide implementation details                               | Modules hide internals behind a clean interface and support nested sub-modules     |
 | DRY                        | Achieved via `for_each`/`dynamic`/locals in one module, but copy-paste still common                     | Native DRY: define once, invoke via `module` blocks wherever needed                |
 | Composability             | Chaining snippets or templates by hand; dependencies aren’t explicit                                     | Modules can call other modules, making complex stacks easy to assemble             |
-| Discoverability           | Teams search snippet repos or README files manually                                                     | Registry support (public or private) lets you search, version and document modules |
-| Version Pinning           | No built-in versioning; workspaces can segregate states but not code versions                           | Semantic versioning (e.g. `git tag` or registry) ensures controlled upgrades       |
-| Testability               | Tests must run against the entire config, so isolating logic for unit tests is hard                     | You can treat modules as units and test them in isolation (Terratest, Kitchen-TF)  |
+| Testability               | Tests must run against the entire config, so isolating logic for unit tests is hard                     | You can treat modules as units and test them in isolation   |
 | Refactoring Effort        | Every change must be propagated manually across each project’s files                                    | Refactor once inside the module; bump module version to roll out to all consumers  |
-| Onboarding Speed          | New engineers must learn bespoke file layouts and hunt for snippets                                     | Scaffold a new project in seconds by referencing a standard module                |
-| Collaboration & Ownership | Multiple teams edit the same files—merge conflicts and unclear ownership are common                     | Modules create clear ownership boundaries; maintainers own their module lifecycle  |
+
 
 ---
 | Factor                          | Terraform Modules                                                                                  | Static Configuration                                                                     |
 |---------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | Abstraction & Design            | Single-purpose modules with clear inputs/outputs hide implementation details and support nesting   | All logic lives in the root config; implementation details are exposed and tightly coupled |
-| Parameterization & Flexibility  | Rich variable types and scoped inputs let consumers tweak behavior without touching module code    | Uses locals, maps, dynamic blocks within one config; customization often requires manual edits |
-| Naming & Standardization        | Enforces consistent naming schemes and tags at module boundaries                                   | Relies on manual discipline for naming/tags in each file, increasing drift risk           |
 | Code Organization & Structure   | Clear folder hierarchy (`modules/`, `env/`, `examples/`) separates concerns                       | Flat or ad-hoc directory layouts; root module mixes all resources                         |
 | Versioning & Lifecycle          | Supports semantic versioning and registry publishing for controlled upgrades                      | No native code versioning; every change immediately affects all consumers                 |
-| Documentation & Discoverability | README, examples, and registry metadata surface usage patterns and caveats                        | Inline comments or external docs only; teams must hunt down relevant snippets             |
 | Testing & Validation            | Enables isolated unit tests (Terratest, Kitchen-Terraform) and per-module linting                  | CI tests exercise entire config; isolating and validating specific logic is harder        |
 | State Management & Isolation    | Namespaces resources under module scopes to avoid collisions; state remains in parent backend     | Relies on workspaces or manual naming to prevent state collisions; no automatic namespacing |
-| Dependency & Composability      | Explicit inputs/outputs wiring makes dependencies clear; modules can compose higher-order modules | Implicit resource dependencies; reuse via copy-paste or in-file for_each lacks clear graph |
-| Governance & Ownership          | Fine-grained ownership per module; registry permissions govern publish/consume                     | Ownership coarse-grained at repo or folder level; merge conflicts more common             |
+
 
 ---
 
