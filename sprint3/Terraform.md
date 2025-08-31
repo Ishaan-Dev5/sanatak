@@ -60,13 +60,11 @@ This document provides a  of practical use cases.
 | **Abstraction & Encapsulation**| Hides implementation details, exposing only interface inputs                                          | Implementation details are fully exposed in each file                              |
 | **Versioning & Lifecycle**     | Can version modules independently for controlled updates                                              | No separate versioning; changes affect all usages at once                          |
 | **Consistency**                | Enforces uniform patterns and naming across teams                                                     | Risk of drift and configuration divergence over time                               |
-| **Maintenance Overhead**       | Single module update propagates to every consumer                                                     | Updates must be manually applied in each static file                               |
 | **Sharing & Collaboration**    | Registry or private module repositories enable sharing                                                | Teams must share snippets or templates informally                                  |
 | **DRY (Don’t Repeat Yourself)**| Centralizes common logic once—uses `module` blocks to avoid duplication                               | Encourages copy-pasting, which leads to drift and inconsistencies over time        |
 | **Composability**              | Easily nests modules within modules to build higher-order constructs                                  | Monolithic file tree where dependencies aren’t explicit                            |
 | **Namespace Isolation**        | Allocates distinct namespaces for module resources, reducing chance of resource name collisions       | Resources share a single namespace, increasing risk of accidental overlaps         |
 | **Testability**                | Modules can be tested in isolation as independent units                                               | Tests must run against the entire config, so isolating logic is hard               |
-| **Refactoring Effort**         | Refactor once inside the module; bump module version to roll out everywhere                           | Every change must be manually propagated across project files                      |
 | **Code Organization**          | Clear hierarchy (`modules/`, `env/`, `examples/`) separates concerns                                  | Flat/ad-hoc layouts; root mixes all resources                                      |
 ---
 
@@ -74,15 +72,13 @@ This document provides a  of practical use cases.
 |----------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | Update Propagation               | Centralized updates in one place; bump module version to roll out fixes                               | Manual edits in every file; higher risk of missing updates                               |
 | Code Duplication Reduction       | Abstracts common patterns into one module                                                             | Copy-paste boilerplate everywhere leads to redundant code                                |
-| Refactoring Effort               | Refactor inside a module and consumers opt-in by version upgrade                                      | Refactor across all configurations manually; increases chance of inconsistencies         |
 | Testing & Validation             | Supports isolated module testing (Terratest, Kitchen-Terraform) and per-module linting                | Tests run against full config; isolating failures is harder                              |
 | Readability & Organization       | Clear folder hierarchy and module boundaries                                                          | Monolithic root configs with mixed concerns                                              |
 | Documentation Maintenance        | Module-scoped README and examples live alongside code                                                 | Inline comments or scattered external docs; harder to keep in sync                       |
 | Dependency Management            | Explicit inputs/outputs make dependencies clear                                                       | Implicit in-file dependencies; tracing resource relationships can be challenging         |
 | Version Control & Rollbacks      | Semantic versioning enables safe rollbacks to previous module releases                                | No isolated versioning; rollbacks affect entire codebase                                 |
-| Team Collaboration               | Ownership per module reduces merge conflicts and clarifies responsibilities                          | Multiple contributors in same files increase conflicts and blur ownership                 |
-| Onboarding Efficiency            | Standardized modules and examples speed up new user adoption                                          | New users must learn project-specific layouts and hunt for reusable snippets             |
-
+| **Refactoring Effort**         | Refactor once inside the module; bump module version to roll out everywhere                           | Every change must be manually propagated across project files                      |
+| **Maintenance Overhead**       | Single module update propagates to every consumer                                                     | Updates must be manually applied in each static file                               |
 ---
 
 
