@@ -75,7 +75,6 @@ This document provides a  of practical use cases.
 ---
 | Reusability Aspect        | Static Configuration Patterns                                                                           | Terraform Modules                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Encapsulation             | All logic lives in the root module; you can’t hide implementation details                               | Modules hide internals behind a clean interface and support nested sub-modules |
 | Testability               | Tests must run against the entire config, so isolating logic for unit tests is hard                     | You can treat modules as units and test them in isolation   |
 | Refactoring Effort        | Every change must be propagated manually across each project’s files                                    | Refactor once inside the module; bump module version to roll out to all consumers  |
 
