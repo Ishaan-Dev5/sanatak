@@ -1,0 +1,37 @@
+node {
+    stage('Clean Workspace') {
+        cleanWs()
+    }
+
+    stage('Clone Repository') {
+        git(
+            url: 'https://github.com/OT-MyGurukulam/employee-api.git',
+            branch: 'main'
+        )
+    }
+
+    stage('Run Tests') {
+        // Jenkins Global Tool se Go ka path lo
+        def goHome = tool name: 'GoLang', type: 'go'
+        env.PATH = "${goHome}/bin:${env.PATH}"
+
+        // Go-junit-report install (agar agent pe pehle se nahi hai)
+sh 'GO111MODULE=on go install github.com/jstemmer/go-junit-report/v2@latest'
+env.PATH = "${env.HOME}/go/bin:${env.PATH}"
+
+sh 'mkdir -p test-reports'
+
+// JUnit XML generation only (console pe output nahi)
+sh 'go test ./... -v | go-junit-report > test-reports/test-report.xml || true'
+
+        // Archive raw logs
+        archiveArtifacts artifacts: 'test-reports/*', allowEmptyArchive: true
+
+        // Publish JUnit report in Jenkins UI (official style)
+        stage('Publish Test Results') {
+            junit 'test-reports/test-report.xml'
+        }
+    }
+
+    echo " Pipeline execution completed."
+}
