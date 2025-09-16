@@ -147,19 +147,21 @@ terraform apply -auto-approve
 
 ## 5. Troubleshooting
 
-| Issue                           | Solution                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------- |
-| `gitleaks: command not found`   | Ensure Gitleaks binary is installed in `/usr/local/bin` and executable                |
-| Job fails with permission error | Add execute permissions: `chmod +x /usr/local/bin/gitleaks`                           |
-| Report file empty               | Check that the repository contains code to scan and that `--source .` path is correct |
+| **Issue**                                          | **Solution**                                                                                 |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `BucketAlreadyExists` or `BucketAlreadyOwnedByYou` | Change the S3 bucket name to a globally unique one in `main.tf`.                             |
+| `InsufficientPermissions`                          | Ensure AWS IAM user has proper permissions (`s3:CreateBucket`, `s3:PutBucketTagging`, etc.). |
+| Terraform plan shows unexpected changes            | Review drift in `terraform plan` and apply fixes with `terraform apply -auto-approve`.       |
+| Drift not detected                                 | Run `terraform plan -detailed-exitcode` after making manual changes to the infrastructure.   |
 
 ---
 
 ## 6. Best Practices
 
-- Run scans on Jenkins agents, not master nodes.
-- Fail builds automatically if secrets are found in strict CI policies.
-- Combine with git-secrets for defense in depth.
+- Avoid manual changes in the cloud; update Terraform code instead.
+- Keep Terraform CLI and provider versions up-to-date to avoid deprecation issues.
+- Use remote state storage with locking (e.g., S3 + DynamoDB for AWS).
+- Tag resources consistently to track and manage infrastructure easily.
 
 ---
 
@@ -168,11 +170,14 @@ terraform apply -auto-approve
 
 ## 7. FAQs
 
-#### 1. **Can Gitleaks run on Windows agents?**
-Yes, download the Windows binary and update the path in the pipeline.
+#### 1. **What is drift in Terraform?**
+Drift occurs when the actual infrastructure in the cloud differs from what is defined in Terraform code.
 
-#### 2. **Does Gitleaks scan commit history?**
-Yes, with the --no-git flag removed (default behavior scans git history).
+#### 2. **How can I detect drift?**
+Run terraform plan -detailed-exitcode
+
+#### 3. **Does running terraform refresh detect drift?**
+No. terraform refresh updates the state file to match the actual infrastructure, which will hide any drift. Use terraform plan without refresh to detect drift.
 
 ---
 
@@ -189,5 +194,5 @@ Yes, with the --no-git flag removed (default behavior scans git history).
 
 | Description                       | Link                                                                 |
 |------------------------------------|----------------------------------------------------------------------|
-| Credential scanning document                       | [Link]()                         |
-|  Gitleaks GitHub Repo | [Link](https://github.com/gitleaks/gitleaks) |
+| Terraform Drift Document                       | [Link]()                         |
+
