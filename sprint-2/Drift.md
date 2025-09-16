@@ -8,7 +8,7 @@
 
 | **Author**   | **Created on** | **Version** | **Last updated by** | **Last edited on** | **Level** | **Reviewer**  |
 |--------------|----------------|-------------|---------------------|--------------------|-----------|---------------|
-| Ishaan       | 11-08-25       | v1.0        | Ishaan              | 12-08-25           | Internal  | Rohit Chopra  | 
+| Ishaan       | 16-09-25       | v1.0        | Ishaan              | 16-09-25           | Internal  | Rohit Chopra  | 
 
 ---
 
@@ -28,19 +28,15 @@
 
 ## 1. Purpose
 
-This Proof of Concept (POC) demonstrates integrating Gitleaks, an open-source secret scanning tool, into a Jenkins CI pipeline.
-The goal is to automatically scan source code for sensitive data (API keys, tokens, passwords) during the Continuous Integration (CI) process and prevent them from entering the repository
+This Proof of Concept (POC) demonstrates integrating Terraform’s drift detection.
 
 ---
 
 ## 2. Pre-Requisites
 
-- Jenkins server installed and running
-- Git installed 
-- Gitleaks binary installed 
-- Access to the Git repository to be scanned
-- Basic understanding of Jenkins Pipeline syntax
-- Port 8080 should be available
+- Terraform
+- Cloud provider CLI installed and configured 
+
 
 ---
 
@@ -52,101 +48,100 @@ The goal is to automatically scan source code for sensitive data (API keys, toke
 | RAM                   | 1 GiB                   |
 | Disk                  | 8 GB                    |
 | OS                    | Ubuntu 22.04 LTS        |
-| Jenkins Version       | 2.516.1                  |
-| Git                   | 2.34.1                   |
+
 
 ---
 
 ## 4. Setup and Execution
 
-### 1. Fetch the latest Gitleaks version.
+### 1. Create terraform files to create a AWS resource
 
-```bash
-    GITLEAKS_VERSION=$(curl -s "https://api.github.com/repos/gitleaks/gitleaks/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-```
-
-
-
-### 2. Download the Gitleaks binary
-
-```bash
-    wget -qO gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz
-```
-
-
-### 3. Extract the executable 
-
-```bash
-    sudo tar xf gitleaks.tar.gz -C /usr/local/bin gitleaks
-```
-
-### 4. verify the installation
-
-```bash
-    gitleaks version
-```
-<img width="1919" height="314" alt="image" src="https://github.com/user-attachments/assets/79ada9f9-ef69-4cf2-82a1-5fa1757124cf" />
-
-
-### 5.  Create a Jenkins Pipeline Job
-
-- Go to Jenkins Dashboard → New Item
-- Select Pipeline
-- Choose Pipeline script in configuration
-
-
-<img width="1844" height="858" alt="Screenshot 2025-08-13 114157" src="https://github.com/user-attachments/assets/9e585ae6-6cc2-41bb-85a7-18f7e0aa1c78" />
-
-
-### 6. Jenkins Pipeline Script
-
-```groovy
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/employee-api.git'
-            }
-        }
-
-        stage('Run Gitleaks Scan') {
-            steps {
-                sh '''
-                echo "Running Gitleaks Secret Scan..."
-                gitleaks detect --source . --report-format json --report-path gitleaks-report.json
-                '''
-            }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'gitleaks-report.json', onlyIfSuccessful: false
-        }
-        failure {
-            echo "Secrets found! Please review gitleaks-report.json."
-        }
-    }
+#### main.tf
+```hcl
+provider "aws" {
+  region = "ap-south-1"
 }
 
+resource "aws_s3_bucket" "demo_bucket" {
+  bucket = "terraform-drift-demo-unique-12345"
+
+
+  tags = {
+    Name        = "TerraformDriftDemoBucket"
+    Environment = "POC"
+  }
+}
+```
+#### outputs.tf
+
+```hcl
+output "bucket_name" {
+  value = aws_s3_bucket.demo_bucket.id
+}
 ```
 
-### 7. Execution and Review
+---
 
+### 2. Run terraform commands
 
-- Run the Jenkins job.
-- If secrets are detected:
-  - The build will fail.
-  - A gitleaks-report.json will be archived in Jenkins for review.
-- If no secrets are found, the build will pass successfully
+```hcl
+    terraform init
+```
+<img width="1919" height="429" alt="image" src="https://github.com/user-attachments/assets/be3f0004-7272-4426-9aa6-699c8ccb8756" />
 
-<img width="1919" height="862" alt="Screenshot 2025-08-13 114612" src="https://github.com/user-attachments/assets/48bfb59e-ed30-454f-a302-c223c77cb46e" />
+```hcl
+    terraform plan
+```
+<img width="1919" height="952" alt="image" src="https://github.com/user-attachments/assets/ef22012d-91b7-437a-9e9c-3ccfcf6ec091" />
 
-
+```hcl
+   terraform apply -auto-approve
+```
+<img width="1913" height="939" alt="image" src="https://github.com/user-attachments/assets/7ef5211c-9857-4a2f-829f-017806669ef6" />
 
 ---
+
+### 3. Verify your resources on AWS
+
+<img width="1919" height="929" alt="image" src="https://github.com/user-attachments/assets/c670af34-5e98-4a97-971e-335e840124ba" />
+
+---
+
+### 4. Change tag on the resource using AWS console
+
+<img width="1919" height="856" alt="image" src="https://github.com/user-attachments/assets/988060ef-9f97-4338-bb53-b6d57ce6f757" />
+
+---
+
+
+### 5.  For Drift detection
+
+#### run terraform plan
+```hcl
+ terraform plan
+```
+
+#### drift detected
+
+<img width="1918" height="677" alt="image" src="https://github.com/user-attachments/assets/651f6cf0-774d-484e-a25c-b08e764322fe" />
+
+---
+
+
+
+### 6. To fix the drift
+
+```hcl
+terraform apply -auto-approve
+```
+<img width="1919" height="839" alt="image" src="https://github.com/user-attachments/assets/6bc1809f-c3de-4b14-a05e-c372e0594899" />
+
+---
+
+
+
+
+
 
 
 
